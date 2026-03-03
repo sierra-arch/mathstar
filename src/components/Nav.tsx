@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/story", label: "Our Story" },
-  { href: "/how-it-works", label: "How It Works" },
+  { href: "/how-it-works", label: "MathSTAR" },
   { href: "/reviews", label: "Reviews" },
 ];
 

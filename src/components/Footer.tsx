@@ -8,7 +8,7 @@ const footerLinks = [
       { label: "Our Story", href: "/story" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Impact & Results", href: "/impact" },
-      { label: "MathSTAR", href: "https://shepherdxr.org" },
+      { label: "MathSTAR", href: "/how-it-works" },
     ],
   },
   {
