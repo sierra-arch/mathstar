@@ -4,6 +4,7 @@ import StoryTeaser from "@/components/StoryTeaser";
 import HowItWorks from "@/components/HowItWorks";
 import TestimonialsTeaser from "@/components/TestimonialsTeaser";
 import PhotoStrip from "@/components/PhotoStrip";
+import PressTeaser from "@/components/PressTeaser";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <HowItWorks />
       <TestimonialsTeaser />
       <PhotoStrip />
+      <PressTeaser />
       <CTA />
       <Footer />
     </main>

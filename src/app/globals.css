@@ -21,6 +21,11 @@
   --color-purple-100: #F0E6F7;
   --color-purple-50: #F8F2FC;
 
+  /* Aqua/teal accent — pairs with brand purple */
+  --color-aqua: #0891B2;
+  --color-aqua-light: #E0F7FA;
+  --color-aqua-mid: #B2EBF2;
+
   --color-teal-600: #0891B2;
   --color-teal-100: #CFFAFE;
 
@@ -30,6 +35,65 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.06; }
+  50% { transform: translateY(-28px) rotate(4deg); opacity: 0.14; }
+}
+@keyframes floatUpSlow {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); opacity: 0.04; }
+  50% { transform: translateY(-40px) rotate(2deg); opacity: 0.1; }
+}
+@keyframes floatAcross {
+  0%, 100% { transform: translateX(0px) translateY(0px); opacity: 0.07; }
+  33% { transform: translateX(12px) translateY(-20px); opacity: 0.12; }
+  66% { transform: translateX(-8px) translateY(-10px); opacity: 0.08; }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.08); }
+}
+
+.float-1 { animation: floatUp 6s ease-in-out infinite; }
+.float-2 { animation: floatUpSlow 9s ease-in-out infinite; animation-delay: -2s; }
+.float-3 { animation: floatAcross 7s ease-in-out infinite; animation-delay: -4s; }
+.float-4 { animation: floatUp 8s ease-in-out infinite; animation-delay: -1s; }
+.float-5 { animation: floatUpSlow 11s ease-in-out infinite; animation-delay: -5s; }
+.float-6 { animation: floatAcross 5s ease-in-out infinite; animation-delay: -3s; }
+.float-7 { animation: floatUp 7s ease-in-out infinite; animation-delay: -6s; }
+.float-8 { animation: floatUpSlow 10s ease-in-out infinite; animation-delay: -1.5s; }
+.pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+
+/* ── Fish swimming animations ── */
+@keyframes swimRight {
+  0% { transform: translateX(-120px) translateY(0px) scaleX(1); opacity: 0; }
+  5% { opacity: 1; }
+  48% { transform: translateX(calc(100vw + 60px)) translateY(-30px) scaleX(1); opacity: 1; }
+  49% { transform: translateX(calc(100vw + 60px)) translateY(-30px) scaleX(1); opacity: 0; }
+  100% { transform: translateX(calc(100vw + 60px)) translateY(-30px) scaleX(1); opacity: 0; }
+}
+@keyframes swimLeft {
+  0% { transform: translateX(calc(100vw + 120px)) translateY(0px) scaleX(-1); opacity: 0; }
+  5% { opacity: 1; }
+  48% { transform: translateX(-80px) translateY(20px) scaleX(-1); opacity: 1; }
+  49% { transform: translateX(-80px) translateY(20px) scaleX(-1); opacity: 0; }
+  100% { transform: translateX(-80px) translateY(20px) scaleX(-1); opacity: 0; }
+}
+@keyframes swimRightWavy {
+  0% { transform: translateX(-120px) translateY(0px) scaleX(1); opacity: 0; }
+  5% { opacity: 0.8; }
+  25% { transform: translateX(30vw) translateY(-20px) scaleX(1); }
+  50% { transform: translateX(60vw) translateY(15px) scaleX(1); opacity: 0.8; }
+  75% { transform: translateX(90vw) translateY(-10px) scaleX(1); opacity: 0.6; }
+  100% { transform: translateX(calc(100vw + 80px)) translateY(0px) scaleX(1); opacity: 0; }
+}
+
+.fish-1 { animation: swimRight 18s linear infinite; animation-delay: 0s; }
+.fish-2 { animation: swimLeft 22s linear infinite; animation-delay: -6s; }
+.fish-3 { animation: swimRightWavy 26s linear infinite; animation-delay: -11s; }
+.fish-4 { animation: swimRight 15s linear infinite; animation-delay: -4s; }
+.fish-5 { animation: swimLeft 30s linear infinite; animation-delay: -15s; }
+.fish-6 { animation: swimRightWavy 20s linear infinite; animation-delay: -8s; }
 
 body {
   font-family: var(--font-jakarta), sans-serif;
