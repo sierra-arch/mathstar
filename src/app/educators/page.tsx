@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import EducatorsHero from "@/components/educators/EducatorsHero";
+import EducatorsPilotData from "@/components/educators/EducatorsPilotData";
 import EducatorsResults from "@/components/educators/EducatorsResults";
 import EducatorsQuotes from "@/components/educators/EducatorsQuotes";
 import EducatorsHowTo from "@/components/educators/EducatorsHowTo";
@@ -18,6 +19,7 @@ export default function EducatorsPage() {
     <main>
       <Nav />
       <EducatorsHero />
+      <EducatorsPilotData />
       <EducatorsResults />
       <EducatorsQuotes />
       <EducatorsHowTo />

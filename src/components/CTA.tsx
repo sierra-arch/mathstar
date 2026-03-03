@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
-    <section id="get" className="bg-[#0F0620] pb-28 px-6 lg:px-16">
+    <section id="get" className="bg-[#0F0620] pt-20 pb-28 px-6 lg:px-16">
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="relative rounded-3xl overflow-hidden"

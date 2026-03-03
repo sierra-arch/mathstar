@@ -16,8 +16,6 @@ const footerLinks = [
     links: [
       { label: "For Parents", href: "/parents" },
       { label: "For Educators", href: "/educators" },
-      { label: "Donate", href: "/donate" },
-      { label: "Volunteer", href: "/volunteer" },
     ],
   },
   {
@@ -30,8 +28,10 @@ const footerLinks = [
     ],
   },
   {
-    heading: "Legal",
+    heading: "Give Back",
     links: [
+      { label: "Donate", href: "/donate" },
+      { label: "Volunteer", href: "/volunteer" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Use", href: "/terms" },
     ],
@@ -59,7 +59,7 @@ export default function Footer() {
               <span className="font-extrabold text-base text-white/70 tracking-tight">MathSTAR</span>
             </Link>
             <p className="text-white/30 text-sm leading-relaxed">
-              Gifting the wonder of math to every child.
+              Revealing the wonder of math in every child.
             </p>
           </div>
 
@@ -92,14 +92,15 @@ export default function Footer() {
           <p className="text-white/25 text-sm">
             &copy; {new Date().getFullYear()} ShepherdXR. All rights reserved.
           </p>
-          <a
-            href="https://shepherdxr.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/25 text-sm hover:text-white/50 transition-colors"
-          >
-            shepherdxr.org
-          </a>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="text-white/25 text-xs hover:text-white/50 transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-white/15 text-xs">·</span>
+            <Link href="/terms" className="text-white/25 text-xs hover:text-white/50 transition-colors">
+              Terms of Use
+            </Link>
+          </div>
         </div>
 
       </div>
