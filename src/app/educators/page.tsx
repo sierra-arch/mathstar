@@ -1,0 +1,28 @@
+import type { Metadata } from "next";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import EducatorsHero from "@/components/educators/EducatorsHero";
+import EducatorsResults from "@/components/educators/EducatorsResults";
+import EducatorsQuotes from "@/components/educators/EducatorsQuotes";
+import EducatorsHowTo from "@/components/educators/EducatorsHowTo";
+import CTA from "@/components/CTA";
+
+export const metadata: Metadata = {
+  title: "For Educators — MathSTAR",
+  description:
+    "Bring MathSTAR to your school. See the pilot data, hear from teachers and administrators, and learn how to get your students access.",
+};
+
+export default function EducatorsPage() {
+  return (
+    <main>
+      <Nav />
+      <EducatorsHero />
+      <EducatorsResults />
+      <EducatorsQuotes />
+      <EducatorsHowTo />
+      <CTA />
+      <Footer />
+    </main>
+  );
+}

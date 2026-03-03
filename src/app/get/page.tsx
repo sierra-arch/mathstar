@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
-import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import PathwaySelector from "@/components/PathwaySelector";
 
 export const metadata: Metadata = {
   title: "Get MathSTAR — Gift the Wonder of Math",
   description:
-    "Get MathSTAR for your child today. An 8-hour VR math adventure available at home and at participating libraries.",
+    "Get MathSTAR for your child or school. Choose your path — parents and educators each have a dedicated experience.",
 };
 
 export default function GetPage() {
   return (
-    <main className="pt-20">
+    <main>
       <Nav />
-      <div className="min-h-[40vh] bg-[#0F0620]" />
-      <CTA />
+      <PathwaySelector />
       <Footer />
     </main>
   );
