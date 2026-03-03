@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function PathwaySelector() {
   return (
@@ -54,17 +55,23 @@ export default function PathwaySelector() {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <Link href="/parents" className="group block h-full">
-              <div className="relative h-full bg-white rounded-3xl p-10 lg:p-12 border border-[#7030A0]/10 shadow-lg hover:shadow-2xl hover:shadow-[#7030A0]/15 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="relative h-full bg-white rounded-3xl border border-[#7030A0]/10 shadow-lg hover:shadow-2xl hover:shadow-[#7030A0]/15 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+
+                {/* Photo */}
+                <div className="relative w-full h-56 overflow-hidden">
+                  <Image
+                    src="/pexels-julia-m-cameron-4144037.jpg"
+                    alt="Child using VR headset at home"
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/20" />
+                </div>
 
                 {/* Card glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#7030A0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" />
 
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-[#F7F2FF] rounded-2xl flex items-center justify-center mb-8 text-3xl">
-                    🏠
-                  </div>
-
+                <div className="relative z-10 p-10">
                   <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">For Parents</p>
 
                   <h2 className="text-2xl lg:text-3xl font-extrabold text-ink leading-tight mb-5">
@@ -92,18 +99,23 @@ export default function PathwaySelector() {
             transition={{ duration: 0.7, delay: 0.45 }}
           >
             <Link href="/educators" className="group block h-full">
-              <div className="relative h-full bg-[#0F0620] rounded-3xl p-10 lg:p-12 shadow-lg hover:shadow-2xl hover:shadow-[#7030A0]/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="relative h-full bg-[#0F0620] rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#7030A0]/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+
+                {/* Photo */}
+                <div className="relative w-full h-56 overflow-hidden">
+                  <Image
+                    src="/pexels-julia-m-cameron-4144152.jpg"
+                    alt="Student using VR headset in classroom"
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0F0620]/60" />
+                </div>
 
                 {/* Card glow */}
                 <div className="absolute top-[-20%] right-[-10%] w-[300px] h-[300px] bg-[#7030A0]/20 rounded-full blur-[80px] pointer-events-none" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[200px] h-[200px] bg-teal-400/10 rounded-full blur-[60px] pointer-events-none" />
 
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 text-3xl">
-                    🏫
-                  </div>
-
+                <div className="relative z-10 p-10">
                   <p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-4">For Educators</p>
 
                   <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight mb-5">

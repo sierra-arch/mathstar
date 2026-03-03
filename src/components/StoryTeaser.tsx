@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function StoryTeaser() {
   return (
@@ -46,7 +47,7 @@ export default function StoryTeaser() {
           </Link>
         </motion.div>
 
-        {/* Right — pull quote card */}
+        {/* Right — wonder photo with quote overlay */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -54,16 +55,30 @@ export default function StoryTeaser() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="relative"
         >
-          {/* Glow behind card */}
-          <div className="absolute -inset-8 bg-gradient-to-br from-[#7030A0]/15 via-[#EDE9FE]/60 to-teal-100/30 rounded-[40px] blur-2xl pointer-events-none" />
-          <div className="relative bg-white rounded-3xl p-12 shadow-lg border border-[#7030A0]/8">
-            <div className="text-8xl text-[#7030A0]/15 font-serif leading-none mb-6 -mt-4">&ldquo;</div>
-            <p className="text-2xl lg:text-[1.7rem] font-extrabold text-ink leading-snug mb-8">
-              That day, someone gifted me the wonder of math.
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-px bg-[#7030A0]/30" />
-              <p className="text-ink/50 text-sm font-medium">Femi, Founder of MathSTAR</p>
+          {/* Glow behind image */}
+          <div className="absolute -inset-6 bg-gradient-to-br from-[#7030A0]/15 via-[#EDE9FE]/60 to-teal-100/30 rounded-[40px] blur-2xl pointer-events-none" />
+
+          <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-[#7030A0]/15">
+            <Image
+              src="/pexels-thepaintedsquare-3405461.jpg"
+              alt="Child experiencing wonder with VR headset"
+              width={700}
+              height={700}
+              className="w-full h-[480px] object-cover object-center"
+            />
+            {/* Gradient at bottom for quote readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+            {/* Founder quote overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-8">
+              <div className="text-5xl text-white/30 font-serif leading-none mb-3">&ldquo;</div>
+              <p className="text-white font-extrabold text-xl lg:text-2xl leading-snug mb-4">
+                That day, someone gifted me the wonder of math.
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-px bg-white/40" />
+                <p className="text-white/60 text-sm font-medium">Femi, Founder of MathSTAR</p>
+              </div>
             </div>
           </div>
         </motion.div>
