@@ -30,7 +30,7 @@ const footerLinks = [
   {
     heading: "Give Back",
     links: [
-      { label: "Donate", href: "/donate" },
+      { label: "Donate", href: "https://www.paypal.com/ncp/payment/AYP27URPK33R8" },
       { label: "Volunteer", href: "/volunteer" },
     ],
   },
