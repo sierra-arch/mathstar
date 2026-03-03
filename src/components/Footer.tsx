@@ -32,8 +32,6 @@ const footerLinks = [
     links: [
       { label: "Donate", href: "/donate" },
       { label: "Volunteer", href: "/volunteer" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Use", href: "/terms" },
     ],
   },
 ];
