@@ -38,7 +38,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F0620] border-t border-white/5 px-6 lg:px-16 pt-16 pb-10">
+    <footer className="bg-[#2D1060] border-t border-white/8 px-6 lg:px-16 pt-16 pb-10">
       <div className="max-w-6xl mx-auto">
 
         {/* Top row */}
@@ -74,7 +74,7 @@ export default function Footer() {
                       href={link.href}
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="text-white/40 text-sm hover:text-white/70 transition-colors"
+                      className="text-white/70 text-sm hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
