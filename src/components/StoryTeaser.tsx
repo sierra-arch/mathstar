@@ -5,8 +5,13 @@ import Link from "next/link";
 
 export default function StoryTeaser() {
   return (
-    <section className="py-28 px-6 lg:px-16 bg-white">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="relative py-40 px-6 lg:px-16 bg-white overflow-hidden">
+
+      {/* Ambient purple orbs */}
+      <div className="absolute top-[-10%] left-[-15%] w-[600px] h-[600px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-[#7030A0]/8 rounded-full blur-[80px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
 
         {/* Left — the hook */}
         <motion.div
@@ -15,33 +20,33 @@ export default function StoryTeaser() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">
+          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
             Our Story
           </p>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-ink leading-tight mb-6">
+          <h2 className="text-4xl lg:text-[3.25rem] font-extrabold text-ink leading-tight mb-8">
             One graphic novel
             <br />
             changed{" "}
             <em className="not-italic italic text-[#7030A0]">everything.</em>
           </h2>
-          <p className="text-lg text-ink/60 leading-relaxed mb-8">
+          <p className="text-xl text-ink/60 leading-relaxed mb-7">
             Our founder was expelled from his first school. Diagnosed with ADHD, emotional impairment,
             a language disability. And in math? He struggled — until a school custodian handed him a
             mathematics graphic novel and gifted him the wonder.
           </p>
-          <p className="text-lg text-ink/60 leading-relaxed mb-10">
+          <p className="text-xl text-ink/60 leading-relaxed mb-12">
             That wonder took him to Oxford, to a quantum physics paper, to Netflix. And now he&apos;s
             determined every child gets the same gift.
           </p>
           <Link
             href="/story"
-            className="inline-flex items-center gap-2 text-[#7030A0] font-semibold text-base hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-[#7030A0] font-semibold text-lg hover:gap-4 transition-all"
           >
             Read the full story →
           </Link>
         </motion.div>
 
-        {/* Right — pull quote */}
+        {/* Right — pull quote card */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -49,13 +54,17 @@ export default function StoryTeaser() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="relative"
         >
-          <div className="absolute -inset-4 bg-gradient-to-br from-[#F8F2FC] to-[#EDE9FE] rounded-3xl" />
-          <div className="relative bg-white rounded-2xl p-10 shadow-sm">
-            <div className="text-6xl text-[#7030A0]/20 font-serif leading-none mb-4">&ldquo;</div>
-            <p className="text-2xl lg:text-3xl font-extrabold text-ink leading-snug mb-6">
+          {/* Glow behind card */}
+          <div className="absolute -inset-8 bg-gradient-to-br from-[#7030A0]/15 via-[#EDE9FE]/60 to-teal-100/30 rounded-[40px] blur-2xl pointer-events-none" />
+          <div className="relative bg-white rounded-3xl p-12 shadow-lg border border-[#7030A0]/8">
+            <div className="text-8xl text-[#7030A0]/15 font-serif leading-none mb-6 -mt-4">&ldquo;</div>
+            <p className="text-2xl lg:text-[1.7rem] font-extrabold text-ink leading-snug mb-8">
               That day, someone gifted me the wonder of math.
             </p>
-            <p className="text-ink/50 text-sm font-medium">— Femi, Founder of MathSTAR</p>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-px bg-[#7030A0]/30" />
+              <p className="text-ink/50 text-sm font-medium">Femi, Founder of MathSTAR</p>
+            </div>
           </div>
         </motion.div>
 

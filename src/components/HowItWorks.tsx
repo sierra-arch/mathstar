@@ -28,12 +28,17 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how" className="py-28 px-6 lg:px-16 bg-[#FAFAF8]">
-      <div className="max-w-6xl mx-auto">
+    <section id="how" className="relative py-40 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
 
-        <div className="text-center mb-16">
+      {/* Ambient orbs */}
+      <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/15 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[5%] left-[-8%] w-[400px] h-[400px] bg-teal-400/15 rounded-full blur-[80px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+
+        <div className="text-center mb-20">
           <motion.p
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-3"
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -41,7 +46,7 @@ export default function HowItWorks() {
             How It Works
           </motion.p>
           <motion.h2
-            className="text-4xl lg:text-5xl font-extrabold text-ink leading-tight"
+            className="text-4xl lg:text-[3.25rem] font-extrabold text-ink leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -53,31 +58,31 @@ export default function HowItWorks() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              className={`bg-gradient-to-br ${step.gradient} rounded-3xl p-8`}
+              className={`bg-gradient-to-br ${step.gradient} rounded-3xl p-10`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
               <div
-                className="text-6xl font-extrabold mb-6 opacity-20"
+                className="text-7xl font-extrabold mb-8 opacity-20"
                 style={{ color: step.accent }}
               >
                 {step.num}
               </div>
-              <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
-              <p className="text-ink/60 leading-relaxed">{step.desc}</p>
+              <h3 className="text-xl font-bold text-ink mb-4">{step.title}</h3>
+              <p className="text-ink/60 leading-relaxed text-base">{step.desc}</p>
             </motion.div>
           ))}
         </div>
 
         {/* Video row */}
         <motion.div
-          className="mt-10 rounded-3xl overflow-hidden shadow-xl shadow-purple-900/10 relative"
+          className="rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/15 relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -89,11 +94,11 @@ export default function HowItWorks() {
             muted
             loop
             playsInline
-            className="w-full object-cover max-h-[480px]"
+            className="w-full object-cover max-h-[520px]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0F0620]/40 to-transparent pointer-events-none" />
-          <div className="absolute bottom-6 left-8">
-            <p className="text-white/80 text-sm font-medium">Shape equations with your bare hands</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F0620]/50 to-transparent pointer-events-none" />
+          <div className="absolute bottom-8 left-10">
+            <p className="text-white/90 text-base font-semibold">Shape equations with your bare hands</p>
           </div>
         </motion.div>
       </div>

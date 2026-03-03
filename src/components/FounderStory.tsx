@@ -63,10 +63,15 @@ function AnimatedParagraph({
 
 export default function FounderStory() {
   return (
-    <section id="story" className="py-28 px-6 lg:px-16 bg-white">
-      <div className="max-w-3xl mx-auto">
+    <section id="story" className="relative py-40 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
+
+      {/* Ambient orbs */}
+      <div className="absolute top-[5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[5%] left-[-10%] w-[400px] h-[400px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-3xl mx-auto relative z-10">
         <motion.p
-          className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
+          className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -75,7 +80,7 @@ export default function FounderStory() {
         </motion.p>
 
         <motion.h2
-          className="text-4xl lg:text-5xl font-extrabold text-ink mb-16 leading-tight"
+          className="text-4xl lg:text-[3.25rem] font-extrabold text-ink mb-20 leading-tight"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -84,7 +89,7 @@ export default function FounderStory() {
           Gifting the Wonder of Math
         </motion.h2>
 
-        <div className="space-y-9">
+        <div className="space-y-12">
           {story.map((s, i) => (
             <AnimatedParagraph key={i} text={s.text} highlight={s.highlight} />
           ))}
@@ -92,27 +97,23 @@ export default function FounderStory() {
 
         {/* MathSTAR description */}
         <motion.div
-          className="mt-16 bg-[#F8F2FC] rounded-3xl p-8 border border-[#7030A0]/10"
+          className="mt-20 bg-white rounded-3xl p-12 border border-[#7030A0]/10 shadow-sm"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-lg text-ink/75 leading-relaxed">
+          <p className="text-xl text-ink/75 leading-relaxed mb-8">
             This <strong className="text-ink">8-hour VR intervention</strong> takes students from stuck-in-arithmetic to
             algebra-confident. They put on the headset at home or at their local library, and enter an underwater world
             where fish multiply and divide before their eyes, where they{" "}
             <strong className="text-ink">shape equations with their bare hands.</strong>
           </p>
-          <div className="mt-6 flex flex-wrap gap-6">
-            <div>
-              <div className="text-2xl font-extrabold text-[#7030A0]">Kids choose it over recess.</div>
-            </div>
-            <div>
-              <div className="text-2xl font-extrabold text-[#7030A0]">Educators rate it 10/10.</div>
-            </div>
+          <div className="flex flex-wrap gap-x-10 gap-y-3 mb-6">
+            <div className="text-2xl font-extrabold text-[#7030A0]">Kids choose it over recess.</div>
+            <div className="text-2xl font-extrabold text-[#7030A0]">Educators rate it 10/10.</div>
           </div>
-          <p className="mt-4 text-base text-ink/60">
+          <p className="text-base text-ink/55">
             But here&apos;s what really matters: kids are saying,{" "}
             <em>&ldquo;I love this,&rdquo;</em> and{" "}
             <em>&ldquo;Math is my favorite subject now.&rdquo;</em>
