@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -14,11 +14,22 @@ const links = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastY = useRef(0);
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 30);
+      if (y < 60) {
+        setVisible(true);
+      } else {
+        setVisible(y < lastY.current);
+      }
+      lastY.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -26,14 +37,14 @@ export default function Nav() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 flex items-center justify-between transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 flex items-center justify-between transition-colors duration-300 ${
         scrolled || !isHome
           ? "bg-white/90 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
       initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
+      animate={{ y: visible ? 0 : "-100%", opacity: visible ? 1 : 0 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
     >
       <Link href="/" className="flex items-center gap-2.5">
         <Image
