@@ -1,8 +1,8 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import FounderStory from "@/components/FounderStory";
+import StoryTeaser from "@/components/StoryTeaser";
 import HowItWorks from "@/components/HowItWorks";
-import Testimonials from "@/components/Testimonials";
+import TestimonialsTeaser from "@/components/TestimonialsTeaser";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -11,9 +11,9 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <FounderStory />
+      <StoryTeaser />
       <HowItWorks />
-      <Testimonials />
+      <TestimonialsTeaser />
       <CTA />
       <Footer />
     </main>
