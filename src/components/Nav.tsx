@@ -34,27 +34,32 @@ export default function Nav() {
   }, []);
 
   const isHome = pathname === "/";
+  const isDark = pathname === "/how-it-works";
+
+  const navBg = isDark
+    ? scrolled ? "bg-[#0F0620]/75 backdrop-blur-md" : "bg-transparent"
+    : scrolled || !isHome
+    ? "bg-white/90 backdrop-blur-md shadow-sm"
+    : "bg-transparent";
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 flex items-center justify-between transition-colors duration-300 ${
-        scrolled || !isHome
-          ? "bg-white/90 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4 flex items-center justify-between transition-colors duration-300 ${navBg}`}
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: visible ? 0 : "-100%", opacity: visible ? 1 : 0 }}
       transition={{ duration: 0.35, ease: "easeInOut" }}
     >
       <Link href="/" className="flex items-center gap-2.5">
         <Image
-          src="/logo-purple.png"
-          alt="ShepherdXR"
+          src={isDark ? "/logo-white.png" : "/logo-purple.png"}
+          alt="MathSTAR"
           width={36}
           height={36}
           className="object-contain"
         />
-        <span className="font-extrabold text-lg text-ink tracking-tight">MathSTAR</span>
+        <span className={`font-extrabold text-lg tracking-tight ${isDark ? "text-white" : "text-ink"}`}>
+          MathSTAR
+        </span>
       </Link>
 
       <div className="hidden md:flex items-center gap-8">
@@ -64,8 +69,8 @@ export default function Nav() {
             href={link.href}
             className={`text-sm font-medium transition-colors ${
               pathname === link.href
-                ? "text-[#7030A0] font-semibold"
-                : "text-ink/60 hover:text-ink"
+                ? isDark ? "text-[#C49FDC] font-semibold" : "text-[#7030A0] font-semibold"
+                : isDark ? "text-white/60 hover:text-white" : "text-ink/60 hover:text-ink"
             }`}
           >
             {link.label}

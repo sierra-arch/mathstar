@@ -4,26 +4,59 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
-/* ─── Floating fish ─── */
-const fishShapes = [
-  { emoji: "🐠", cls: "fish-1", style: { top: "25%", fontSize: "2rem" } },
-  { emoji: "🐟", cls: "fish-2", style: { top: "60%", fontSize: "1.6rem" } },
-  { emoji: "🐠", cls: "fish-3", style: { top: "40%", fontSize: "1.2rem" } },
-  { emoji: "🐡", cls: "fish-4", style: { top: "75%", fontSize: "1.8rem" } },
-  { emoji: "🐟", cls: "fish-5", style: { top: "15%", fontSize: "1.4rem" } },
-  { emoji: "🐠", cls: "fish-6", style: { top: "50%", fontSize: "1rem" } },
+/* ─── SVG fish illustrations ─── */
+function FishA({ color }: { color: string }) {
+  return (
+    <svg width="72" height="44" viewBox="0 0 72 44" fill="none">
+      <ellipse cx="34" cy="22" rx="26" ry="14" fill={color} />
+      <path d="M58 22 L72 10 L72 34 Z" fill={color} />
+      <path d="M28 8 Q34 0 40 8" fill={color} opacity="0.8" />
+      <circle cx="13" cy="20" r="3.5" fill="rgba(0,0,0,0.3)" />
+      <circle cx="12" cy="19" r="1.5" fill="white" opacity="0.7" />
+    </svg>
+  );
+}
+
+function FishB({ color }: { color: string }) {
+  return (
+    <svg width="58" height="50" viewBox="0 0 58 50" fill="none">
+      <ellipse cx="26" cy="25" rx="22" ry="19" fill={color} />
+      <path d="M46 25 L58 13 L58 37 Z" fill={color} />
+      <path d="M20 6 Q26 0 32 6" fill={color} opacity="0.75" />
+      <path d="M20 44 Q26 50 32 44" fill={color} opacity="0.75" />
+      <circle cx="11" cy="22" r="4" fill="rgba(0,0,0,0.25)" />
+      <circle cx="10" cy="21" r="2" fill="white" opacity="0.65" />
+    </svg>
+  );
+}
+
+function FishC({ color }: { color: string }) {
+  return (
+    <svg width="88" height="32" viewBox="0 0 88 32" fill="none">
+      <ellipse cx="40" cy="16" rx="34" ry="11" fill={color} />
+      <path d="M72 16 L88 6 L88 26 Z" fill={color} />
+      <path d="M34 5 Q42 0 50 5" fill={color} opacity="0.7" />
+      <circle cx="12" cy="14" r="3" fill="rgba(0,0,0,0.25)" />
+      <circle cx="11" cy="13" r="1.5" fill="white" opacity="0.6" />
+    </svg>
+  );
+}
+
+const fishData: { Shape: typeof FishA; color: string; cls: string; top: string }[] = [
+  { Shape: FishA, color: "rgba(8,145,178,0.5)",    cls: "fish-1", top: "25%" },
+  { Shape: FishB, color: "rgba(196,159,220,0.45)", cls: "fish-2", top: "60%" },
+  { Shape: FishC, color: "rgba(255,255,255,0.25)", cls: "fish-3", top: "40%" },
+  { Shape: FishA, color: "rgba(196,159,220,0.4)",  cls: "fish-4", top: "75%" },
+  { Shape: FishC, color: "rgba(8,145,178,0.4)",    cls: "fish-5", top: "15%" },
+  { Shape: FishB, color: "rgba(255,255,255,0.2)",  cls: "fish-6", top: "50%" },
 ];
 
 function FloatingFish() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {fishShapes.map((f, i) => (
-        <div
-          key={i}
-          className={`absolute ${f.cls}`}
-          style={{ ...f.style, opacity: 0.4 }}
-        >
-          {f.emoji}
+      {fishData.map((f, i) => (
+        <div key={i} className={`absolute ${f.cls}`} style={{ top: f.top }}>
+          <f.Shape color={f.color} />
         </div>
       ))}
     </div>
@@ -322,6 +355,7 @@ export default function GameExperience() {
           src="/Manipulatives.mp4"
           autoPlay muted loop playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          onLoadedMetadata={(e) => { e.currentTarget.currentTime = 26; }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F0620] via-[#0F0620]/30 to-[#0F0620]/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0F0620]/70 to-transparent" />
