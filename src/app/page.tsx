@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import ResultsSlide from "@/components/ResultsSlide";
 import StoryTeaser from "@/components/StoryTeaser";
 import HowItWorks from "@/components/HowItWorks";
 import TestimonialsTeaser from "@/components/TestimonialsTeaser";
@@ -13,6 +14,7 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
+      <ResultsSlide />
       <StoryTeaser />
       <HowItWorks />
       <TestimonialsTeaser />

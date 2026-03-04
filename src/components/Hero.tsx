@@ -22,16 +22,6 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden bg-[#FAFAF8]"
     >
 
-      {/* ── Subtle background video ── */}
-      <video
-        src="/Gameplay-edited.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none"
-      />
-
       {/* ── Gradient mesh (left half bleeds into photo) ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
