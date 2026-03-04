@@ -93,7 +93,7 @@ export default function StoryHero() {
             <br />
             changed{" "}
             <em
-              className="not-italic italic"
+              className="not-italic italic inline-block pb-1 pr-2"
               style={{
                 background: "linear-gradient(135deg, #C49FDC 10%, #ffffff 50%, #0891B2 90%)",
                 WebkitBackgroundClip: "text",

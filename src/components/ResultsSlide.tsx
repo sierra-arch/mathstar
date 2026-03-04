@@ -76,7 +76,7 @@ export default function ResultsSlide() {
           >
             The numbers are{" "}
             <span
-              className="italic"
+              className="italic inline-block pb-1 pr-2"
               style={{
                 background: "linear-gradient(135deg, #C49FDC 20%, #0891B2)",
                 WebkitBackgroundClip: "text",
