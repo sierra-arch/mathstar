@@ -38,7 +38,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2D1060] border-t border-white/8 px-6 lg:px-16 pt-16 pb-10">
+    <footer className="bg-[#7030A0] border-t border-white/8 px-6 lg:px-16 pt-16 pb-10">
       <div className="max-w-6xl mx-auto">
 
         {/* Top row */}

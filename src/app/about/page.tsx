@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "About ShepherdXR — MathSTAR",
@@ -16,25 +17,31 @@ export default function AboutPage() {
 
       {/* ── HERO ── */}
       <section className="pt-36 pb-24 px-6 lg:px-20 max-w-5xl mx-auto">
-        <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-6">
-          About ShepherdXR
-        </p>
-        <h1 className="text-5xl lg:text-7xl font-extrabold text-[#0D0B12] leading-[1.02] mb-8 max-w-3xl">
-          We build technology that{" "}
-          <span className="italic text-[#7030A0]">changes</span>{" "}
-          how kids see themselves.
-        </h1>
-        <p className="text-[#0D0B12]/55 text-xl leading-relaxed max-w-2xl">
-          ShepherdXR is an immersive learning company. Our first product, MathSTAR,
-          is a virtual reality universe that turns math from a fear into a superpower —
-          in 8 hours or less.
-        </p>
+        <FadeIn>
+          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-6">
+            About ShepherdXR
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h1 className="text-5xl lg:text-7xl font-extrabold text-[#0D0B12] leading-[1.02] mb-8 max-w-3xl">
+            We build technology that{" "}
+            <span className="italic text-[#7030A0]">changes</span>{" "}
+            how kids see themselves.
+          </h1>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p className="text-[#0D0B12]/55 text-xl leading-relaxed max-w-2xl">
+            ShepherdXR is an immersive learning company. Our first product, MathSTAR,
+            is a virtual reality universe that turns math from a fear into a superpower —
+            in 8 hours or less.
+          </p>
+        </FadeIn>
       </section>
 
       {/* ── ORIGIN ── */}
       <section className="py-24 px-6 lg:px-20 bg-[#F0E6F7]">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <FadeIn>
             <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
               Our Origin
             </p>
@@ -57,9 +64,9 @@ export default function AboutPage() {
             >
               Read the full founder story →
             </Link>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-2 gap-5">
+          <FadeIn delay={0.15} className="grid grid-cols-2 gap-5">
             {[
               { num: "10/10", label: "students chose math over recess" },
               { num: "18%", label: "pre → post test score gain" },
@@ -74,21 +81,21 @@ export default function AboutPage() {
                 <div className="text-[#0D0B12]/50 text-sm leading-snug">{s.label}</div>
               </div>
             ))}
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* ── WHAT WE BELIEVE ── */}
       <section className="py-28 px-6 lg:px-20">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+          <FadeIn className="text-center mb-16">
             <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
               What We Believe
             </p>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight">
               Three things we know to be true.
             </h2>
-          </div>
+          </FadeIn>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {[

@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ImpactHero from "@/components/impact/ImpactHero";
 import ImpactStats from "@/components/impact/ImpactStats";
+import ImpactCharts from "@/components/impact/ImpactCharts";
 import ImpactPilots from "@/components/impact/ImpactPilots";
 import ImpactFindings from "@/components/impact/ImpactFindings";
 import ImpactQuotes from "@/components/impact/ImpactQuotes";
@@ -20,6 +21,7 @@ export default function ImpactPage() {
       <Nav />
       <ImpactHero />
       <ImpactStats />
+      <ImpactCharts />
       <ImpactPilots />
       <ImpactFindings />
       <ImpactQuotes />

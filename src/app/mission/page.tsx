@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "Our Mission — MathSTAR",
@@ -17,17 +18,23 @@ export default function MissionPage() {
       {/* ── MANIFESTO HERO ── */}
       <section className="pt-36 pb-28 px-6 lg:px-20 bg-[#7030A0]">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8">
-            Our Mission
-          </p>
-          <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[1.02] mb-10">
-            Gift the wonder of math{" "}
-            <span className="italic text-[#C49FDC]">to every child.</span>
-          </h1>
-          <p className="text-white/60 text-xl leading-relaxed max-w-2xl">
-            Not some children. Not children from the right zip codes or the right schools.
-            Every child. That&apos;s the mission. Everything else is in service of that.
-          </p>
+          <FadeIn>
+            <p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8">
+              Our Mission
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[1.02] mb-10">
+              Gift the wonder of math{" "}
+              <span className="italic text-[#C49FDC]">to every child.</span>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="text-white/60 text-xl leading-relaxed max-w-2xl">
+              Not some children. Not children from the right zip codes or the right schools.
+              Every child. That&apos;s the mission. Everything else is in service of that.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
