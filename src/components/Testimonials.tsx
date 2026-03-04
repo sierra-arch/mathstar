@@ -9,6 +9,7 @@ const featured = [
     who: "Parent",
     context: "Roxbury Library Pilot, Aug 2025",
     tag: "Math Love",
+    highlight: false,
   },
   {
     quote:
@@ -16,6 +17,7 @@ const featured = [
     who: "Parent",
     context: "Roxbury Library Pilot, Aug 2025",
     tag: "Engagement",
+    highlight: true,
   },
   {
     quote:
@@ -23,6 +25,7 @@ const featured = [
     who: "Parent",
     context: "6 months after pilot",
     tag: "Transfer",
+    highlight: true,
   },
 ];
 
@@ -94,6 +97,7 @@ const grid = [
     quote: "Wait, that level I just did was algebra?",
     who: "Student, Ellis Pilot (BPS), Jan 2026",
     tag: "Learning",
+    highlight: true,
   },
   {
     quote: "It was crazy and fun at the same time.",
@@ -104,6 +108,7 @@ const grid = [
     quote: "They went 20 minutes into recess and didn't notice.",
     who: "Ms. Joseph, Teacher — Ellis Pilot (BPS), Jan 2026",
     tag: "Engagement",
+    highlight: true,
   },
   {
     quote: "Students' excitement and motivation before, during, and after was up. Even on days where we did not have VR.",
@@ -129,6 +134,7 @@ const grid = [
     quote: "He got 17/21 in the game's test... we know he's capable of this, but it doesn't show up on paper. He needs ACCESS to something like this.",
     who: "Ms. Munroe, Teacher — Ellis Pilot (BPS), Jan 2026",
     tag: "Learning",
+    highlight: true,
   },
   {
     quote: "I think it gave students a different way to view math.",
@@ -181,7 +187,7 @@ function TagChip({ tag }: { tag: string }) {
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="relative bg-[#F7F2FF] py-24 px-6 lg:px-16">
+    <section id="reviews" className="relative bg-[#F7F2FF] pt-40 pb-24 px-6 lg:px-16">
 
       {/* Ambient orbs */}
       <div className="absolute top-[5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/8 rounded-full blur-[120px] pointer-events-none" />
@@ -199,13 +205,14 @@ export default function Testimonials() {
             Real Stories
           </motion.p>
           <motion.h2
-            className="text-4xl lg:text-5xl font-extrabold text-ink leading-tight"
+            className="text-4xl lg:text-[3.25rem] font-extrabold text-ink leading-[1.1]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Parents. Teachers. Kids.{" "}
+            Parents. Teachers. Kids.
+            <br />
             <em className="not-italic italic text-[#7030A0]">
               All saying the same thing.
             </em>
@@ -217,7 +224,7 @@ export default function Testimonials() {
           {featured.map((f, i) => (
             <motion.div
               key={i}
-              className="bg-white rounded-3xl p-7 flex flex-col shadow-sm shadow-[#7030A0]/8 border border-[#7030A0]/6"
+              className={`rounded-3xl p-7 flex flex-col shadow-sm border ${f.highlight ? "bg-[#E0F7FA] border-[#0891B2]/20 shadow-[#0891B2]/8" : "bg-white border-[#7030A0]/6 shadow-[#7030A0]/8"}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -240,7 +247,7 @@ export default function Testimonials() {
           {grid.map((q, i) => (
             <motion.div
               key={i}
-              className="bg-white hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm shadow-[#7030A0]/5 border border-[#7030A0]/5"
+              className={`hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm border ${q.highlight ? "bg-[#E0F7FA] border-[#0891B2]/18 shadow-[#0891B2]/5" : "bg-white border-[#7030A0]/5 shadow-[#7030A0]/5"}`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
