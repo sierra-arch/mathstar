@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const stats = [
   {
@@ -60,8 +61,24 @@ export default function TheProblem() {
             </p>
           </motion.div>
 
-          {/* Right — stats */}
+          {/* Right — photo + stats */}
           <div className="space-y-4">
+            <motion.div
+              className="relative rounded-3xl overflow-hidden mb-2"
+              style={{ height: "280px" }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <Image
+                src="/Stock Images/pexels-tima-miroshnichenko-7047681.jpg"
+                alt="Student experiencing MathSTAR VR"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B12]/40 to-transparent pointer-events-none" />
+            </motion.div>
             {stats.map((s, i) => (
               <motion.div
                 key={i}

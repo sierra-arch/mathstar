@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const stats = [
   {
@@ -130,6 +131,26 @@ export default function ResultsNumbers() {
             <em className="not-italic italic text-[#0891B2]">The data agrees.</em>
           </motion.h2>
         </div>
+
+        {/* Photo strip */}
+        <motion.div
+          className="grid grid-cols-3 gap-3 mb-16 rounded-3xl overflow-hidden"
+          style={{ height: "220px" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="relative rounded-2xl overflow-hidden">
+            <Image src="/Stock Images/pexels-anastasia-shuraeva-9821658.jpg" alt="Student learning" fill className="object-cover object-center" />
+          </div>
+          <div className="relative rounded-2xl overflow-hidden">
+            <Image src="/Stock Images/pexels-julia-m-cameron-4144041 (1).jpg" alt="Students engaged" fill className="object-cover object-center" />
+          </div>
+          <div className="relative rounded-2xl overflow-hidden">
+            <Image src="/Stock Images/pexels-vanessa-loring-7869248.jpg" alt="Child thriving" fill className="object-cover object-center" />
+          </div>
+        </motion.div>
 
         {/* Headline stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">

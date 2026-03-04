@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const features = [
   {
     icon: "🥽",
+    photo: "/Stock Images/pexels-artempodrez-7774026.jpg",
+    photoAlt: "Student focused in private learning environment",
     title: "Focused Environment",
     color: "#7030A0",
     bg: "from-[#7030A0]/10 to-[#7030A0]/4",
@@ -14,6 +17,8 @@ const features = [
   },
   {
     icon: "🤲",
+    photo: "/Stock Images/pexels-eren-li-7241498.jpg",
+    photoAlt: "Hands-on embodied learning",
     title: "Embodied Learning",
     color: "#0891B2",
     bg: "from-[#0891B2]/10 to-[#0891B2]/4",
@@ -23,6 +28,8 @@ const features = [
   },
   {
     icon: "🔊",
+    photo: "/Stock Images/pexels-anastasia-shuraeva-9821666.jpg",
+    photoAlt: "Accessible guided learning",
     title: "Accessible Guidance",
     color: "#7030A0",
     bg: "from-[#7030A0]/10 to-[#7030A0]/4",
@@ -80,12 +87,22 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
           {features.map((f, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl p-8 border ${f.border} bg-gradient-to-br ${f.bg} relative overflow-hidden`}
+              className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} relative overflow-hidden`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
+              <div className="relative w-full overflow-hidden" style={{ height: "180px" }}>
+                <Image
+                  src={f.photo}
+                  alt={f.photoAlt}
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none" />
+              </div>
+              <div className="p-8">
               <div className="text-4xl mb-5">{f.icon}</div>
               <h3
                 className="text-xl font-extrabold mb-3 leading-snug"
@@ -106,6 +123,7 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
                     {tag}
                   </span>
                 ))}
+              </div>
               </div>
             </motion.div>
           ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const pillars = [
   {
@@ -62,6 +63,37 @@ export default function OurAnswer() {
           <p className="text-[#0D0B12]/60 text-lg leading-relaxed max-w-3xl mt-4">
             We focus on middle graders with diverse learning styles and Individualized Education Programs (IEPs) — the students most likely to fall through the cracks of a pen-and-paper system.
           </p>
+        </motion.div>
+
+        {/* Gameplay video */}
+        <motion.div
+          className="relative rounded-3xl overflow-hidden mb-16 shadow-2xl shadow-[#7030A0]/10"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <video
+            src="/Gameplay-edited.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full object-cover max-h-[480px]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F0620]/60 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-6 left-8 right-8 flex items-end justify-between">
+            <div>
+              <p className="text-white font-bold text-lg leading-snug">See MathSTAR in action</p>
+              <p className="text-white/60 text-sm mt-1">Real gameplay from our pilot programs</p>
+            </div>
+            <Link
+              href="/mathstar"
+              className="shrink-0 px-5 py-2.5 rounded-full bg-white/15 border border-white/25 text-white text-sm font-semibold hover:bg-white/25 transition-colors backdrop-blur-sm"
+            >
+              Learn more →
+            </Link>
+          </div>
         </motion.div>
 
         {/* Pillars grid */}

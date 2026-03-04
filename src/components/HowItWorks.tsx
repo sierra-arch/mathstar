@@ -11,8 +11,16 @@ const steps = [
     desc: "At home or at your local library — no special setup, no downloads, no tech experience needed. Strap in and you're there in seconds.",
     detail: "MathSTAR works with Meta Quest headsets available at participating public libraries and for home use. Setup takes under 2 minutes. No controllers, no cables, no IT department required.",
     accent: "#7030A0",
-    visual: null as React.ReactNode,
-    placeholder: true,
+    visual: (
+      <Image
+        src="/Stock Images/pexels-tima-miroshnichenko-7047292.jpg"
+        alt="Child putting on VR headset"
+        width={900}
+        height={560}
+        className="w-full h-full object-cover object-center"
+      />
+    ),
+    placeholder: false,
   },
   {
     num: "02",

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const story = [
   {
@@ -89,35 +90,68 @@ export default function FounderStory() {
       <div className="absolute top-[5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/15 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[5%] left-[-10%] w-[400px] h-[400px] bg-[#0891B2]/12 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-3xl mx-auto relative z-10">
-        <motion.p
-          className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          Femi Fadugba · Founder
-        </motion.p>
+      <div className="max-w-6xl mx-auto relative z-10">
 
-        <motion.h2
-          className="text-4xl lg:text-[3.25rem] font-extrabold text-[#0D0B12] mb-20 leading-tight"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Gifting the Wonder of Math
-        </motion.h2>
+        {/* Header */}
+        <div className="max-w-3xl mb-14">
+          <motion.p
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            Femi Fadugba · Founder
+          </motion.p>
 
-        <div className="space-y-14">
-          {story.map((s, i) => (
-            <AnimatedParagraph
-              key={i}
-              text={s.text}
-              highlight={s.highlight}
-              accentColor={s.accentColor}
-            />
-          ))}
+          <motion.h2
+            className="text-4xl lg:text-[3.25rem] font-extrabold text-[#0D0B12] leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Gifting the Wonder of Math
+          </motion.h2>
+        </div>
+
+        {/* 2-col: photo + story */}
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-16 items-start">
+
+          {/* Photo column — sticky on scroll */}
+          <motion.div
+            className="lg:sticky lg:top-24"
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="relative rounded-3xl overflow-hidden aspect-[3/4]">
+              <Image
+                src="/headshots/Femi%20:%20Founder/femi-fadugba-5108468.jpg"
+                alt="Femi Fadugba, Founder of MathSTAR"
+                fill
+                className="object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B12]/50 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-white font-extrabold text-lg leading-snug">Femi Fadugba</p>
+                <p className="text-white/65 text-sm">Founder &amp; CEO · MathSTAR</p>
+                <p className="text-white/45 text-xs mt-1">MSc Quantum Physics · Oxford</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Story column */}
+          <div className="space-y-14">
+            {story.map((s, i) => (
+              <AnimatedParagraph
+                key={i}
+                text={s.text}
+                highlight={s.highlight}
+                accentColor={s.accentColor}
+              />
+            ))}
+          </div>
         </div>
 
         {/* MathSTAR callout */}
