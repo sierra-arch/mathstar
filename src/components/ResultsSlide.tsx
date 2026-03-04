@@ -70,7 +70,7 @@ export default function ResultsSlide() {
           {/* Headline */}
           <motion.h2
             className="text-5xl lg:text-[5rem] xl:text-[5.5rem] font-extrabold text-white leading-[1.0] mb-6 max-w-3xl"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}

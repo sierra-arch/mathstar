@@ -41,7 +41,7 @@ export default function CTA() {
 
         <motion.h2
           className="text-5xl lg:text-[5rem] font-extrabold text-[#0D0B12] leading-[1.02] mb-7"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}

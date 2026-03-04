@@ -60,7 +60,7 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
         </motion.p>
         <motion.h2
           className="text-5xl lg:text-[5rem] xl:text-[5.5rem] font-extrabold text-white leading-[1.02] mb-7"
-          initial={{ opacity: 0, y: 80 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.9, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
@@ -112,7 +112,7 @@ function LightSlide({ num, overline, headline, children }: {
           {overline}
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -129,6 +129,56 @@ function LightSlide({ num, overline, headline, children }: {
             {children}
           </motion.div>
         )}
+      </motion.div>
+    </section>
+  );
+}
+
+/* ── Cinematic quote section with scroll fadeOut ── */
+function QuoteSection() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const fadeOut = useTransform(scrollYProgress, [0.35, 0.85], [1, 0]);
+  const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
+
+  return (
+    <section ref={ref} className="relative h-screen overflow-hidden bg-[#06040E] flex items-center justify-center">
+      <SectionNum n="07" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(8,145,178,0.08)_0%,transparent_65%)] pointer-events-none" />
+
+      <motion.div className="max-w-4xl mx-auto text-center relative z-10 px-6" style={{ opacity: fadeOut, y: textY }}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
+        >
+          <div className="text-9xl text-white/8 font-serif leading-none mb-2 select-none">&ldquo;</div>
+          <p className="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-10">
+            They got 17/21 in the game&apos;s test.
+            We know they&apos;re capable of this —
+            but it doesn&apos;t show up on paper.
+            <span
+              className="italic block mt-5 inline-block pb-2 pr-4"
+              style={{
+                background: "linear-gradient(135deg, #C49FDC, #0891B2)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              They need ACCESS.
+            </span>
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-12 h-px bg-white/15" />
+            <div>
+              <p className="text-white/65 font-semibold text-sm">Ms. Munroe</p>
+              <p className="text-white/30 text-xs">Classroom Teacher · Ellis Elementary Pilot</p>
+            </div>
+            <div className="w-12 h-px bg-white/15" />
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );
@@ -168,7 +218,7 @@ export default function GameExperience() {
           </motion.p>
           <motion.h1
             className="text-6xl lg:text-[5.5rem] xl:text-[6rem] font-extrabold text-white leading-[1.0] mb-8"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
@@ -354,7 +404,7 @@ export default function GameExperience() {
           </motion.p>
           <motion.h2
             className="text-5xl lg:text-[5rem] font-extrabold text-white leading-[1.02] mb-6"
-            initial={{ opacity: 0, y: 80 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.9, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
@@ -393,7 +443,7 @@ export default function GameExperience() {
             </motion.p>
             <motion.h2
               className="text-5xl lg:text-7xl font-extrabold text-[#0D0B12] leading-[1.0]"
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -441,7 +491,7 @@ export default function GameExperience() {
               <motion.div
                 key={i}
                 className="relative bg-white border border-[#0D0B12]/6 rounded-3xl p-10 overflow-hidden shadow-sm"
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
@@ -466,45 +516,7 @@ export default function GameExperience() {
       </section>
 
       {/* ── 9. DARK — Cinematic quote ── */}
-      <section className="relative h-screen overflow-hidden bg-[#06040E] flex items-center justify-center">
-        <SectionNum n="07" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(8,145,178,0.08)_0%,transparent_65%)] pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto text-center relative z-10 px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.93 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-          >
-            <div className="text-9xl text-white/8 font-serif leading-none mb-2 select-none">&ldquo;</div>
-            <p className="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-10">
-              They got 17/21 in the game&apos;s test.
-              We know they&apos;re capable of this —
-              but it doesn&apos;t show up on paper.
-              <span
-                className="italic block mt-5 inline-block pb-2 pr-4"
-                style={{
-                  background: "linear-gradient(135deg, #C49FDC, #0891B2)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                They need ACCESS.
-              </span>
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-px bg-white/15" />
-              <div>
-                <p className="text-white/65 font-semibold text-sm">Ms. Munroe</p>
-                <p className="text-white/30 text-xs">Classroom Teacher · Ellis Elementary Pilot</p>
-              </div>
-              <div className="w-12 h-px bg-white/15" />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <QuoteSection />
 
       {/* ── 10. LIGHT — CTA ── */}
       <section className="relative min-h-screen py-40 px-6 bg-white overflow-hidden flex items-center justify-center">
@@ -516,7 +528,7 @@ export default function GameExperience() {
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <motion.h2
             className="text-5xl lg:text-7xl font-extrabold text-[#0D0B12] leading-tight mb-8"
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}

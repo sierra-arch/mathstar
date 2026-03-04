@@ -100,7 +100,7 @@ export default function HowItWorks() {
             <motion.div
               key={step.num}
               className="bg-white rounded-3xl p-6 flex flex-col gap-5 shadow-sm shadow-[#7030A0]/5 border border-[#7030A0]/6"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
@@ -126,7 +126,7 @@ export default function HowItWorks() {
         {/* Video row */}
         <motion.div
           className="rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/15 relative"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}

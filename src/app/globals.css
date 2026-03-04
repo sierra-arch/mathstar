@@ -99,4 +99,8 @@ body {
   font-family: var(--font-jakarta), sans-serif;
   background: #FAFAF8;
   color: #0D0B12;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
