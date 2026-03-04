@@ -8,6 +8,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import TheProblem from "@/components/how-it-works/TheProblem";
 import OurAnswer from "@/components/how-it-works/OurAnswer";
+import LearnerProfiles from "@/components/how-it-works/LearnerProfiles";
 import ResultsNumbers from "@/components/how-it-works/ResultsNumbers";
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function HowItWorksPage() {
       <HowItWorks />
       <TheProblem />
       <OurAnswer />
+      <LearnerProfiles />
       <LearningFeatures />
       <ResultsNumbers />
       <ImpactCharts />

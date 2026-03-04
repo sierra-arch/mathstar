@@ -44,7 +44,7 @@ function PhotoPlaceholder({ label }: { label: string }) {
 
 export default function TestimonialsTeaser() {
   return (
-    <section className="relative py-40 px-6 lg:px-16 bg-white overflow-hidden">
+    <section className="relative pt-28 pb-40 px-6 lg:px-16 bg-white overflow-hidden">
 
       {/* Ambient orbs */}
       <div className="absolute top-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
@@ -52,7 +52,7 @@ export default function TestimonialsTeaser() {
 
       <div className="max-w-6xl mx-auto relative z-10">
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div>
             <motion.p
               className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
@@ -63,7 +63,7 @@ export default function TestimonialsTeaser() {
               Real Stories
             </motion.p>
             <motion.h2
-              className="text-4xl lg:text-[3.25rem] font-extrabold text-ink leading-tight"
+              className="text-4xl lg:text-[3.25rem] font-extrabold text-ink leading-[1.15]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -71,7 +71,7 @@ export default function TestimonialsTeaser() {
             >
               Parents. Teachers. Kids.
               <br />
-              <em className="not-italic italic text-[#0891B2]">All saying the same thing.</em>
+              <span className="text-[#0891B2]">All saying the same thing.</span>
             </motion.h2>
           </div>
           <motion.div
