@@ -136,7 +136,7 @@ export default function AboutPage() {
                 role: "Founder & CEO",
                 focus: "Leadership, STEM & Story",
                 bio: "Oxford (MEng), UPenn (MPA). BCG consultant, published in quantum computing, bestselling author, Netflix Executive Producer, and STEM tutor. Built MathSTAR from his own experience of math as a child who almost fell through the cracks.",
-                photo: "/headshots/femi-fadugba-5108468.jpg",
+                photo: "/headshots/Femi%20:%20Founder/4009.avif",
                 color: "#7030A0",
               },
               {

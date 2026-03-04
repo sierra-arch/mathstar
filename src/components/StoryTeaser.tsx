@@ -60,7 +60,7 @@ export default function StoryTeaser() {
 
           <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-[#7030A0]/15">
             <Image
-              src="/headshots/femi-fadugba-5108468.jpg"
+              src="/headshots/Femi%20:%20Founder/Femi.webp"
               alt="Femi Fadugba, Founder of MathSTAR"
               width={700}
               height={700}
