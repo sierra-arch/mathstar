@@ -117,22 +117,22 @@ const profiles = [
     ],
   },
   {
-    id: "ell",
-    label: "English Learners",
+    id: "deaf",
+    label: "Deaf / Hard of Hearing",
     color: "#4A1E6B",
-    tagline: "Math speaks every language. So does MathSTAR.",
+    tagline: "A world that communicates through sight and touch — not just sound.",
     howItHelps: [
       {
-        title: "Multi-Language Subtitles",
-        body: "On-screen guidance appears in the student's language. They read along in their own words.",
-      },
-      {
-        title: "Spoken Audio Narration",
-        body: "Step-by-step voice instructions mean reading is never a requirement. The world talks them through it.",
-      },
-      {
         title: "Visual-First Design",
-        body: "Fish multiply in front of their eyes. The ocean world communicates through visuals — language is never the barrier.",
+        body: "Every mechanic is built around what students see and do with their hands. The underwater world communicates through motion — sound is never the primary channel.",
+      },
+      {
+        title: "On-Screen Captions & Subtitles",
+        body: "Step-by-step guidance appears as text on screen. Deaf and hard-of-hearing students follow along without missing a beat.",
+      },
+      {
+        title: "Gesture-Based Interaction",
+        body: "Students shape equations with their bare hands — no verbal responses, no listening required. Their hands are the interface.",
       },
     ],
     stats: [
@@ -218,26 +218,24 @@ export default function LearnerProfiles() {
           </motion.p>
         </div>
 
-        {/* Full-width folder tab bar */}
-        <div className="flex w-full -mb-px">
+        {/* Folder tab bar */}
+        <div className="flex w-full gap-1">
           {profiles.map((p, i) => {
             const isActive = active === p.id;
             return (
               <button
                 key={p.id}
                 onClick={() => setActive(p.id)}
-                className="flex-1 relative py-3 px-2 text-center border border-b-0 transition-all duration-200 focus:outline-none overflow-hidden"
+                className="flex-1 relative py-3 px-2 text-center border transition-all duration-200 focus:outline-none"
                 style={{
-                  background: isActive ? `${p.color}12` : p.color,
+                  background: isActive ? `${p.color}10` : p.color,
                   color: isActive ? p.color : "rgba(255,255,255,0.92)",
                   borderColor: isActive ? `${p.color}30` : "transparent",
+                  borderBottom: isActive ? `1px solid ${p.color}10` : `1px solid transparent`,
+                  borderRadius: "0.875rem 0.875rem 0 0",
                   zIndex: isActive ? 20 : 10 - i,
-                  transform: isActive ? "translateY(0)" : "translateY(4px)",
-                  borderRadius: i === 0
-                    ? "1.5rem 0 0 0"
-                    : i === profiles.length - 1
-                    ? "0 1.5rem 0 0"
-                    : "0",
+                  transform: isActive ? "translateY(0)" : "translateY(3px)",
+                  marginBottom: isActive ? "-1px" : "0",
                 }}
               >
                 <span className="text-xs font-bold tracking-wide whitespace-nowrap leading-none">
@@ -250,8 +248,8 @@ export default function LearnerProfiles() {
 
         {/* Content card */}
         <div
-          className="relative z-10 rounded-b-3xl rounded-tr-none rounded-tl-none border overflow-hidden shadow-sm transition-colors duration-300"
-          style={{ borderColor: `${current.color}25`, background: `${current.color}08` }}
+          className="relative z-10 rounded-b-3xl rounded-tr-3xl rounded-tl-3xl border overflow-hidden shadow-sm transition-colors duration-300"
+          style={{ borderColor: `${current.color}25`, background: `${current.color}10` }}
         >
           <AnimatePresence mode="wait">
             <motion.div
