@@ -25,13 +25,12 @@ const profiles = [
     ],
     stats: [
       { value: "0", label: "classroom removals over 11 VR sessions" },
-      { value: "4/5", label: "behavior regulation improvement — instructor rating" },
+      { value: "4/5", label: "behavior regulation — instructor rating" },
     ],
-    quote: {
-      text: "Students stayed calm — even on non-VR days.",
-      who: "Instructor",
-      context: "Ellis Elementary Pilot",
-    },
+    quotes: [
+      { text: "Students stayed calm — even on non-VR days.", who: "Instructor", context: "Ellis Elementary Pilot" },
+      { text: "They need ACCESS to something like this.", who: "Instructor", context: "Ellis Elementary Pilot" },
+    ],
   },
   {
     id: "dyslexia",
@@ -53,14 +52,13 @@ const profiles = [
       },
     ],
     stats: [
-      { value: "86%", label: "of students said they learned a lot" },
-      { value: "86%", label: "would recommend MathSTAR to a friend" },
+      { value: "86%", label: "said they learned a lot" },
+      { value: "86%", label: "would recommend to a friend" },
     ],
-    quote: {
-      text: "Wait, that level I just did was algebra?",
-      who: "Student",
-      context: "Ellis Pilot, Jan 2026",
-    },
+    quotes: [
+      { text: "Wait, that level I just did was algebra?", who: "Student", context: "Ellis Pilot, Jan 2026" },
+      { text: "They went 20 minutes into recess and didn't notice.", who: "Ms. Joseph, Teacher", context: "Ellis Pilot, Jan 2026" },
+    ],
   },
   {
     id: "autism",
@@ -83,13 +81,12 @@ const profiles = [
     ],
     stats: [
       { value: "0", label: "classroom removals over 11 VR sessions" },
-      { value: "4/5", label: "behavior regulation improvement — instructor rating" },
+      { value: "4/5", label: "behavior regulation — instructor rating" },
     ],
-    quote: {
-      text: "They need ACCESS to something like this.",
-      who: "Instructor",
-      context: "Ellis Elementary Pilot",
-    },
+    quotes: [
+      { text: "Students stayed calm — even on non-VR days.", who: "Instructor", context: "Ellis Elementary Pilot" },
+      { text: "They need ACCESS to something like this.", who: "Instructor", context: "Ellis Elementary Pilot" },
+    ],
   },
   {
     id: "anxiety",
@@ -111,14 +108,13 @@ const profiles = [
       },
     ],
     stats: [
-      { value: "+18%", label: "increase in growth mindset scores" },
+      { value: "+18%", label: "growth mindset increase" },
       { value: "+18%", label: "pre → post test score gain" },
     ],
-    quote: {
-      text: "My son came to me and said, 'Mom, maths is my favourite subject now.'",
-      who: "Parent",
-      context: "Roxbury Library Pilot",
-    },
+    quotes: [
+      { text: "My son came to me and said, 'Mom, maths is my favourite subject now.'", who: "Parent", context: "Roxbury Library Pilot" },
+      { text: "Wait, that level I just did was algebra?", who: "Student", context: "Ellis Pilot, Jan 2026" },
+    ],
   },
   {
     id: "ell",
@@ -140,14 +136,13 @@ const profiles = [
       },
     ],
     stats: [
-      { value: "86%", label: "said they learned a lot — including ELL students" },
-      { value: "10/10", label: "educator rating — fit for diverse classrooms" },
+      { value: "86%", label: "said they learned a lot" },
+      { value: "10/10", label: "educator rating for diverse classrooms" },
     ],
-    quote: {
-      text: "They went 20 minutes into recess and didn't notice.",
-      who: "Ms. Joseph, Teacher",
-      context: "Ellis Pilot, Jan 2026",
-    },
+    quotes: [
+      { text: "They went 20 minutes into recess and didn't notice.", who: "Ms. Joseph, Teacher", context: "Ellis Pilot, Jan 2026" },
+      { text: "They need ACCESS to something like this.", who: "Instructor", context: "Ellis Elementary Pilot" },
+    ],
   },
   {
     id: "iep",
@@ -172,11 +167,10 @@ const profiles = [
       { value: "17/21", label: "scored in-game — invisible on paper tests" },
       { value: "45%", label: "jump in median test score — BPL Research" },
     ],
-    quote: {
-      text: "They need ACCESS to something like this.",
-      who: "Instructor",
-      context: "Ellis Elementary Pilot",
-    },
+    quotes: [
+      { text: "They need ACCESS to something like this.", who: "Instructor", context: "Ellis Elementary Pilot" },
+      { text: "Students stayed calm — even on non-VR days.", who: "Instructor", context: "Ellis Elementary Pilot" },
+    ],
   },
 ];
 
@@ -224,114 +218,113 @@ export default function LearnerProfiles() {
           </motion.p>
         </div>
 
-        {/* File-folder tab bar */}
-        <div className="overflow-x-auto pb-0 -mb-px">
-          <div className="flex gap-1.5 min-w-max px-1">
-            {profiles.map((p, i) => {
-              const isActive = active === p.id;
-              return (
-                <button
-                  key={p.id}
-                  onClick={() => setActive(p.id)}
-                  className="relative px-5 py-3 rounded-t-2xl text-xs font-bold tracking-wide whitespace-nowrap border border-b-0 transition-all duration-200 focus:outline-none"
-                  style={{
-                    background: isActive ? "white" : p.color,
-                    color: isActive ? p.color : "rgba(255,255,255,0.92)",
-                    borderColor: isActive ? `${p.color}30` : "transparent",
-                    zIndex: isActive ? 20 : 10 - i,
-                    transform: isActive ? "translateY(0)" : "translateY(3px)",
-                    boxShadow: isActive
-                      ? `0 -4px 16px ${p.color}20`
-                      : "none",
-                  }}
-                >
-                  {/* Number badge */}
-                  <span
-                    className="inline-block text-[9px] font-black mr-1.5 opacity-60"
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+        {/* Full-width folder tab bar */}
+        <div className="flex w-full -mb-px">
+          {profiles.map((p, i) => {
+            const isActive = active === p.id;
+            return (
+              <button
+                key={p.id}
+                onClick={() => setActive(p.id)}
+                className="flex-1 relative py-3 px-2 text-center border border-b-0 transition-all duration-200 focus:outline-none overflow-hidden"
+                style={{
+                  background: isActive ? `${p.color}12` : p.color,
+                  color: isActive ? p.color : "rgba(255,255,255,0.92)",
+                  borderColor: isActive ? `${p.color}30` : "transparent",
+                  zIndex: isActive ? 20 : 10 - i,
+                  transform: isActive ? "translateY(0)" : "translateY(4px)",
+                  borderRadius: i === 0
+                    ? "1.5rem 0 0 0"
+                    : i === profiles.length - 1
+                    ? "0 1.5rem 0 0"
+                    : "0",
+                }}
+              >
+                <span className="text-xs font-bold tracking-wide whitespace-nowrap leading-none">
                   {p.label}
-                </button>
-              );
-            })}
-          </div>
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Content card — folder body */}
+        {/* Content card */}
         <div
-          className="relative z-10 bg-white rounded-b-3xl rounded-tr-3xl border p-8 lg:p-10 shadow-sm"
-          style={{ borderColor: `${current.color}25` }}
+          className="relative z-10 rounded-b-3xl rounded-tr-none rounded-tl-none border overflow-hidden shadow-sm transition-colors duration-300"
+          style={{ borderColor: `${current.color}25`, background: `${current.color}08` }}
         >
-          {/* Colored left accent bar */}
-          <div
-            className="absolute left-0 top-8 bottom-8 w-1 rounded-full transition-colors duration-300"
-            style={{ background: current.color }}
-          />
-
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 lg:grid-cols-5 gap-8 pl-4"
+              transition={{ duration: 0.28 }}
+              className="grid grid-cols-1 lg:grid-cols-5"
             >
               {/* Left — how it helps */}
-              <div className="lg:col-span-3 space-y-4">
-                <p
-                  className="text-lg font-bold leading-snug mb-5"
-                  style={{ color: current.color }}
-                >
+              <div className="lg:col-span-3 p-8 lg:p-10 border-r" style={{ borderColor: `${current.color}15` }}>
+                <p className="text-base font-bold leading-snug mb-8" style={{ color: current.color }}>
                   {current.tagline}
                 </p>
-                {current.howItHelps.map((item, i) => (
-                  <div
-                    key={i}
-                    className="rounded-2xl p-5 border"
-                    style={{ borderColor: `${current.color}18`, background: `${current.color}05` }}
-                  >
-                    <p className="font-extrabold text-[#0D0B12] mb-1.5 text-sm">{item.title}</p>
-                    <p className="text-[#0D0B12]/60 text-sm leading-relaxed">{item.body}</p>
-                  </div>
-                ))}
+                <div className="space-y-7">
+                  {current.howItHelps.map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div
+                        className="w-1 shrink-0 rounded-full mt-1"
+                        style={{ background: `${current.color}40`, minHeight: "100%" }}
+                      />
+                      <div>
+                        <p className="font-extrabold text-[#0D0B12] mb-1 text-sm">{item.title}</p>
+                        <p className="text-[#0D0B12]/55 text-sm leading-relaxed">{item.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Right — stats + quote */}
-              <div className="lg:col-span-2 flex flex-col gap-4">
-                <div className="grid grid-cols-2 gap-3">
+              {/* Right — stats + two quotes */}
+              <div className="lg:col-span-2 flex flex-col">
+
+                {/* Stats row */}
+                <div
+                  className="grid grid-cols-2 border-b"
+                  style={{ borderColor: `${current.color}15` }}
+                >
                   {current.stats.map((s, i) => (
                     <div
                       key={i}
-                      className="rounded-2xl p-5 border text-center"
-                      style={{ borderColor: `${current.color}20`, background: `${current.color}08` }}
+                      className="p-6 text-center border-r last:border-r-0"
+                      style={{ borderColor: `${current.color}15` }}
                     >
-                      <div
-                        className="text-3xl font-extrabold mb-1"
-                        style={{ color: current.color }}
-                      >
+                      <div className="text-3xl font-extrabold mb-1" style={{ color: current.color }}>
                         {s.value}
                       </div>
-                      <div className="text-[#0D0B12]/55 text-xs leading-snug">{s.label}</div>
+                      <div className="text-[#0D0B12]/50 text-xs leading-snug">{s.label}</div>
                     </div>
                   ))}
                 </div>
 
-                <div
-                  className="rounded-2xl p-6 border flex-1 flex flex-col justify-between"
-                  style={{ borderColor: `${current.color}18`, background: `${current.color}05` }}
-                >
-                  <p className="text-[#0D0B12] text-base font-medium leading-relaxed mb-5">
-                    &ldquo;{current.quote.text}&rdquo;
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-px" style={{ background: `${current.color}50` }} />
-                    <div>
-                      <p className="text-[#0D0B12]/65 text-sm font-semibold">{current.quote.who}</p>
-                      <p className="text-[#0D0B12]/35 text-xs">{current.quote.context}</p>
+                {/* Two quotes stacked */}
+                <div className="flex flex-col flex-1 divide-y" style={{ borderColor: `${current.color}15` }}>
+                  {current.quotes.map((q, i) => (
+                    <div
+                      key={i}
+                      className="flex-1 p-6 flex flex-col justify-between"
+                      style={{ borderColor: `${current.color}15` }}
+                    >
+                      <p className="text-[#0D0B12]/80 text-sm font-medium leading-relaxed mb-4 italic">
+                        &ldquo;{q.text}&rdquo;
+                      </p>
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-4 h-px shrink-0" style={{ background: `${current.color}50` }} />
+                        <div>
+                          <p className="text-[#0D0B12]/60 text-xs font-semibold">{q.who}</p>
+                          <p className="text-[#0D0B12]/30 text-[11px]">{q.context}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </motion.div>
