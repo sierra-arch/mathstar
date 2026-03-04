@@ -135,6 +135,18 @@ export default function Hero() {
               className="object-cover object-center"
               priority
             />
+            {/* Floating student review chip */}
+            <motion.div
+              className="absolute bottom-5 right-5 bg-white/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-xl border border-[#7030A0]/10 max-w-[220px]"
+              initial={{ opacity: 0, y: 16, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <p className="text-[#0D0B12] text-sm font-semibold leading-snug mb-1">
+                &ldquo;I would invest $200 into this.&rdquo;
+              </p>
+              <p className="text-[#7030A0]/60 text-xs font-medium">Student, age ~10</p>
+            </motion.div>
           </div>
         </motion.div>
 
