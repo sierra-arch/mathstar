@@ -130,7 +130,7 @@ function StickyScenes() {
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "360vh" }}>
-      <div className="sticky top-0 h-screen overflow-hidden bg-[#0F0620]">
+      <div className="sticky top-0 h-screen overflow-hidden bg-[#7030A0]">
 
         {/* Full-screen game video */}
         <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
@@ -138,9 +138,10 @@ function StickyScenes() {
             src="/Gameplay-edited.mp4"
             autoPlay muted loop playsInline
             className="w-full h-full object-cover opacity-50"
+            onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.6; }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0F0620]/90 via-[#0F0620]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0F0620]/70 via-transparent to-[#0F0620]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#7030A0]/90 via-[#7030A0]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#7030A0]/70 via-transparent to-[#7030A0]/30" />
         </motion.div>
 
         {/* Ambient glow */}
@@ -203,10 +204,10 @@ function StickyScenes() {
 /* ─── Main component ─── */
 export default function GameExperience() {
   return (
-    <div className="bg-[#0F0620]">
+    <div className="bg-[#7030A0]">
 
       {/* ── 1. HERO ────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0F0620]">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#7030A0] pt-24">
 
         {/* Background video */}
         <div className="absolute inset-0">
@@ -214,8 +215,9 @@ export default function GameExperience() {
             src="/Gameplay-edited.mp4"
             autoPlay muted loop playsInline
             className="w-full h-full object-cover opacity-30"
+            onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.6; }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F0620]/60 via-transparent to-[#0F0620]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#7030A0]/60 via-transparent to-[#7030A0]" />
         </div>
 
         {/* Ambient orbs */}
@@ -286,7 +288,7 @@ export default function GameExperience() {
       </section>
 
       {/* ── 2. ATMOSPHERE ──────────────────────────────────────────── */}
-      <section className="relative py-40 px-6 lg:px-20 bg-[#0F0620] overflow-hidden">
+      <section className="relative py-40 px-6 lg:px-20 bg-[#7030A0] overflow-hidden">
 
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#7030A0/15_0%,_transparent_70%)] pointer-events-none" />
 
@@ -349,16 +351,16 @@ export default function GameExperience() {
       <StickyScenes />
 
       {/* ── 4. MANIPULATIVES VIDEO ─────────────────────────────────── */}
-      <section className="relative h-screen overflow-hidden bg-[#0F0620]">
+      <section className="relative h-screen overflow-hidden bg-[#7030A0]">
 
         <video
           src="/Manipulatives.mp4"
           autoPlay muted loop playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          onLoadedMetadata={(e) => { e.currentTarget.currentTime = 26; }}
+          onLoadedMetadata={(e) => { e.currentTarget.currentTime = 26; e.currentTarget.playbackRate = 0.6; }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F0620] via-[#0F0620]/30 to-[#0F0620]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0F0620]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#7030A0] via-[#7030A0]/30 to-[#7030A0]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#7030A0]/70 to-transparent" />
 
         <div className="absolute inset-0 flex items-end pb-24 px-8 lg:px-20">
           <motion.div
@@ -384,7 +386,7 @@ export default function GameExperience() {
       </section>
 
       {/* ── 5. GAME MECHANICS ──────────────────────────────────────── */}
-      <section className="relative py-40 px-6 lg:px-20 bg-[#0F0620] overflow-hidden">
+      <section className="relative py-40 px-6 lg:px-20 bg-[#7030A0] overflow-hidden">
 
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#7030A0]/15 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#0891B2]/10 rounded-full blur-[90px] pointer-events-none" />
@@ -491,7 +493,7 @@ export default function GameExperience() {
       </section>
 
       {/* ── 6. CINEMATIC QUOTE ─────────────────────────────────────── */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#0A0418]">
+      <section className="relative py-40 px-6 overflow-hidden bg-[#4A1E6B]">
 
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,_#0891B2/12_0%,_transparent_65%)] pointer-events-none" />
 
@@ -532,7 +534,7 @@ export default function GameExperience() {
       </section>
 
       {/* ── 7. STATS BAR ───────────────────────────────────────────── */}
-      <section className="relative py-28 px-6 lg:px-20 bg-[#0F0620] overflow-hidden border-t border-white/5">
+      <section className="relative py-28 px-6 lg:px-20 bg-[#7030A0] overflow-hidden border-t border-white/5">
 
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -561,7 +563,7 @@ export default function GameExperience() {
       </section>
 
       {/* ── 8. CTA ─────────────────────────────────────────────────── */}
-      <section className="relative py-40 px-6 bg-[#0F0620] overflow-hidden border-t border-white/5">
+      <section className="relative py-40 px-6 bg-[#7030A0] overflow-hidden border-t border-white/5">
 
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#7030A0/25_0%,_transparent_70%)] pointer-events-none" />
         <FloatingSymbols />
