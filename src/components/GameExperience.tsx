@@ -138,7 +138,7 @@ function StickyScenes() {
             src="/Gameplay-edited.mp4"
             autoPlay muted loop playsInline
             className="w-full h-full object-cover opacity-50"
-            onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.6; }}
+            onLoadedMetadata={(e) => { e.currentTarget.currentTime = 45; e.currentTarget.playbackRate = 0.6; }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#7030A0]/90 via-[#7030A0]/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#7030A0]/70 via-transparent to-[#7030A0]/30" />
@@ -215,7 +215,7 @@ export default function GameExperience() {
             src="/Gameplay-edited.mp4"
             autoPlay muted loop playsInline
             className="w-full h-full object-cover opacity-30"
-            onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.6; }}
+            onLoadedMetadata={(e) => { e.currentTarget.currentTime = 90; e.currentTarget.playbackRate = 0.6; }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#7030A0]/60 via-transparent to-[#7030A0]" />
         </div>
