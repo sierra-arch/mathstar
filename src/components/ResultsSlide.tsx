@@ -23,7 +23,7 @@ export default function ResultsSlide() {
   const textY      = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-[#080612]">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-[#0d0620]">
 
       {/* ── Full-bleed gameplay video ── */}
       <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
@@ -33,21 +33,26 @@ export default function ResultsSlide() {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-90"
           onLoadedMetadata={(e) => { e.currentTarget.currentTime = 26; }}
         />
       </motion.div>
 
-      {/* ── Overlays ── */}
-      {/* Dark base — heavier at edges, lighter in center so gameplay shows */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/80 via-[#080612]/40 to-[#080612]/85" />
-      {/* Left vignette for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/80 via-transparent to-transparent" />
-      {/* Purple atmospheric tint */}
+      {/* ── Overlays — lighter so gameplay color shows ── */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0620]/30 via-[#0d0620]/10 to-[#0d0620]/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d0620]/65 via-transparent to-transparent" />
+      {/* Rich purple/teal atmosphere */}
       <div
         className="absolute inset-0"
-        style={{ background: "radial-gradient(ellipse 70% 60% at 25% 50%, rgba(112,48,160,0.25) 0%, transparent 65%)" }}
+        style={{ background: "radial-gradient(ellipse 70% 60% at 20% 55%, rgba(112,48,160,0.35) 0%, transparent 60%)" }}
       />
+      <div
+        className="absolute inset-0"
+        style={{ background: "radial-gradient(ellipse 50% 40% at 80% 20%, rgba(8,145,178,0.20) 0%, transparent 55%)" }}
+      />
+      {/* Gradient edge transitions */}
+      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
 
       {/* ── Content ── */}
       <motion.div

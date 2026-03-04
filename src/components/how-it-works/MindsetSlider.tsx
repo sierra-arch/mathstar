@@ -56,10 +56,15 @@ export default function MindsetSlider() {
   const showBefore = position < 50;
 
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#0D0B12] overflow-hidden">
+    <section className="relative py-28 px-6 lg:px-20 overflow-hidden"
+      style={{ background: "linear-gradient(160deg, #1a0840 0%, #0c1a35 50%, #0d1f30 100%)" }}>
 
-      <div className="absolute top-[-5%] right-[-5%] w-[500px] h-[500px] bg-[#7030A0]/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-[#0891B2]/15 rounded-full blur-[100px] pointer-events-none" />
+      {/* Richer color atmosphere */}
+      <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] bg-[#7030A0]/35 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] bg-[#0891B2]/25 rounded-full blur-[110px] pointer-events-none" />
+      {/* Gradient edge transitions */}
+      <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#FAFAF8] to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F0E6F7] to-transparent z-20 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
 

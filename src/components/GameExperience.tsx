@@ -93,23 +93,30 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
   const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
 
   return (
-    <section ref={ref} className="relative h-screen overflow-hidden bg-[#080612] flex items-end">
+    <section ref={ref} className="relative h-screen overflow-hidden bg-[#0d0620] flex items-end">
       <div className="absolute inset-0">
         <video
           src={src}
           autoPlay muted loop playsInline
           className="w-full h-full object-cover"
-          style={{ opacity: 0.75 }}
+          style={{ opacity: 0.90 }}
           onLoadedMetadata={(e) => { e.currentTarget.currentTime = videoStart; e.currentTarget.playbackRate = 0.65; }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/40 via-transparent to-[#080612]/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/65 via-[#080612]/20 to-transparent" />
+        {/* Lighter overlays — let the gameplay color breathe */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0620]/25 via-transparent to-[#0d0620]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0620]/55 via-[#0d0620]/10 to-transparent" />
+        {/* Rich color atmosphere */}
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 15% 60%, rgba(112,48,160,0.30) 0%, transparent 60%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 20%, rgba(8,145,178,0.20) 0%, transparent 55%)" }} />
       </div>
+      {/* Gradient edge transitions — blend into surrounding light slides */}
+      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
       <ScanlineOverlay />
       <SectionNum n={num} />
 
       <div
-        className="absolute top-0 left-0 w-1 h-full opacity-30"
+        className="absolute top-0 left-0 w-1 h-full opacity-40"
         style={{ background: `linear-gradient(to bottom, transparent, ${accent}, transparent)` }}
       />
 
