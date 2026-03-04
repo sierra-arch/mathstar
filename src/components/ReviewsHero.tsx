@@ -16,7 +16,7 @@ export default function ReviewsHero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative h-[85vh] overflow-hidden bg-[#F7F2FF]">
+    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#F7F2FF]">
 
       {/* ── LAYER 1: Gradient background (slowest) ── */}
       <motion.div className="absolute inset-0 scale-[1.1]" style={{ y: bgY }}>
@@ -85,7 +85,7 @@ export default function ReviewsHero() {
       >
         {/* Overline */}
         <motion.p
-          className="absolute top-28 left-8 lg:left-16 text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase"
+          className="absolute top-36 left-8 lg:left-16 text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -95,7 +95,7 @@ export default function ReviewsHero() {
 
         {/* Supporting */}
         <motion.p
-          className="absolute top-28 right-8 lg:right-16 text-[#0D0B12]/35 text-xs leading-relaxed text-right max-w-[150px]"
+          className="absolute top-36 right-8 lg:right-16 text-[#0D0B12]/35 text-xs leading-relaxed text-right max-w-[150px]"
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
