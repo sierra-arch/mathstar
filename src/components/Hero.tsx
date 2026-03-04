@@ -57,9 +57,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Gift them the{" "}
+            Gift the{" "}
             <span
-              className="italic"
+              className="italic inline-block pb-1"
               style={{
                 background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
                 WebkitBackgroundClip: "text",
@@ -122,7 +122,7 @@ export default function Hero() {
               background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196,159,220,0.3) 0%, transparent 70%)",
             }}
           />
-          <div className="relative w-full h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/20">
+          <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/20">
             <Image
               src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
               alt="Kid experiencing wonder in VR"
