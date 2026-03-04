@@ -65,7 +65,7 @@ const profiles = [
   {
     id: "autism",
     label: "Autism Spectrum",
-    color: "#7030A0",
+    color: "#6D28D9",
     tagline: "Structured. Predictable. Private. Their kind of world.",
     howItHelps: [
       {
@@ -94,7 +94,7 @@ const profiles = [
   {
     id: "anxiety",
     label: "Math Anxiety",
-    color: "#0891B2",
+    color: "#0E7490",
     tagline: "When math feels like a game, fear doesn't stand a chance.",
     howItHelps: [
       {
@@ -103,7 +103,7 @@ const profiles = [
       },
       {
         title: "Progress Disguised as Play",
-        body: "Kids don't realize they're doing algebra until they already are. The fear never gets a chance to kick in.",
+        body: "Students don't realize they're doing algebra until they already are. The fear never gets a chance to kick in.",
       },
       {
         title: "Mindset Shifts Fast",
@@ -123,7 +123,7 @@ const profiles = [
   {
     id: "ell",
     label: "English Learners",
-    color: "#7030A0",
+    color: "#4A1E6B",
     tagline: "Math speaks every language. So does MathSTAR.",
     howItHelps: [
       {
@@ -152,7 +152,7 @@ const profiles = [
   {
     id: "iep",
     label: "IEP Students",
-    color: "#0891B2",
+    color: "#155E75",
     tagline: "Designed specifically for the students the system forgets.",
     howItHelps: [
       {
@@ -185,13 +185,12 @@ export default function LearnerProfiles() {
   const current = profiles.find((p) => p.id === active)!;
 
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-white overflow-hidden">
+    <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF] overflow-hidden">
 
-      {/* Ambient blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.30) 0%, rgba(112,48,160,0.08) 50%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.28) 0%, transparent 68%)" }} />
       <div className="absolute -top-16 -right-16 w-[480px] h-[480px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(8,145,178,0.14) 0%, transparent 62%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(8,145,178,0.12) 0%, transparent 62%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -203,7 +202,7 @@ export default function LearnerProfiles() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Is MathSTAR Right for My Child?
+            Is MathSTAR Right for My Student?
           </motion.p>
           <motion.h2
             className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight mb-5"
@@ -225,95 +224,119 @@ export default function LearnerProfiles() {
           </motion.p>
         </div>
 
-        {/* Tab bar */}
-        <div className="flex flex-wrap gap-2 justify-center mb-12">
-          {profiles.map((p) => (
-            <button
-              key={p.id}
-              onClick={() => setActive(p.id)}
-              className="px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
-              style={
-                active === p.id
-                  ? { background: p.color, color: "white" }
-                  : { background: `${p.color}12`, color: p.color }
-              }
-            >
-              {p.label}
-            </button>
-          ))}
+        {/* File-folder tab bar */}
+        <div className="overflow-x-auto pb-0 -mb-px">
+          <div className="flex gap-1.5 min-w-max px-1">
+            {profiles.map((p, i) => {
+              const isActive = active === p.id;
+              return (
+                <button
+                  key={p.id}
+                  onClick={() => setActive(p.id)}
+                  className="relative px-5 py-3 rounded-t-2xl text-xs font-bold tracking-wide whitespace-nowrap border border-b-0 transition-all duration-200 focus:outline-none"
+                  style={{
+                    background: isActive ? "white" : p.color,
+                    color: isActive ? p.color : "rgba(255,255,255,0.92)",
+                    borderColor: isActive ? `${p.color}30` : "transparent",
+                    zIndex: isActive ? 20 : 10 - i,
+                    transform: isActive ? "translateY(0)" : "translateY(3px)",
+                    boxShadow: isActive
+                      ? `0 -4px 16px ${p.color}20`
+                      : "none",
+                  }}
+                >
+                  {/* Number badge */}
+                  <span
+                    className="inline-block text-[9px] font-black mr-1.5 opacity-60"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {p.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Content panel */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.35 }}
-            className="grid grid-cols-1 lg:grid-cols-5 gap-8"
-          >
-            {/* Left — how it helps */}
-            <div className="lg:col-span-3 space-y-5">
-              <p
-                className="text-xl font-bold leading-snug mb-6"
-                style={{ color: current.color }}
-              >
-                {current.tagline}
-              </p>
-              {current.howItHelps.map((item, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl p-6 border"
-                  style={{ borderColor: `${current.color}18`, background: `${current.color}06` }}
+        {/* Content card — folder body */}
+        <div
+          className="relative z-10 bg-white rounded-b-3xl rounded-tr-3xl border p-8 lg:p-10 shadow-sm"
+          style={{ borderColor: `${current.color}25` }}
+        >
+          {/* Colored left accent bar */}
+          <div
+            className="absolute left-0 top-8 bottom-8 w-1 rounded-full transition-colors duration-300"
+            style={{ background: current.color }}
+          />
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.3 }}
+              className="grid grid-cols-1 lg:grid-cols-5 gap-8 pl-4"
+            >
+              {/* Left — how it helps */}
+              <div className="lg:col-span-3 space-y-4">
+                <p
+                  className="text-lg font-bold leading-snug mb-5"
+                  style={{ color: current.color }}
                 >
-                  <p className="font-extrabold text-[#0D0B12] mb-2">{item.title}</p>
-                  <p className="text-[#0D0B12]/60 text-sm leading-relaxed">{item.body}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Right — stats + quote */}
-            <div className="lg:col-span-2 flex flex-col gap-5">
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-4">
-                {current.stats.map((s, i) => (
+                  {current.tagline}
+                </p>
+                {current.howItHelps.map((item, i) => (
                   <div
                     key={i}
-                    className="rounded-2xl p-6 border text-center"
-                    style={{ borderColor: `${current.color}20`, background: `${current.color}08` }}
+                    className="rounded-2xl p-5 border"
+                    style={{ borderColor: `${current.color}18`, background: `${current.color}05` }}
                   >
-                    <div
-                      className="text-4xl font-extrabold mb-1"
-                      style={{ color: current.color }}
-                    >
-                      {s.value}
-                    </div>
-                    <div className="text-[#0D0B12]/55 text-xs leading-snug">{s.label}</div>
+                    <p className="font-extrabold text-[#0D0B12] mb-1.5 text-sm">{item.title}</p>
+                    <p className="text-[#0D0B12]/60 text-sm leading-relaxed">{item.body}</p>
                   </div>
                 ))}
               </div>
 
-              {/* Quote */}
-              <div
-                className="rounded-2xl p-7 border flex-1 flex flex-col justify-between"
-                style={{ borderColor: `${current.color}18`, background: `${current.color}06` }}
-              >
-                <p className="text-[#0D0B12] text-lg font-medium leading-relaxed mb-6">
-                  &ldquo;{current.quote.text}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-px" style={{ background: `${current.color}50` }} />
-                  <div>
-                    <p className="text-[#0D0B12]/65 text-sm font-semibold">{current.quote.who}</p>
-                    <p className="text-[#0D0B12]/35 text-xs">{current.quote.context}</p>
+              {/* Right — stats + quote */}
+              <div className="lg:col-span-2 flex flex-col gap-4">
+                <div className="grid grid-cols-2 gap-3">
+                  {current.stats.map((s, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl p-5 border text-center"
+                      style={{ borderColor: `${current.color}20`, background: `${current.color}08` }}
+                    >
+                      <div
+                        className="text-3xl font-extrabold mb-1"
+                        style={{ color: current.color }}
+                      >
+                        {s.value}
+                      </div>
+                      <div className="text-[#0D0B12]/55 text-xs leading-snug">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div
+                  className="rounded-2xl p-6 border flex-1 flex flex-col justify-between"
+                  style={{ borderColor: `${current.color}18`, background: `${current.color}05` }}
+                >
+                  <p className="text-[#0D0B12] text-base font-medium leading-relaxed mb-5">
+                    &ldquo;{current.quote.text}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-5 h-px" style={{ background: `${current.color}50` }} />
+                    <div>
+                      <p className="text-[#0D0B12]/65 text-sm font-semibold">{current.quote.who}</p>
+                      <p className="text-[#0D0B12]/35 text-xs">{current.quote.context}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
