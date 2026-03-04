@@ -39,7 +39,7 @@ const media: MediaItem[] = [
     src: "/Stock Images/pexels-michelangelo-buonarroti-8728379.jpg",
     alt: "VR learning experience profile view",
     className: "h-72 lg:h-80",
-    objectPosition: "object-[center_20%]",
+    objectPosition: "object-[center_65%]",
   },
 ];
 
