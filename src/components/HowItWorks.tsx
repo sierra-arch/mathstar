@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import FloatingHeadset from "@/components/FloatingHeadset";
 
 // Placeholder component for photos/videos coming soon
 function VisualPlaceholder({ label }: { label: string }) {
@@ -70,6 +71,9 @@ export default function HowItWorks() {
       {/* Ambient orbs */}
       <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/15 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[5%] left-[-8%] w-[400px] h-[400px] bg-teal-400/15 rounded-full blur-[80px] pointer-events-none" />
+
+      {/* Floating headset — top right */}
+      <FloatingHeadset size={200} variant="light" rotate={12} delay={0.5} className="absolute top-12 right-4 lg:right-20 opacity-35" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 

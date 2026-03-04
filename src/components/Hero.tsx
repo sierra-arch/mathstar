@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import FloatingHeadset from "@/components/FloatingHeadset";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -126,6 +127,14 @@ export default function Hero() {
             style={{
               background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196,159,220,0.3) 0%, transparent 70%)",
             }}
+          />
+          {/* Floating headset — top-left of photo column */}
+          <FloatingHeadset
+            size={160}
+            variant="light"
+            rotate={-18}
+            delay={0.3}
+            className="absolute -top-10 -left-10 z-20 opacity-80"
           />
           <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/20">
             <Image

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import FloatingHeadset from "@/components/FloatingHeadset";
 
 export default function CTA() {
   return (
@@ -26,6 +27,10 @@ export default function CTA() {
           style={{ background: "radial-gradient(circle, rgba(240,230,247,0.9) 0%, transparent 65%)" }}
         />
       </div>
+
+      {/* Floating headsets */}
+      <FloatingHeadset size={180} variant="light" rotate={15} delay={0} className="absolute top-8 right-8 lg:right-16 opacity-40" />
+      <FloatingHeadset size={120} variant="light" rotate={-22} delay={1.2} className="absolute bottom-8 left-8 lg:left-16 opacity-30" />
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
 
