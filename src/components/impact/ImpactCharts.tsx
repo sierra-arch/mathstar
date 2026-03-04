@@ -1,6 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const audiences = {
+  parent: {
+    overline: "Real Pilot Results",
+    heading: "Your child's breakthrough is in this data.",
+    sub: "These are real kids — 4th graders who struggled with math before MathSTAR. Here's what happened after 8 hours.",
+  },
+  educator: {
+    overline: "Ellis Elementary Pilot Data",
+    heading: "The numbers don't lie.",
+    sub: "Pre vs. post results across 10 students — 4th graders with ADHD, Autism, EI, and Intellectual Disability.",
+  },
+};
 
 /* ── Data from Ellis Elementary Pilot ── */
 const prePostBars = [
@@ -117,6 +131,9 @@ function BarPair({
 }
 
 export default function ImpactCharts() {
+  const [audience, setAudience] = useState<"parent" | "educator">("parent");
+  const copy = audiences[audience];
+
   return (
     <section className="relative py-28 px-6 lg:px-16 bg-white overflow-hidden">
 
@@ -127,24 +144,53 @@ export default function ImpactCharts() {
 
       <div className="max-w-6xl mx-auto relative z-10">
 
-        {/* Section header */}
+        {/* Audience toggle */}
         <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="flex justify-center mb-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
         >
-          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">
-            Ellis Elementary Pilot Data
-          </p>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight">
-            The numbers don&apos;t lie.
-          </h2>
-          <p className="text-[#0D0B12]/45 text-lg mt-4 max-w-xl mx-auto">
-            Pre vs. post results across 10 students — 4th graders with ADHD, Autism, EI, and Intellectual Disability.
-          </p>
+          <div className="flex items-center gap-1 bg-[#F7F2FF] rounded-full p-1">
+            {(["parent", "educator"] as const).map((a) => (
+              <button
+                key={a}
+                onClick={() => setAudience(a)}
+                className="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200"
+                style={
+                  audience === a
+                    ? { background: "#7030A0", color: "white" }
+                    : { color: "#7030A0" }
+                }
+              >
+                {a === "parent" ? "I'm a Parent" : "I'm an Educator"}
+              </button>
+            ))}
+          </div>
         </motion.div>
+
+        {/* Section header */}
+        <div className="text-center mb-20">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={audience}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.3 }}
+            >
+              <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">
+                {copy.overline}
+              </p>
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight">
+                {copy.heading}
+              </h2>
+              <p className="text-[#0D0B12]/45 text-lg mt-4 max-w-xl mx-auto">
+                {copy.sub}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 

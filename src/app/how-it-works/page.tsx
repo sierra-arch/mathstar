@@ -9,6 +9,9 @@ import Footer from "@/components/Footer";
 import TheProblem from "@/components/how-it-works/TheProblem";
 import OurAnswer from "@/components/how-it-works/OurAnswer";
 import LearnerProfiles from "@/components/how-it-works/LearnerProfiles";
+import IsItRightQuiz from "@/components/how-it-works/IsItRightQuiz";
+import ROICalculator from "@/components/how-it-works/ROICalculator";
+import MindsetSlider from "@/components/how-it-works/MindsetSlider";
 import ResultsNumbers from "@/components/how-it-works/ResultsNumbers";
 
 export const metadata: Metadata = {
@@ -23,9 +26,12 @@ export default function HowItWorksPage() {
       <Nav />
       <HowItWorks />
       <TheProblem />
+      <MindsetSlider />
       <OurAnswer />
+      <IsItRightQuiz />
       <LearnerProfiles />
       <LearningFeatures />
+      <ROICalculator />
       <ResultsNumbers />
       <ImpactCharts />
       <TestimonialsTeaser />
