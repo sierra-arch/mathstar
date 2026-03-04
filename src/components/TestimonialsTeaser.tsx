@@ -121,9 +121,9 @@ export default function TestimonialsTeaser() {
           ))}
         </div>
 
-        {/* Editorial photo strip — 3 moments from the pilots */}
+        {/* Editorial photo strip — 2 moments from the pilots */}
         <motion.div
-          className="grid grid-cols-3 gap-3 mt-10 rounded-3xl overflow-hidden"
+          className="grid grid-cols-2 gap-3 mt-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -139,11 +139,6 @@ export default function TestimonialsTeaser() {
             />
             <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
             <p className="absolute bottom-3 left-4 text-white/70 text-xs font-medium">Roxbury Library, Aug 2025</p>
-          </div>
-
-          {/* Placeholder — pilot moments coming */}
-          <div className="relative h-56 overflow-hidden rounded-2xl">
-            <PhotoPlaceholder label="Photo · Coming soon" />
           </div>
 
           {/* Real photo — learning breakthrough */}
