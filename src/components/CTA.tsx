@@ -48,7 +48,7 @@ export default function CTA() {
         >
           Gift them the{" "}
           <span
-            className="italic inline-block pb-1 pr-2"
+            className="italic inline-block pb-2 pr-4"
             style={{
               background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
               WebkitBackgroundClip: "text",

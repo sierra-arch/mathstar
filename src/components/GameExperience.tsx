@@ -167,7 +167,7 @@ export default function GameExperience() {
           >
             Step inside the{" "}
             <span
-              className="italic inline-block pb-1 pr-2"
+              className="italic inline-block pb-2 pr-4"
               style={{
                 background: "linear-gradient(135deg, #C49FDC, #0891B2)",
                 WebkitBackgroundClip: "text",
@@ -211,7 +211,7 @@ export default function GameExperience() {
           <h2 className="text-5xl lg:text-7xl xl:text-[5.5rem] font-extrabold text-[#0D0B12] leading-[1.0] mb-10">
             An ocean where{" "}
             <span
-              className="italic inline-block pb-1 pr-2"
+              className="italic inline-block pb-2 pr-4"
               style={{
                 background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
                 WebkitBackgroundClip: "text",
@@ -285,7 +285,7 @@ export default function GameExperience() {
           <h2 className="text-5xl lg:text-6xl font-extrabold text-[#0D0B12] leading-[1.0] mb-14">
             The numbers are{" "}
             <span
-              className="italic inline-block pb-1 pr-2"
+              className="italic inline-block pb-2 pr-4"
               style={{
                 background: "linear-gradient(135deg, #7030A0, #0891B2)",
                 WebkitBackgroundClip: "text",
@@ -394,7 +394,7 @@ export default function GameExperience() {
               Three things happen.
               <br />
               <span
-                className="italic inline-block pb-1 pr-2"
+                className="italic inline-block pb-2 pr-4"
                 style={{
                   background: "linear-gradient(135deg, #7030A0, #0891B2)",
                   WebkitBackgroundClip: "text",
@@ -476,7 +476,7 @@ export default function GameExperience() {
               We know they&apos;re capable of this —
               but it doesn&apos;t show up on paper.
               <span
-                className="italic block mt-5 inline-block pb-1 pr-2"
+                className="italic block mt-5 inline-block pb-2 pr-4"
                 style={{
                   background: "linear-gradient(135deg, #C49FDC, #0891B2)",
                   WebkitBackgroundClip: "text",
@@ -517,7 +517,7 @@ export default function GameExperience() {
             Ready to bring
             <br />
             <span
-              className="italic inline-block pb-1 pr-2"
+              className="italic inline-block pb-2 pr-4"
               style={{
                 background: "linear-gradient(135deg, #7030A0, #0891B2)",
                 WebkitBackgroundClip: "text",
