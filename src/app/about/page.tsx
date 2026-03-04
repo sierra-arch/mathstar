@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
+import AboutHero from "@/components/AboutHero";
 
 export const metadata: Metadata = {
   title: "About ShepherdXR — MathSTAR",
@@ -15,28 +16,7 @@ export default function AboutPage() {
     <main className="bg-[#FAFAF8]">
       <Nav />
 
-      {/* ── HERO ── */}
-      <section className="pt-36 pb-24 px-6 lg:px-20 max-w-5xl mx-auto">
-        <FadeIn>
-          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-6">
-            About ShepherdXR
-          </p>
-        </FadeIn>
-        <FadeIn delay={0.1}>
-          <h1 className="text-5xl lg:text-7xl font-extrabold text-[#0D0B12] leading-[1.02] mb-8 max-w-3xl">
-            We build technology that{" "}
-            <span className="italic text-[#7030A0]">changes</span>{" "}
-            how kids see themselves.
-          </h1>
-        </FadeIn>
-        <FadeIn delay={0.2}>
-          <p className="text-[#0D0B12]/55 text-xl leading-relaxed max-w-2xl">
-            ShepherdXR is an immersive learning company. Our first product, MathSTAR,
-            is a virtual reality universe that turns math from a fear into a superpower —
-            in 8 hours or less.
-          </p>
-        </FadeIn>
-      </section>
+      <AboutHero />
 
       {/* ── ORIGIN ── */}
       <section className="py-24 px-6 lg:px-20 bg-[#F0E6F7]">
