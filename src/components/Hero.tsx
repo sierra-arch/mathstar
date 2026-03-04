@@ -41,12 +41,20 @@ export default function Hero() {
               "linear-gradient(to top, rgba(13,11,18,0.92) 0%, rgba(13,11,18,0.55) 45%, rgba(13,11,18,0.25) 100%)",
           }}
         />
-        {/* Purple atmospheric tint */}
+        {/* Purple atmospheric tint top-right */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 65% 55% at 65% 25%, rgba(112,48,160,0.45) 0%, transparent 65%)",
+              "radial-gradient(ellipse 60% 50% at 72% 20%, rgba(112,48,160,0.45) 0%, transparent 65%)",
+          }}
+        />
+        {/* Teal atmospheric tint bottom-left */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 50% 45% at 15% 85%, rgba(8,145,178,0.3) 0%, transparent 65%)",
           }}
         />
       </motion.div>

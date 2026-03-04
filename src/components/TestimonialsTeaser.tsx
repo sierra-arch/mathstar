@@ -9,18 +9,21 @@ const picks = [
     who: "Parent",
     context: "Roxbury Library Pilot",
     tag: "Parent",
+    accent: "#7030A0",
   },
   {
     quote: "They went 20 minutes into recess and didn't notice.",
     who: "Ms. Joseph, Teacher",
     context: "Ellis Pilot, Jan 2026",
     tag: "Teacher",
+    accent: "#0891B2",
   },
   {
     quote: "Wait, that level I just did was algebra?",
     who: "Student",
     context: "Ellis Pilot, Jan 2026",
     tag: "Student",
+    accent: "#7030A0",
   },
 ];
 
@@ -30,7 +33,7 @@ export default function TestimonialsTeaser() {
 
       {/* Ambient orbs */}
       <div className="absolute top-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-5%] left-[-8%] w-[400px] h-[400px] bg-[#7030A0]/8 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-8%] w-[400px] h-[400px] bg-[#0891B2]/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -53,7 +56,7 @@ export default function TestimonialsTeaser() {
             >
               Parents. Teachers. Kids.
               <br />
-              <em className="not-italic italic text-[#7030A0]">All saying the same thing.</em>
+              <em className="not-italic italic text-[#0891B2]">All saying the same thing.</em>
             </motion.h2>
           </div>
           <motion.div
@@ -75,20 +78,24 @@ export default function TestimonialsTeaser() {
           {picks.map((p, i) => (
             <motion.div
               key={i}
-              className="relative bg-[#F7F2FF] rounded-3xl p-10 flex flex-col border border-[#7030A0]/8"
+              className="relative bg-[#F7F2FF] rounded-3xl p-10 flex flex-col"
+              style={{ border: `1px solid ${p.accent}18` }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
-              <span className="inline-block text-xs font-semibold bg-[#7030A0]/10 text-[#7030A0] px-3 py-1.5 rounded-full mb-6 w-fit">
+              <span
+                className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full mb-6 w-fit"
+                style={{ background: `${p.accent}14`, color: p.accent }}
+              >
                 {p.tag}
               </span>
               <p className="text-ink text-xl font-medium leading-relaxed flex-1 mb-7">
                 &ldquo;{p.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-px bg-[#7030A0]/30" />
+                <div className="w-6 h-px" style={{ background: `${p.accent}40` }} />
                 <div>
                   <p className="text-ink/60 text-sm font-medium">{p.who}</p>
                   <p className="text-ink/35 text-xs mt-0.5">{p.context}</p>

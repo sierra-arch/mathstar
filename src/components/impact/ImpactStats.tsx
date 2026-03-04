@@ -23,9 +23,9 @@ const topStats = [
     value: "45%",
     label: "jump in median test score",
     sublabel: "in just 3 sessions — BPL Research",
-    color: "text-violet-600",
-    bg: "bg-violet-500/8",
-    accent: "border-violet-500/20",
+    color: "text-[#0891B2]",
+    bg: "bg-[#0891B2]/8",
+    accent: "border-[#0891B2]/20",
   },
   {
     value: "86%",
@@ -64,9 +64,9 @@ const outcomeCards = [
     headline: "18%",
     headlineLabel: "pre vs. post test gain",
     supporting: ["86% said \"Yes\" to learning a lot", "Students reached algebra concepts in 8 hrs"],
-    color: "text-violet-600",
-    bg: "from-violet-500/10 to-violet-500/4",
-    border: "border-violet-500/15",
+    color: "text-[#0891B2]",
+    bg: "from-[#0891B2]/10 to-[#0891B2]/4",
+    border: "border-[#0891B2]/15",
   },
   {
     category: "Growth Mindset",
@@ -94,9 +94,9 @@ const outcomeCards = [
     headline: "17/21",
     headlineLabel: "scored in-game — invisible on paper tests",
     supporting: ["Especially powerful for EI & IEP students", "\"They need ACCESS to something like this.\""],
-    color: "text-violet-600",
-    bg: "from-violet-500/10 to-violet-500/4",
-    border: "border-violet-500/15",
+    color: "text-[#0891B2]",
+    bg: "from-[#0891B2]/10 to-[#0891B2]/4",
+    border: "border-[#0891B2]/15",
   },
 ];
 
@@ -105,6 +105,7 @@ export default function ImpactStats() {
     <section className="relative py-28 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
 
       <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/12 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-8%] w-[450px] h-[450px] bg-[#0891B2]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -126,7 +127,7 @@ export default function ImpactStats() {
             transition={{ duration: 0.6 }}
           >
             The kids are sold.{" "}
-            <em className="not-italic italic text-[#7030A0]">The data agrees.</em>
+            <em className="not-italic italic text-[#0891B2]">The data agrees.</em>
           </motion.h2>
         </div>
 

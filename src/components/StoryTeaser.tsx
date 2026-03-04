@@ -8,9 +8,9 @@ export default function StoryTeaser() {
   return (
     <section className="relative py-40 px-6 lg:px-16 bg-white overflow-hidden">
 
-      {/* Ambient purple orbs */}
+      {/* Ambient orbs */}
       <div className="absolute top-[-10%] left-[-15%] w-[600px] h-[600px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-[#7030A0]/8 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-[#0891B2]/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
 
@@ -56,7 +56,7 @@ export default function StoryTeaser() {
           className="relative"
         >
           {/* Glow behind image */}
-          <div className="absolute -inset-6 bg-gradient-to-br from-[#7030A0]/15 via-[#EDE9FE]/60 to-teal-100/30 rounded-[40px] blur-2xl pointer-events-none" />
+          <div className="absolute -inset-6 bg-gradient-to-br from-[#7030A0]/20 via-[#EDE9FE]/50 to-[#0891B2]/20 rounded-[40px] blur-2xl pointer-events-none" />
 
           <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-[#7030A0]/15">
             <Image
@@ -76,7 +76,7 @@ export default function StoryTeaser() {
                 That day, someone gifted me the wonder of math.
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-px bg-white/40" />
+                <div className="w-6 h-px bg-[#0891B2]/70" />
                 <p className="text-white/60 text-sm font-medium">Femi, Founder of MathSTAR</p>
               </div>
             </div>

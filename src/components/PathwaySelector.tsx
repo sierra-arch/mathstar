@@ -10,8 +10,8 @@ export default function PathwaySelector() {
 
       {/* Ambient orbs */}
       <div className="absolute top-[-5%] left-[-10%] w-[600px] h-[600px] bg-[#7030A0]/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/12 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-[40%] right-[20%] w-[300px] h-[300px] bg-teal-400/10 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#0891B2]/12 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[40%] right-[20%] w-[300px] h-[300px] bg-[#0891B2]/12 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto w-full relative z-10">
 
@@ -99,7 +99,7 @@ export default function PathwaySelector() {
             transition={{ duration: 0.7, delay: 0.45 }}
           >
             <Link href="/educators" className="group block h-full">
-              <div className="relative h-full bg-[#0F0620] rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#7030A0]/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="relative h-full bg-[#0F0620] rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#0891B2]/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
 
                 {/* Photo */}
                 <div className="relative w-full h-56 overflow-hidden">
@@ -113,10 +113,10 @@ export default function PathwaySelector() {
                 </div>
 
                 {/* Card glow */}
-                <div className="absolute top-[-20%] right-[-10%] w-[300px] h-[300px] bg-[#7030A0]/20 rounded-full blur-[80px] pointer-events-none" />
+                <div className="absolute top-[-20%] right-[-10%] w-[300px] h-[300px] bg-[#0891B2]/20 rounded-full blur-[80px] pointer-events-none" />
 
                 <div className="relative z-10 p-10">
-                  <p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-4">For Educators</p>
+                  <p className="text-[#0891B2] font-semibold text-sm tracking-widest uppercase mb-4">For Educators</p>
 
                   <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight mb-5">
                     I&apos;m a teacher or school administrator looking to support my students
@@ -127,7 +127,7 @@ export default function PathwaySelector() {
                     see the data, and give your students access they deserve.
                   </p>
 
-                  <div className="flex items-center gap-2 text-[#C49FDC] font-semibold text-base group-hover:gap-4 transition-all duration-200">
+                  <div className="flex items-center gap-2 text-[#0891B2] font-semibold text-base group-hover:gap-4 transition-all duration-200">
                     <span>Learn more for educators</span>
                     <span>→</span>
                   </div>
