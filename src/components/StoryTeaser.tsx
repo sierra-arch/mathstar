@@ -60,11 +60,11 @@ export default function StoryTeaser() {
 
           <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-[#7030A0]/15">
             <Image
-              src="/Stock Images/pexels-thepaintedsquare-3405461.jpg"
-              alt="Child experiencing wonder with VR headset"
+              src="/headshots/femi-fadugba-5108468.jpg"
+              alt="Femi Fadugba, Founder of MathSTAR"
               width={700}
               height={700}
-              className="w-full h-[480px] object-cover object-center"
+              className="w-full h-[480px] object-cover object-top"
             />
             {/* Gradient at bottom for quote readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
