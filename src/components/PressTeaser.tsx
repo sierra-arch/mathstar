@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const articles = [
   {
@@ -132,18 +133,31 @@ export default function PressTeaser() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="text-xl lg:text-2xl font-semibold text-ink leading-relaxed mb-6">
-              &ldquo;A lot of people don&apos;t learn math well in the traditional way. Many kids are visual learners — they need an intervention that meets them where they are, so they can finally get it. And{" "}
-              <em className="not-italic italic text-[#7030A0]">love it.</em>&rdquo;
-            </p>
-            <div className="flex items-center justify-center gap-3">
-              <div className="w-8 h-px bg-[#7030A0]/35" />
-              <div className="text-center">
-                <p className="text-ink/70 font-bold text-sm">Femi Fadugba</p>
-                <p className="text-ink/40 text-xs">Founder, ShepherdXR</p>
+          <div className="flex flex-col lg:flex-row items-center gap-10 max-w-3xl mx-auto">
+            {/* Femi's photo */}
+            <div className="shrink-0">
+              <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-[#7030A0]/20 ring-offset-4 ring-offset-transparent">
+                <Image
+                  src="/femi-fadugba-5108468.jpg"
+                  alt="Femi Fadugba, Founder of MathSTAR"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-              <div className="w-8 h-px bg-[#7030A0]/35" />
+            </div>
+            <div className="text-center lg:text-left">
+              <p className="text-xl lg:text-2xl font-semibold text-ink leading-relaxed mb-6">
+                &ldquo;A lot of people don&apos;t learn math well in the traditional way. Many kids are visual learners — they need an intervention that meets them where they are, so they can finally get it. And{" "}
+                <em className="not-italic italic text-[#7030A0]">love it.</em>&rdquo;
+              </p>
+              <div className="flex items-center gap-3 justify-center lg:justify-start">
+                <div className="w-8 h-px bg-[#7030A0]/35" />
+                <div>
+                  <p className="text-ink/70 font-bold text-sm">Femi Fadugba</p>
+                  <p className="text-ink/40 text-xs">Founder, ShepherdXR</p>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

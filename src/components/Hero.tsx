@@ -31,30 +31,30 @@ export default function Hero() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
         />
-        {/* Dark cinematic overlay */}
+        {/* Dark base */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, rgba(13,11,18,0.92) 0%, rgba(13,11,18,0.55) 45%, rgba(13,11,18,0.25) 100%)",
+              "linear-gradient(to top, rgba(13,11,18,0.97) 0%, rgba(13,11,18,0.75) 50%, rgba(13,11,18,0.6) 100%)",
           }}
         />
-        {/* Purple atmospheric tint top-right */}
+        {/* Soft purple hint top-right */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 50% at 72% 20%, rgba(112,48,160,0.45) 0%, transparent 65%)",
+              "radial-gradient(ellipse 60% 50% at 72% 20%, rgba(112,48,160,0.18) 0%, transparent 65%)",
           }}
         />
-        {/* Teal atmospheric tint bottom-left */}
+        {/* Soft teal hint bottom-left */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 50% 45% at 15% 85%, rgba(8,145,178,0.3) 0%, transparent 65%)",
+              "radial-gradient(ellipse 50% 45% at 15% 85%, rgba(8,145,178,0.1) 0%, transparent 65%)",
           }}
         />
       </motion.div>
@@ -64,14 +64,12 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{ y: midY }}
       >
-        <motion.div
+        <div
           className="absolute top-[8%] right-[5%] w-[420px] h-[420px] rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(196,159,220,0.2) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(196,159,220,0.08) 0%, transparent 70%)",
           }}
-          animate={{ scale: [1, 1.08, 1] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
       </motion.div>
 

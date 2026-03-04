@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const picks = [
   {
@@ -27,6 +28,20 @@ const picks = [
   },
 ];
 
+// Placeholder for photos coming soon
+function PhotoPlaceholder({ label }: { label: string }) {
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#F7F2FF] to-[#E0F7FA]">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(112,48,160,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <circle cx="12" cy="12" r="3.5" />
+        <path d="M8 5V3.5" />
+      </svg>
+      <span className="text-[#7030A0]/25 text-xs tracking-widest uppercase font-medium">{label}</span>
+    </div>
+  );
+}
+
 export default function TestimonialsTeaser() {
   return (
     <section className="relative py-40 px-6 lg:px-16 bg-white overflow-hidden">
@@ -37,7 +52,7 @@ export default function TestimonialsTeaser() {
 
       <div className="max-w-6xl mx-auto relative z-10">
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
           <div>
             <motion.p
               className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
@@ -74,6 +89,45 @@ export default function TestimonialsTeaser() {
           </motion.div>
         </div>
 
+        {/* Editorial photo strip — 3 moments from the pilots */}
+        <motion.div
+          className="grid grid-cols-3 gap-3 mb-14 rounded-3xl overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Real photo — classroom joy */}
+          <div className="relative h-56 overflow-hidden rounded-2xl">
+            <Image
+              src="/pexels-julia-m-cameron-4144152.jpg"
+              alt="Students experiencing MathSTAR at the pilot"
+              fill
+              className="object-cover object-center hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
+            <p className="absolute bottom-3 left-4 text-white/70 text-xs font-medium">Roxbury Library, Aug 2025</p>
+          </div>
+
+          {/* Placeholder — pilot moments coming */}
+          <div className="relative h-56 overflow-hidden rounded-2xl">
+            <PhotoPlaceholder label="Photo · Coming soon" />
+          </div>
+
+          {/* Real photo — learning breakthrough */}
+          <div className="relative h-56 overflow-hidden rounded-2xl">
+            <Image
+              src="/pexels-vazhnik-7864583.jpg"
+              alt="Child having a math breakthrough moment"
+              fill
+              className="object-cover object-center hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
+            <p className="absolute bottom-3 left-4 text-white/70 text-xs font-medium">Ellis Elementary, Jan 2026</p>
+          </div>
+        </motion.div>
+
+        {/* Quote cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {picks.map((p, i) => (
             <motion.div

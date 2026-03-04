@@ -1,28 +1,65 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+// Placeholder component for photos/videos coming soon
+function VisualPlaceholder({ label }: { label: string }) {
+  return (
+    <div className="w-full h-52 rounded-2xl flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#EDE9FE] to-[#E0F7FA] border border-[#7030A0]/10">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(112,48,160,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <circle cx="12" cy="12" r="3.5" />
+        <path d="M8 5V3.5" />
+      </svg>
+      <span className="text-[#7030A0]/30 text-xs tracking-widest uppercase font-medium">{label}</span>
+    </div>
+  );
+}
 
 const steps = [
   {
     num: "01",
     title: "Put on the headset",
     desc: "At home or at your local library — no special setup needed. Strap in and you're there.",
-    gradient: "from-[#F8F2FC] to-[#EDE9FE]",
     accent: "#7030A0",
+    visual: (
+      <VisualPlaceholder label="Photo · Coming soon" />
+    ),
   },
   {
     num: "02",
     title: "Enter the underwater world",
     desc: "Fish multiply and divide before their eyes. They reach out and shape equations with their bare hands.",
-    gradient: "from-[#E0F7FA] to-[#B2EBF2]",
     accent: "#0891B2",
+    visual: (
+      <div className="w-full h-52 rounded-2xl overflow-hidden">
+        <Image
+          src="/pexels-julia-m-cameron-4144037.jpg"
+          alt="Child engaged in VR learning"
+          width={600}
+          height={400}
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+    ),
   },
   {
     num: "03",
     title: "Watch math click",
     desc: "8 hours from arithmetic to algebra-confident. Kids beg to stay. Educators rate it 10/10.",
-    gradient: "from-[#F8F2FC] to-[#EDE9FE]",
     accent: "#7030A0",
+    visual: (
+      <div className="w-full h-52 rounded-2xl overflow-hidden">
+        <Image
+          src="/pexels-julia-m-cameron-4144150.jpg"
+          alt="Student experiencing breakthrough moment"
+          width={600}
+          height={400}
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+    ),
   },
 ];
 
@@ -62,20 +99,26 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              className={`bg-gradient-to-br ${step.gradient} rounded-3xl p-10`}
+              className="bg-white rounded-3xl p-6 flex flex-col gap-5 shadow-sm shadow-[#7030A0]/5 border border-[#7030A0]/6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
             >
-              <div
-                className="text-7xl font-extrabold mb-8 opacity-20"
-                style={{ color: step.accent }}
-              >
-                {step.num}
+              {/* Visual slot */}
+              {step.visual}
+
+              {/* Text */}
+              <div className="px-2 pb-2">
+                <div
+                  className="text-5xl font-extrabold mb-3 opacity-15 leading-none"
+                  style={{ color: step.accent }}
+                >
+                  {step.num}
+                </div>
+                <h3 className="text-xl font-bold text-ink mb-3">{step.title}</h3>
+                <p className="text-ink/55 leading-relaxed text-base">{step.desc}</p>
               </div>
-              <h3 className="text-xl font-bold text-ink mb-4">{step.title}</h3>
-              <p className="text-ink/60 leading-relaxed text-base">{step.desc}</p>
             </motion.div>
           ))}
         </div>
