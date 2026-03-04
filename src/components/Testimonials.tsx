@@ -155,21 +155,6 @@ const grid = [
     who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
     tag: "Engagement",
   },
-  {
-    quote: "Students take the information they have learned and transfer the information to everyday lessons.",
-    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
-    tag: "Transfer",
-  },
-  {
-    quote: "We're monitoring growth over time.",
-    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
-    tag: "Learning",
-  },
-  {
-    quote: "Skills practiced on the VR are transferring to classroom tasks.",
-    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
-    tag: "Transfer",
-  },
 ];
 
 const tagColors: Record<string, { bg: string; text: string }> = {
