@@ -271,7 +271,7 @@ export default function GameExperience() {
     <div className="bg-[#080612]">
 
       {/* ── 1. HERO (dark video) ── */}
-      <section ref={heroRef} className="relative h-screen overflow-hidden flex items-center justify-center">
+      <section ref={heroRef} className="relative h-screen overflow-hidden flex items-end justify-center">
         <motion.div className="absolute inset-0" style={{ scale: heroScale }}>
           <video
             src="/Gameplay-edited.mp4"
@@ -284,7 +284,7 @@ export default function GameExperience() {
         </motion.div>
         <ScanlineOverlay />
 
-        <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto" style={{ opacity: heroOpacity }}>
+        <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-20" style={{ opacity: heroOpacity }}>
           <motion.p
             className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8"
             initial={{ opacity: 0, y: 10 }}
@@ -310,8 +310,8 @@ export default function GameExperience() {
               }}
             >
               world
-            </span>
-            <br />where math is alive.
+            </span>{" "}
+            where math is alive.
           </motion.h1>
           <motion.p
             className="text-white/50 text-xl max-w-xl mx-auto leading-relaxed mb-16"

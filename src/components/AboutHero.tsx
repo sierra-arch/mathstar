@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutHero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -33,61 +34,46 @@ export default function AboutHero() {
         />
       </motion.div>
 
-      {/* ── LAYER 2: Orb (medium speed) ── */}
+      {/* ── LAYER 2: Kid photo (medium speed) ── */}
       <motion.div
-        className="absolute inset-0 flex items-center justify-end pr-16 lg:pr-24 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-end pr-8 lg:pr-20 pointer-events-none"
         style={{ y: orbY }}
       >
         <motion.div
-          className="relative w-[380px] h-[380px] lg:w-[480px] lg:h-[480px]"
-          initial={{ opacity: 0, scale: 0.75 }}
-          animate={{ opacity: 1, scale: 1 }}
+          className="relative w-[340px] h-[460px] lg:w-[420px] lg:h-[560px]"
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Outer orbit ring */}
-          <motion.div
-            className="absolute inset-0 rounded-full border border-[#7030A0]/20"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-[#7030A0]/40" />
-          </motion.div>
-
-          {/* Inner counter-ring */}
-          <motion.div
-            className="absolute inset-[12%] rounded-full border border-[#C49FDC]/30"
-            animate={{ rotate: -360 }}
-            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-          >
-            <div className="absolute bottom-0 right-[10%] translate-y-1/2 w-3 h-3 rounded-full bg-[#C49FDC]/60" />
-          </motion.div>
-
-          {/* Main sphere */}
-          <motion.div
-            className="absolute inset-[22%] rounded-full"
-            style={{
-              background:
-                "radial-gradient(ellipse 68% 62% at 38% 35%, rgba(255,255,255,0.95) 0%, rgba(196,159,220,0.75) 45%, rgba(112,48,160,0.85) 100%)",
-            }}
-            animate={{ y: [0, -16, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            {/* Highlight */}
-            <div
-              className="absolute inset-[14%] rounded-full"
-              style={{
-                background:
-                  "radial-gradient(ellipse 65% 55% at 32% 28%, rgba(255,255,255,0.6) 0%, transparent 70%)",
-              }}
+          {/* Soft glow behind photo */}
+          <div
+            className="absolute -inset-8 rounded-[3rem] pointer-events-none"
+            style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(196,159,220,0.45) 0%, transparent 70%)" }}
+          />
+          {/* Photo */}
+          <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-[#7030A0]/20">
+            <Image
+              src="/Stock Images/pexels-sound-on-3761267.jpg"
+              alt="Child experiencing the wonder of VR learning"
+              fill
+              className="object-cover object-center"
+              priority
             />
-          </motion.div>
-
-          {/* Teal satellite */}
+            {/* Subtle gradient overlay at bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#7030A0]/20 via-transparent to-transparent" />
+          </div>
+          {/* Teal accent dot */}
           <motion.div
-            className="absolute -top-8 -right-4 w-20 h-20 rounded-full"
-            style={{ background: "radial-gradient(circle, rgba(8,145,178,0.65) 0%, transparent 70%)" }}
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-4 -left-4 w-14 h-14 rounded-full"
+            style={{ background: "radial-gradient(circle, rgba(8,145,178,0.7) 0%, transparent 70%)" }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          />
+          {/* Purple accent dot */}
+          <motion.div
+            className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-[#C49FDC]/60"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           />
         </motion.div>
       </motion.div>

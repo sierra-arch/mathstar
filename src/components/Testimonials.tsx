@@ -17,7 +17,7 @@ const featured = [
     who: "Parent",
     context: "Roxbury Library Pilot, Aug 2025",
     tag: "Engagement",
-    highlight: true,
+    highlight: false,
   },
   {
     quote:
@@ -25,7 +25,7 @@ const featured = [
     who: "Parent",
     context: "6 months after pilot",
     tag: "Transfer",
-    highlight: true,
+    highlight: false,
   },
 ];
 
@@ -45,6 +45,7 @@ const grid = [
     quote: "I'm so good at this; I'm like the power of math.",
     who: "Student (Rubi), Roxbury Library Pilot, Aug 2025",
     tag: "Enjoyment",
+    highlight: true,
   },
   {
     quote: 'Sophia: "What\'s your favourite part of the game?" Malachi: "solving it."',
@@ -67,6 +68,7 @@ const grid = [
     quote: "Math is gonna be so fun from now on.",
     who: "Student, Ellis Pilot (BPS), Jan 2026",
     tag: "Math Love",
+    highlight: true,
   },
   {
     quote: "I love this.",
@@ -160,6 +162,7 @@ const grid = [
     quote: "Engagement has opened the door.",
     who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
     tag: "Engagement",
+    highlight: true,
   },
 ];
 

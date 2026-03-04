@@ -89,9 +89,7 @@ export default function StoryHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            One graphic novel
-            <br />
-            changed{" "}
+            The gift that changed{" "}
             <em
               className="not-italic italic inline-block pb-2 pr-4"
               style={{

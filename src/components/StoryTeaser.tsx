@@ -25,9 +25,7 @@ export default function StoryTeaser() {
             Our Story
           </p>
           <h2 className="text-4xl lg:text-[3.25rem] font-extrabold text-ink leading-tight mb-8">
-            One graphic novel
-            <br />
-            changed{" "}
+            The gift that changed{" "}
             <em className="not-italic italic text-[#7030A0]">everything.</em>
           </h2>
           <p className="text-xl text-ink/60 leading-relaxed mb-7">
