@@ -15,6 +15,7 @@ const story = [
   {
     text: "That day, someone gifted me the wonder of math.",
     highlight: true,
+    accentColor: "#7030A0",
   },
   {
     text: "Wonder replaced fear with curiosity, even excitement. I worked harder, grew confident, and years later, earned my Master's at Oxford — publishing a quantum physics paper in the same journal where Einstein published his own famous equations.",
@@ -31,28 +32,47 @@ const story = [
   {
     text: "That's why we created MathSTAR.",
     highlight: true,
+    accentColor: "#0891B2",
   },
 ];
 
 function AnimatedParagraph({
   text,
   highlight,
+  accentColor = "#7030A0",
 }: {
   text: string;
   highlight: boolean;
+  accentColor?: string;
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-8%" });
 
+  if (highlight) {
+    return (
+      <motion.div
+        ref={ref}
+        className="relative pl-6 border-l-4"
+        style={{ borderColor: accentColor }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
+        <p
+          className="text-2xl lg:text-3xl font-extrabold leading-snug"
+          style={{ color: accentColor }}
+        >
+          {text}
+        </p>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.p
       ref={ref}
-      className={
-        highlight
-          ? "text-2xl lg:text-3xl font-extrabold text-[#7030A0] leading-snug"
-          : "text-xl lg:text-2xl text-ink/65 font-normal leading-relaxed"
-      }
-      initial={{ opacity: 0, y: 28 }}
+      className="text-xl lg:text-2xl text-[#0D0B12]/60 font-normal leading-relaxed"
+      initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7 }}
     >
@@ -67,7 +87,7 @@ export default function FounderStory() {
 
       {/* Ambient orbs */}
       <div className="absolute top-[5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[5%] left-[-10%] w-[400px] h-[400px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[5%] left-[-10%] w-[400px] h-[400px] bg-[#0891B2]/12 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto relative z-10">
         <motion.p
@@ -76,11 +96,11 @@ export default function FounderStory() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Our Story
+          Femi Fadugba · Founder
         </motion.p>
 
         <motion.h2
-          className="text-4xl lg:text-[3.25rem] font-extrabold text-ink mb-20 leading-tight"
+          className="text-4xl lg:text-[3.25rem] font-extrabold text-[#0D0B12] mb-20 leading-tight"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -89,35 +109,64 @@ export default function FounderStory() {
           Gifting the Wonder of Math
         </motion.h2>
 
-        <div className="space-y-12">
+        <div className="space-y-14">
           {story.map((s, i) => (
-            <AnimatedParagraph key={i} text={s.text} highlight={s.highlight} />
+            <AnimatedParagraph
+              key={i}
+              text={s.text}
+              highlight={s.highlight}
+              accentColor={s.accentColor}
+            />
           ))}
         </div>
 
-        {/* MathSTAR description */}
+        {/* MathSTAR callout */}
         <motion.div
-          className="mt-20 bg-white rounded-3xl p-12 border border-[#7030A0]/10 shadow-sm"
+          className="mt-24 relative overflow-hidden rounded-3xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-xl text-ink/75 leading-relaxed mb-8">
-            This <strong className="text-ink">8-hour VR intervention</strong> takes students from stuck-in-arithmetic to
-            algebra-confident. They put on the headset at home or at their local library, and enter an underwater world
-            where fish multiply and divide before their eyes, where they{" "}
-            <strong className="text-ink">shape equations with their bare hands.</strong>
-          </p>
-          <div className="flex flex-wrap gap-x-10 gap-y-3 mb-6">
-            <div className="text-2xl font-extrabold text-[#7030A0]">Kids choose it over recess.</div>
-            <div className="text-2xl font-extrabold text-[#7030A0]">Educators rate it 10/10.</div>
+          {/* Gradient background */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(112,48,160,0.08) 0%, rgba(255,255,255,0) 50%, rgba(8,145,178,0.06) 100%)",
+            }}
+          />
+          <div className="relative bg-white/70 backdrop-blur-sm border border-[#7030A0]/12 rounded-3xl p-12">
+            <p className="text-xl text-[#0D0B12]/75 leading-relaxed mb-8">
+              This <strong className="text-[#0D0B12]">8-hour VR intervention</strong> takes students from
+              stuck-in-arithmetic to algebra-confident. They put on the headset at home or at their local library,
+              and enter an underwater world where fish multiply and divide before their eyes, where they{" "}
+              <strong className="text-[#0D0B12]">shape equations with their bare hands.</strong>
+            </p>
+
+            <div className="flex flex-wrap gap-8 mb-8 pt-6 border-t border-[#0D0B12]/8">
+              <div>
+                <div className="text-3xl font-extrabold text-[#7030A0]">10/10</div>
+                <div className="text-xs text-[#0D0B12]/45 mt-1 uppercase tracking-widest">Educator rating</div>
+              </div>
+              <div className="w-px bg-[#0D0B12]/10 hidden sm:block" />
+              <div>
+                <div className="text-3xl font-extrabold text-[#0891B2]">+18%</div>
+                <div className="text-xs text-[#0D0B12]/45 mt-1 uppercase tracking-widest">Test score gain</div>
+              </div>
+              <div className="w-px bg-[#0D0B12]/10 hidden sm:block" />
+              <div>
+                <div className="text-3xl font-extrabold text-[#7030A0]">10/10</div>
+                <div className="text-xs text-[#0D0B12]/45 mt-1 uppercase tracking-widest">Chose math over recess</div>
+              </div>
+            </div>
+
+            <p className="text-base text-[#0D0B12]/55">
+              But here&apos;s what really matters: kids are saying,{" "}
+              <em className="text-[#7030A0] font-semibold">&ldquo;I love this,&rdquo;</em> and{" "}
+              <em className="text-[#7030A0] font-semibold">&ldquo;Math is my favorite subject now.&rdquo;</em>
+            </p>
           </div>
-          <p className="text-base text-ink/55">
-            But here&apos;s what really matters: kids are saying,{" "}
-            <em>&ldquo;I love this,&rdquo;</em> and{" "}
-            <em>&ldquo;Math is my favorite subject now.&rdquo;</em>
-          </p>
         </motion.div>
       </div>
     </section>

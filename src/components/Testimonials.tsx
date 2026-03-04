@@ -85,10 +85,10 @@ export default function Testimonials() {
   return (
     <section id="reviews" className="relative">
       {/* Torn paper transition from light → dark */}
-      <div className="bg-[#0F0620] relative">
+      <div className="bg-[#0D0B12] relative">
         <svg
           viewBox="0 0 1440 90"
-          className="w-full fill-[#FAFAF8] block"
+          className="w-full fill-[#F7F2FF] block"
           preserveAspectRatio="none"
           style={{ marginBottom: "-2px" }}
         >
@@ -96,7 +96,7 @@ export default function Testimonials() {
         </svg>
       </div>
 
-      <div className="bg-[#0F0620] py-24 px-6 lg:px-16">
+      <div className="bg-[#0D0B12] py-24 px-6 lg:px-16">
         <div className="max-w-6xl mx-auto">
 
           <div className="text-center mb-16">

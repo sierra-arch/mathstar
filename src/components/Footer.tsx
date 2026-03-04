@@ -38,7 +38,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#7030A0] border-t border-white/8 px-6 lg:px-16 pt-16 pb-10">
+    <footer className="bg-[#4A1E6B] border-t border-white/10 px-6 lg:px-16 pt-16 pb-10">
       <div className="max-w-6xl mx-auto">
 
         {/* Top row */}
@@ -52,11 +52,11 @@ export default function Footer() {
                 alt="ShepherdXR"
                 width={32}
                 height={32}
-                className="object-contain opacity-70"
+                className="object-contain"
               />
-              <span className="font-extrabold text-base text-white/70 tracking-tight">MathSTAR</span>
+              <span className="font-extrabold text-base text-white tracking-tight">MathSTAR</span>
             </Link>
-            <p className="text-white/30 text-sm leading-relaxed">
+            <p className="text-white/65 text-sm leading-relaxed">
               Revealing the wonder of math in every child.
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function Footer() {
           {/* Link columns */}
           {footerLinks.map((col) => (
             <div key={col.heading}>
-              <p className="text-white/50 text-xs font-semibold tracking-widest uppercase mb-4">
+              <p className="text-white/80 text-xs font-bold tracking-widest uppercase mb-4">
                 {col.heading}
               </p>
               <ul className="space-y-3">
@@ -74,7 +74,7 @@ export default function Footer() {
                       href={link.href}
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="text-white/70 text-sm hover:text-white transition-colors"
+                      className="text-white/75 text-sm hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -86,16 +86,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/25 text-sm">
+        <div className="border-t border-white/15 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white/55 text-sm">
             &copy; {new Date().getFullYear()} ShepherdXR. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-white/25 text-xs hover:text-white/50 transition-colors">
+            <Link href="/privacy" className="text-white/55 text-xs hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <span className="text-white/15 text-xs">·</span>
-            <Link href="/terms" className="text-white/25 text-xs hover:text-white/50 transition-colors">
+            <span className="text-white/30 text-xs">·</span>
+            <Link href="/terms" className="text-white/55 text-xs hover:text-white transition-colors">
               Terms of Use
             </Link>
           </div>

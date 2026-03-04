@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
+import StoryHero from "@/components/StoryHero";
 import FounderStory from "@/components/FounderStory";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -12,8 +13,9 @@ export const metadata: Metadata = {
 
 export default function StoryPage() {
   return (
-    <main className="pt-20">
+    <main>
       <Nav />
+      <StoryHero />
       <FounderStory />
       <CTA />
       <Footer />
