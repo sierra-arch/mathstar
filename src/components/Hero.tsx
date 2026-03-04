@@ -22,24 +22,29 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden bg-[#FAFAF8]"
     >
 
-      {/* ── Gradient mesh (left half bleeds into photo) ── */}
+      {/* ── Soft full-bleed gradient mesh ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Base tint — very light lavender across the whole bg */}
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 120% 100% at 50% 50%, rgba(230,215,245,0.55) 0%, rgba(250,250,248,0.0) 70%)" }} />
+        {/* Left-centre purple bloom */}
         <div
-          className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.5) 0%, rgba(112,48,160,0.12) 48%, transparent 70%)" }}
+          className="absolute top-1/2 left-[-10%] -translate-y-1/2 w-[900px] h-[900px] rounded-full blur-[60px]"
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.45) 0%, rgba(112,48,160,0.08) 55%, transparent 75%)" }}
         />
+        {/* Top-right teal accent */}
         <div
-          className="absolute -bottom-32 -left-24 w-[500px] h-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.18) 0%, transparent 65%)" }}
+          className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full blur-[80px]"
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.22) 0%, transparent 65%)" }}
         />
+        {/* Bottom-left soft teal */}
         <div
-          className="absolute top-0 left-1/4 w-[350px] h-[350px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(240,230,247,0.9) 0%, transparent 65%)" }}
+          className="absolute bottom-[-15%] left-[-5%] w-[550px] h-[550px] rounded-full blur-[70px]"
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 65%)" }}
         />
-        {/* Right-side fade so photo blends in */}
+        {/* Centre-right soft lavender to carry colour behind photo */}
         <div
-          className="absolute inset-y-0 right-0 w-1/2 pointer-events-none"
-          style={{ background: "linear-gradient(to left, transparent 55%, #FAFAF8 100%)" }}
+          className="absolute top-[20%] right-[5%] w-[500px] h-[500px] rounded-full blur-[80px]"
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.3) 0%, transparent 70%)" }}
         />
       </div>
 
