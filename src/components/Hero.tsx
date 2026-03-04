@@ -83,8 +83,9 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.25 }}
           >
-            Kids choose it over recess. Educators rate it 10/10.
-            And yes — they&apos;re saying &ldquo;I love this&rdquo; about math now.
+            An underwater world where fish multiply
+            and equations come alive in your hands.
+            Kids call it their favourite subject now.
           </motion.p>
 
           <motion.div
