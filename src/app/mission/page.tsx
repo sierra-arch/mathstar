@@ -24,14 +24,14 @@ export default function MissionPage() {
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[1.02] mb-10">
-              Gift the wonder of math{" "}
-              <span className="italic text-[#C49FDC]">to every child.</span>
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[1.02] mb-6">
+              Unearth the Unexpected{" "}
+              <span className="italic text-[#C49FDC]">Einsteins of Tomorrow.</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-white/60 text-xl leading-relaxed max-w-2xl">
-              Not some children. Not children from the right zip codes or the right schools.
+              Gift the wonder of math to every child — not some children, not children from the right zip codes.
               Every child. That&apos;s the mission. Everything else is in service of that.
             </p>
           </FadeIn>
@@ -50,19 +50,13 @@ export default function MissionPage() {
             </h2>
             <div className="space-y-5 text-[#0D0B12]/60 text-lg leading-relaxed">
               <p>
-                Millions of children sit in math classrooms every day believing a lie:
-                that they&apos;re not math people. They didn&apos;t decide that. A broken
-                system decided it for them.
+                By 8th grade, <strong className="text-[#0D0B12]/80">92% of students with learning differences are not proficient in math.</strong> They didn&apos;t fail math. Math failed them.
               </p>
               <p>
-                For most students, math is taught through repetition, fear of wrong answers,
-                and the slow erosion of confidence. By middle school, many have already
-                written themselves off.
+                Lower math scores predict lower high school and college graduation rates, reduced earnings and economic mobility, and lower health literacy over a lifetime.
               </p>
               <p>
-                But that&apos;s not a capacity problem. It&apos;s an access problem.
-                The right experience — at the right moment — changes everything.
-                Most kids just never get it.
+                Some students thrive with pen and paper. But many receive math best through visuals, hearing, hands-on experience, and 1-on-1 intervention. The system wasn&apos;t built for them. MathSTAR is.
               </p>
             </div>
           </div>
@@ -70,18 +64,18 @@ export default function MissionPage() {
           <div className="space-y-6 pt-4">
             {[
               {
-                stat: "60%+",
-                label: "of U.S. students perform below grade level in math",
+                stat: "92%",
+                label: "of students with learning differences not proficient in math by 8th grade",
                 color: "#7030A0",
               },
               {
-                stat: "18%",
-                label: "pre → post test gain after MathSTAR pilot at Ellis Elementary",
+                stat: "45%",
+                label: "jump in median test score after just 3 MathSTAR sessions — BPL Research",
                 color: "#0891B2",
               },
               {
-                stat: "10/10",
-                label: "students chose math over recess during the Ellis pilot",
+                stat: "55,000",
+                label: "learners to reach at or above grade level — our 3-year goal",
                 color: "#7030A0",
               },
             ].map((item) => (
@@ -112,11 +106,11 @@ export default function MissionPage() {
             <h2 className="text-4xl font-extrabold text-[#0D0B12] leading-tight mb-6">
               Wonder first. Everything else follows.
             </h2>
+            <p className="text-[#0D0B12]/60 text-lg leading-relaxed mb-4">
+              MathSTAR is an <strong className="text-[#0D0B12]/80">8-hour plug-and-play VR intervention</strong> that moves students from stuck-in-arithmetic to algebra-confident. Deployed in classrooms, after-school programs, and at home.
+            </p>
             <p className="text-[#0D0B12]/60 text-lg leading-relaxed">
-              When our founder Femi was given a mathematics graphic novel as a child,
-              it didn&apos;t teach him math facts. It made math beautiful. That wonder
-              unlocked everything that followed — Oxford, quantum physics, a career he
-              chose from a place of strength.
+              We focus on middle graders with diverse learning styles and Individualized Education Programs (IEPs) — the students most likely to fall through the cracks of a pen-and-paper system.
             </p>
           </div>
 

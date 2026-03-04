@@ -115,6 +115,86 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── TEAM ── */}
+      <section className="py-28 px-6 lg:px-20 bg-[#F7F2FF]">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn className="text-center mb-16">
+            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+              The Team
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight">
+              The people behind the wonder.
+            </h2>
+          </FadeIn>
+
+          {/* Leadership */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {[
+              {
+                name: "Femi Fadugba",
+                role: "Founder & CEO",
+                focus: "Leadership, STEM & Story",
+                bio: "Oxford (MEng), UPenn (MPA). BCG consultant, published in quantum computing, bestselling author, Netflix Executive Producer, and STEM tutor. Built MathSTAR from his own experience of math as a child who almost fell through the cracks.",
+                initials: "FF",
+                color: "#7030A0",
+              },
+              {
+                name: "Dan Miller",
+                role: "Chief Experience Officer",
+                focus: "Product Feel & Function",
+                bio: "George Mason (MS, Data Analytics Engineering), Gettysburg (BS, Math & Economics). Leads UI, gesture schema, pedagogy, and backend. Previously in technical roles at Cenevo & Unison.",
+                initials: "DM",
+                color: "#0891B2",
+              },
+            ].map((member) => (
+              <FadeIn key={member.name}>
+                <div className="bg-white rounded-3xl p-8 border border-[#0D0B12]/8 flex gap-6 items-start">
+                  {/* Photo placeholder */}
+                  <div
+                    className="w-20 h-20 rounded-2xl shrink-0 flex items-center justify-center text-white font-extrabold text-xl"
+                    style={{ background: `linear-gradient(135deg, ${member.color}cc, ${member.color})` }}
+                  >
+                    {member.initials}
+                  </div>
+                  <div>
+                    <p className="font-extrabold text-[#0D0B12] text-lg leading-snug">{member.name}</p>
+                    <p className="font-semibold text-sm mb-0.5" style={{ color: member.color }}>{member.role}</p>
+                    <p className="text-[#0D0B12]/35 text-xs italic mb-3">&ldquo;{member.focus}&rdquo;</p>
+                    <p className="text-[#0D0B12]/55 text-sm leading-relaxed">{member.bio}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* Extended team */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { name: "Viola Gattus", role: "Designer-Mathmo", initials: "VG", color: "#7030A0" },
+              { name: "Sophia Turcotte", role: "Marketing & Story", initials: "ST", color: "#0891B2" },
+              { name: "Kerem Pauwels", role: "Lead Artist", initials: "KP", color: "#7030A0" },
+              { name: "Chris Coombes", role: "Developer-Mathmo", initials: "CC", color: "#0891B2" },
+              { name: "Joseph Ravalese", role: "Lead Product Manager", initials: "JR", color: "#7030A0" },
+              { name: "Amelie Pollack", role: "Lead Sound & Music", initials: "AP", color: "#0891B2" },
+            ].map((member, i) => (
+              <FadeIn key={member.name} delay={i * 0.06}>
+                <div className="bg-white rounded-2xl p-5 border border-[#0D0B12]/8 text-center">
+                  {/* Photo placeholder */}
+                  <div
+                    className="w-14 h-14 rounded-xl mx-auto mb-3 flex items-center justify-center text-white font-extrabold text-sm"
+                    style={{ background: `linear-gradient(135deg, ${member.color}99, ${member.color})` }}
+                  >
+                    {member.initials}
+                  </div>
+                  <p className="font-extrabold text-[#0D0B12] text-sm leading-snug mb-1">{member.name}</p>
+                  <p className="text-[#0D0B12]/45 text-xs leading-snug">{member.role}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <section className="py-24 px-6 bg-[#7030A0]">
         <div className="max-w-3xl mx-auto text-center">

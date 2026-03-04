@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import GameExperience from "@/components/GameExperience";
+import LearningFeatures from "@/components/LearningFeatures";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function HowItWorksPage() {
     <main>
       <Nav />
       <GameExperience />
+      <LearningFeatures dark />
       <Footer />
     </main>
   );

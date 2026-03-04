@@ -6,6 +6,7 @@ import EducatorsPilotData from "@/components/educators/EducatorsPilotData";
 import EducatorsResults from "@/components/educators/EducatorsResults";
 import EducatorsQuotes from "@/components/educators/EducatorsQuotes";
 import EducatorsHowTo from "@/components/educators/EducatorsHowTo";
+import LearningFeatures from "@/components/LearningFeatures";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function EducatorsPage() {
       <EducatorsHero />
       <EducatorsPilotData />
       <EducatorsResults />
+      <LearningFeatures />
       <EducatorsQuotes />
       <EducatorsHowTo />
       <CTA />
