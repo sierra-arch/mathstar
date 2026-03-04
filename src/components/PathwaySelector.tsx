@@ -60,7 +60,7 @@ export default function PathwaySelector() {
                 {/* Photo */}
                 <div className="relative w-full h-56 overflow-hidden">
                   <Image
-                    src="/pexels-julia-m-cameron-4144037.jpg"
+                    src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
                     alt="Child using VR headset at home"
                     fill
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
@@ -104,7 +104,7 @@ export default function PathwaySelector() {
                 {/* Photo */}
                 <div className="relative w-full h-56 overflow-hidden">
                   <Image
-                    src="/pexels-julia-m-cameron-4144152.jpg"
+                    src="/Stock Images/pexels-julia-m-cameron-4144152.jpg"
                     alt="Student using VR headset in classroom"
                     fill
                     className="object-cover object-top group-hover:scale-105 transition-transform duration-500"

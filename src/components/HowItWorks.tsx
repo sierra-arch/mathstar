@@ -30,12 +30,12 @@ const steps = [
   {
     num: "02",
     title: "Enter the underwater world",
-    desc: "Fish multiply and divide before their eyes. They reach out and shape equations with their bare hands.",
+    desc: "No controllers — just their hands. Fish multiply before their eyes. They reach out and shape equations in mid-air.",
     accent: "#0891B2",
     visual: (
       <div className="w-full h-52 rounded-2xl overflow-hidden">
         <Image
-          src="/pexels-julia-m-cameron-4144037.jpg"
+          src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
           alt="Child engaged in VR learning"
           width={600}
           height={400}
@@ -52,7 +52,7 @@ const steps = [
     visual: (
       <div className="w-full h-52 rounded-2xl overflow-hidden">
         <Image
-          src="/pexels-julia-m-cameron-4144150.jpg"
+          src="/Stock Images/pexels-julia-m-cameron-4144150.jpg"
           alt="Student experiencing breakthrough moment"
           width={600}
           height={400}

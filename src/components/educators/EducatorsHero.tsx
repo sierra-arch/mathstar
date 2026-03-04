@@ -25,7 +25,7 @@ export default function EducatorsHero() {
         style={{ y: bgY }}
       >
         <Image
-          src="/pexels-julia-m-cameron-4144152.jpg"
+          src="/Stock Images/pexels-julia-m-cameron-4144152.jpg"
           alt="Student using VR headset in classroom"
           fill
           className="object-cover object-top"

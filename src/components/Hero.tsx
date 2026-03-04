@@ -143,8 +143,8 @@ export default function Hero() {
           />
 
           <Image
-            src="/Stock Images/pexels-mart-production-8472008.jpg"
-            alt="Kid smiling with VR headset"
+            src="/Stock Images/pexels-vanessa-loring-7869248.jpg"
+            alt="Kid experiencing wonder in VR"
             fill
             className="object-cover object-top"
             priority

@@ -132,7 +132,7 @@ export default function TestimonialsTeaser() {
           {/* Real photo — classroom joy */}
           <div className="relative h-56 overflow-hidden rounded-2xl">
             <Image
-              src="/pexels-julia-m-cameron-4144152.jpg"
+              src="/Stock Images/pexels-julia-m-cameron-4144152.jpg"
               alt="Students experiencing MathSTAR at the pilot"
               fill
               className="object-cover object-center hover:scale-105 transition-transform duration-700"
@@ -149,7 +149,7 @@ export default function TestimonialsTeaser() {
           {/* Real photo — learning breakthrough */}
           <div className="relative h-56 overflow-hidden rounded-2xl">
             <Image
-              src="/pexels-vazhnik-7864583.jpg"
+              src="/Stock Images/pexels-vazhnik-7864583.jpg"
               alt="Child having a math breakthrough moment"
               fill
               className="object-cover object-center hover:scale-105 transition-transform duration-700"

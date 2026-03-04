@@ -24,7 +24,7 @@ export default function StoryHero() {
         style={{ y: bgY }}
       >
         <Image
-          src="/pexels-thepaintedsquare-3405461.jpg"
+          src="/Stock Images/pexels-thepaintedsquare-3405461.jpg"
           alt="Child experiencing wonder"
           fill
           className="object-cover object-center"

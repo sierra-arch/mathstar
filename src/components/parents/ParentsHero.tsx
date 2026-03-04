@@ -25,7 +25,7 @@ export default function ParentsHero() {
         style={{ y: bgY }}
       >
         <Image
-          src="/pexels-julia-m-cameron-4144037.jpg"
+          src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
           alt="Child with VR headset"
           fill
           className="object-cover object-top"

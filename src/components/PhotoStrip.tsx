@@ -5,31 +5,31 @@ import Image from "next/image";
 
 const photos = [
   {
-    src: "/pexels-tima-miroshnichenko-7047292.jpg",
+    src: "/Stock Images/pexels-tima-miroshnichenko-7047292.jpg",
     alt: "Child with arms wide open experiencing VR",
     className: "h-72 lg:h-80",
     objectPosition: "object-top",
   },
   {
-    src: "/pexels-sound-on-3761267.jpg",
+    src: "/Stock Images/pexels-sound-on-3761267.jpg",
     alt: "Joyful person experiencing VR learning",
     className: "h-72 lg:h-96",
     objectPosition: "object-center",
   },
   {
-    src: "/pexels-michelangelo-buonarroti-8728557.jpg",
+    src: "/Stock Images/pexels-michelangelo-buonarroti-8728557.jpg",
     alt: "Students sharing a VR math experience",
     className: "h-72 lg:h-80",
     objectPosition: "object-center",
   },
   {
-    src: "/pexels-tima-miroshnichenko-5303587.jpg",
+    src: "/Stock Images/pexels-tima-miroshnichenko-5303587.jpg",
     alt: "Child arms wide open in teal VR room",
     className: "h-72 lg:h-96",
     objectPosition: "object-top",
   },
   {
-    src: "/pexels-michelangelo-buonarroti-8728379.jpg",
+    src: "/Stock Images/pexels-michelangelo-buonarroti-8728379.jpg",
     alt: "VR learning experience profile view",
     className: "h-72 lg:h-80",
     objectPosition: "object-center",

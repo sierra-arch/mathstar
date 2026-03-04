@@ -60,7 +60,7 @@ export default function StoryTeaser() {
 
           <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-[#7030A0]/15">
             <Image
-              src="/pexels-thepaintedsquare-3405461.jpg"
+              src="/Stock Images/pexels-thepaintedsquare-3405461.jpg"
               alt="Child experiencing wonder with VR headset"
               width={700}
               height={700}
