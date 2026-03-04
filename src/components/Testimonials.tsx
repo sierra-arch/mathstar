@@ -27,57 +27,148 @@ const featured = [
 ];
 
 const grid = [
+  // Roxbury Library Pilot
+  {
+    quote: "Thank you for making this game.",
+    who: "Student (Apollo), Roxbury Library Pilot, Aug 2025",
+    tag: "Math Love",
+  },
+  {
+    quote: "I would invest in this. I'd put 200 dollars into it. I'd take it from my mum's wallet, and replace it with monopoly money. Monopoly money looks so real.",
+    who: "Student (Apollo), Roxbury Library Pilot, Aug 2025",
+    tag: "Math Love",
+  },
+  {
+    quote: "I'm so good at this; I'm like the power of math.",
+    who: "Student (Rubi), Roxbury Library Pilot, Aug 2025",
+    tag: "Enjoyment",
+  },
+  {
+    quote: 'Sophia: "What\'s your favourite part of the game?" Malachi: "solving it."',
+    who: "Student (Malachi), Roxbury Library Pilot, Aug 2025",
+    tag: "Math Love",
+    dialogue: true,
+  },
+  {
+    quote: "[My nephew, Apollo] sold the program to me. He really took ownership of it in the way he talked about it.",
+    who: "Ms. Cruz, School Administrator, Roxbury Library Pilot, Aug 2025",
+    tag: "Math Love",
+  },
+  {
+    quote: "This is really cool. Really fun. In school, I'm able to remember history and geography, but with math, it's like as soon as I learn it, it goes straight out of my head. But with this, I can see it. And so it sticks.",
+    who: "Student (Mariam), Roxbury Library Pilot, Aug 2025",
+    tag: "Transfer",
+  },
+  // Ellis Pilot
   {
     quote: "Math is gonna be so fun from now on.",
-    who: "Student, Ellis Pilot",
+    who: "Student, Ellis Pilot (BPS), Jan 2026",
+    tag: "Math Love",
   },
   {
     quote: "I love this.",
-    who: "Student, Ellis Pilot",
+    who: "Student, Ellis Pilot (BPS), Jan 2026",
+    tag: "Math Love",
+  },
+  {
+    quote: "Can we do it for longer?",
+    who: "Student, Ellis Pilot (BPS), Jan 2026",
+    tag: "Engagement",
+  },
+  {
+    quote: "This is so satisfying.",
+    who: "Student, Ellis Pilot (BPS), Jan 2026",
+    tag: "Enjoyment",
+  },
+  {
+    quote: "They just made learning fun.",
+    who: "Student, Ellis Pilot (BPS), Jan 2026",
+    tag: "Learning",
+  },
+  {
+    quote: "Imagine if they made VR for reading…",
+    who: "Student, Ellis Pilot (BPS), Jan 2026",
+    tag: "Learning",
   },
   {
     quote: "Wait, that level I just did was algebra?",
-    who: "Student, Ellis Pilot",
+    who: "Student, Ellis Pilot (BPS), Jan 2026",
+    tag: "Learning",
+  },
+  {
+    quote: "It was crazy and fun at the same time.",
+    who: "Student, Ellis Pilot (BPS), Jan 2026",
+    tag: "Enjoyment",
   },
   {
     quote: "They went 20 minutes into recess and didn't notice.",
-    who: "Ms. Joseph, Teacher — Ellis Pilot",
+    who: "Ms. Joseph, Teacher — Ellis Pilot (BPS), Jan 2026",
+    tag: "Engagement",
   },
   {
-    quote:
-      "Students' excitement and motivation before, during, and after was up. Even on days where we did not have VR.",
-    who: "Mr. McKinnon, Paraprofessional",
+    quote: "Students' excitement and motivation before, during, and after was up. Even on days where we did not have VR.",
+    who: "Mr. McKinnon, Paraprofessional — Ellis Pilot (BPS), Jan 2026",
+    tag: "Engagement",
   },
   {
-    quote:
-      "He got 17/21 in the game's test... we know he's capable of this, but it doesn't show up on paper. He needs ACCESS to something like this.",
-    who: "Ms. Munroe, Teacher",
+    quote: "When they know VR is on the line, they behave.",
+    who: "Mr. McKinnon, Paraprofessional — Ellis Pilot (BPS), Jan 2026",
+    tag: "Regulation",
   },
   {
-    quote:
-      "In school, with math, it's like as soon as I learn it, it goes straight out of my head. But with this, I can see it. And so it sticks.",
-    who: "Student, Roxbury Library Pilot",
-  },
-  {
-    quote:
-      "That has been especially powerful for our EI students who struggle to access math in traditional formats.",
-    who: "Ms. Cruz, School Administrator",
+    quote: "What is this best for? Engagement and motivation for the students.",
+    who: "Mr. McKinnon, Paraprofessional — Ellis Pilot (BPS), Jan 2026",
+    tag: "Engagement",
   },
   {
     quote: "Do we get to play it?!",
-    who: "Every student who walked past the classroom",
+    who: "Every student who walked past the classroom — Ellis Pilot (BPS), Jan 2026",
+    tag: "Engagement",
   },
   {
-    quote: "Engagement has opened the door... now we need to be able to see what students are learning.",
-    who: "Ms. Cruz, School Administrator",
+    quote: "He got 17/21 in the game's test... we know he's capable of this, but it doesn't show up on paper. He needs ACCESS to something like this.",
+    who: "Ms. Munroe, Teacher — Ellis Pilot (BPS), Jan 2026",
+    tag: "Learning",
+  },
+  {
+    quote: "I think it gave students a different way to view math.",
+    who: "Ms. Joseph, Teacher — Ellis Pilot (BPS), Jan 2026",
+    tag: "Learning",
+  },
+  {
+    quote: "That has been especially powerful for our EI students who struggle to access math in traditional formats.",
+    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
+    tag: "Engagement",
+  },
+  {
+    quote: "We are seeing strong indicators around student regulation, time-on-task, and overall engagement.",
+    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
+    tag: "Regulation",
   },
   {
     quote: "I noticed that it helped build students' confidence and engagement.",
-    who: "Ms. Joseph, Teacher",
+    who: "Ms. Joseph, Teacher — Ellis Pilot (BPS), Jan 2026",
+    tag: "Confidence",
   },
   {
-    quote: "I would invest in this. I'd put 200 dollars into it.",
-    who: "Student (age ~10), Roxbury Library Pilot",
+    quote: "Engagement has opened the door... now we need to be able to see what students are learning.",
+    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
+    tag: "Transfer",
+  },
+  {
+    quote: "I would like to see students take the information they have learned and transfer the information to everyday lessons.",
+    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
+    tag: "Transfer",
+  },
+  {
+    quote: "We need to be able to see what students are learning, where they started and how we're monitoring growth over time.",
+    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
+    tag: "Transfer",
+  },
+  {
+    quote: "How would you recommend she look for evidence that skills practiced on the VR are transferring to classroom tasks?",
+    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
+    tag: "Transfer",
   },
 ];
 

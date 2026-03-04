@@ -4,93 +4,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
-/* ─── SVG fish illustrations ─── */
-function FishA({ color }: { color: string }) {
-  return (
-    <svg width="72" height="44" viewBox="0 0 72 44" fill="none">
-      <ellipse cx="34" cy="22" rx="26" ry="14" fill={color} />
-      <path d="M58 22 L72 10 L72 34 Z" fill={color} />
-      <path d="M28 8 Q34 0 40 8" fill={color} opacity="0.8" />
-      <circle cx="13" cy="20" r="3.5" fill="rgba(0,0,0,0.3)" />
-      <circle cx="12" cy="19" r="1.5" fill="white" opacity="0.7" />
-    </svg>
-  );
-}
-
-function FishB({ color }: { color: string }) {
-  return (
-    <svg width="58" height="50" viewBox="0 0 58 50" fill="none">
-      <ellipse cx="26" cy="25" rx="22" ry="19" fill={color} />
-      <path d="M46 25 L58 13 L58 37 Z" fill={color} />
-      <path d="M20 6 Q26 0 32 6" fill={color} opacity="0.75" />
-      <path d="M20 44 Q26 50 32 44" fill={color} opacity="0.75" />
-      <circle cx="11" cy="22" r="4" fill="rgba(0,0,0,0.25)" />
-      <circle cx="10" cy="21" r="2" fill="white" opacity="0.65" />
-    </svg>
-  );
-}
-
-function FishC({ color }: { color: string }) {
-  return (
-    <svg width="88" height="32" viewBox="0 0 88 32" fill="none">
-      <ellipse cx="40" cy="16" rx="34" ry="11" fill={color} />
-      <path d="M72 16 L88 6 L88 26 Z" fill={color} />
-      <path d="M34 5 Q42 0 50 5" fill={color} opacity="0.7" />
-      <circle cx="12" cy="14" r="3" fill="rgba(0,0,0,0.25)" />
-      <circle cx="11" cy="13" r="1.5" fill="white" opacity="0.6" />
-    </svg>
-  );
-}
-
-const fishData: { Shape: typeof FishA; color: string; cls: string; top: string }[] = [
-  { Shape: FishA, color: "rgba(8,145,178,0.5)",    cls: "fish-1", top: "25%" },
-  { Shape: FishB, color: "rgba(196,159,220,0.45)", cls: "fish-2", top: "60%" },
-  { Shape: FishC, color: "rgba(255,255,255,0.25)", cls: "fish-3", top: "40%" },
-  { Shape: FishA, color: "rgba(196,159,220,0.4)",  cls: "fish-4", top: "75%" },
-  { Shape: FishC, color: "rgba(8,145,178,0.4)",    cls: "fish-5", top: "15%" },
-  { Shape: FishB, color: "rgba(255,255,255,0.2)",  cls: "fish-6", top: "50%" },
-];
-
-function FloatingFish() {
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {fishData.map((f, i) => (
-        <div key={i} className={`absolute ${f.cls}`} style={{ top: f.top }}>
-          <f.Shape color={f.color} />
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/* ─── Floating math symbols ─── */
-const symbols = [
-  { char: "x²", cls: "float-1", style: { top: "12%", left: "6%", fontSize: "4.5rem" } },
-  { char: "+", cls: "float-2", style: { top: "58%", left: "4%", fontSize: "7rem" } },
-  { char: "∑", cls: "float-3", style: { top: "28%", right: "8%", fontSize: "5.5rem" } },
-  { char: "÷", cls: "float-4", style: { top: "72%", right: "6%", fontSize: "6rem" } },
-  { char: "∞", cls: "float-5", style: { top: "42%", left: "48%", fontSize: "3.5rem" } },
-  { char: "√", cls: "float-6", style: { top: "18%", right: "22%", fontSize: "4.5rem" } },
-  { char: "=", cls: "float-7", style: { bottom: "18%", left: "18%", fontSize: "5.5rem" } },
-  { char: "π", cls: "float-8", style: { top: "8%", left: "38%", fontSize: "3.5rem" } },
-];
-
-function FloatingSymbols() {
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {symbols.map((s, i) => (
-        <div
-          key={i}
-          className={`absolute text-white font-extrabold select-none ${s.cls}`}
-          style={{ ...s.style, opacity: 0.07 }}
-        >
-          {s.char}
-        </div>
-      ))}
-    </div>
-  );
-}
-
 /* ─── Scroll-pinned game scenes ─── */
 const scenes = [
   {
@@ -123,37 +36,30 @@ function StickyScenes() {
   const panel0Opacity = useTransform(scrollYProgress, [0, 0.2, 0.35], [1, 1, 0]);
   const panel1Opacity = useTransform(scrollYProgress, [0.25, 0.4, 0.62, 0.75], [0, 1, 1, 0]);
   const panel2Opacity = useTransform(scrollYProgress, [0.65, 0.78, 1], [0, 1, 1]);
-
   const panelOpacities = [panel0Opacity, panel1Opacity, panel2Opacity];
-
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "360vh" }}>
-      <div className="sticky top-0 h-screen overflow-hidden bg-[#7030A0]">
+    <div ref={containerRef} className="relative" style={{ height: "210vh" }}>
+      <div className="sticky top-0 h-screen overflow-hidden bg-[#080612]">
 
-        {/* Full-screen game video */}
+        {/* Full-screen game video — more visible, lighter overlay */}
         <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
           <video
             src="/Gameplay-edited.mp4"
             autoPlay muted loop playsInline
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover opacity-70"
             onLoadedMetadata={(e) => { e.currentTarget.currentTime = 45; e.currentTarget.playbackRate = 0.6; }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#7030A0]/90 via-[#7030A0]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#7030A0]/70 via-transparent to-[#7030A0]/30" />
+          {/* Lighter left-side gradient for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/85 via-[#080612]/30 to-transparent" />
+          {/* Bottom gradient to anchor the scene */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080612]/60 via-transparent to-transparent" />
         </motion.div>
-
-        {/* Ambient glow */}
-        <div className="absolute top-[20%] right-[15%] w-[500px] h-[500px] bg-[#7030A0]/20 rounded-full blur-[120px] pulse-glow pointer-events-none" />
-        <div className="absolute bottom-[10%] left-[20%] w-[300px] h-[300px] bg-[#0891B2]/15 rounded-full blur-[80px] pulse-glow pointer-events-none" />
-
-        {/* Fish swimming across the scene */}
-        <FloatingFish />
 
         {/* Scroll progress bar */}
         <motion.div
-          className="absolute left-0 top-0 h-1 bg-gradient-to-r from-[#7030A0] to-[#0891B2]"
+          className="absolute left-0 top-0 h-[2px] bg-gradient-to-r from-[#7030A0] to-[#0891B2]"
           style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
         />
 
@@ -183,7 +89,7 @@ function StickyScenes() {
           </div>
         </div>
 
-        {/* Scroll hint (fades as you scroll) */}
+        {/* Scroll hint */}
         <motion.div
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           style={{ opacity: useTransform(scrollYProgress, [0, 0.15], [1, 0]) }}
@@ -204,31 +110,23 @@ function StickyScenes() {
 /* ─── Main component ─── */
 export default function GameExperience() {
   return (
-    <div className="bg-[#7030A0]">
+    <div className="bg-[#080612]">
 
       {/* ── 1. HERO ────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#7030A0] pt-24">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
 
         {/* Background video */}
         <div className="absolute inset-0">
           <video
             src="/Gameplay-edited.mp4"
             autoPlay muted loop playsInline
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-50"
             onLoadedMetadata={(e) => { e.currentTarget.currentTime = 90; e.currentTarget.playbackRate = 0.6; }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#7030A0]/60 via-transparent to-[#7030A0]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/70 via-[#080612]/20 to-[#080612]" />
         </div>
 
-        {/* Ambient orbs */}
-        <div className="absolute top-[10%] left-[-10%] w-[700px] h-[700px] bg-[#7030A0]/20 rounded-full blur-[140px] pulse-glow pointer-events-none" />
-        <div className="absolute bottom-[5%] right-[-5%] w-[500px] h-[500px] bg-[#0891B2]/15 rounded-full blur-[100px] pulse-glow pointer-events-none" />
-
-        {/* Floating symbols + fish */}
-        <FloatingSymbols />
-        <FloatingFish />
-
-        {/* Hero text */}
+        {/* Hero text — no fish, no symbols */}
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <motion.p
             className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8"
@@ -288,9 +186,7 @@ export default function GameExperience() {
       </section>
 
       {/* ── 2. ATMOSPHERE ──────────────────────────────────────────── */}
-      <section className="relative py-40 px-6 lg:px-20 bg-[#7030A0] overflow-hidden">
-
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#7030A0/15_0%,_transparent_70%)] pointer-events-none" />
+      <section className="relative py-40 px-6 lg:px-20 bg-[#080612] overflow-hidden">
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
@@ -323,7 +219,7 @@ export default function GameExperience() {
             </p>
           </motion.div>
 
-          {/* Three atmosphere pills */}
+          {/* Atmosphere pills */}
           <div className="flex flex-wrap justify-center gap-4 mt-16">
             {[
               { icon: "🐠", text: "Fish that form equations" },
@@ -351,7 +247,7 @@ export default function GameExperience() {
       <StickyScenes />
 
       {/* ── 4. MANIPULATIVES VIDEO ─────────────────────────────────── */}
-      <section className="relative h-screen overflow-hidden bg-[#7030A0]">
+      <section className="relative h-screen overflow-hidden bg-[#080612]">
 
         <video
           src="/Manipulatives.mp4"
@@ -359,8 +255,8 @@ export default function GameExperience() {
           className="absolute inset-0 w-full h-full object-cover"
           onLoadedMetadata={(e) => { e.currentTarget.currentTime = 26; e.currentTarget.playbackRate = 0.6; }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#7030A0] via-[#7030A0]/30 to-[#7030A0]/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#7030A0]/70 to-transparent" />
+        {/* Only a bottom gradient — let the video breathe */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080612] via-[#080612]/40 to-transparent" />
 
         <div className="absolute inset-0 flex items-end pb-24 px-8 lg:px-20">
           <motion.div
@@ -376,7 +272,7 @@ export default function GameExperience() {
               <br />
               with your bare hands.
             </h2>
-            <p className="text-white/50 text-lg leading-relaxed">
+            <p className="text-white/55 text-lg leading-relaxed">
               Reach out. Grab a number. Pull it into place.
               This is math the way kids were born to learn it —
               through touch, movement, and discovery.
@@ -386,10 +282,11 @@ export default function GameExperience() {
       </section>
 
       {/* ── 5. GAME MECHANICS ──────────────────────────────────────── */}
-      <section className="relative py-40 px-6 lg:px-20 bg-[#7030A0] overflow-hidden">
+      <section className="relative py-40 px-6 lg:px-20 bg-[#080612] overflow-hidden">
 
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#7030A0]/15 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#0891B2]/10 rounded-full blur-[90px] pointer-events-none" />
+        {/* Subtle ambient glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7030A0]/8 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-[#0891B2]/6 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-20">
@@ -453,7 +350,7 @@ export default function GameExperience() {
             ].map((card, i) => (
               <motion.div
                 key={i}
-                className="relative bg-white/4 border border-white/8 rounded-3xl p-10 overflow-hidden"
+                className="relative bg-white/[0.03] border border-white/[0.07] rounded-3xl p-10 overflow-hidden"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -462,7 +359,7 @@ export default function GameExperience() {
                 {/* Number watermark */}
                 <div
                   className="absolute -top-4 -right-4 text-[9rem] font-extrabold leading-none select-none pointer-events-none"
-                  style={{ color: card.color, opacity: 0.07 }}
+                  style={{ color: card.color, opacity: 0.06 }}
                 >
                   {card.num}
                 </div>
@@ -480,8 +377,8 @@ export default function GameExperience() {
                   {card.body}
                 </p>
 
-                <div className="border-t border-white/8 pt-6">
-                  <p className="text-white/70 text-sm font-medium leading-relaxed mb-2 italic">
+                <div className="border-t border-white/[0.07] pt-6">
+                  <p className="text-white/65 text-sm font-medium leading-relaxed mb-2 italic">
                     {card.quote}
                   </p>
                   <p className="text-white/30 text-xs">{card.who}</p>
@@ -493,9 +390,9 @@ export default function GameExperience() {
       </section>
 
       {/* ── 6. CINEMATIC QUOTE ─────────────────────────────────────── */}
-      <section className="relative py-40 px-6 overflow-hidden bg-[#4A1E6B]">
+      <section className="relative py-40 px-6 overflow-hidden bg-[#06040E]">
 
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,_#0891B2/12_0%,_transparent_65%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(8,145,178,0.07)_0%,transparent_65%)] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
@@ -504,7 +401,7 @@ export default function GameExperience() {
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <div className="text-8xl text-[#7030A0]/30 font-serif leading-none mb-4">&ldquo;</div>
+            <div className="text-8xl text-white/10 font-serif leading-none mb-4">&ldquo;</div>
             <p className="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-10">
               They got 17/21 in the game&apos;s test.
               We know they&apos;re capable of this —
@@ -522,19 +419,19 @@ export default function GameExperience() {
               </span>
             </p>
             <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-px bg-[#7030A0]/50" />
+              <div className="w-12 h-px bg-white/15" />
               <div>
                 <p className="text-white/65 font-semibold text-sm">Ms. Munroe</p>
                 <p className="text-white/30 text-xs">Classroom Teacher · Ellis Elementary Pilot</p>
               </div>
-              <div className="w-12 h-px bg-[#7030A0]/50" />
+              <div className="w-12 h-px bg-white/15" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ── 7. STATS BAR ───────────────────────────────────────────── */}
-      <section className="relative py-28 px-6 lg:px-20 bg-[#7030A0] overflow-hidden border-t border-white/5">
+      <section className="relative py-28 px-6 lg:px-20 bg-[#080612] overflow-hidden border-t border-white/[0.05]">
 
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -563,11 +460,9 @@ export default function GameExperience() {
       </section>
 
       {/* ── 8. CTA ─────────────────────────────────────────────────── */}
-      <section className="relative py-40 px-6 bg-[#7030A0] overflow-hidden border-t border-white/5">
+      <section className="relative py-40 px-6 bg-[#080612] overflow-hidden border-t border-white/[0.05]">
 
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#7030A0/25_0%,_transparent_70%)] pointer-events-none" />
-        <FloatingSymbols />
-        <FloatingFish />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(112,48,160,0.12)_0%,transparent_65%)] pointer-events-none" />
 
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <motion.h2
@@ -612,7 +507,7 @@ export default function GameExperience() {
             <Link
               href="/parents"
               className="px-8 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
-              style={{ background: "linear-gradient(135deg, #7030A0, #4A1E6B)", boxShadow: "0 4px 30px #7030A0/30" }}
+              style={{ background: "linear-gradient(135deg, #7030A0, #4A1E6B)", boxShadow: "0 4px 30px rgba(112,48,160,0.3)" }}
             >
               For Parents →
             </Link>
