@@ -22,8 +22,13 @@ function SectionNum({ n, dark = true }: { n: string; dark?: boolean }) {
 function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
   num: string; tag: string; headline: string; body: string; accent: string; src: string; videoStart: number;
 }) {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const fadeOut = useTransform(scrollYProgress, [0.35, 0.85], [1, 0]);
+  const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
+
   return (
-    <section className="relative h-screen overflow-hidden bg-[#080612] flex items-end">
+    <section ref={ref} className="relative h-screen overflow-hidden bg-[#080612] flex items-end">
       <div className="absolute inset-0">
         <video
           src={src}
@@ -32,19 +37,17 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
           style={{ opacity: 0.75 }}
           onLoadedMetadata={(e) => { e.currentTarget.currentTime = videoStart; e.currentTarget.playbackRate = 0.65; }}
         />
-        {/* Lighter overlays so video breathes */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/40 via-transparent to-[#080612]/85" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/65 via-[#080612]/20 to-transparent" />
       </div>
       <SectionNum n={num} />
 
-      {/* Left accent bar */}
       <div
         className="absolute top-0 left-0 w-1 h-full opacity-30"
         style={{ background: `linear-gradient(to bottom, transparent, ${accent}, transparent)` }}
       />
 
-      <div className="relative z-10 px-8 lg:px-20 pb-20 max-w-3xl">
+      <motion.div className="relative z-10 px-8 lg:px-20 pb-20 max-w-3xl" style={{ opacity: fadeOut, y: textY }}>
         <motion.p
           className="text-xs font-bold tracking-widest uppercase mb-5"
           style={{ color: accent }}
@@ -73,7 +76,7 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
         >
           {body}
         </motion.p>
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -85,16 +88,20 @@ function LightSlide({ num, overline, headline, children }: {
   headline: React.ReactNode;
   children?: React.ReactNode;
 }) {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const fadeOut = useTransform(scrollYProgress, [0.35, 0.85], [1, 0]);
+  const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
+
   return (
-    <section className="relative h-screen overflow-hidden bg-[#F7F2FF] flex items-center justify-center">
-      {/* Ambient orbs */}
+    <section ref={ref} className="relative h-screen overflow-hidden bg-[#F7F2FF] flex items-center justify-center">
       <div className="absolute top-[-15%] right-[-8%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(196,159,220,0.35) 0%, transparent 70%)" }} />
       <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 70%)" }} />
       <SectionNum n={num} dark={false} />
 
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full">
+      <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full" style={{ opacity: fadeOut, y: textY }}>
         <motion.p
           className="text-[#7030A0] font-semibold text-xs tracking-widest uppercase mb-8"
           initial={{ opacity: 0, y: 16 }}
@@ -122,7 +129,7 @@ function LightSlide({ num, overline, headline, children }: {
             {children}
           </motion.div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 }

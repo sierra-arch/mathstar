@@ -19,7 +19,8 @@ export default function ResultsSlide() {
   });
 
   const videoScale = useTransform(scrollYProgress, [0, 1], [1.08, 1]);
-  const fadeIn     = useTransform(scrollYProgress, [0.1, 0.35], [0, 1]);
+  const fadeIn     = useTransform(scrollYProgress, [0.08, 0.3, 0.7, 0.92], [0, 1, 1, 0]);
+  const textY      = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
 
   return (
     <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-[#080612]">
@@ -51,7 +52,7 @@ export default function ResultsSlide() {
       {/* ── Content ── */}
       <motion.div
         className="relative z-10 min-h-screen flex flex-col justify-center px-8 lg:px-20 py-32"
-        style={{ opacity: fadeIn }}
+        style={{ opacity: fadeIn, y: textY }}
       >
         <div className="max-w-6xl mx-auto w-full">
 
