@@ -85,7 +85,7 @@ export default function ReviewsHero() {
       >
         {/* Overline */}
         <motion.p
-          className="absolute top-36 left-8 lg:left-16 text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase"
+          className="absolute top-48 left-8 lg:left-16 text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -95,7 +95,7 @@ export default function ReviewsHero() {
 
         {/* Supporting */}
         <motion.p
-          className="absolute top-36 right-8 lg:right-16 text-[#0D0B12]/35 text-xs leading-relaxed text-right max-w-[150px]"
+          className="absolute top-48 right-8 lg:right-16 text-[#0D0B12]/35 text-xs leading-relaxed text-right max-w-[150px]"
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -106,14 +106,14 @@ export default function ReviewsHero() {
         {/* Main headline — lower left */}
         <div className="absolute bottom-0 left-0 right-0 px-8 lg:px-16 pb-16">
           <motion.h1
-            className="text-[3.4rem] sm:text-[4.5rem] lg:text-[6rem] font-extrabold text-[#0D0B12] leading-[0.95] mb-4 max-w-2xl"
+            className="text-[3.4rem] sm:text-[4.5rem] lg:text-[6rem] font-extrabold text-[#0D0B12] leading-[0.95] mb-4"
             initial={{ opacity: 0, y: 70 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Parents. Teachers. Kids.
+            <span className="whitespace-nowrap">Parents. Teachers. Kids.</span>
             <br />
-            <em className="not-italic italic text-[#0891B2]">All saying the same thing.</em>
+            <em className="not-italic italic text-[#7030A0]">All saying the same thing.</em>
           </motion.h1>
         </div>
 

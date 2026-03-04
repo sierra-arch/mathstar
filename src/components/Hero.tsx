@@ -51,15 +51,6 @@ export default function Hero() {
           className="flex flex-col justify-center px-8 lg:px-16 pt-36 pb-20 lg:pt-0 lg:pb-0"
           style={{ y: textY, opacity: fadeOut }}
         >
-          <motion.p
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-7"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Don&apos;t close the door on their potential
-          </motion.p>
-
           <motion.h1
             className="text-5xl sm:text-6xl lg:text-[5rem] xl:text-[5.5rem] font-extrabold text-[#0D0B12] leading-[1.0] mb-7"
             initial={{ opacity: 0, y: 30 }}
@@ -116,40 +107,30 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT — Kid photo */}
+        {/* RIGHT — Kid photo in rounded box */}
         <motion.div
-          className="relative hidden lg:block"
+          className="relative hidden lg:flex items-center justify-center px-8 py-16"
           style={{ y: imgY }}
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Glow behind photo */}
+          {/* Glow behind box */}
           <div
-            className="absolute inset-0 pointer-events-none z-10"
+            className="absolute inset-0 pointer-events-none"
             style={{
-              background: "radial-gradient(ellipse 60% 70% at 30% 50%, rgba(196,159,220,0.35) 0%, transparent 65%)",
+              background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196,159,220,0.3) 0%, transparent 70%)",
             }}
           />
-
-          <Image
-            src="/Stock Images/pexels-vanessa-loring-7869248.jpg"
-            alt="Kid experiencing wonder in VR"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-
-          {/* Left-edge fade into gradient */}
-          <div
-            className="absolute inset-y-0 left-0 w-40 z-20 pointer-events-none"
-            style={{ background: "linear-gradient(to right, #FAFAF8 0%, transparent 100%)" }}
-          />
-          {/* Bottom fade */}
-          <div
-            className="absolute bottom-0 left-0 right-0 h-32 z-20 pointer-events-none"
-            style={{ background: "linear-gradient(to top, #FAFAF8 0%, transparent 100%)" }}
-          />
+          <div className="relative w-full h-[600px] rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/20">
+            <Image
+              src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
+              alt="Kid experiencing wonder in VR"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
         </motion.div>
 
       </div>
