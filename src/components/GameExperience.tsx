@@ -4,6 +4,71 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
+/* ── Simple fish SVG (faces right; swimLeft CSS flips it) ── */
+function FishSVG({ size = 22 }: { size?: number }) {
+  return (
+    <svg width={size} height={Math.round(size * 0.5)} viewBox="0 0 50 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 12.5 L14 2 L14 23 Z" fill="white" />
+      <ellipse cx="30" cy="12.5" rx="20" ry="9" fill="white" />
+      <circle cx="44" cy="10" r="2" fill="#080612" />
+    </svg>
+  );
+}
+
+/* ── Fish layer — uses swimRight/swimLeft CSS defined in globals.css ── */
+function FishLayer() {
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden>
+      <div className="fish-1 absolute" style={{ top: "22%", opacity: 0.12 }}><FishSVG size={20} /></div>
+      <div className="fish-2 absolute" style={{ top: "58%", opacity: 0.09 }}><FishSVG size={16} /></div>
+      <div className="fish-3 absolute" style={{ top: "72%", opacity: 0.10 }}><FishSVG size={18} /></div>
+      <div className="fish-4 absolute" style={{ top: "38%", opacity: 0.08 }}><FishSVG size={22} /></div>
+      <div className="fish-5 absolute" style={{ top: "12%", opacity: 0.07 }}><FishSVG size={14} /></div>
+      <div className="fish-6 absolute" style={{ top: "82%", opacity: 0.09 }}><FishSVG size={17} /></div>
+    </div>
+  );
+}
+
+/* ── Floating math particles — uses float-1..8 CSS from globals.css ── */
+const PARTICLES = [
+  { text: "2",  cls: "float-1", top: "10%", left: "6%",  size: "1.4rem", op: 0.08 },
+  { text: "+",  cls: "float-2", top: "30%", left: "88%", size: "1.1rem", op: 0.07 },
+  { text: "5",  cls: "float-3", top: "65%", left: "10%", size: "0.9rem", op: 0.06 },
+  { text: "=",  cls: "float-4", top: "78%", left: "82%", size: "1.2rem", op: 0.08 },
+  { text: "3",  cls: "float-5", top: "48%", left: "94%", size: "0.85rem",op: 0.05 },
+  { text: "7",  cls: "float-6", top: "18%", left: "52%", size: "1.0rem", op: 0.06 },
+  { text: "+",  cls: "float-7", top: "88%", left: "32%", size: "0.9rem", op: 0.06 },
+  { text: "2",  cls: "float-8", top: "52%", left: "68%", size: "0.8rem", op: 0.05 },
+];
+function FloatingParticles() {
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden>
+      {PARTICLES.map((p, i) => (
+        <span
+          key={i}
+          className={`${p.cls} absolute font-extrabold text-white`}
+          style={{ top: p.top, left: p.left, fontSize: p.size, opacity: p.op }}
+        >
+          {p.text}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+/* ── Scanline HUD overlay for dark sections ── */
+function ScanlineOverlay() {
+  return (
+    <div
+      className="absolute inset-0 pointer-events-none"
+      style={{
+        backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.022) 3px, rgba(0,0,0,0.022) 4px)",
+        zIndex: 4,
+      }}
+    />
+  );
+}
+
 /* ── Section number watermark ── */
 function SectionNum({ n, dark = true }: { n: string; dark?: boolean }) {
   return (
@@ -40,6 +105,9 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
         <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/40 via-transparent to-[#080612]/85" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/65 via-[#080612]/20 to-transparent" />
       </div>
+      <ScanlineOverlay />
+      <FishLayer />
+      <FloatingParticles />
       <SectionNum n={num} />
 
       <div
@@ -145,6 +213,9 @@ function QuoteSection() {
     <section ref={ref} className="relative h-screen overflow-hidden bg-[#06040E] flex items-center justify-center">
       <SectionNum n="07" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(8,145,178,0.08)_0%,transparent_65%)] pointer-events-none" />
+      <ScanlineOverlay />
+      <FishLayer />
+      <FloatingParticles />
 
       <motion.div className="max-w-4xl mx-auto text-center relative z-10 px-6" style={{ opacity: fadeOut, y: textY }}>
         <motion.div
@@ -206,6 +277,9 @@ export default function GameExperience() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/55 via-[#080612]/10 to-[#080612]" />
         </motion.div>
+        <ScanlineOverlay />
+        <FishLayer />
+        <FloatingParticles />
 
         <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto" style={{ opacity: heroOpacity }}>
           <motion.p
@@ -391,6 +465,9 @@ export default function GameExperience() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080612] via-[#080612]/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/55 via-transparent to-transparent" />
+        <ScanlineOverlay />
+        <FishLayer />
+        <FloatingParticles />
 
         <div className="relative z-10 px-8 lg:px-20 pb-20 max-w-3xl">
           <motion.p
