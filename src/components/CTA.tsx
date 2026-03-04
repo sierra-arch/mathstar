@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section id="get" className="relative py-36 px-6 lg:px-16 bg-[#FAFAF8]">
+    <section id="get" className="relative pt-56 pb-36 px-6 lg:px-16 bg-[#FAFAF8]">
 
       {/* Gradient mesh blobs — soft, large, overlapping */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -61,7 +61,7 @@ export default function CTA() {
           >
             wonder
           </span>
-          {" "}of math.
+          <br />of math.
         </motion.h2>
 
         <motion.p

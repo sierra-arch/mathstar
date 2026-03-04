@@ -365,10 +365,9 @@ export default function GameExperience() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           {[
-            { icon: "🐠", text: "Fish that form equations" },
             { icon: "🤲", text: "Math you hold in your hands" },
-            { icon: "🌊", text: "An ocean that teaches" },
-            { icon: "⭐", text: "Algebra hidden in adventure" },
+            { icon: "🐟", text: "Fractions swimming in 3D" },
+            { icon: "🫧", text: "Algebra hidden in adventure" },
           ].map((pill, i) => (
             <motion.div
               key={i}
@@ -378,7 +377,7 @@ export default function GameExperience() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 + i * 0.08 }}
             >
-              <span className="text-lg">{pill.icon}</span>
+              <span className="text-2xl">{pill.icon}</span>
               {pill.text}
             </motion.div>
           ))}
