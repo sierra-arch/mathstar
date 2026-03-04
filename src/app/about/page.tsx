@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import AboutHero from "@/components/AboutHero";
 
@@ -135,7 +136,7 @@ export default function AboutPage() {
                 role: "Founder & CEO",
                 focus: "Leadership, STEM & Story",
                 bio: "Oxford (MEng), UPenn (MPA). BCG consultant, published in quantum computing, bestselling author, Netflix Executive Producer, and STEM tutor. Built MathSTAR from his own experience of math as a child who almost fell through the cracks.",
-                initials: "FF",
+                photo: "/headshots/femi-fadugba-5108468.jpg",
                 color: "#7030A0",
               },
               {
@@ -143,18 +144,20 @@ export default function AboutPage() {
                 role: "Chief Experience Officer",
                 focus: "Product Feel & Function",
                 bio: "George Mason (MS, Data Analytics Engineering), Gettysburg (BS, Math & Economics). Leads UI, gesture schema, pedagogy, and backend. Previously in technical roles at Cenevo & Unison.",
-                initials: "DM",
+                photo: "/headshots/Dan Miller.webp",
                 color: "#0891B2",
               },
             ].map((member) => (
               <FadeIn key={member.name}>
                 <div className="bg-white rounded-3xl p-8 border border-[#0D0B12]/8 flex gap-6 items-start">
-                  {/* Photo placeholder */}
-                  <div
-                    className="w-20 h-20 rounded-2xl shrink-0 flex items-center justify-center text-white font-extrabold text-xl"
-                    style={{ background: `linear-gradient(135deg, ${member.color}cc, ${member.color})` }}
-                  >
-                    {member.initials}
+                  <div className="w-20 h-20 rounded-2xl shrink-0 overflow-hidden">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                   <div>
                     <p className="font-extrabold text-[#0D0B12] text-lg leading-snug">{member.name}</p>
@@ -170,21 +173,23 @@ export default function AboutPage() {
           {/* Extended team */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { name: "Viola Gattus", role: "Designer-Mathmo", initials: "VG", color: "#7030A0" },
-              { name: "Sophia Turcotte", role: "Marketing & Story", initials: "ST", color: "#0891B2" },
-              { name: "Kerem Pauwels", role: "Lead Artist", initials: "KP", color: "#7030A0" },
-              { name: "Chris Coombes", role: "Developer-Mathmo", initials: "CC", color: "#0891B2" },
-              { name: "Joseph Ravalese", role: "Lead Product Manager", initials: "JR", color: "#7030A0" },
-              { name: "Amelie Pollack", role: "Lead Sound & Music", initials: "AP", color: "#0891B2" },
+              { name: "Viola Gattus",    role: "Designer-Mathmo",      photo: "/headshots/Viola Gattus.webp",    color: "#7030A0" },
+              { name: "Sophia Turcotte", role: "Marketing & Story",     photo: "/headshots/Sophia Turcotte.webp", color: "#0891B2" },
+              { name: "Kerem Pauwels",   role: "Lead Artist",           photo: "/headshots/Kerem Pauwels.webp",   color: "#7030A0" },
+              { name: "Chris Coombes",   role: "Developer-Mathmo",      photo: "/headshots/Chris Coombes.webp",   color: "#0891B2" },
+              { name: "Joseph Ravalese", role: "Lead Product Manager",  photo: "/headshots/Joseph Ravalese.webp", color: "#7030A0" },
+              { name: "Amelie Pollack",  role: "Lead Sound & Music",    photo: "/headshots/Amelie Pollack.webp",  color: "#0891B2" },
             ].map((member, i) => (
               <FadeIn key={member.name} delay={i * 0.06}>
                 <div className="bg-white rounded-2xl p-5 border border-[#0D0B12]/8 text-center">
-                  {/* Photo placeholder */}
-                  <div
-                    className="w-14 h-14 rounded-xl mx-auto mb-3 flex items-center justify-center text-white font-extrabold text-sm"
-                    style={{ background: `linear-gradient(135deg, ${member.color}99, ${member.color})` }}
-                  >
-                    {member.initials}
+                  <div className="w-14 h-14 rounded-xl mx-auto mb-3 overflow-hidden">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={56}
+                      height={56}
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                   <p className="font-extrabold text-[#0D0B12] text-sm leading-snug mb-1">{member.name}</p>
                   <p className="text-[#0D0B12]/45 text-xs leading-snug">{member.role}</p>
@@ -192,6 +197,43 @@ export default function AboutPage() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── OUR EXPERTISE ── */}
+      <section className="py-24 px-6 lg:px-20 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="flex items-center gap-6 mb-14">
+              <div className="flex-1 h-px bg-[#7030A0]/20" />
+              <p className="text-[#7030A0] font-semibold text-xl tracking-wide">Our Expertise</p>
+              <div className="flex-1 h-px bg-[#7030A0]/20" />
+            </div>
+
+            <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
+              {[
+                "BCG",
+                "Tuck School of Business at Dartmouth",
+                "Harvard T.H. Chan",
+                "Yahoo!",
+                "University of Oxford",
+                "George Mason University",
+                "Northeastern University",
+                "UPenn",
+                "Berklee College of Music",
+                "HarperCollins",
+                "Penguin Random House",
+                "Netflix",
+              ].map((org) => (
+                <span
+                  key={org}
+                  className="text-[#0D0B12]/35 font-semibold text-sm lg:text-base tracking-wide hover:text-[#7030A0]/60 transition-colors"
+                >
+                  {org}
+                </span>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
 
