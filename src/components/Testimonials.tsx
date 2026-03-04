@@ -151,22 +151,22 @@ const grid = [
     tag: "Confidence",
   },
   {
-    quote: "Engagement has opened the door... now we need to be able to see what students are learning.",
+    quote: "Engagement has opened the door.",
+    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
+    tag: "Engagement",
+  },
+  {
+    quote: "Students take the information they have learned and transfer the information to everyday lessons.",
     who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
     tag: "Transfer",
   },
   {
-    quote: "I would like to see students take the information they have learned and transfer the information to everyday lessons.",
+    quote: "We're monitoring growth over time.",
     who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
-    tag: "Transfer",
+    tag: "Learning",
   },
   {
-    quote: "We need to be able to see what students are learning, where they started and how we're monitoring growth over time.",
-    who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
-    tag: "Transfer",
-  },
-  {
-    quote: "How would you recommend she look for evidence that skills practiced on the VR are transferring to classroom tasks?",
+    quote: "Skills practiced on the VR are transferring to classroom tasks.",
     who: "Ms. Cruz, School Administrator — Ellis Pilot (BPS), Jan 2026",
     tag: "Transfer",
   },
