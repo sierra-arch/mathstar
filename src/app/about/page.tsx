@@ -200,37 +200,43 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── OUR EXPERTISE ── */}
+      {/* ── OUR COMBINED EXPERTISE ── */}
       <section className="py-24 px-6 lg:px-20 bg-white">
         <div className="max-w-5xl mx-auto">
           <FadeIn>
-            <div className="flex items-center gap-6 mb-14">
+            <div className="flex items-center gap-6 mb-16">
               <div className="flex-1 h-px bg-[#7030A0]/20" />
-              <p className="text-[#7030A0] font-semibold text-xl tracking-wide">Our Expertise</p>
+              <p className="text-[#7030A0] font-semibold text-xl tracking-wide">Our Combined Expertise</p>
               <div className="flex-1 h-px bg-[#7030A0]/20" />
             </div>
 
-            <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
+            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-10">
               {[
-                "BCG",
-                "Tuck School of Business at Dartmouth",
-                "Harvard T.H. Chan",
-                "Yahoo!",
-                "University of Oxford",
-                "George Mason University",
-                "Northeastern University",
-                "UPenn",
-                "Berklee College of Music",
-                "HarperCollins",
-                "Penguin Random House",
-                "Netflix",
+                { name: "BCG",                    domain: "bcg.com" },
+                { name: "Oxford",                 domain: "ox.ac.uk" },
+                { name: "Harvard T.H. Chan",      domain: "harvard.edu" },
+                { name: "UPenn",                  domain: "upenn.edu" },
+                { name: "Tuck at Dartmouth",      domain: "dartmouth.edu" },
+                { name: "Yahoo",                  domain: "yahoo.com" },
+                { name: "Northeastern",           domain: "northeastern.edu" },
+                { name: "George Mason",           domain: "gmu.edu" },
+                { name: "Berklee",                domain: "berklee.edu" },
+                { name: "HarperCollins",          domain: "harpercollins.com" },
+                { name: "Penguin Random House",   domain: "penguinrandomhouse.com" },
+                { name: "Netflix",                domain: "netflix.com" },
               ].map((org) => (
-                <span
-                  key={org}
-                  className="text-[#0D0B12]/35 font-semibold text-sm lg:text-base tracking-wide hover:text-[#7030A0]/60 transition-colors"
-                >
-                  {org}
-                </span>
+                <div key={org.name} className="flex flex-col items-center gap-2 group">
+                  <Image
+                    src={`https://logo.clearbit.com/${org.domain}`}
+                    alt={org.name}
+                    width={80}
+                    height={40}
+                    className="h-8 w-auto object-contain opacity-40 group-hover:opacity-70 transition-opacity duration-200 grayscale"
+                  />
+                  <span className="text-[#0D0B12]/30 text-xs font-medium group-hover:text-[#7030A0]/50 transition-colors">
+                    {org.name}
+                  </span>
+                </div>
               ))}
             </div>
           </FadeIn>
