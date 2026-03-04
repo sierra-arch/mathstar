@@ -24,7 +24,7 @@ const media: MediaItem[] = [
   {
     type: "video",
     src: "/Gameplay-edited.mp4",
-    videoStart: 38,
+    videoStart: 53,
     className: "h-72 lg:h-80",
   },
   {
