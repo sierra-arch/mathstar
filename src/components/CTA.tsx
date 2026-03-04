@@ -9,10 +9,9 @@ export default function CTA() {
 
       {/* Gradient mesh blobs — soft, large, overlapping */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Main center lavender bloom — shifted up so it reaches the top edge */}
         <div
-          className="absolute top-[15%] left-1/2 -translate-x-1/2 w-[1100px] h-[1100px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.55) 0%, rgba(112,48,160,0.18) 42%, transparent 68%)" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.6) 0%, rgba(112,48,160,0.22) 42%, transparent 70%)" }}
         />
         <div
           className="absolute -top-24 -right-24 w-[550px] h-[550px] rounded-full"
@@ -23,13 +22,8 @@ export default function CTA() {
           style={{ background: "radial-gradient(circle, rgba(74,30,107,0.22) 0%, transparent 62%)" }}
         />
         <div
-          className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full"
+          className="absolute top-0 left-1/3 w-[350px] h-[350px] rounded-full"
           style={{ background: "radial-gradient(circle, rgba(240,230,247,0.9) 0%, transparent 65%)" }}
-        />
-        {/* Bottom fade — runs seamlessly into footer's dark purple */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-56 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, transparent 0%, #4A1E6B 100%)" }}
         />
       </div>
 
