@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
-import ReviewsHero from "@/components/ReviewsHero";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -15,7 +14,6 @@ export default function ReviewsPage() {
   return (
     <main>
       <Nav />
-      <ReviewsHero />
       <Testimonials />
       <CTA />
       <Footer />

@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section id="get" className="relative overflow-hidden py-36 px-6 lg:px-16 bg-[#FAFAF8]">
+    <section id="get" className="relative py-36 px-6 lg:px-16 bg-[#FAFAF8]">
 
       {/* Gradient mesh blobs — soft, large, overlapping */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
           style={{ background: "radial-gradient(circle, rgba(196,159,220,0.6) 0%, rgba(112,48,160,0.22) 42%, transparent 70%)" }}
