@@ -138,6 +138,7 @@ export default function HowItWorks() {
             loop
             playsInline
             className="w-full object-cover max-h-[520px]"
+            onLoadedMetadata={(e) => { e.currentTarget.currentTime = 26; }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F0620]/50 to-transparent pointer-events-none" />
           <div className="absolute bottom-8 left-10">

@@ -89,9 +89,41 @@ export default function TestimonialsTeaser() {
           </motion.div>
         </div>
 
+        {/* Quote cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          {picks.map((p, i) => (
+            <motion.div
+              key={i}
+              className="relative bg-[#F7F2FF] rounded-3xl p-10 flex flex-col"
+              style={{ border: `1px solid ${p.accent}18` }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.12 }}
+            >
+              <span
+                className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full mb-6 w-fit"
+                style={{ background: `${p.accent}14`, color: p.accent }}
+              >
+                {p.tag}
+              </span>
+              <p className="text-ink text-xl font-medium leading-relaxed flex-1 mb-7">
+                &ldquo;{p.quote}&rdquo;
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-px" style={{ background: `${p.accent}40` }} />
+                <div>
+                  <p className="text-ink/60 text-sm font-medium">{p.who}</p>
+                  <p className="text-ink/35 text-xs mt-0.5">{p.context}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
         {/* Editorial photo strip — 3 moments from the pilots */}
         <motion.div
-          className="grid grid-cols-3 gap-3 mb-14 rounded-3xl overflow-hidden"
+          className="grid grid-cols-3 gap-3 mt-10 rounded-3xl overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -126,38 +158,6 @@ export default function TestimonialsTeaser() {
             <p className="absolute bottom-3 left-4 text-white/70 text-xs font-medium">Ellis Elementary, Jan 2026</p>
           </div>
         </motion.div>
-
-        {/* Quote cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {picks.map((p, i) => (
-            <motion.div
-              key={i}
-              className="relative bg-[#F7F2FF] rounded-3xl p-10 flex flex-col"
-              style={{ border: `1px solid ${p.accent}18` }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-            >
-              <span
-                className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full mb-6 w-fit"
-                style={{ background: `${p.accent}14`, color: p.accent }}
-              >
-                {p.tag}
-              </span>
-              <p className="text-ink text-xl font-medium leading-relaxed flex-1 mb-7">
-                &ldquo;{p.quote}&rdquo;
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-px" style={{ background: `${p.accent}40` }} />
-                <div>
-                  <p className="text-ink/60 text-sm font-medium">{p.who}</p>
-                  <p className="text-ink/35 text-xs mt-0.5">{p.context}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
       </div>
     </section>
