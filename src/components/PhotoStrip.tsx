@@ -3,36 +3,43 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const photos = [
+type MediaItem =
+  | { type: "image"; src: string; alt: string; className: string; objectPosition: string }
+  | { type: "video"; src: string; videoStart: number; className: string };
+
+const media: MediaItem[] = [
   {
-    src: "/Stock Images/pexels-tima-miroshnichenko-7047292.jpg",
-    alt: "Child with arms wide open experiencing VR",
+    type: "video",
+    src: "/Gameplay-edited.mp4",
+    videoStart: 4,
     className: "h-72 lg:h-80",
-    objectPosition: "object-top",
   },
   {
+    type: "image",
     src: "/Stock Images/pexels-sound-on-3761267.jpg",
     alt: "Joyful person experiencing VR learning",
     className: "h-72 lg:h-96",
     objectPosition: "object-center",
   },
   {
-    src: "/Stock Images/pexels-michelangelo-buonarroti-8728557.jpg",
-    alt: "Students sharing a VR math experience",
+    type: "video",
+    src: "/Gameplay-edited.mp4",
+    videoStart: 38,
     className: "h-72 lg:h-80",
-    objectPosition: "object-center",
   },
   {
+    type: "image",
     src: "/Stock Images/pexels-tima-miroshnichenko-5303587.jpg",
     alt: "Child arms wide open in teal VR room",
     className: "h-72 lg:h-96",
     objectPosition: "object-top",
   },
   {
+    type: "image",
     src: "/Stock Images/pexels-michelangelo-buonarroti-8728379.jpg",
     alt: "VR learning experience profile view",
     className: "h-72 lg:h-80",
-    objectPosition: "object-center",
+    objectPosition: "object-[center_20%]",
   },
 ];
 
@@ -61,23 +68,37 @@ export default function PhotoStrip() {
           </h2>
         </motion.div>
 
-        {/* Photo grid — varied heights for visual interest */}
+        {/* Media grid — varied heights for visual interest */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 items-end">
-          {photos.map((photo, i) => (
+          {media.map((item, i) => (
             <motion.div
               key={i}
-              className={`relative ${photo.className} rounded-2xl overflow-hidden`}
+              className={`relative ${item.className} rounded-2xl overflow-hidden`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
             >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className={`object-cover ${photo.objectPosition} hover:scale-105 transition-transform duration-700`}
-              />
+              {item.type === "video" ? (
+                <video
+                  src={item.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onLoadedMetadata={(e) => {
+                    e.currentTarget.currentTime = item.videoStart;
+                  }}
+                />
+              ) : (
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className={`object-cover ${item.objectPosition} hover:scale-105 transition-transform duration-700`}
+                />
+              )}
             </motion.div>
           ))}
         </div>
