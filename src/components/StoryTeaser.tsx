@@ -40,7 +40,7 @@ export default function StoryTeaser() {
             determined every child gets the same gift.
           </p>
           <Link
-            href="/story"
+            href="/about"
             className="inline-flex items-center gap-2 text-[#7030A0] font-semibold text-lg hover:gap-4 transition-all"
           >
             Read the full story →

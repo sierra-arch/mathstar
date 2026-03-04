@@ -5,11 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import AboutHero from "@/components/AboutHero";
+import FounderStory from "@/components/FounderStory";
 
 export const metadata: Metadata = {
-  title: "About ShepherdXR — MathSTAR",
+  title: "Our Story — MathSTAR",
   description:
-    "ShepherdXR is an immersive learning company building MathSTAR — a VR universe that turns math from fear into a superpower. Meet the team and our mission.",
+    "From expelled to Oxford: how our founder was gifted the wonder of math, and why he built MathSTAR so every child gets the same gift. Meet the team behind the mission.",
 };
 
 export default function AboutPage() {
@@ -18,6 +19,9 @@ export default function AboutPage() {
       <Nav />
 
       <AboutHero />
+
+      {/* ── FOUNDER STORY ── */}
+      <FounderStory />
 
       {/* ── ORIGIN ── */}
       <section className="py-24 px-6 lg:px-20 bg-[#F0E6F7]">
@@ -34,17 +38,11 @@ export default function AboutPage() {
               impairment, and a language disability. He struggled with math — until a school
               custodian handed him a mathematics graphic novel and math became beautiful.
             </p>
-            <p className="text-[#0D0B12]/60 text-lg leading-relaxed mb-8">
+            <p className="text-[#0D0B12]/60 text-lg leading-relaxed">
               That moment of wonder took him from struggling student to Oxford Master&apos;s
               graduate, quantum physics researcher, bestselling novelist, and Netflix storyteller.
               He built ShepherdXR so no child has to wait for lucky.
             </p>
-            <Link
-              href="/story"
-              className="inline-flex items-center gap-2 text-[#7030A0] font-semibold text-sm hover:underline"
-            >
-              Read the full founder story →
-            </Link>
           </FadeIn>
 
           <FadeIn delay={0.15} className="grid grid-cols-2 gap-5">

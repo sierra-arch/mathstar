@@ -5,7 +5,6 @@ const footerLinks = [
   {
     heading: "Explore",
     links: [
-      { label: "Our Story", href: "/story" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Impact & Results", href: "/impact" },
       { label: "MathSTAR", href: "/mathstar" },
