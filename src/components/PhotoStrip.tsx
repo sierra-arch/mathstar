@@ -40,7 +40,10 @@ export default function PhotoStrip() {
   return (
     <section className="relative py-24 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
 
-      <div className="absolute top-0 left-[-5%] w-[400px] h-[400px] bg-[#7030A0]/10 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(196,159,220,0.40) 0%, rgba(112,48,160,0.12) 42%, transparent 68%)" }} />
+      <div className="absolute -top-16 -right-16 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(8,145,178,0.18) 0%, transparent 62%)" }} />
+      <div className="absolute -bottom-16 -left-16 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(74,30,107,0.16) 0%, transparent 62%)" }} />
+      <div className="absolute top-0 left-1/4 w-[380px] h-[380px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(240,230,247,0.82) 0%, transparent 65%)" }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
 

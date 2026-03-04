@@ -29,7 +29,10 @@ export default function ParentsWhy() {
   return (
     <section className="relative py-40 px-6 lg:px-16 bg-white overflow-hidden">
 
-      <div className="absolute bottom-0 right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/8 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(196,159,220,0.45) 0%, rgba(112,48,160,0.14) 42%, transparent 68%)" }} />
+      <div className="absolute -top-28 -right-20 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(8,145,178,0.22) 0%, transparent 62%)" }} />
+      <div className="absolute -bottom-20 -left-16 w-[440px] h-[440px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(74,30,107,0.18) 0%, transparent 62%)" }} />
+      <div className="absolute top-0 left-1/3 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(240,230,247,0.88) 0%, transparent 65%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
