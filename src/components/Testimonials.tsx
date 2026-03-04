@@ -172,90 +172,102 @@ const grid = [
   },
 ];
 
+const tagColors: Record<string, { bg: string; text: string }> = {
+  "Math Love":  { bg: "#7030A0/10", text: "#7030A0" },
+  "Transfer":   { bg: "#0891B2/10", text: "#0891B2" },
+  "Enjoyment":  { bg: "#7030A0/10", text: "#7030A0" },
+  "Engagement": { bg: "#0891B2/10", text: "#0891B2" },
+  "Regulation": { bg: "#4A1E6B/10", text: "#4A1E6B" },
+  "Learning":   { bg: "#0891B2/10", text: "#0891B2" },
+  "Confidence": { bg: "#7030A0/10", text: "#7030A0" },
+};
+
+function TagChip({ tag }: { tag: string }) {
+  const color = tagColors[tag] ?? { bg: "#7030A0/10", text: "#7030A0" };
+  return (
+    <span
+      className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-5 w-fit"
+      style={{ background: `rgba(${color.text === "#7030A0" ? "112,48,160" : color.text === "#0891B2" ? "8,145,178" : "74,30,107"},0.1)`, color: color.text }}
+    >
+      {tag}
+    </span>
+  );
+}
+
 export default function Testimonials() {
   return (
-    <section id="reviews" className="relative">
-      {/* Torn paper transition from light → dark */}
-      <div className="bg-[#0D0B12] relative">
-        <svg
-          viewBox="0 0 1440 90"
-          className="w-full fill-[#F7F2FF] block"
-          preserveAspectRatio="none"
-          style={{ marginBottom: "-2px" }}
-        >
-          <path d="M0,0 Q60,70 150,40 Q240,10 360,55 Q480,90 600,50 Q720,15 840,60 Q960,90 1080,45 Q1200,10 1320,55 Q1380,75 1440,40 L1440,0 Z" />
-        </svg>
-      </div>
+    <section id="reviews" className="relative bg-[#F7F2FF] py-24 px-6 lg:px-16">
 
-      <div className="bg-[#0D0B12] py-24 px-6 lg:px-16">
-        <div className="max-w-6xl mx-auto">
+      {/* Ambient orbs */}
+      <div className="absolute top-[5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/8 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[5%] left-[-6%] w-[400px] h-[400px] bg-[#0891B2]/8 rounded-full blur-[100px] pointer-events-none" />
 
-          <div className="text-center mb-16">
-            <motion.p
-              className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-3"
+      <div className="max-w-6xl mx-auto relative z-10">
+
+        <div className="text-center mb-16">
+          <motion.p
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-3"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            Real Stories
+          </motion.p>
+          <motion.h2
+            className="text-4xl lg:text-5xl font-extrabold text-ink leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            Parents. Teachers. Kids.{" "}
+            <em className="not-italic italic text-[#7030A0]">
+              All saying the same thing.
+            </em>
+          </motion.h2>
+        </div>
+
+        {/* Featured parent quotes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+          {featured.map((f, i) => (
+            <motion.div
+              key={i}
+              className="bg-white rounded-3xl p-7 flex flex-col shadow-sm shadow-[#7030A0]/8 border border-[#7030A0]/6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+            >
+              <TagChip tag={f.tag} />
+              <p className="text-ink text-lg font-medium leading-relaxed flex-1 mb-5">
+                &ldquo;{f.quote}&rdquo;
+              </p>
+              <div>
+                <p className="text-ink/55 text-sm">{f.who}</p>
+                <p className="text-ink/35 text-xs mt-0.5">{f.context}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Quote mosaic grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          {grid.map((q, i) => (
+            <motion.div
+              key={i}
+              className="bg-white hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm shadow-[#7030A0]/5 border border-[#7030A0]/5"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.04 }}
             >
-              Real Stories
-            </motion.p>
-            <motion.h2
-              className="text-4xl lg:text-5xl font-extrabold text-white leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              Parents. Teachers. Kids.{" "}
-              <em className="not-italic italic text-[#C49FDC]">
-                All saying the same thing.
-              </em>
-            </motion.h2>
-          </div>
-
-          {/* Featured parent quotes */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-            {featured.map((f, i) => (
-              <motion.div
-                key={i}
-                className="bg-white/5 border border-white/10 rounded-3xl p-7 flex flex-col"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-              >
-                <span className="inline-block text-xs font-semibold bg-[#7030A0]/40 text-[#C49FDC] px-3 py-1 rounded-full mb-5 w-fit">
-                  {f.tag}
-                </span>
-                <p className="text-white text-lg font-medium leading-relaxed flex-1 mb-5">
-                  &ldquo;{f.quote}&rdquo;
-                </p>
-                <div>
-                  <p className="text-white/50 text-sm">{f.who}</p>
-                  <p className="text-white/30 text-xs mt-0.5">{f.context}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Quote mosaic grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {grid.map((q, i) => (
-              <motion.div
-                key={i}
-                className="bg-white/[0.04] hover:bg-white/[0.07] transition-colors rounded-2xl px-6 py-5"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.05 }}
-              >
-                <p className="text-white/80 text-sm leading-relaxed mb-2">
-                  &ldquo;{q.quote}&rdquo;
-                </p>
-                <p className="text-white/30 text-xs">— {q.who}</p>
-              </motion.div>
-            ))}
-          </div>
+              <TagChip tag={q.tag ?? ""} />
+              <p className="text-ink/80 text-sm leading-relaxed mb-3 flex-1">
+                &ldquo;{q.quote}&rdquo;
+              </p>
+              <p className="text-ink/35 text-xs">— {q.who}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
