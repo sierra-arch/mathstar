@@ -8,7 +8,8 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/story", label: "Our Story" },
-  { href: "/how-it-works", label: "MathSTAR" },
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/mathstar", label: "MathSTAR" },
   { href: "/reviews", label: "Reviews" },
 ];
 
@@ -34,7 +35,7 @@ export default function Nav() {
   }, []);
 
   const isHome = pathname === "/";
-  const isDark = pathname === "/how-it-works";
+  const isDark = pathname === "/mathstar";
 
   const navBg = isDark
     ? scrolled ? "bg-[#0F0620]/75 backdrop-blur-md" : "bg-transparent"

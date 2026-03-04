@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
-import GameExperience from "@/components/GameExperience";
-import LearningFeatures from "@/components/LearningFeatures";
+import HowItWorks from "@/components/HowItWorks";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "The MathSTAR Experience — Step Inside the World",
+  title: "How It Works — MathSTAR",
   description:
-    "An underwater VR universe where fish multiply, equations come alive, and kids go from arithmetic to algebra-confident in 8 hours. See what happens inside MathSTAR.",
+    "Three simple steps from headset to algebra-confident. Learn how MathSTAR works at home and at your local library.",
 };
 
 export default function HowItWorksPage() {
   return (
     <main>
       <Nav />
-      <GameExperience />
-      <LearningFeatures dark />
+      <HowItWorks />
+      <CTA />
       <Footer />
     </main>
   );

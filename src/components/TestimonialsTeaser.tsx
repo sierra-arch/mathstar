@@ -121,38 +121,6 @@ export default function TestimonialsTeaser() {
           ))}
         </div>
 
-        {/* Editorial photo strip — 2 moments from the pilots */}
-        <motion.div
-          className="grid grid-cols-2 gap-3 mt-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Real photo — classroom joy */}
-          <div className="relative h-56 overflow-hidden rounded-2xl">
-            <Image
-              src="/Stock Images/pexels-julia-m-cameron-4144152.jpg"
-              alt="Students experiencing MathSTAR at the pilot"
-              fill
-              className="object-cover object-center hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
-            <p className="absolute bottom-3 left-4 text-white/70 text-xs font-medium">Roxbury Library, Aug 2025</p>
-          </div>
-
-          {/* Real photo — learning breakthrough */}
-          <div className="relative h-56 overflow-hidden rounded-2xl">
-            <Image
-              src="/Stock Images/pexels-vazhnik-7864583.jpg"
-              alt="Child having a math breakthrough moment"
-              fill
-              className="object-cover object-center hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
-            <p className="absolute bottom-3 left-4 text-white/70 text-xs font-medium">Ellis Elementary, Jan 2026</p>
-          </div>
-        </motion.div>
 
       </div>
     </section>
