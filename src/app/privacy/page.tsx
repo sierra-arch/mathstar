@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PlaceholderPage from "@/components/PlaceholderPage";
 
-export const metadata: Metadata = { title: "Privacy Policy — MathSTAR" };
+export const metadata: Metadata = { title: "Privacy Policy — ShepherdXR" };
 
 export default function PrivacyPage() {
   return (

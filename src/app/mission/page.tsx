@@ -5,7 +5,7 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Our Mission — MathSTAR",
+  title: "Our Mission — ShepherdXR",
   description:
     "Gifting the wonder of math to every child, regardless of circumstance. Learn what drives ShepherdXR and why equitable access to math wonder is our north star.",
 };

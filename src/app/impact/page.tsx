@@ -10,7 +10,7 @@ import ImpactQuotes from "@/components/impact/ImpactQuotes";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Impact & Results — MathSTAR",
+  title: "Impact & Results — ShepherdXR",
   description:
     "Pilot data, educator findings, and student outcomes from MathSTAR's Boston Public Library and Boston Public Schools programs.",
 };

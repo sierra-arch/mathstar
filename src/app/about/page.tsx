@@ -9,7 +9,7 @@ import FounderStory from "@/components/FounderStory";
 import FlipCard from "@/components/FlipCard";
 
 export const metadata: Metadata = {
-  title: "Our Story — MathSTAR",
+  title: "Our Story — ShepherdXR",
   description:
     "From expelled to Oxford: how our founder was gifted the wonder of math, and why he built MathSTAR so every child gets the same gift. Meet the team behind the mission.",
 };

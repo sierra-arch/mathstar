@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PlaceholderPage from "@/components/PlaceholderPage";
 
-export const metadata: Metadata = { title: "Donate — MathSTAR" };
+export const metadata: Metadata = { title: "Donate — ShepherdXR" };
 
 export default function DonatePage() {
   return (

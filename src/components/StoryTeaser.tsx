@@ -59,7 +59,7 @@ export default function StoryTeaser() {
           <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-[#7030A0]/15">
             <Image
               src="/headshots/Femi%20:%20Founder/Femi.webp"
-              alt="Femi Fadugba, Founder of MathSTAR"
+              alt="Femi Fadugba, Founder of ShepherdXR"
               width={700}
               height={700}
               className="w-full h-[480px] object-cover object-top"
@@ -75,7 +75,7 @@ export default function StoryTeaser() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-6 h-px bg-[#0891B2]/70" />
-                <p className="text-white/60 text-sm font-medium">Femi, Founder of MathSTAR</p>
+                <p className="text-white/60 text-sm font-medium">Femi, Founder of ShepherdXR</p>
               </div>
             </div>
           </div>

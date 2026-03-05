@@ -139,7 +139,7 @@ export default function PressTeaser() {
               <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-[#7030A0]/20 ring-offset-4 ring-offset-transparent">
                 <Image
                   src="/headshots/Femi%20:%20Founder/download.jpeg"
-                  alt="Femi Fadugba, Founder of MathSTAR"
+                  alt="Femi Fadugba, Founder of ShepherdXR"
                   width={96}
                   height={96}
                   className="w-full h-full object-cover object-top"

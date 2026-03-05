@@ -9,7 +9,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MathSTAR — Gift the Wonder of Math",
+  title: "ShepherdXR — Gift the Wonder of Math",
   description:
     "An 8-hour VR intervention that takes students from stuck in arithmetic to algebra-confident. Kids choose it over recess. Educators rate it 10/10.",
 };

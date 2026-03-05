@@ -15,7 +15,7 @@ import MindsetSlider from "@/components/how-it-works/MindsetSlider";
 import ResultsNumbers from "@/components/how-it-works/ResultsNumbers";
 
 export const metadata: Metadata = {
-  title: "How It Works — MathSTAR",
+  title: "How It Works — ShepherdXR",
   description:
     "Three simple steps from headset to algebra-confident. See the research, the method, and the results that are changing how kids feel about math.",
 };

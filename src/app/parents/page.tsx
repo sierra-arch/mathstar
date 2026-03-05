@@ -8,7 +8,7 @@ import ParentsHowToGet from "@/components/parents/ParentsHowToGet";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "For Parents — MathSTAR",
+  title: "For Parents — ShepherdXR",
   description:
     "Gift your child the wonder of math. MathSTAR is an 8-hour VR adventure available at home or your local library — no school required.",
 };

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact — MathSTAR",
+  title: "Contact — ShepherdXR",
   description:
     "Get in touch with the MathSTAR team. Questions, school partnerships, press inquiries, and general hellos — we'd love to hear from you.",
 };

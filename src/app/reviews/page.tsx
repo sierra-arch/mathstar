@@ -5,7 +5,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Reviews — MathSTAR",
+  title: "Reviews — ShepherdXR",
   description:
     "What parents, teachers, and kids are saying about MathSTAR. Real stories from the Roxbury Library and Ellis School pilots.",
 };

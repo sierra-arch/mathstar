@@ -10,7 +10,7 @@ import LearningFeatures from "@/components/LearningFeatures";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "For Educators — MathSTAR",
+  title: "For Educators — ShepherdXR",
   description:
     "Bring MathSTAR to your school. See the pilot data, hear from teachers and administrators, and learn how to get your students access.",
 };

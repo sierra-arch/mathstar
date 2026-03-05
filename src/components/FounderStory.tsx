@@ -128,14 +128,14 @@ export default function FounderStory() {
             <div className="relative rounded-3xl overflow-hidden aspect-[3/4]">
               <Image
                 src="/headshots/Femi%20:%20Founder/femi-fadugba-5108468.jpg"
-                alt="Femi Fadugba, Founder of MathSTAR"
+                alt="Femi Fadugba, Founder of ShepherdXR"
                 fill
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B12]/50 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-white font-extrabold text-lg leading-snug">Femi Fadugba</p>
-                <p className="text-white/65 text-sm">Founder &amp; CEO · MathSTAR</p>
+                <p className="text-white/65 text-sm">Founder &amp; CEO · ShepherdXR</p>
                 <p className="text-white/45 text-xs mt-1">MSc Quantum Physics · Oxford</p>
               </div>
             </div>

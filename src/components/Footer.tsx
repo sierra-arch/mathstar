@@ -58,7 +58,7 @@ export default function Footer() {
                 height={32}
                 className="object-contain"
               />
-              <span className="font-extrabold text-base text-white tracking-tight">MathSTAR</span>
+              <span className="font-extrabold text-base text-white tracking-tight">ShepherdXR</span>
             </Link>
             <p className="text-white/65 text-sm leading-relaxed">
               Revealing the wonder of math in every child.

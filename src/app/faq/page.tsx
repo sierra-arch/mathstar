@@ -5,7 +5,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "FAQ — MathSTAR",
+  title: "FAQ — ShepherdXR",
   description:
     "Answers to common questions about MathSTAR — how it works, what ages it's for, where to access it, the research behind it, and how to support the mission.",
 };

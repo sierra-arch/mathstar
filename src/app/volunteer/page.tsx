@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Volunteer — MathSTAR",
+  title: "Volunteer — ShepherdXR",
   description:
     "Help bring the wonder of math to kids in your community. Volunteer opportunities with MathSTAR — from library demos to tutoring and outreach.",
 };

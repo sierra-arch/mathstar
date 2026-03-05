@@ -53,13 +53,13 @@ export default function Nav() {
       <Link href="/" className="flex items-center gap-2.5">
         <Image
           src={isDark ? "/logo-white.png" : "/logo-purple.png"}
-          alt="MathSTAR"
+          alt="ShepherdXR"
           width={36}
           height={36}
           className="object-contain"
         />
         <span className={`font-extrabold text-lg tracking-tight ${isDark ? "text-white" : "text-ink"}`}>
-          MathSTAR
+          ShepherdXR
         </span>
       </Link>
 
