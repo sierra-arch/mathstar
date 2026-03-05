@@ -43,17 +43,17 @@ const results = [
 
 export default function EducatorsResults() {
   return (
-    <section className="relative py-40 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
+    <section className="relative py-40 px-6 lg:px-16 bg-[#FFF5F5] overflow-hidden">
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(196,159,220,0.48) 0%, rgba(112,48,160,0.15) 42%, transparent 68%)" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(252,165,165,0.48) 0%, rgba(220,38,38,0.15) 42%, transparent 68%)" }} />
       <div className="absolute -top-16 -left-16 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(8,145,178,0.20) 0%, transparent 62%)" }} />
-      <div className="absolute -bottom-20 -right-16 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(74,30,107,0.18) 0%, transparent 62%)" }} />
-      <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(240,230,247,0.88) 0%, transparent 65%)" }} />
+      <div className="absolute -bottom-20 -right-16 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(127,29,29,0.18) 0%, transparent 62%)" }} />
+      <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(254,242,242,0.88) 0%, transparent 65%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <motion.p
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -69,7 +69,7 @@ export default function EducatorsResults() {
           >
             What teachers and administrators
             <br />
-            <em className="not-italic italic text-[#7030A0]">observed in the pilots</em>
+            <em className="not-italic italic text-[#DC2626]">observed in the pilots</em>
           </motion.h2>
           <motion.p
             className="text-ink/50 text-lg mt-5 max-w-xl mx-auto"
@@ -86,7 +86,7 @@ export default function EducatorsResults() {
           {results.map((r, i) => (
             <motion.div
               key={i}
-              className="bg-white rounded-3xl p-10 border border-[#7030A0]/8 shadow-sm"
+              className="bg-white rounded-3xl p-10 border border-[#DC2626]/8 shadow-sm"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -94,12 +94,12 @@ export default function EducatorsResults() {
             >
               <div className="flex items-center gap-3 mb-7">
                 <span className="text-3xl">{r.icon}</span>
-                <span className="text-[#7030A0] font-bold text-sm tracking-widest uppercase">{r.category}</span>
+                <span className="text-[#DC2626] font-bold text-sm tracking-widest uppercase">{r.category}</span>
               </div>
               <ul className="space-y-4">
                 {r.findings.map((f, j) => (
                   <li key={j} className="flex items-start gap-3 text-ink/70 leading-relaxed">
-                    <span className="text-[#7030A0] font-bold mt-0.5 shrink-0">—</span>
+                    <span className="text-[#DC2626] font-bold mt-0.5 shrink-0">—</span>
                     <span>{f}</span>
                   </li>
                 ))}

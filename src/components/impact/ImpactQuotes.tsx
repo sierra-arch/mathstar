@@ -15,7 +15,7 @@ const quotes = [
     who: "Ms. Munroe",
     role: "Teacher, Ellis Pilot",
     theme: "Access",
-    accent: "#7030A0",
+    accent: "#DC2626",
   },
   {
     quote: "That has been especially powerful for our EI students who struggle to access math in traditional formats.",
@@ -36,7 +36,7 @@ const quotes = [
     who: "Ms. Joseph",
     role: "Teacher, Ellis Pilot",
     theme: "Perspective",
-    accent: "#7030A0",
+    accent: "#DC2626",
   },
   {
     quote: "I noticed that it helped build students' confidence and engagement.",
@@ -49,15 +49,15 @@ const quotes = [
 
 export default function ImpactQuotes() {
   return (
-    <section className="relative py-40 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
+    <section className="relative py-40 px-6 lg:px-16 bg-[#FFF5F5] overflow-hidden">
 
-      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#DC2626]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-8%] w-[450px] h-[450px] bg-[#0891B2]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <motion.p
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

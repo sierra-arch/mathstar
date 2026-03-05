@@ -56,7 +56,7 @@ export default function ParentsHero() {
       >
         {/* Overline — upper left */}
         <motion.p
-          className="absolute top-28 left-8 lg:left-16 text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase"
+          className="absolute top-28 left-8 lg:left-16 text-[#DC2626]/70 font-semibold text-xs tracking-widest uppercase"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -85,7 +85,7 @@ export default function ParentsHero() {
             Don&apos;t let math
             close the door
             on their{" "}
-            <em className="not-italic italic text-[#7030A0]">potential.</em>
+            <em className="not-italic italic text-[#DC2626]">potential.</em>
           </motion.h1>
 
           <motion.div
@@ -100,15 +100,15 @@ export default function ParentsHero() {
               rel="noopener noreferrer"
               className="px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5"
               style={{
-                background: "linear-gradient(135deg, #7030A0, #4A1E6B)",
-                boxShadow: "0 8px 40px rgba(112,48,160,0.4)",
+                background: "linear-gradient(135deg, #DC2626, #7F1D1D)",
+                boxShadow: "0 8px 40px rgba(220,38,38,0.4)",
               }}
             >
               Get MathSTAR →
             </Link>
             <Link
               href="/contact"
-              className="px-10 py-4 rounded-full font-bold text-[#7030A0] text-base border-2 border-[#7030A0]/30 hover:border-[#7030A0]/60 transition-all duration-200"
+              className="px-10 py-4 rounded-full font-bold text-[#DC2626] text-base border-2 border-[#DC2626]/30 hover:border-[#DC2626]/60 transition-all duration-200"
             >
               Have Questions →
             </Link>
@@ -117,7 +117,7 @@ export default function ParentsHero() {
 
         {/* Quote chip — bottom right */}
         <motion.div
-          className="absolute bottom-16 right-8 lg:right-16 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl px-6 py-4 max-w-[250px] border border-[#7030A0]/10"
+          className="absolute bottom-16 right-8 lg:right-16 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl px-6 py-4 max-w-[250px] border border-[#DC2626]/10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.0 }}
@@ -136,7 +136,7 @@ export default function ParentsHero() {
           transition={{ delay: 1.4 }}
         >
           <motion.div
-            className="w-px h-10 bg-[#7030A0]/30"
+            className="w-px h-10 bg-[#DC2626]/30"
             animate={{ scaleY: [0, 1, 0], originY: 0 }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           />

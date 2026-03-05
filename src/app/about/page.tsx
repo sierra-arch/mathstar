@@ -25,10 +25,10 @@ export default function AboutPage() {
       <FounderStory />
 
       {/* ── ORIGIN ── */}
-      <section className="py-24 px-6 lg:px-20 bg-[#F0E6F7]">
+      <section className="py-24 px-6 lg:px-20 bg-[#FEF2F2]">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <FadeIn>
-            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+            <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
               Our Origin
             </p>
             <h2 className="text-4xl font-extrabold text-[#0D0B12] leading-tight mb-6">
@@ -55,9 +55,9 @@ export default function AboutPage() {
             ].map((s) => (
               <div
                 key={s.num}
-                className="bg-white rounded-2xl p-6 border border-[#7030A0]/10"
+                className="bg-white rounded-2xl p-6 border border-[#DC2626]/10"
               >
-                <div className="text-3xl font-extrabold text-[#7030A0] mb-2">{s.num}</div>
+                <div className="text-3xl font-extrabold text-[#DC2626] mb-2">{s.num}</div>
                 <div className="text-[#0D0B12]/50 text-sm leading-snug">{s.label}</div>
               </div>
             ))}
@@ -69,7 +69,7 @@ export default function AboutPage() {
       <section className="py-28 px-6 lg:px-20">
         <div className="max-w-5xl mx-auto">
           <FadeIn className="text-center mb-16">
-            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+            <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
               What We Believe
             </p>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight">
@@ -99,10 +99,10 @@ export default function AboutPage() {
                 key={i}
                 className="relative bg-white border border-[#0D0B12]/8 rounded-3xl p-10"
               >
-                <p className="text-[#7030A0]/15 text-8xl font-extrabold leading-none absolute -top-3 right-6 select-none">
+                <p className="text-[#DC2626]/15 text-8xl font-extrabold leading-none absolute -top-3 right-6 select-none">
                   {item.num}
                 </p>
-                <p className="text-[#7030A0] text-xs font-bold tracking-widest uppercase mb-5">
+                <p className="text-[#DC2626] text-xs font-bold tracking-widest uppercase mb-5">
                   {item.num}
                 </p>
                 <h3 className="text-xl font-extrabold text-[#0D0B12] leading-snug mb-4">
@@ -116,10 +116,10 @@ export default function AboutPage() {
       </section>
 
       {/* ── TEAM ── */}
-      <section className="py-28 px-6 lg:px-20 bg-[#F7F2FF]">
+      <section className="py-28 px-6 lg:px-20 bg-[#FFF5F5]">
         <div className="max-w-6xl mx-auto">
           <FadeIn className="text-center mb-16">
-            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+            <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
               The Team
             </p>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight">
@@ -136,7 +136,7 @@ export default function AboutPage() {
                 focus: "Leadership, STEM & Story",
                 bio: "Oxford (MEng), UPenn (MPA). BCG consultant, published in quantum computing, bestselling author, Netflix Executive Producer, and STEM tutor. Built MathSTAR from his own experience of math as a child who almost fell through the cracks.",
                 photo: "/headshots/Femi%20:%20Founder/4009.avif",
-                color: "#7030A0",
+                color: "#DC2626",
               },
               {
                 name: "Dan Miller",
@@ -156,11 +156,11 @@ export default function AboutPage() {
           {/* Extended team */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { name: "Viola Gattus",    role: "Designer-Mathmo",      photo: "/headshots/Viola Gattus.webp",    color: "#7030A0", bio: "Brings the visual world of MathSTAR to life — bridging beautiful design with mathematical rigor.", focus: "Design & Math", },
+              { name: "Viola Gattus",    role: "Designer-Mathmo",      photo: "/headshots/Viola Gattus.webp",    color: "#DC2626", bio: "Brings the visual world of MathSTAR to life — bridging beautiful design with mathematical rigor.", focus: "Design & Math", },
               { name: "Sophia Turcotte", role: "Marketing & Story",     photo: "/headshots/Sophia Turcotte.webp", color: "#0891B2", bio: "Shapes how the MathSTAR story is told — from brand voice to campaign strategy.", focus: "Story & Brand", },
-              { name: "Kerem Pauwels",   role: "Lead Artist",           photo: "/headshots/Kerem Pauwels.webp",   color: "#7030A0", bio: "Designs the underwater world, characters, and visual environments students explore.", focus: "Art & World-Building", },
+              { name: "Kerem Pauwels",   role: "Lead Artist",           photo: "/headshots/Kerem Pauwels.webp",   color: "#DC2626", bio: "Designs the underwater world, characters, and visual environments students explore.", focus: "Art & World-Building", },
               { name: "Chris Coombes",   role: "Developer-Mathmo",      photo: "/headshots/Chris Coombes.webp",   color: "#0891B2", bio: "Builds the mechanics of MathSTAR, ensuring every interaction is smooth and mathematically sound.", focus: "Dev & Math", },
-              { name: "Joseph Ravalese", role: "Lead Product Manager",  photo: "/headshots/Joseph Ravalese.webp", color: "#7030A0", bio: "Keeps the product and team moving — translating vision into shipping features.", focus: "Product & Ops", },
+              { name: "Joseph Ravalese", role: "Lead Product Manager",  photo: "/headshots/Joseph Ravalese.webp", color: "#DC2626", bio: "Keeps the product and team moving — translating vision into shipping features.", focus: "Product & Ops", },
               { name: "Amelie Pollack",  role: "Lead Sound & Music",    photo: "/headshots/Amelie Pollack.webp",  color: "#0891B2", bio: "Berklee-trained composer creating the soundscape that makes the underwater world feel alive.", focus: "Sound & Music", },
             ].map((member, i) => (
               <FadeIn key={member.name} delay={i * 0.06}>
@@ -176,9 +176,9 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-6 mb-16">
-              <div className="flex-1 h-px bg-[#7030A0]/20" />
-              <p className="text-[#7030A0] font-semibold text-xl tracking-wide">Our Combined Expertise</p>
-              <div className="flex-1 h-px bg-[#7030A0]/20" />
+              <div className="flex-1 h-px bg-[#DC2626]/20" />
+              <p className="text-[#DC2626] font-semibold text-xl tracking-wide">Our Combined Expertise</p>
+              <div className="flex-1 h-px bg-[#DC2626]/20" />
             </div>
 
             <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-10">
@@ -204,7 +204,7 @@ export default function AboutPage() {
                     height={40}
                     className="h-8 w-auto object-contain opacity-40 group-hover:opacity-70 transition-opacity duration-200 grayscale"
                   />
-                  <span className="text-[#0D0B12]/30 text-xs font-medium group-hover:text-[#7030A0]/50 transition-colors">
+                  <span className="text-[#0D0B12]/30 text-xs font-medium group-hover:text-[#DC2626]/50 transition-colors">
                     {org.name}
                   </span>
                 </div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 px-6 bg-[#7030A0]">
+      <section className="py-24 px-6 bg-[#DC2626]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
             Ready to learn more?
@@ -226,7 +226,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/mathstar"
-              className="px-8 py-4 rounded-full font-bold text-[#7030A0] bg-white text-base hover:bg-[#F0E6F7] transition-colors"
+              className="px-8 py-4 rounded-full font-bold text-[#DC2626] bg-white text-base hover:bg-[#FEF2F2] transition-colors"
             >
               See the Experience →
             </Link>

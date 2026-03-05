@@ -44,7 +44,7 @@ export default function EducatorsHero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 55% 50% at 75% 20%, rgba(112,48,160,0.35) 0%, transparent 65%)",
+              "radial-gradient(ellipse 55% 50% at 75% 20%, rgba(220,38,38,0.35) 0%, transparent 65%)",
           }}
         />
       </motion.div>
@@ -84,7 +84,7 @@ export default function EducatorsHero() {
           >
             Your students
             are capable of{" "}
-            <em className="not-italic italic text-[#C49FDC]">so much more.</em>
+            <em className="not-italic italic text-[#FCA5A5]">so much more.</em>
           </motion.h1>
 
           <motion.div
@@ -95,7 +95,7 @@ export default function EducatorsHero() {
           >
             <Link
               href="/contact"
-              className="px-10 py-4 rounded-full font-bold text-[#7030A0] bg-white text-base transition-all duration-200 hover:-translate-y-0.5 shadow-2xl"
+              className="px-10 py-4 rounded-full font-bold text-[#DC2626] bg-white text-base transition-all duration-200 hover:-translate-y-0.5 shadow-2xl"
             >
               Request a School Pilot →
             </Link>

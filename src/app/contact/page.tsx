@@ -15,7 +15,7 @@ const reasons = [
     body: "Questions about getting MathSTAR for your child, library access, or how the experience works.",
     href: "/parents",
     cta: "Visit Parents Page",
-    color: "#7030A0",
+    color: "#DC2626",
   },
   {
     title: "For Educators",
@@ -29,7 +29,7 @@ const reasons = [
     body: "Media inquiries, interview requests, or coverage of our pilot programs and research.",
     href: "mailto:press@shepherdxr.org",
     cta: "Email Press Team",
-    color: "#7030A0",
+    color: "#DC2626",
   },
   {
     title: "General Inquiries",
@@ -46,9 +46,9 @@ export default function ContactPage() {
       <Nav />
 
       {/* ── HERO ── */}
-      <section className="pt-36 pb-20 px-6 lg:px-20 bg-[#7030A0]">
+      <section className="pt-36 pb-20 px-6 lg:px-20 bg-[#DC2626]">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-6">
+          <p className="text-[#FCA5A5] font-semibold text-sm tracking-widest uppercase mb-6">
             Contact
           </p>
           <h1 className="text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] mb-6">
@@ -97,7 +97,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── DIRECT EMAIL ── */}
-      <section className="py-20 px-6 lg:px-20 bg-[#F0E6F7]">
+      <section className="py-20 px-6 lg:px-20 bg-[#FEF2F2]">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
           <div>
             <h2 className="text-3xl font-extrabold text-[#0D0B12] mb-3">
@@ -107,15 +107,15 @@ export default function ContactPage() {
               Reach us directly at{" "}
               <a
                 href="mailto:hello@shepherdxr.org"
-                className="text-[#7030A0] font-semibold hover:underline"
+                className="text-[#DC2626] font-semibold hover:underline"
               >
                 hello@shepherdxr.org
               </a>
             </p>
           </div>
-          <div className="shrink-0 bg-white rounded-2xl px-8 py-6 border border-[#7030A0]/15 text-center">
+          <div className="shrink-0 bg-white rounded-2xl px-8 py-6 border border-[#DC2626]/15 text-center">
             <p className="text-[#0D0B12]/40 text-xs tracking-widest uppercase mb-1">Response time</p>
-            <p className="text-2xl font-extrabold text-[#7030A0]">&lt; 1 business day</p>
+            <p className="text-2xl font-extrabold text-[#DC2626]">&lt; 1 business day</p>
           </div>
         </div>
       </section>

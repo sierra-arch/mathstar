@@ -48,7 +48,7 @@ function getResult(answers: Answers) {
       body: "Our curriculum is designed for students in grades 3–8, particularly those building foundational math skills. If your student is in high school, we'd love to talk — MathSTAR is expanding its grade range.",
       cta: "Contact us about future programs →",
       href: "/contact",
-      color: "#7030A0",
+      color: "#DC2626",
       fit: "Possible fit",
     };
   }
@@ -59,7 +59,7 @@ function getResult(answers: Answers) {
       body: "VR creates a private, distraction-free world with no classroom noise or social pressure. Movement is the lesson. Students with ADHD/ADD consistently show improved focus and zero classroom removals in our pilots.",
       cta: "See ADHD learner profile →",
       href: "/how-it-works#learner-profiles",
-      color: "#7030A0",
+      color: "#DC2626",
       fit: "Strong fit",
     };
   }
@@ -81,7 +81,7 @@ function getResult(answers: Answers) {
       body: "The VR world is consistent and safe. No unexpected social situations, no peer pressure. Students with Autism Spectrum diagnoses have shown strong engagement and zero classroom disruptions in our pilots.",
       cta: "See Autism learner profile →",
       href: "/how-it-works#learner-profiles",
-      color: "#7030A0",
+      color: "#DC2626",
       fit: "Strong fit",
     };
   }
@@ -103,7 +103,7 @@ function getResult(answers: Answers) {
       body: "When math becomes an underwater world where fish multiply and equations float in mid-air, \"bored\" becomes a thing of the past. 10/10 students chose MathSTAR over recess.",
       cta: "See the full experience →",
       href: "/mathstar",
-      color: "#7030A0",
+      color: "#DC2626",
       fit: "Great fit",
     };
   }
@@ -114,7 +114,7 @@ function getResult(answers: Answers) {
     body: "Whether they're looking for a challenge, a confidence boost, or a completely new way to experience math — MathSTAR is built for exactly that. 8 hours from arithmetic to algebra-confident.",
     cta: "Get MathSTAR →",
     href: "/get",
-    color: "#7030A0",
+    color: "#DC2626",
     fit: "Great fit",
   };
 }
@@ -148,7 +148,7 @@ export default function IsItRightQuiz() {
     <section className="relative py-28 px-6 lg:px-20 bg-white overflow-hidden">
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.28) 0%, transparent 68%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(252,165,165,0.28) 0%, transparent 68%)" }} />
       <div className="absolute -top-16 -right-16 w-[480px] h-[480px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(8,145,178,0.12) 0%, transparent 62%)" }} />
 
@@ -162,7 +162,7 @@ export default function IsItRightQuiz() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">
+          <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4">
             Quick Quiz
           </p>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight mb-4">
@@ -174,9 +174,9 @@ export default function IsItRightQuiz() {
         </motion.div>
 
         {/* Progress bar */}
-        <div className="h-1.5 bg-[#7030A0]/10 rounded-full mb-10 overflow-hidden">
+        <div className="h-1.5 bg-[#DC2626]/10 rounded-full mb-10 overflow-hidden">
           <motion.div
-            className="h-full bg-[#7030A0] rounded-full"
+            className="h-full bg-[#DC2626] rounded-full"
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.4 }}
           />
@@ -191,8 +191,8 @@ export default function IsItRightQuiz() {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-[#F7F2FF] rounded-3xl p-8 lg:p-10">
-                <p className="text-[#7030A0] text-xs font-bold tracking-widest uppercase mb-3">
+              <div className="bg-[#FFF5F5] rounded-3xl p-8 lg:p-10">
+                <p className="text-[#DC2626] text-xs font-bold tracking-widest uppercase mb-3">
                   Question {step + 1} of {questions.length}
                 </p>
                 <h3 className="text-2xl font-extrabold text-[#0D0B12] mb-8 leading-snug">
@@ -203,7 +203,7 @@ export default function IsItRightQuiz() {
                     <button
                       key={opt.value}
                       onClick={() => handleAnswer(current.id, opt.value)}
-                      className="text-left px-6 py-4 rounded-2xl border border-[#7030A0]/15 bg-white font-semibold text-[#0D0B12] text-sm hover:border-[#7030A0]/50 hover:bg-[#7030A0]/4 transition-all duration-150"
+                      className="text-left px-6 py-4 rounded-2xl border border-[#DC2626]/15 bg-white font-semibold text-[#0D0B12] text-sm hover:border-[#DC2626]/50 hover:bg-[#DC2626]/4 transition-all duration-150"
                     >
                       {opt.label}
                     </button>

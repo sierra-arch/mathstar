@@ -37,11 +37,11 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#4A1E6B] px-6 lg:px-16 pt-16 pb-10">
+    <footer className="relative bg-[#7F1D1D] px-6 lg:px-16 pt-16 pb-10">
       {/* Gradient bleed transition from section above */}
       <div
         className="absolute -top-32 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent 0%, #4A1E6B 100%)" }}
+        style={{ background: "linear-gradient(to bottom, transparent 0%, #7F1D1D 100%)" }}
       />
       <div className="max-w-6xl mx-auto">
 

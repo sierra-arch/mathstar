@@ -45,12 +45,12 @@ const media: MediaItem[] = [
 
 export default function PhotoStrip() {
   return (
-    <section className="relative py-24 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
+    <section className="relative py-24 px-6 lg:px-16 bg-[#FFF5F5] overflow-hidden">
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(196,159,220,0.40) 0%, rgba(112,48,160,0.12) 42%, transparent 68%)" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(252,165,165,0.40) 0%, rgba(220,38,38,0.12) 42%, transparent 68%)" }} />
       <div className="absolute -top-16 -right-16 w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(8,145,178,0.18) 0%, transparent 62%)" }} />
-      <div className="absolute -bottom-16 -left-16 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(74,30,107,0.16) 0%, transparent 62%)" }} />
-      <div className="absolute top-0 left-1/4 w-[380px] h-[380px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(240,230,247,0.82) 0%, transparent 65%)" }} />
+      <div className="absolute -bottom-16 -left-16 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(127,29,29,0.16) 0%, transparent 62%)" }} />
+      <div className="absolute top-0 left-1/4 w-[380px] h-[380px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(254,242,242,0.82) 0%, transparent 65%)" }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -61,10 +61,10 @@ export default function PhotoStrip() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">The Experience</p>
+          <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4">The Experience</p>
           <h2 className="text-4xl lg:text-[3rem] font-extrabold text-ink leading-tight">
             This is what{" "}
-            <em className="not-italic italic text-[#7030A0]">wonder</em> looks like.
+            <em className="not-italic italic text-[#DC2626]">wonder</em> looks like.
           </h2>
         </motion.div>
 

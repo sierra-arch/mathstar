@@ -14,12 +14,12 @@ export default function ImpactPilots() {
   return (
     <section className="relative py-40 px-6 lg:px-16 bg-white overflow-hidden">
 
-      <div className="absolute bottom-[-5%] left-[-8%] w-[400px] h-[400px] bg-[#7030A0]/8 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-8%] w-[400px] h-[400px] bg-[#DC2626]/8 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <motion.p
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -35,13 +35,13 @@ export default function ImpactPilots() {
           >
             Where we&apos;ve been —
             <br />
-            <em className="not-italic italic text-[#7030A0]">and what we found</em>
+            <em className="not-italic italic text-[#DC2626]">and what we found</em>
           </motion.h2>
         </div>
 
         {/* Pilot 1 — BPL Research */}
         <motion.div
-          className="bg-[#F7F2FF] rounded-3xl p-12 lg:p-16 mb-8 border border-[#7030A0]/8 overflow-hidden relative"
+          className="bg-[#FFF5F5] rounded-3xl p-12 lg:p-16 mb-8 border border-[#DC2626]/8 overflow-hidden relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function ImpactPilots() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Left */}
             <div className="lg:col-span-2">
-              <div className="inline-block bg-[#7030A0]/10 text-[#7030A0] text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-5">
+              <div className="inline-block bg-[#DC2626]/10 text-[#DC2626] text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-5">
                 Pilot 01
               </div>
               <h3 className="text-2xl font-extrabold text-ink mb-2">Roxbury Public Library</h3>
@@ -59,7 +59,7 @@ export default function ImpactPilots() {
               {/* Research badges */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {researchBadges.map((b, i) => (
-                  <span key={i} className="flex items-center gap-1.5 bg-white border border-[#7030A0]/12 rounded-full px-3 py-1.5 text-ink/65 text-xs font-medium">
+                  <span key={i} className="flex items-center gap-1.5 bg-white border border-[#DC2626]/12 rounded-full px-3 py-1.5 text-ink/65 text-xs font-medium">
                     <span>{b.icon}</span>
                     {b.label}
                   </span>
@@ -76,19 +76,19 @@ export default function ImpactPilots() {
             {/* Right — Big stat cards */}
             <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-5">
               <motion.div
-                className="bg-white rounded-2xl p-8 border border-[#7030A0]/10 flex flex-col justify-between"
+                className="bg-white rounded-2xl p-8 border border-[#DC2626]/10 flex flex-col justify-between"
                 initial={{ opacity: 0, scale: 0.96 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <div className="text-6xl font-extrabold text-[#7030A0] mb-2">45%</div>
+                <div className="text-6xl font-extrabold text-[#DC2626] mb-2">45%</div>
                 <div className="text-ink font-bold text-base leading-snug mb-2">jump in median test score</div>
                 <div className="text-ink/45 text-sm">in just 3 sessions — before vs. after MathSTAR</div>
               </motion.div>
 
               <motion.div
-                className="bg-white rounded-2xl p-8 border border-[#7030A0]/10 flex flex-col justify-between"
+                className="bg-white rounded-2xl p-8 border border-[#DC2626]/10 flex flex-col justify-between"
                 initial={{ opacity: 0, scale: 0.96 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -100,7 +100,7 @@ export default function ImpactPilots() {
               </motion.div>
 
               <motion.div
-                className="sm:col-span-2 bg-[#7030A0] rounded-2xl p-8 text-white flex flex-col justify-between"
+                className="sm:col-span-2 bg-[#DC2626] rounded-2xl p-8 text-white flex flex-col justify-between"
                 initial={{ opacity: 0, scale: 0.96 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -126,13 +126,13 @@ export default function ImpactPilots() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          <div className="absolute top-[-20%] right-[-10%] w-[400px] h-[400px] bg-[#7030A0]/25 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute top-[-20%] right-[-10%] w-[400px] h-[400px] bg-[#DC2626]/25 rounded-full blur-[80px] pointer-events-none" />
 
           <div className="relative z-10">
             {/* Header */}
             <div className="flex flex-wrap items-start justify-between gap-6 mb-12">
               <div>
-                <div className="inline-block bg-white/10 text-[#C49FDC] text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-5">
+                <div className="inline-block bg-white/10 text-[#FCA5A5] text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-5">
                   Pilot 02
                 </div>
                 <h3 className="text-2xl font-extrabold text-white mb-2">Ellis Elementary School</h3>
@@ -152,7 +152,7 @@ export default function ImpactPilots() {
                 </div>
               </div>
               <div className="text-right shrink-0">
-                <div className="text-5xl font-extrabold text-[#C49FDC]">10/10</div>
+                <div className="text-5xl font-extrabold text-[#FCA5A5]">10/10</div>
                 <div className="text-white/45 text-sm mt-1">educator satisfaction</div>
               </div>
             </div>
@@ -160,11 +160,11 @@ export default function ImpactPilots() {
             {/* Outcome cards grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
               {[
-                { num: "10/10", label: "chose math over recess", color: "text-[#C49FDC]" },
+                { num: "10/10", label: "chose math over recess", color: "text-[#FCA5A5]" },
                 { num: "18%", label: "pre → post test gain", color: "text-teal-400" },
-                { num: "86%", label: "said they enjoyed it", color: "text-[#C49FDC]" },
+                { num: "86%", label: "said they enjoyed it", color: "text-[#FCA5A5]" },
                 { num: "0", label: "classroom removals", color: "text-teal-400" },
-                { num: "18%", label: "growth mindset boost", color: "text-[#C49FDC]" },
+                { num: "18%", label: "growth mindset boost", color: "text-[#FCA5A5]" },
                 { num: "5/5", label: "would recommend", color: "text-teal-400" },
               ].map((s, i) => (
                 <motion.div
@@ -199,8 +199,8 @@ export default function ImpactPilots() {
                 >
                   <p className="text-white/80 text-sm leading-relaxed mb-4 font-medium">&ldquo;{q.quote}&rdquo;</p>
                   <div className="flex items-center gap-2">
-                    <div className="w-4 h-px bg-[#C49FDC]/50" />
-                    <span className="text-[#C49FDC]/70 text-xs">{q.who}</span>
+                    <div className="w-4 h-px bg-[#FCA5A5]/50" />
+                    <span className="text-[#FCA5A5]/70 text-xs">{q.who}</span>
                   </div>
                 </motion.div>
               ))}

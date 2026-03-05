@@ -11,9 +11,9 @@ interface PlaceholderPageProps {
 
 export default function PlaceholderPage({ title, description, emoji = "🚧" }: PlaceholderPageProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-24 px-6 bg-[#F7F2FF] overflow-hidden">
-      <div className="absolute top-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/12 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-5%] left-[-10%] w-[400px] h-[400px] bg-[#7030A0]/8 rounded-full blur-[80px] pointer-events-none" />
+    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-24 px-6 bg-[#FFF5F5] overflow-hidden">
+      <div className="absolute top-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#DC2626]/12 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-10%] w-[400px] h-[400px] bg-[#DC2626]/8 rounded-full blur-[80px] pointer-events-none" />
 
       <motion.div
         className="text-center max-w-lg mx-auto relative z-10"
@@ -22,12 +22,12 @@ export default function PlaceholderPage({ title, description, emoji = "🚧" }: 
         transition={{ duration: 0.7 }}
       >
         <div className="text-6xl mb-8">{emoji}</div>
-        <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">Coming Soon</p>
+        <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4">Coming Soon</p>
         <h1 className="text-4xl font-extrabold text-ink mb-6">{title}</h1>
         <p className="text-ink/55 text-lg leading-relaxed mb-10">{description}</p>
         <Link
           href="/contact"
-          className="inline-block bg-[#7030A0] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#4A1E6B] transition-colors shadow-lg shadow-[#7030A0]/20"
+          className="inline-block bg-[#DC2626] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#7F1D1D] transition-colors shadow-lg shadow-[#DC2626]/20"
         >
           Get in touch instead →
         </Link>

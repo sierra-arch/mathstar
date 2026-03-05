@@ -57,14 +57,14 @@ export default function MindsetSlider() {
 
   return (
     <section className="relative py-28 px-6 lg:px-20 overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #1a0840 0%, #0c1a35 50%, #0d1f30 100%)" }}>
+      style={{ background: "linear-gradient(160deg, #200505 0%, #0c1a35 50%, #0d1f30 100%)" }}>
 
       {/* Richer color atmosphere */}
-      <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] bg-[#7030A0]/35 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] bg-[#DC2626]/35 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] bg-[#0891B2]/25 rounded-full blur-[110px] pointer-events-none" />
       {/* Gradient edge transitions */}
       <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#FAFAF8] to-transparent z-20 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F0E6F7] to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#FEF2F2] to-transparent z-20 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
 
@@ -76,12 +76,12 @@ export default function MindsetSlider() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-4">
+          <p className="text-[#FCA5A5] font-semibold text-sm tracking-widest uppercase mb-4">
             Before &amp; After
           </p>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
             One experience.{" "}
-            <em className="not-italic italic text-[#C49FDC]">Everything changes.</em>
+            <em className="not-italic italic text-[#FCA5A5]">Everything changes.</em>
           </h2>
           <p className="text-white/50 text-lg max-w-xl mx-auto">
             Drag the slider to see what MathSTAR does to a child&apos;s relationship with math.
@@ -97,7 +97,7 @@ export default function MindsetSlider() {
               className="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
               style={
                 activeStory === i
-                  ? { background: "#7030A0", color: "white" }
+                  ? { background: "#DC2626", color: "white" }
                   : { background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.55)" }
               }
             >
@@ -116,8 +116,8 @@ export default function MindsetSlider() {
         >
           {/* Before panel */}
           <div className="absolute inset-0 flex flex-col justify-center px-10 lg:px-16"
-            style={{ background: "linear-gradient(135deg, #1a0a2e 0%, #0D0B12 100%)", border: "1px solid rgba(112,48,160,0.2)" }}>
-            <p className="text-[#C49FDC]/50 text-xs font-bold tracking-widest uppercase mb-4">Before MathSTAR</p>
+            style={{ background: "linear-gradient(135deg, #1a0a2e 0%, #0D0B12 100%)", border: "1px solid rgba(220,38,38,0.2)" }}>
+            <p className="text-[#FCA5A5]/50 text-xs font-bold tracking-widest uppercase mb-4">Before MathSTAR</p>
             <p className="text-white/70 text-xl lg:text-2xl font-medium leading-relaxed mb-5 max-w-sm">
               &ldquo;{current.before.quote}&rdquo;
             </p>
@@ -129,7 +129,7 @@ export default function MindsetSlider() {
             className="absolute inset-0 flex flex-col justify-center px-10 lg:px-16 overflow-hidden"
             style={{ clipPath: `inset(0 ${100 - position}% 0 0)`, background: "linear-gradient(135deg, #2d1654 0%, #1a3a4a 100%)" }}
           >
-            <p className="text-[#C49FDC] text-xs font-bold tracking-widest uppercase mb-4">After MathSTAR</p>
+            <p className="text-[#FCA5A5] text-xs font-bold tracking-widest uppercase mb-4">After MathSTAR</p>
             <p className="text-white text-xl lg:text-2xl font-semibold leading-relaxed mb-5 max-w-sm">
               &ldquo;{current.after.quote}&rdquo;
             </p>
@@ -144,7 +144,7 @@ export default function MindsetSlider() {
             <div className="w-0.5 h-full bg-white/30" />
             <div className="absolute w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M5 8H1M11 8H15M5 8L3 6M5 8L3 10M11 8L13 6M11 8L13 10" stroke="#7030A0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M5 8H1M11 8H15M5 8L3 6M5 8L3 10M11 8L13 6M11 8L13 10" stroke="#DC2626" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function MindsetSlider() {
 
         {/* Bottom stat */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div className="rounded-2xl p-6 text-center" style={{ background: "rgba(112,48,160,0.12)", border: "1px solid rgba(112,48,160,0.2)" }}>
+          <div className="rounded-2xl p-6 text-center" style={{ background: "rgba(220,38,38,0.12)", border: "1px solid rgba(220,38,38,0.2)" }}>
             <p className="text-white/40 text-xs font-bold tracking-widest uppercase mb-2">Before</p>
             <p className="text-white/65 font-semibold">{stat.before}</p>
           </div>

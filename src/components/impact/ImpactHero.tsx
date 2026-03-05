@@ -22,7 +22,7 @@ export default function ImpactHero() {
       <motion.div className="absolute inset-0 scale-[1.1]" style={{ y: bgY }}>
         <div
           className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(112,48,160,0.4) 0%, transparent 65%)" }}
+          style={{ background: "radial-gradient(circle, rgba(220,38,38,0.4) 0%, transparent 65%)" }}
         />
         <div
           className="absolute bottom-[-15%] left-[-5%] w-[500px] h-[500px] rounded-full"
@@ -44,7 +44,7 @@ export default function ImpactHero() {
           <div
             className="text-[18rem] lg:text-[22rem] font-extrabold leading-none"
             style={{
-              background: "linear-gradient(160deg, rgba(196,159,220,0.25) 0%, rgba(112,48,160,0.08) 100%)",
+              background: "linear-gradient(160deg, rgba(252,165,165,0.25) 0%, rgba(220,38,38,0.08) 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -90,7 +90,7 @@ export default function ImpactHero() {
           >
             The data is in.
             <br />
-            <em className="not-italic italic text-[#C49FDC]">Kids are changing.</em>
+            <em className="not-italic italic text-[#FCA5A5]">Kids are changing.</em>
           </motion.h1>
 
           {/* Inline stats */}
@@ -101,17 +101,17 @@ export default function ImpactHero() {
             transition={{ duration: 0.7, delay: 0.6 }}
           >
             <div>
-              <div className="text-4xl font-extrabold text-[#C49FDC]">10/10</div>
+              <div className="text-4xl font-extrabold text-[#FCA5A5]">10/10</div>
               <div className="text-white/30 text-xs mt-1 uppercase tracking-widest">Educator rating</div>
             </div>
             <div className="w-px h-10 bg-white/10" />
             <div>
-              <div className="text-4xl font-extrabold text-[#C49FDC]">+18%</div>
+              <div className="text-4xl font-extrabold text-[#FCA5A5]">+18%</div>
               <div className="text-white/30 text-xs mt-1 uppercase tracking-widest">Test score gain</div>
             </div>
             <div className="w-px h-10 bg-white/10" />
             <div>
-              <div className="text-4xl font-extrabold text-[#C49FDC]">86%</div>
+              <div className="text-4xl font-extrabold text-[#FCA5A5]">86%</div>
               <div className="text-white/30 text-xs mt-1 uppercase tracking-widest">Would recommend</div>
             </div>
           </motion.div>

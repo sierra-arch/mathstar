@@ -24,7 +24,7 @@ const prePostBars = [
     pre: 9.67,
     post: 11.17,
     max: 21,
-    color: "#7030A0",
+    color: "#DC2626",
     gain: "+18%",
   },
   {
@@ -42,21 +42,21 @@ const prePostBars = [
     pre: 2.64,
     post: 2.71,
     max: 3,
-    color: "#7030A0",
+    color: "#DC2626",
     gain: "+3%",
   },
 ];
 
 const studentResponses = [
-  { label: "I enjoyed this experience", pct: 86, color: "#7030A0" },
+  { label: "I enjoyed this experience", pct: 86, color: "#DC2626" },
   { label: "I learned a lot", pct: 86, color: "#0891B2" },
-  { label: "I would recommend to a friend", pct: 86, color: "#7030A0" },
+  { label: "I would recommend to a friend", pct: 86, color: "#DC2626" },
 ];
 
 const instructorRatings = [
-  { label: "Engagement", value: "4.5 / 5", pct: 90, color: "#7030A0" },
+  { label: "Engagement", value: "4.5 / 5", pct: 90, color: "#DC2626" },
   { label: "Behavior Regulation", value: "4 / 5", pct: 80, color: "#0891B2" },
-  { label: "Classroom Fit", value: "5 / 5", pct: 100, color: "#7030A0" },
+  { label: "Classroom Fit", value: "5 / 5", pct: 100, color: "#DC2626" },
   { label: "Overall Helpfulness", value: "10 / 10", pct: 100, color: "#0891B2" },
 ];
 
@@ -137,10 +137,10 @@ export default function ImpactCharts() {
   return (
     <section className="relative py-28 px-6 lg:px-16 bg-white overflow-hidden">
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(196,159,220,0.44) 0%, rgba(112,48,160,0.14) 42%, transparent 68%)" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(252,165,165,0.44) 0%, rgba(220,38,38,0.14) 42%, transparent 68%)" }} />
       <div className="absolute -top-20 -right-20 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(8,145,178,0.22) 0%, transparent 62%)" }} />
-      <div className="absolute -bottom-16 -left-16 w-[440px] h-[440px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(74,30,107,0.18) 0%, transparent 62%)" }} />
-      <div className="absolute top-0 left-1/3 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(240,230,247,0.88) 0%, transparent 65%)" }} />
+      <div className="absolute -bottom-16 -left-16 w-[440px] h-[440px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(127,29,29,0.18) 0%, transparent 62%)" }} />
+      <div className="absolute top-0 left-1/3 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(254,242,242,0.88) 0%, transparent 65%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -151,7 +151,7 @@ export default function ImpactCharts() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center gap-1 bg-[#F7F2FF] rounded-full p-1">
+          <div className="flex items-center gap-1 bg-[#FFF5F5] rounded-full p-1">
             {(["parent", "educator"] as const).map((a) => (
               <button
                 key={a}
@@ -159,8 +159,8 @@ export default function ImpactCharts() {
                 className="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200"
                 style={
                   audience === a
-                    ? { background: "#7030A0", color: "white" }
-                    : { color: "#7030A0" }
+                    ? { background: "#DC2626", color: "white" }
+                    : { color: "#DC2626" }
                 }
               >
                 {a === "parent" ? "I'm a Parent" : "I'm an Educator"}
@@ -179,7 +179,7 @@ export default function ImpactCharts() {
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.3 }}
             >
-              <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">
+              <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4">
                 {copy.overline}
               </p>
               <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight">

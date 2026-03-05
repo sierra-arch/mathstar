@@ -17,7 +17,7 @@ export default function FAQPage() {
 
       {/* ── HERO ── */}
       <section className="pt-36 pb-16 px-6 lg:px-20 max-w-4xl mx-auto">
-        <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-6">
+        <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-6">
           FAQ
         </p>
         <h1 className="text-5xl lg:text-6xl font-extrabold text-[#0D0B12] leading-[1.05] mb-6">
@@ -37,7 +37,7 @@ export default function FAQPage() {
       </section>
 
       {/* ── STILL HAVE QUESTIONS ── */}
-      <section className="py-20 px-6 bg-[#F0E6F7]">
+      <section className="py-20 px-6 bg-[#FEF2F2]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-extrabold text-[#0D0B12] mb-4">
             Still have questions?
@@ -48,7 +48,7 @@ export default function FAQPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-[#7030A0] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#4A1E6B] transition-colors"
+            className="inline-flex items-center gap-2 bg-[#DC2626] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#7F1D1D] transition-colors"
           >
             Contact Us →
           </Link>

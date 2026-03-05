@@ -29,15 +29,15 @@ export default function ParentsWhy() {
   return (
     <section className="relative py-40 px-6 lg:px-16 bg-white overflow-hidden">
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(196,159,220,0.45) 0%, rgba(112,48,160,0.14) 42%, transparent 68%)" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(252,165,165,0.45) 0%, rgba(220,38,38,0.14) 42%, transparent 68%)" }} />
       <div className="absolute -top-28 -right-20 w-[520px] h-[520px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(8,145,178,0.22) 0%, transparent 62%)" }} />
-      <div className="absolute -bottom-20 -left-16 w-[440px] h-[440px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(74,30,107,0.18) 0%, transparent 62%)" }} />
-      <div className="absolute top-0 left-1/3 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(240,230,247,0.88) 0%, transparent 65%)" }} />
+      <div className="absolute -bottom-20 -left-16 w-[440px] h-[440px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(127,29,29,0.18) 0%, transparent 62%)" }} />
+      <div className="absolute top-0 left-1/3 w-[420px] h-[420px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(254,242,242,0.88) 0%, transparent 65%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <motion.p
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -53,7 +53,7 @@ export default function ParentsWhy() {
           >
             This isn&apos;t another math app.
             <br />
-            <em className="not-italic italic text-[#7030A0]">It&apos;s a transformation.</em>
+            <em className="not-italic italic text-[#DC2626]">It&apos;s a transformation.</em>
           </motion.h2>
         </div>
 
@@ -61,7 +61,7 @@ export default function ParentsWhy() {
           {reasons.map((r, i) => (
             <motion.div
               key={i}
-              className="bg-[#F7F2FF] rounded-3xl p-10 border border-[#7030A0]/8"
+              className="bg-[#FFF5F5] rounded-3xl p-10 border border-[#DC2626]/8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -6,10 +6,10 @@ import Image from "next/image";
 
 export default function PathwaySelector() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-24 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-24 px-6 lg:px-16 bg-[#FFF5F5] overflow-hidden">
 
       {/* Ambient orbs */}
-      <div className="absolute top-[-5%] left-[-10%] w-[600px] h-[600px] bg-[#7030A0]/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[-5%] left-[-10%] w-[600px] h-[600px] bg-[#DC2626]/15 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#0891B2]/12 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-[40%] right-[20%] w-[300px] h-[300px] bg-[#0891B2]/12 rounded-full blur-[80px] pointer-events-none" />
 
@@ -18,7 +18,7 @@ export default function PathwaySelector() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.p
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5"
+            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -33,7 +33,7 @@ export default function PathwaySelector() {
           >
             Who are you getting
             <br />
-            MathSTAR <em className="not-italic italic text-[#7030A0]">for?</em>
+            MathSTAR <em className="not-italic italic text-[#DC2626]">for?</em>
           </motion.h1>
           <motion.p
             className="text-xl text-ink/55 max-w-lg mx-auto"
@@ -55,7 +55,7 @@ export default function PathwaySelector() {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <Link href="/parents" className="group block h-full">
-              <div className="relative h-full bg-white rounded-3xl border border-[#7030A0]/10 shadow-lg hover:shadow-2xl hover:shadow-[#7030A0]/15 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="relative h-full bg-white rounded-3xl border border-[#DC2626]/10 shadow-lg hover:shadow-2xl hover:shadow-[#DC2626]/15 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
 
                 {/* Photo */}
                 <div className="relative w-full h-56 overflow-hidden">
@@ -69,10 +69,10 @@ export default function PathwaySelector() {
                 </div>
 
                 {/* Card glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#7030A0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DC2626]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" />
 
                 <div className="relative z-10 p-10">
-                  <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">For Parents</p>
+                  <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4">For Parents</p>
 
                   <h2 className="text-2xl lg:text-3xl font-extrabold text-ink leading-tight mb-5">
                     I&apos;m a parent looking to get this for my child
@@ -83,7 +83,7 @@ export default function PathwaySelector() {
                     No school required — just a headset and 8 hours that change everything.
                   </p>
 
-                  <div className="flex items-center gap-2 text-[#7030A0] font-semibold text-base group-hover:gap-4 transition-all duration-200">
+                  <div className="flex items-center gap-2 text-[#DC2626] font-semibold text-base group-hover:gap-4 transition-all duration-200">
                     <span>Learn more for parents</span>
                     <span>→</span>
                   </div>
@@ -145,7 +145,7 @@ export default function PathwaySelector() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          Not sure? <Link href="/contact" className="text-[#7030A0] hover:underline">Get in touch</Link> and we&apos;ll point you in the right direction.
+          Not sure? <Link href="/contact" className="text-[#DC2626] hover:underline">Get in touch</Link> and we&apos;ll point you in the right direction.
         </motion.p>
 
       </div>

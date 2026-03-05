@@ -23,8 +23,8 @@ export default function FloatingHeadset({
 
   const colors =
     variant === "dark"
-      ? { from: "#C49FDC", to: "#0891B2", shell: "#1a0f2e", lens: "#0d1a2e", strap: "#C49FDC" }
-      : { from: "#7030A0", to: "#0891B2", shell: "#F0E6F7", lens: "#E8D5F5", strap: "#7030A0" };
+      ? { from: "#FCA5A5", to: "#0891B2", shell: "#1a0f2e", lens: "#0d1a2e", strap: "#FCA5A5" }
+      : { from: "#DC2626", to: "#0891B2", shell: "#FEF2F2", lens: "#E8D5F5", strap: "#DC2626" };
 
   return (
     <motion.div
@@ -39,7 +39,7 @@ export default function FloatingHeadset({
         xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size * 0.58}
-        style={{ filter: `drop-shadow(0 20px 40px ${variant === "dark" ? "rgba(196,159,220,0.25)" : "rgba(112,48,160,0.2)"})` }}
+        style={{ filter: `drop-shadow(0 20px 40px ${variant === "dark" ? "rgba(252,165,165,0.25)" : "rgba(220,38,38,0.2)"})` }}
       >
         <defs>
           <linearGradient id={gradId} x1="0" y1="0" x2="260" y2="150" gradientUnits="userSpaceOnUse">
@@ -71,22 +71,22 @@ export default function FloatingHeadset({
         <rect x="22" y="28" width="216" height="98" rx="28" fill={`url(#${gradId})`} />
 
         {/* Inner visor face */}
-        <rect x="36" y="40" width="188" height="76" rx="20" fill={variant === "dark" ? "rgba(8,6,18,0.7)" : "rgba(240,230,247,0.5)"} />
+        <rect x="36" y="40" width="188" height="76" rx="20" fill={variant === "dark" ? "rgba(8,6,18,0.7)" : "rgba(254,242,242,0.5)"} />
 
         {/* Left lens */}
-        <ellipse cx="95" cy="78" rx="42" ry="34" fill={variant === "dark" ? "rgba(8,6,18,0.85)" : "rgba(112,48,160,0.12)"} />
+        <ellipse cx="95" cy="78" rx="42" ry="34" fill={variant === "dark" ? "rgba(8,6,18,0.85)" : "rgba(220,38,38,0.12)"} />
         <ellipse cx="95" cy="78" rx="42" ry="34" stroke={`url(#${gradId})`} strokeWidth="2.5" fill="none" />
         {/* Left lens glint */}
         <ellipse cx="82" cy="65" rx="10" ry="7" fill="white" opacity={variant === "dark" ? "0.12" : "0.35"} style={{ transform: "rotate(-20deg)", transformOrigin: "82px 65px" }} />
 
         {/* Right lens */}
-        <ellipse cx="165" cy="78" rx="42" ry="34" fill={variant === "dark" ? "rgba(8,6,18,0.85)" : "rgba(112,48,160,0.12)"} />
+        <ellipse cx="165" cy="78" rx="42" ry="34" fill={variant === "dark" ? "rgba(8,6,18,0.85)" : "rgba(220,38,38,0.12)"} />
         <ellipse cx="165" cy="78" rx="42" ry="34" stroke={`url(#${gradId})`} strokeWidth="2.5" fill="none" />
         {/* Right lens glint */}
         <ellipse cx="152" cy="65" rx="10" ry="7" fill="white" opacity={variant === "dark" ? "0.12" : "0.35"} style={{ transform: "rotate(-20deg)", transformOrigin: "152px 65px" }} />
 
         {/* Nose bridge */}
-        <rect x="123" y="62" width="14" height="32" rx="5" fill={variant === "dark" ? "rgba(8,6,18,0.6)" : "rgba(112,48,160,0.15)"} />
+        <rect x="123" y="62" width="14" height="32" rx="5" fill={variant === "dark" ? "rgba(8,6,18,0.6)" : "rgba(220,38,38,0.15)"} />
 
         {/* Top accent line */}
         <rect x="60" y="34" width="140" height="3" rx="1.5" fill="white" opacity={variant === "dark" ? "0.1" : "0.4"} />

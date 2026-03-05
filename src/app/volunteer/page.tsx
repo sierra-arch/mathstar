@@ -15,7 +15,7 @@ const roles = [
     commitment: "2–4 hrs/month",
     body: "Help kids experience MathSTAR for the first time at public library sessions. Guide them through the headset setup, answer questions, and be there for the moment they fall in love with math.",
     tags: ["In-Person", "Libraries", "Flexible Schedule"],
-    color: "#7030A0",
+    color: "#DC2626",
   },
   {
     title: "Math Mentor",
@@ -29,7 +29,7 @@ const roles = [
     commitment: "2–3 hrs/month",
     body: "Help us reach underserved families, community centers, and schools who should know about MathSTAR. Share flyers, attend community events, and help us expand access.",
     tags: ["Flexible", "Your Community", "Storytelling"],
-    color: "#7030A0",
+    color: "#DC2626",
   },
   {
     title: "Fundraising Partner",
@@ -46,14 +46,14 @@ export default function VolunteerPage() {
       <Nav />
 
       {/* ── HERO ── */}
-      <section className="pt-36 pb-24 px-6 lg:px-20 bg-[#7030A0]">
+      <section className="pt-36 pb-24 px-6 lg:px-20 bg-[#DC2626]">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-6">
+          <p className="text-[#FCA5A5] font-semibold text-sm tracking-widest uppercase mb-6">
             Volunteer
           </p>
           <h1 className="text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] mb-8">
             Be the moment that{" "}
-            <span className="italic text-[#C49FDC]">changes a child.</span>
+            <span className="italic text-[#FCA5A5]">changes a child.</span>
           </h1>
           <p className="text-white/60 text-xl leading-relaxed max-w-2xl">
             Our founder&apos;s trajectory changed because one person — a school custodian —
@@ -66,7 +66,7 @@ export default function VolunteerPage() {
       <section className="py-24 px-6 lg:px-20">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2">
-            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+            <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
               Why It Matters
             </p>
             <h2 className="text-4xl font-extrabold text-[#0D0B12] leading-tight mb-6">
@@ -94,9 +94,9 @@ export default function VolunteerPage() {
             ].map((s) => (
               <div
                 key={s.num}
-                className="bg-[#F0E6F7] rounded-2xl p-6 border border-[#7030A0]/10"
+                className="bg-[#FEF2F2] rounded-2xl p-6 border border-[#DC2626]/10"
               >
-                <div className="text-3xl font-extrabold text-[#7030A0] mb-1">{s.num}</div>
+                <div className="text-3xl font-extrabold text-[#DC2626] mb-1">{s.num}</div>
                 <div className="text-[#0D0B12]/50 text-sm">{s.label}</div>
               </div>
             ))}
@@ -105,10 +105,10 @@ export default function VolunteerPage() {
       </section>
 
       {/* ── ROLES ── */}
-      <section className="py-24 px-6 lg:px-20 bg-[#F0E6F7]">
+      <section className="py-24 px-6 lg:px-20 bg-[#FEF2F2]">
         <div className="max-w-5xl mx-auto">
           <div className="mb-14">
-            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+            <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
               Volunteer Roles
             </p>
             <h2 className="text-4xl font-extrabold text-[#0D0B12] leading-tight">
@@ -154,7 +154,7 @@ export default function VolunteerPage() {
       </section>
 
       {/* ── SIGN UP CTA ── */}
-      <section className="py-24 px-6 bg-[#7030A0]">
+      <section className="py-24 px-6 bg-[#DC2626]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
             Ready to get involved?
@@ -166,7 +166,7 @@ export default function VolunteerPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:volunteer@shepherdxr.org?subject=Volunteer%20Interest"
-              className="px-8 py-4 rounded-full font-bold text-[#7030A0] bg-white text-base hover:bg-[#F0E6F7] transition-colors"
+              className="px-8 py-4 rounded-full font-bold text-[#DC2626] bg-white text-base hover:bg-[#FEF2F2] transition-colors"
             >
               Express Interest →
             </a>

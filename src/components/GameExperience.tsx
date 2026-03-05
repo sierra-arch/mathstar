@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
 /* ── Simple fish SVG (faces right; swimLeft CSS flips it) ── */
-function FishSVG({ size = 30, color = "#7030A0" }: { size?: number; color?: string }) {
+function FishSVG({ size = 30, color = "#DC2626" }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={Math.round(size * 0.5)} viewBox="0 0 50 25" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M2 12.5 L14 2 L14 23 Z" fill={color} />
@@ -21,7 +21,7 @@ function FishLayer() {
     <div className="absolute inset-0 pointer-events-none overflow-hidden select-none" aria-hidden>
       <div className="fish-1 absolute" style={{ top: "22%", opacity: 0.20 }}><FishSVG size={34} color="#0891B2" /></div>
       <div className="fish-2 absolute" style={{ top: "58%", opacity: 0.18 }}><FishSVG size={28} color="#F97316" /></div>
-      <div className="fish-3 absolute" style={{ top: "72%", opacity: 0.18 }}><FishSVG size={30} color="#7030A0" /></div>
+      <div className="fish-3 absolute" style={{ top: "72%", opacity: 0.18 }}><FishSVG size={30} color="#DC2626" /></div>
       <div className="fish-4 absolute" style={{ top: "38%", opacity: 0.16 }}><FishSVG size={40} color="#F59E0B" /></div>
       <div className="fish-5 absolute" style={{ top: "12%", opacity: 0.15 }}><FishSVG size={24} color="#059669" /></div>
       <div className="fish-6 absolute" style={{ top: "82%", opacity: 0.18 }}><FishSVG size={32} color="#0891B2" /></div>
@@ -31,12 +31,12 @@ function FishLayer() {
 
 /* ── Floating math particles — colorful, bigger, for light slides ── */
 const PARTICLES = [
-  { text: "2",  cls: "float-1", top: "10%", left: "6%",  size: "2.2rem", color: "#7030A0", op: 0.20 },
+  { text: "2",  cls: "float-1", top: "10%", left: "6%",  size: "2.2rem", color: "#DC2626", op: 0.20 },
   { text: "+",  cls: "float-2", top: "30%", left: "88%", size: "1.8rem", color: "#0891B2", op: 0.18 },
   { text: "5",  cls: "float-3", top: "65%", left: "10%", size: "1.6rem", color: "#F97316", op: 0.18 },
   { text: "=",  cls: "float-4", top: "78%", left: "82%", size: "2.0rem", color: "#F59E0B", op: 0.20 },
   { text: "3",  cls: "float-5", top: "48%", left: "94%", size: "1.5rem", color: "#059669", op: 0.16 },
-  { text: "7",  cls: "float-6", top: "18%", left: "52%", size: "1.8rem", color: "#7030A0", op: 0.18 },
+  { text: "7",  cls: "float-6", top: "18%", left: "52%", size: "1.8rem", color: "#DC2626", op: 0.18 },
   { text: "+",  cls: "float-7", top: "88%", left: "32%", size: "1.6rem", color: "#0891B2", op: 0.17 },
   { text: "2",  cls: "float-8", top: "52%", left: "68%", size: "1.4rem", color: "#F97316", op: 0.16 },
 ];
@@ -75,7 +75,7 @@ function SectionNum({ n, dark = true }: { n: string; dark?: boolean }) {
     <div className="absolute inset-0 flex items-center justify-end px-8 lg:px-16 pointer-events-none select-none overflow-hidden" aria-hidden>
       <span
         className="text-[22rem] font-extrabold leading-none"
-        style={{ color: dark ? "rgba(255,255,255,0.03)" : "rgba(112,48,160,0.04)" }}
+        style={{ color: dark ? "rgba(255,255,255,0.03)" : "rgba(220,38,38,0.04)" }}
       >
         {n}
       </span>
@@ -93,7 +93,7 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
   const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
 
   return (
-    <section ref={ref} className="relative h-screen overflow-hidden bg-[#0d0620] flex items-end">
+    <section ref={ref} className="relative h-screen overflow-hidden bg-[#1A0303] flex items-end">
       <div className="absolute inset-0">
         <video
           src={src}
@@ -103,15 +103,15 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
           onLoadedMetadata={(e) => { e.currentTarget.currentTime = videoStart; e.currentTarget.playbackRate = 0.65; }}
         />
         {/* Lighter overlays — let the gameplay color breathe */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0620]/25 via-transparent to-[#0d0620]/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0620]/55 via-[#0d0620]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A0303]/25 via-transparent to-[#1A0303]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A0303]/55 via-[#1A0303]/10 to-transparent" />
         {/* Rich color atmosphere */}
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 15% 60%, rgba(112,48,160,0.30) 0%, transparent 60%)" }} />
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 15% 60%, rgba(220,38,38,0.30) 0%, transparent 60%)" }} />
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 20%, rgba(8,145,178,0.20) 0%, transparent 55%)" }} />
       </div>
       {/* Gradient edge transitions — blend into surrounding light slides */}
-      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#FFF5F5] to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#FFF5F5] to-transparent z-20 pointer-events-none" />
       <ScanlineOverlay />
       <SectionNum n={num} />
 
@@ -167,9 +167,9 @@ function LightSlide({ num, overline, headline, children }: {
   const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
 
   return (
-    <section ref={ref} className="relative h-screen overflow-hidden bg-[#F7F2FF] flex items-center justify-center">
+    <section ref={ref} className="relative h-screen overflow-hidden bg-[#FFF5F5] flex items-center justify-center">
       <div className="absolute top-[-15%] right-[-8%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.35) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(252,165,165,0.35) 0%, transparent 70%)" }} />
       <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 70%)" }} />
       <FishLayer />
@@ -178,7 +178,7 @@ function LightSlide({ num, overline, headline, children }: {
 
       <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto w-full" style={{ opacity: fadeOut, y: textY }}>
         <motion.p
-          className="text-[#7030A0] font-semibold text-xs tracking-widest uppercase mb-8"
+          className="text-[#DC2626] font-semibold text-xs tracking-widest uppercase mb-8"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -237,7 +237,7 @@ function QuoteSection() {
             <span
               className="italic block mt-5 inline-block pb-2 pr-4"
               style={{
-                background: "linear-gradient(135deg, #C49FDC, #0891B2)",
+                background: "linear-gradient(135deg, #FCA5A5, #0891B2)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -268,7 +268,7 @@ export default function GameExperience() {
   const heroOpacity = useTransform(heroScroll, [0, 0.6], [1, 0]);
 
   return (
-    <div className="bg-[#080612]">
+    <div className="bg-[#120101]">
 
       {/* ── 1. HERO (dark video) ── */}
       <section ref={heroRef} className="relative h-screen overflow-hidden flex items-end justify-center">
@@ -280,13 +280,13 @@ export default function GameExperience() {
             style={{ opacity: 0.65 }}
             onLoadedMetadata={(e) => { e.currentTarget.currentTime = 90; e.currentTarget.playbackRate = 0.6; }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/55 via-[#080612]/10 to-[#080612]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#120101]/55 via-[#120101]/10 to-[#120101]" />
         </motion.div>
         <ScanlineOverlay />
 
         <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-32" style={{ opacity: heroOpacity }}>
           <motion.p
-            className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8"
+            className="text-[#FCA5A5] font-semibold text-sm tracking-widest uppercase mb-8"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -303,7 +303,7 @@ export default function GameExperience() {
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
-                background: "linear-gradient(135deg, #C49FDC, #0891B2)",
+                background: "linear-gradient(135deg, #FCA5A5, #0891B2)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -329,7 +329,7 @@ export default function GameExperience() {
           >
             <span className="text-white/25 text-xs tracking-widest uppercase">Scroll to experience it</span>
             <motion.div
-              className="w-px h-16 bg-gradient-to-b from-[#C49FDC]/60 to-transparent"
+              className="w-px h-16 bg-gradient-to-b from-[#FCA5A5]/60 to-transparent"
               animate={{ scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -347,7 +347,7 @@ export default function GameExperience() {
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
-                background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
+                background: "linear-gradient(135deg, #DC2626 20%, #FCA5A5 55%, #0891B2)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -371,7 +371,7 @@ export default function GameExperience() {
           ].map((pill, i) => (
             <motion.div
               key={i}
-              className="flex items-center gap-2.5 bg-white/70 border border-[#7030A0]/10 rounded-full px-5 py-3 text-[#0D0B12]/70 text-sm font-medium shadow-sm"
+              className="flex items-center gap-2.5 bg-white/70 border border-[#DC2626]/10 rounded-full px-5 py-3 text-[#0D0B12]/70 text-sm font-medium shadow-sm"
               initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -389,7 +389,7 @@ export default function GameExperience() {
         num="02" tag="Step 01"
         headline={"Put on\nthe headset."}
         body="No classroom required. At home or at your local library — strap in, and in seconds you're underwater. The real world disappears."
-        accent="#C49FDC"
+        accent="#FCA5A5"
         src="/Gameplay-edited.mp4"
         videoStart={5}
       />
@@ -405,7 +405,7 @@ export default function GameExperience() {
         num="04" tag="Step 03"
         headline={"Algebra unlocks\nlike a puzzle."}
         body="What felt impossible on paper becomes intuitive in 3D. Students say it out loud: 'Wait — that was algebra?' 8 hours. Algebra-ready."
-        accent="#C49FDC"
+        accent="#FCA5A5"
         src="/Gameplay-edited.mp4"
         videoStart={68}
       />
@@ -420,7 +420,7 @@ export default function GameExperience() {
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
-                background: "linear-gradient(135deg, #7030A0, #0891B2)",
+                background: "linear-gradient(135deg, #DC2626, #0891B2)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -433,9 +433,9 @@ export default function GameExperience() {
       >
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {[
-            { num: "10/10", label: "students chose math over recess", color: "#7030A0" },
+            { num: "10/10", label: "students chose math over recess", color: "#DC2626" },
             { num: "18%",   label: "pre → post test score gain",      color: "#0891B2" },
-            { num: "45%",   label: "median score jump, 3 sessions",   color: "#7030A0" },
+            { num: "45%",   label: "median score jump, 3 sessions",   color: "#DC2626" },
             { num: "10/10", label: "educator satisfaction rating",     color: "#0891B2" },
           ].map((stat, i) => (
             <motion.div
@@ -456,7 +456,7 @@ export default function GameExperience() {
       </LightSlide>
 
       {/* ── 7. DARK VIDEO — Manipulatives ── */}
-      <section className="relative h-screen overflow-hidden bg-[#080612] flex items-end">
+      <section className="relative h-screen overflow-hidden bg-[#120101] flex items-end">
         <SectionNum n="06" />
         <video
           src="/Manipulatives.mp4"
@@ -465,8 +465,8 @@ export default function GameExperience() {
           style={{ opacity: 0.8 }}
           onLoadedMetadata={(e) => { e.currentTarget.currentTime = 26; e.currentTarget.playbackRate = 0.65; }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080612] via-[#080612]/25 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/55 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#120101] via-[#120101]/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#120101]/55 via-transparent to-transparent" />
         <ScanlineOverlay />
 
         <div className="relative z-10 px-8 lg:px-20 pb-20 max-w-3xl">
@@ -504,7 +504,7 @@ export default function GameExperience() {
       {/* ── 8. LIGHT — Three things ── */}
       <section className="relative min-h-screen py-32 px-6 lg:px-20 bg-[#FAFAF8] overflow-hidden flex items-center">
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full blur-[130px] pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.3) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, rgba(252,165,165,0.3) 0%, transparent 70%)" }} />
         <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-[110px] pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(8,145,178,0.12) 0%, transparent 70%)" }} />
         <FishLayer />
@@ -513,7 +513,7 @@ export default function GameExperience() {
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="mb-16">
             <motion.p
-              className="text-[#7030A0] font-semibold text-xs tracking-widest uppercase mb-5"
+              className="text-[#DC2626] font-semibold text-xs tracking-widest uppercase mb-5"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -532,7 +532,7 @@ export default function GameExperience() {
               <span
                 className="italic inline-block pb-2 pr-4"
                 style={{
-                  background: "linear-gradient(135deg, #7030A0, #0891B2)",
+                  background: "linear-gradient(135deg, #DC2626, #0891B2)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -546,7 +546,7 @@ export default function GameExperience() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {[
               {
-                num: "01", color: "#7030A0",
+                num: "01", color: "#DC2626",
                 title: "They forget they're learning.",
                 body: "Students go 20 minutes into recess without noticing. The game is that good. The learning is that real.",
                 quote: "\"Math is gonna be so fun from now on.\"",
@@ -560,7 +560,7 @@ export default function GameExperience() {
                 who: "Ms. Munroe, Classroom Teacher",
               },
               {
-                num: "03", color: "#7030A0",
+                num: "03", color: "#DC2626",
                 title: "Math becomes their identity.",
                 body: "18% growth mindset increase. Kids leave believing they can keep getting better — because they just did.",
                 quote: "\"Wait, that level I just did was algebra?\"",
@@ -600,7 +600,7 @@ export default function GameExperience() {
       {/* ── 10. LIGHT — CTA ── */}
       <section className="relative min-h-screen py-40 px-6 bg-white overflow-hidden flex items-center justify-center">
         <div className="absolute top-[-15%] left-[-5%] w-[700px] h-[700px] rounded-full blur-[120px] pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.35) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, rgba(252,165,165,0.35) 0%, transparent 70%)" }} />
         <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full blur-[130px] pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 70%)" }} />
 
@@ -617,7 +617,7 @@ export default function GameExperience() {
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
-                background: "linear-gradient(135deg, #7030A0, #0891B2)",
+                background: "linear-gradient(135deg, #DC2626, #0891B2)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -647,13 +647,13 @@ export default function GameExperience() {
             <Link
               href="/parents"
               className="px-8 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: "linear-gradient(135deg, #7030A0, #4A1E6B)", boxShadow: "0 8px 40px rgba(112,48,160,0.3)" }}
+              style={{ background: "linear-gradient(135deg, #DC2626, #7F1D1D)", boxShadow: "0 8px 40px rgba(220,38,38,0.3)" }}
             >
               For Parents →
             </Link>
             <Link
               href="/educators"
-              className="px-8 py-4 rounded-full font-bold text-[#7030A0] text-base border-2 border-[#7030A0]/25 hover:border-[#7030A0]/60 hover:bg-[#F0E6F7] transition-all duration-200"
+              className="px-8 py-4 rounded-full font-bold text-[#DC2626] text-base border-2 border-[#DC2626]/25 hover:border-[#DC2626]/60 hover:bg-[#FEF2F2] transition-all duration-200"
             >
               For Educators →
             </Link>

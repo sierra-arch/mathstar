@@ -9,9 +9,9 @@ const features = [
     photo: "/Stock Images/pexels-artempodrez-7774026.jpg",
     photoAlt: "Student focused in private learning environment",
     title: "Focused Environment",
-    color: "#7030A0",
-    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
-    border: "border-[#7030A0]/15",
+    color: "#DC2626",
+    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
+    border: "border-[#DC2626]/15",
     body: "VR creates a private, distraction-free world — especially impactful for students with ADHD, ADD, or anxiety. To ensure what students master in-game transfers to paper, sessions are paired with worksheets and guided Q&A.",
     tags: ["ADHD / ADD", "Anxiety", "Sensory sensitivity"],
   },
@@ -31,9 +31,9 @@ const features = [
     photo: "/Stock Images/pexels-anastasia-shuraeva-9821666.jpg",
     photoAlt: "Accessible guided learning",
     title: "Accessible Guidance",
-    color: "#7030A0",
-    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
-    border: "border-[#7030A0]/15",
+    color: "#DC2626",
+    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
+    border: "border-[#DC2626]/15",
     body: "Step-by-step narration with multi-language subtitles and spoken audio ensures no student is left behind. Built from the ground up to support deaf and hard-of-hearing students and English learners.",
     tags: ["Deaf / Hard of Hearing", "English Learners", "Multi-language"],
   },
@@ -41,14 +41,14 @@ const features = [
 
 export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
   const headingColor = dark ? "text-white" : "text-[#0D0B12]";
-  const overlineColor = dark ? "text-[#C49FDC]" : "text-[#7030A0]";
+  const overlineColor = dark ? "text-[#FCA5A5]" : "text-[#DC2626]";
   const subColor = dark ? "text-white/50" : "text-[#0D0B12]/50";
 
   return (
-    <section className={`relative py-24 px-6 lg:px-16 ${dark ? "bg-[#0D0B12]" : "bg-[#F7F2FF]"} overflow-hidden`}>
+    <section className={`relative py-24 px-6 lg:px-16 ${dark ? "bg-[#0D0B12]" : "bg-[#FFF5F5]"} overflow-hidden`}>
 
       {/* Ambient orbs */}
-      <div className="absolute top-[-5%] right-[-5%] w-[400px] h-[400px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-5%] w-[400px] h-[400px] bg-[#DC2626]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-5%] w-[350px] h-[350px] bg-[#0891B2]/8 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">

@@ -16,7 +16,7 @@ export default function ReviewsHero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#F7F2FF]">
+    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#FFF5F5]">
 
       {/* ── LAYER 1: Gradient background (slowest) ── */}
       <motion.div className="absolute inset-0 scale-[1.1]" style={{ y: bgY }}>
@@ -24,7 +24,7 @@ export default function ReviewsHero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 90% 75% at 55% 45%, rgba(196,159,220,0.5) 0%, rgba(240,230,247,0.7) 45%, transparent 100%)",
+              "radial-gradient(ellipse 90% 75% at 55% 45%, rgba(252,165,165,0.5) 0%, rgba(254,242,242,0.7) 45%, transparent 100%)",
           }}
         />
         <div
@@ -33,7 +33,7 @@ export default function ReviewsHero() {
         />
         <div
           className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(112,48,160,0.15) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(220,38,38,0.15) 0%, transparent 70%)" }}
         />
       </motion.div>
 
@@ -45,7 +45,7 @@ export default function ReviewsHero() {
         {/* Large faded quote */}
         <motion.div
           className="absolute top-[15%] right-[8%] text-[9rem] lg:text-[12rem] font-extrabold leading-none select-none"
-          style={{ color: "rgba(112,48,160,0.07)" }}
+          style={{ color: "rgba(220,38,38,0.07)" }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.3 }}
@@ -54,7 +54,7 @@ export default function ReviewsHero() {
         </motion.div>
         {/* Floating mini quote chip */}
         <motion.div
-          className="absolute top-[22%] right-[12%] lg:right-[18%] bg-white/70 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-lg border border-[#7030A0]/10 max-w-[200px]"
+          className="absolute top-[22%] right-[12%] lg:right-[18%] bg-white/70 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-lg border border-[#DC2626]/10 max-w-[200px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.8 }}
@@ -85,7 +85,7 @@ export default function ReviewsHero() {
       >
         {/* Overline */}
         <motion.p
-          className="absolute top-48 left-8 lg:left-16 text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase"
+          className="absolute top-48 left-8 lg:left-16 text-[#DC2626]/70 font-semibold text-xs tracking-widest uppercase"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -113,7 +113,7 @@ export default function ReviewsHero() {
           >
             <span className="whitespace-nowrap">Parents. Teachers. Kids.</span>
             <br />
-            <em className="not-italic italic text-[#7030A0]">All saying the same thing.</em>
+            <em className="not-italic italic text-[#DC2626]">All saying the same thing.</em>
           </motion.h1>
         </div>
 
@@ -125,7 +125,7 @@ export default function ReviewsHero() {
           transition={{ delay: 1.4 }}
         >
           <motion.div
-            className="w-px h-10 bg-[#7030A0]/30"
+            className="w-px h-10 bg-[#DC2626]/30"
             animate={{ scaleY: [0, 1, 0], originY: 0 }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           />
