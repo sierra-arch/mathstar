@@ -16,7 +16,7 @@ const story = [
   {
     text: "That day, someone gifted me the wonder of math.",
     highlight: true,
-    accentColor: "#DC2626",
+    accentColor: "#7030A0",
   },
   {
     text: "Wonder replaced fear with curiosity, even excitement. I worked harder, grew confident, and years later, earned my Master's at Oxford — publishing a quantum physics paper in the same journal where Einstein published his own famous equations.",
@@ -40,7 +40,7 @@ const story = [
 function AnimatedParagraph({
   text,
   highlight,
-  accentColor = "#DC2626",
+  accentColor = "#7030A0",
 }: {
   text: string;
   highlight: boolean;
@@ -84,10 +84,10 @@ function AnimatedParagraph({
 
 export default function FounderStory() {
   return (
-    <section id="story" className="relative py-40 px-6 lg:px-16 bg-[#FFF5F5] overflow-hidden">
+    <section id="story" className="relative py-40 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
 
       {/* Ambient orbs */}
-      <div className="absolute top-[5%] right-[-10%] w-[500px] h-[500px] bg-[#DC2626]/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/15 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[5%] left-[-10%] w-[400px] h-[400px] bg-[#0891B2]/12 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -95,7 +95,7 @@ export default function FounderStory() {
         {/* Header */}
         <div className="max-w-3xl mb-14">
           <motion.p
-            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5"
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -167,10 +167,10 @@ export default function FounderStory() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(255,255,255,0) 50%, rgba(8,145,178,0.06) 100%)",
+                "linear-gradient(135deg, rgba(112,48,160,0.08) 0%, rgba(255,255,255,0) 50%, rgba(8,145,178,0.06) 100%)",
             }}
           />
-          <div className="relative bg-white/70 backdrop-blur-sm border border-[#DC2626]/12 rounded-3xl p-12">
+          <div className="relative bg-white/70 backdrop-blur-sm border border-[#7030A0]/12 rounded-3xl p-12">
             <p className="text-xl text-[#0D0B12]/75 leading-relaxed mb-8">
               This <strong className="text-[#0D0B12]">8-hour VR intervention</strong> takes students from
               stuck-in-arithmetic to algebra-confident. They put on the headset at home or at their local library,
@@ -180,7 +180,7 @@ export default function FounderStory() {
 
             <div className="flex flex-wrap gap-8 mb-8 pt-6 border-t border-[#0D0B12]/8">
               <div>
-                <div className="text-3xl font-extrabold text-[#DC2626]">10/10</div>
+                <div className="text-3xl font-extrabold text-[#7030A0]">10/10</div>
                 <div className="text-xs text-[#0D0B12]/45 mt-1 uppercase tracking-widest">Educator rating</div>
               </div>
               <div className="w-px bg-[#0D0B12]/10 hidden sm:block" />
@@ -190,15 +190,15 @@ export default function FounderStory() {
               </div>
               <div className="w-px bg-[#0D0B12]/10 hidden sm:block" />
               <div>
-                <div className="text-3xl font-extrabold text-[#DC2626]">10/10</div>
+                <div className="text-3xl font-extrabold text-[#7030A0]">10/10</div>
                 <div className="text-xs text-[#0D0B12]/45 mt-1 uppercase tracking-widest">Chose math over recess</div>
               </div>
             </div>
 
             <p className="text-base text-[#0D0B12]/55">
               But here&apos;s what really matters: kids are saying,{" "}
-              <em className="text-[#DC2626] font-semibold">&ldquo;I love this,&rdquo;</em> and{" "}
-              <em className="text-[#DC2626] font-semibold">&ldquo;Math is my favorite subject now.&rdquo;</em>
+              <em className="text-[#7030A0] font-semibold">&ldquo;I love this,&rdquo;</em> and{" "}
+              <em className="text-[#7030A0] font-semibold">&ldquo;Math is my favorite subject now.&rdquo;</em>
             </p>
           </div>
         </motion.div>

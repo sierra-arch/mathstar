@@ -7,9 +7,9 @@ const topStats = [
     value: "10/10",
     label: "chose math over recess",
     sublabel: "Ellis Elementary Pilot",
-    color: "text-[#DC2626]",
-    bg: "bg-[#DC2626]/8",
-    accent: "border-[#DC2626]/20",
+    color: "text-[#7030A0]",
+    bg: "bg-[#7030A0]/8",
+    accent: "border-[#7030A0]/20",
   },
   {
     value: "18%",
@@ -31,9 +31,9 @@ const topStats = [
     value: "86%",
     label: "of students said they loved it",
     sublabel: "and would recommend to a friend",
-    color: "text-[#DC2626]",
-    bg: "bg-[#DC2626]/8",
-    accent: "border-[#DC2626]/20",
+    color: "text-[#7030A0]",
+    bg: "bg-[#7030A0]/8",
+    accent: "border-[#7030A0]/20",
   },
 ];
 
@@ -44,9 +44,9 @@ const outcomeCards = [
     headline: "10/10",
     headlineLabel: "chose math over recess",
     supporting: ["86% said \"Yes\" to enjoying the experience", "Both instructors agreed: 5/5 engagement"],
-    color: "text-[#DC2626]",
-    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
-    border: "border-[#DC2626]/15",
+    color: "text-[#7030A0]",
+    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
+    border: "border-[#7030A0]/15",
   },
   {
     category: "Regulation & Behavior",
@@ -74,9 +74,9 @@ const outcomeCards = [
     headline: "18%",
     headlineLabel: "increase in believing they can improve",
     supporting: ["Students went from \"bored + afraid\" to curious", "Unprompted: \"Wait — that was algebra?\""],
-    color: "text-[#DC2626]",
-    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
-    border: "border-[#DC2626]/15",
+    color: "text-[#7030A0]",
+    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
+    border: "border-[#7030A0]/15",
   },
   {
     category: "Educator Rating",
@@ -102,19 +102,19 @@ const outcomeCards = [
 
 export default function ImpactStats() {
   return (
-    <section className="relative pb-28 px-6 lg:px-16 bg-[#FFF5F5] overflow-hidden">
+    <section className="relative pb-28 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
 
       {/* Dark → light gradient transition from hero above */}
       <div
         className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
         style={{
-          background: "linear-gradient(to bottom, #0D0B12 0%, #FFF5F5 100%)",
+          background: "linear-gradient(to bottom, #0D0B12 0%, #F7F2FF 100%)",
         }}
       />
 
       <div className="relative pt-32">
 
-      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#DC2626]/12 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/12 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-8%] w-[450px] h-[450px] bg-[#0891B2]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -122,7 +122,7 @@ export default function ImpactStats() {
         {/* Top headline stats */}
         <div className="text-center mb-16">
           <motion.p
-            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -168,7 +168,7 @@ export default function ImpactStats() {
             transition={{ duration: 0.6 }}
           >
             Every outcome area.{" "}
-            <em className="not-italic italic text-[#DC2626]">All of them moved.</em>
+            <em className="not-italic italic text-[#7030A0]">All of them moved.</em>
           </motion.h3>
           <motion.p
             className="text-ink/50 text-sm mt-3 max-w-xl mx-auto"

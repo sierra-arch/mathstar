@@ -23,7 +23,7 @@ export default function ResultsSlide() {
   const textY      = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-[#1A0303]">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-[#0d0620]">
 
       {/* ── Full-bleed gameplay video ── */}
       <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
@@ -39,20 +39,20 @@ export default function ResultsSlide() {
       </motion.div>
 
       {/* ── Overlays — lighter so gameplay color shows ── */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1A0303]/30 via-[#1A0303]/10 to-[#1A0303]/70" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1A0303]/65 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0620]/30 via-[#0d0620]/10 to-[#0d0620]/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0d0620]/65 via-transparent to-transparent" />
       {/* Rich purple/teal atmosphere */}
       <div
         className="absolute inset-0"
-        style={{ background: "radial-gradient(ellipse 70% 60% at 20% 55%, rgba(220,38,38,0.35) 0%, transparent 60%)" }}
+        style={{ background: "radial-gradient(ellipse 70% 60% at 20% 55%, rgba(112,48,160,0.35) 0%, transparent 60%)" }}
       />
       <div
         className="absolute inset-0"
         style={{ background: "radial-gradient(ellipse 50% 40% at 80% 20%, rgba(8,145,178,0.20) 0%, transparent 55%)" }}
       />
       {/* Gradient edge transitions */}
-      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#FFF5F5] to-transparent z-20 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#FFF5F5] to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
 
       {/* ── Content ── */}
       <motion.div
@@ -63,7 +63,7 @@ export default function ResultsSlide() {
 
           {/* Overline */}
           <motion.p
-            className="text-[#FCA5A5] font-semibold text-xs tracking-widest uppercase mb-6"
+            className="text-[#C49FDC] font-semibold text-xs tracking-widest uppercase mb-6"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -84,7 +84,7 @@ export default function ResultsSlide() {
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
-                background: "linear-gradient(135deg, #FCA5A5 20%, #0891B2)",
+                background: "linear-gradient(135deg, #C49FDC 20%, #0891B2)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -120,7 +120,7 @@ export default function ResultsSlide() {
                 <div
                   className="text-5xl lg:text-6xl font-extrabold mb-3 leading-none"
                   style={{
-                    background: "linear-gradient(135deg, #FCA5A5, #ffffff)",
+                    background: "linear-gradient(135deg, #C49FDC, #ffffff)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -141,7 +141,7 @@ export default function ResultsSlide() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <div className="w-1 self-stretch bg-gradient-to-b from-[#DC2626] to-[#0891B2] rounded-full shrink-0" />
+            <div className="w-1 self-stretch bg-gradient-to-b from-[#7030A0] to-[#0891B2] rounded-full shrink-0" />
             <div>
               <p className="text-white/80 text-lg font-medium leading-relaxed italic mb-3">
                 &ldquo;They got 17/21 in the game&apos;s test. We know they&apos;re capable of this — it just doesn&apos;t show up on paper. They need ACCESS.&rdquo;
@@ -160,7 +160,7 @@ export default function ResultsSlide() {
           >
             <Link
               href="/impact"
-              className="inline-flex items-center gap-2 text-[#FCA5A5] font-semibold text-base hover:gap-4 transition-all"
+              className="inline-flex items-center gap-2 text-[#C49FDC] font-semibold text-base hover:gap-4 transition-all"
             >
               See the full case study →
             </Link>

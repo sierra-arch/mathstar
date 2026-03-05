@@ -10,7 +10,7 @@ const steps = [
     title: "Put on the headset",
     desc: "At home or at your local library — no special setup, no downloads, no tech experience needed. Strap in and you're there in seconds.",
     detail: "MathSTAR works with Meta Quest headsets available at participating public libraries and for home use. Setup takes under 2 minutes. No controllers, no cables, no IT department required.",
-    accent: "#DC2626",
+    accent: "#7030A0",
     visual: (
       <Image
         src="/Stock Images/pexels-tima-miroshnichenko-7047292.jpg"
@@ -44,7 +44,7 @@ const steps = [
     title: "Watch math click",
     desc: "8 hours from arithmetic to algebra-confident. Kids beg to stay. Educators rate it 10/10.",
     detail: "After just 3 sessions, students show a 45% jump in median test score. After 8 hours total, they've moved from basic arithmetic to algebra-ready. The real moment? When they say — unprompted — \"Wait, that was algebra?\"",
-    accent: "#DC2626",
+    accent: "#7030A0",
     visual: (
       <Image
         src="/Stock Images/pexels-julia-m-cameron-4144150.jpg"
@@ -63,9 +63,9 @@ export default function HowItWorks() {
   const current = steps[active];
 
   return (
-    <section id="how" className="relative pt-32 pb-20 px-6 lg:px-16 bg-[#FFF5F5] overflow-hidden">
+    <section id="how" className="relative pt-32 pb-20 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
 
-      <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-[#DC2626]/15 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/15 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[5%] left-[-8%] w-[400px] h-[400px] bg-teal-400/15 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -73,7 +73,7 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.p
-            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -88,7 +88,7 @@ export default function HowItWorks() {
             transition={{ duration: 0.6 }}
           >
             Simple to start.{" "}
-            <em className="not-italic italic text-[#DC2626]">Life-changing</em>{" "}
+            <em className="not-italic italic text-[#7030A0]">Life-changing</em>{" "}
             to experience.
           </motion.h2>
         </div>
@@ -140,18 +140,18 @@ export default function HowItWorks() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="rounded-3xl overflow-hidden border border-[#DC2626]/8 bg-white shadow-sm shadow-[#DC2626]/5"
+                className="rounded-3xl overflow-hidden border border-[#7030A0]/8 bg-white shadow-sm shadow-[#7030A0]/5"
               >
                 {/* Visual */}
                 <div className="w-full h-72 overflow-hidden relative">
                   {current.placeholder ? (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#EDE9FE] to-[#E0F7FA]">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(220,38,38,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(112,48,160,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="2" y="5" width="20" height="14" rx="2" />
                         <circle cx="12" cy="12" r="3.5" />
                         <path d="M8 5V3.5" />
                       </svg>
-                      <span className="text-[#DC2626]/30 text-xs tracking-widest uppercase font-medium">Photo · Coming soon</span>
+                      <span className="text-[#7030A0]/30 text-xs tracking-widest uppercase font-medium">Photo · Coming soon</span>
                     </div>
                   ) : (
                     current.visual
@@ -199,7 +199,7 @@ export default function HowItWorks() {
 
         {/* Video row */}
         <motion.div
-          className="rounded-3xl overflow-hidden shadow-2xl shadow-[#DC2626]/15 relative"
+          className="rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/15 relative"
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -10,7 +10,7 @@ const picks = [
     who: "Parent",
     context: "Roxbury Library Pilot",
     tag: "Parent",
-    accent: "#DC2626",
+    accent: "#7030A0",
   },
   {
     quote: "They went 20 minutes into recess and didn't notice.",
@@ -24,20 +24,20 @@ const picks = [
     who: "Student",
     context: "Ellis Pilot, Jan 2026",
     tag: "Student",
-    accent: "#DC2626",
+    accent: "#7030A0",
   },
 ];
 
 // Placeholder for photos coming soon
 function PhotoPlaceholder({ label }: { label: string }) {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#FFF5F5] to-[#E0F7FA]">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(220,38,38,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#F7F2FF] to-[#E0F7FA]">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(112,48,160,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="5" width="20" height="14" rx="2" />
         <circle cx="12" cy="12" r="3.5" />
         <path d="M8 5V3.5" />
       </svg>
-      <span className="text-[#DC2626]/25 text-xs tracking-widest uppercase font-medium">{label}</span>
+      <span className="text-[#7030A0]/25 text-xs tracking-widest uppercase font-medium">{label}</span>
     </div>
   );
 }
@@ -47,7 +47,7 @@ export default function TestimonialsTeaser() {
     <section className="relative pt-28 pb-40 px-6 lg:px-16 bg-white overflow-hidden">
 
       {/* Ambient orbs */}
-      <div className="absolute top-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#DC2626]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-8%] w-[400px] h-[400px] bg-[#0891B2]/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -55,7 +55,7 @@ export default function TestimonialsTeaser() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div>
             <motion.p
-              className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
+              className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -82,7 +82,7 @@ export default function TestimonialsTeaser() {
           >
             <Link
               href="/reviews"
-              className="inline-flex items-center gap-2 text-[#DC2626] font-semibold text-lg hover:gap-4 transition-all whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-[#7030A0] font-semibold text-lg hover:gap-4 transition-all whitespace-nowrap"
             >
               See all reviews →
             </Link>
@@ -94,7 +94,7 @@ export default function TestimonialsTeaser() {
           {picks.map((p, i) => (
             <motion.div
               key={i}
-              className="relative bg-[#FFF5F5] rounded-3xl p-10 flex flex-col"
+              className="relative bg-[#F7F2FF] rounded-3xl p-10 flex flex-col"
               style={{ border: `1px solid ${p.accent}18` }}
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}

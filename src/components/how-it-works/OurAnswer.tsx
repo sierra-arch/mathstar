@@ -7,9 +7,9 @@ const pillars = [
   {
     title: "Immersive",
     body: "VR puts kids inside math — not across from it. The ocean isn't a metaphor. It's the classroom. Fish multiply and divide before their eyes in real time.",
-    color: "#DC2626",
-    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
-    border: "border-[#DC2626]/15",
+    color: "#7030A0",
+    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
+    border: "border-[#7030A0]/15",
   },
   {
     title: "Equitable",
@@ -21,9 +21,9 @@ const pillars = [
   {
     title: "Evidence-Based",
     body: "Piloted at Ellis Elementary and Boston Public Library with IRB-approved research. We measure everything — engagement, test scores, mindset. The data backs the magic.",
-    color: "#DC2626",
-    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
-    border: "border-[#DC2626]/15",
+    color: "#7030A0",
+    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
+    border: "border-[#7030A0]/15",
   },
   {
     title: "Kid-First",
@@ -36,10 +36,10 @@ const pillars = [
 
 export default function OurAnswer() {
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#FEF2F2] overflow-hidden">
+    <section className="relative py-28 px-6 lg:px-20 bg-[#F0E6F7] overflow-hidden">
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(252,165,165,0.30) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.30) 0%, transparent 70%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -51,7 +51,7 @@ export default function OurAnswer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
+          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
             Our Answer
           </p>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight mb-6">
@@ -67,7 +67,7 @@ export default function OurAnswer() {
 
         {/* Gameplay video */}
         <motion.div
-          className="relative rounded-3xl overflow-hidden mb-16 shadow-2xl shadow-[#DC2626]/10"
+          className="relative rounded-3xl overflow-hidden mb-16 shadow-2xl shadow-[#7030A0]/10"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

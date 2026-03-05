@@ -16,17 +16,17 @@ export default function MissionPage() {
       <Nav />
 
       {/* ── MANIFESTO HERO ── */}
-      <section className="pt-36 pb-28 px-6 lg:px-20 bg-[#DC2626]">
+      <section className="pt-36 pb-28 px-6 lg:px-20 bg-[#7030A0]">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <p className="text-[#FCA5A5] font-semibold text-sm tracking-widest uppercase mb-8">
+            <p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8">
               Our Mission
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="text-5xl lg:text-7xl font-extrabold text-white leading-[1.02] mb-6">
               Unearth the Unexpected{" "}
-              <span className="italic text-[#FCA5A5]">Einsteins of Tomorrow.</span>
+              <span className="italic text-[#C49FDC]">Einsteins of Tomorrow.</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -42,7 +42,7 @@ export default function MissionPage() {
       <section className="py-28 px-6 lg:px-20">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <div>
-            <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-6">
+            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-6">
               The Problem
             </p>
             <h2 className="text-4xl font-extrabold text-[#0D0B12] leading-tight mb-8">
@@ -66,7 +66,7 @@ export default function MissionPage() {
               {
                 stat: "92%",
                 label: "of students with learning differences not proficient in math by 8th grade",
-                color: "#DC2626",
+                color: "#7030A0",
               },
               {
                 stat: "45%",
@@ -76,7 +76,7 @@ export default function MissionPage() {
               {
                 stat: "55,000",
                 label: "learners to reach at or above grade level — our 3-year goal",
-                color: "#DC2626",
+                color: "#7030A0",
               },
             ].map((item) => (
               <div
@@ -97,10 +97,10 @@ export default function MissionPage() {
       </section>
 
       {/* ── OUR ANSWER ── */}
-      <section className="py-28 px-6 lg:px-20 bg-[#FEF2F2]">
+      <section className="py-28 px-6 lg:px-20 bg-[#F0E6F7]">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl mb-16">
-            <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
+            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
               Our Answer
             </p>
             <h2 className="text-4xl font-extrabold text-[#0D0B12] leading-tight mb-6">
@@ -135,9 +135,9 @@ export default function MissionPage() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="bg-white rounded-2xl p-7 border border-[#DC2626]/10"
+                className="bg-white rounded-2xl p-7 border border-[#7030A0]/10"
               >
-                <h3 className="text-lg font-extrabold text-[#DC2626] mb-3">{card.title}</h3>
+                <h3 className="text-lg font-extrabold text-[#7030A0] mb-3">{card.title}</h3>
                 <p className="text-[#0D0B12]/55 text-sm leading-relaxed">{card.body}</p>
               </div>
             ))}
@@ -148,7 +148,7 @@ export default function MissionPage() {
       {/* ── COMMITMENTS ── */}
       <section className="py-28 px-6 lg:px-20">
         <div className="max-w-4xl mx-auto">
-          <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
+          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
             Our Commitments
           </p>
           <h2 className="text-4xl font-extrabold text-[#0D0B12] leading-tight mb-14">
@@ -182,7 +182,7 @@ export default function MissionPage() {
                 key={item.num}
                 className="flex gap-10 py-10 border-b border-[#0D0B12]/8 last:border-0"
               >
-                <p className="text-[#DC2626]/30 font-extrabold text-xl shrink-0 pt-1">
+                <p className="text-[#7030A0]/30 font-extrabold text-xl shrink-0 pt-1">
                   {item.num}
                 </p>
                 <div>
@@ -198,7 +198,7 @@ export default function MissionPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 px-6 bg-[#DC2626]">
+      <section className="py-24 px-6 bg-[#7030A0]">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
             The mission needs all of us.
@@ -210,7 +210,7 @@ export default function MissionPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/impact"
-              className="px-8 py-4 rounded-full font-bold text-[#DC2626] bg-white text-base hover:bg-[#FEF2F2] transition-colors"
+              className="px-8 py-4 rounded-full font-bold text-[#7030A0] bg-white text-base hover:bg-[#F0E6F7] transition-colors"
             >
               See the Impact →
             </Link>

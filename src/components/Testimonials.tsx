@@ -167,21 +167,21 @@ const grid = [
 ];
 
 const tagColors: Record<string, { bg: string; text: string }> = {
-  "Math Love":  { bg: "#DC2626/10", text: "#DC2626" },
+  "Math Love":  { bg: "#7030A0/10", text: "#7030A0" },
   "Transfer":   { bg: "#0891B2/10", text: "#0891B2" },
-  "Enjoyment":  { bg: "#DC2626/10", text: "#DC2626" },
+  "Enjoyment":  { bg: "#7030A0/10", text: "#7030A0" },
   "Engagement": { bg: "#0891B2/10", text: "#0891B2" },
-  "Regulation": { bg: "#7F1D1D/10", text: "#7F1D1D" },
+  "Regulation": { bg: "#4A1E6B/10", text: "#4A1E6B" },
   "Learning":   { bg: "#0891B2/10", text: "#0891B2" },
-  "Confidence": { bg: "#DC2626/10", text: "#DC2626" },
+  "Confidence": { bg: "#7030A0/10", text: "#7030A0" },
 };
 
 function TagChip({ tag }: { tag: string }) {
-  const color = tagColors[tag] ?? { bg: "#DC2626/10", text: "#DC2626" };
+  const color = tagColors[tag] ?? { bg: "#7030A0/10", text: "#7030A0" };
   return (
     <span
       className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-5 w-fit"
-      style={{ background: `rgba(${color.text === "#DC2626" ? "112,48,160" : color.text === "#0891B2" ? "8,145,178" : "74,30,107"},0.1)`, color: color.text }}
+      style={{ background: `rgba(${color.text === "#7030A0" ? "112,48,160" : color.text === "#0891B2" ? "8,145,178" : "74,30,107"},0.1)`, color: color.text }}
     >
       {tag}
     </span>
@@ -190,17 +190,17 @@ function TagChip({ tag }: { tag: string }) {
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="relative bg-[#FFF5F5] pt-40 pb-24 px-6 lg:px-16">
+    <section id="reviews" className="relative bg-[#F7F2FF] pt-40 pb-24 px-6 lg:px-16">
 
       {/* Ambient orbs */}
-      <div className="absolute top-[5%] right-[-8%] w-[500px] h-[500px] bg-[#DC2626]/8 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/8 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[5%] left-[-6%] w-[400px] h-[400px] bg-[#0891B2]/8 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
         <div className="text-center mb-16">
           <motion.p
-            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-3"
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -216,7 +216,7 @@ export default function Testimonials() {
           >
             Parents. Teachers. Kids.
             <br />
-            <em className="not-italic italic text-[#DC2626]">
+            <em className="not-italic italic text-[#7030A0]">
               All saying the same thing.
             </em>
           </motion.h2>
@@ -227,7 +227,7 @@ export default function Testimonials() {
           {featured.map((f, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl p-7 flex flex-col shadow-sm border ${f.highlight ? "bg-[#E0F7FA] border-[#0891B2]/20 shadow-[#0891B2]/8" : "bg-white border-[#DC2626]/6 shadow-[#DC2626]/8"}`}
+              className={`rounded-3xl p-7 flex flex-col shadow-sm border ${f.highlight ? "bg-[#E0F7FA] border-[#0891B2]/20 shadow-[#0891B2]/8" : "bg-white border-[#7030A0]/6 shadow-[#7030A0]/8"}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -250,7 +250,7 @@ export default function Testimonials() {
           {grid.map((q, i) => (
             <motion.div
               key={i}
-              className={`hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm border ${q.highlight ? "bg-[#E0F7FA] border-[#0891B2]/18 shadow-[#0891B2]/5" : "bg-white border-[#DC2626]/5 shadow-[#DC2626]/5"}`}
+              className={`hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm border ${q.highlight ? "bg-[#E0F7FA] border-[#0891B2]/18 shadow-[#0891B2]/5" : "bg-white border-[#7030A0]/5 shadow-[#7030A0]/5"}`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}

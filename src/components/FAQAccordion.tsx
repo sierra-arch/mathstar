@@ -59,11 +59,11 @@ export default function FAQAccordion() {
             onClick={() => setOpen(open === i ? null : i)}
             className="w-full text-left py-7 flex items-center justify-between gap-6 group"
           >
-            <span className="text-lg font-semibold text-[#0D0B12] group-hover:text-[#DC2626] transition-colors leading-snug">
+            <span className="text-lg font-semibold text-[#0D0B12] group-hover:text-[#7030A0] transition-colors leading-snug">
               {item.q}
             </span>
             <span
-              className="shrink-0 w-7 h-7 rounded-full border border-[#DC2626]/30 flex items-center justify-center text-[#DC2626] transition-transform duration-300"
+              className="shrink-0 w-7 h-7 rounded-full border border-[#7030A0]/30 flex items-center justify-center text-[#7030A0] transition-transform duration-300"
               style={{ transform: open === i ? "rotate(45deg)" : "rotate(0deg)" }}
             >
               +

@@ -8,8 +8,8 @@ const pilots = [
     location: "Roxbury, MA",
     date: "August 2025",
     type: "Library Pilot",
-    color: "from-[#DC2626]/20 to-violet-500/10",
-    badge: "bg-[#DC2626]/15 text-[#FCA5A5]",
+    color: "from-[#7030A0]/20 to-violet-500/10",
+    badge: "bg-[#7030A0]/15 text-[#C49FDC]",
     details: [
       { label: "Setting", value: "Public library free program" },
       { label: "Population", value: "Mixed ages, community access" },
@@ -61,7 +61,7 @@ export default function EducatorsPilotData() {
   return (
     <section className="relative py-40 px-6 lg:px-16 bg-[#0F0620] overflow-hidden">
 
-      <div className="absolute top-[-5%] left-[-8%] w-[500px] h-[500px] bg-[#DC2626]/20 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-5%] left-[-8%] w-[500px] h-[500px] bg-[#7030A0]/20 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] right-[-5%] w-[400px] h-[400px] bg-teal-400/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -69,7 +69,7 @@ export default function EducatorsPilotData() {
         {/* Header */}
         <div className="text-center mb-20">
           <motion.p
-            className="text-[#FCA5A5] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -85,7 +85,7 @@ export default function EducatorsPilotData() {
           >
             Two pilots. Real schools.
             <br />
-            <em className="not-italic italic text-[#FCA5A5]">Undeniable results.</em>
+            <em className="not-italic italic text-[#C49FDC]">Undeniable results.</em>
           </motion.h2>
         </div>
 
@@ -100,7 +100,7 @@ export default function EducatorsPilotData() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <div className="text-4xl font-extrabold text-[#FCA5A5] mb-2">{s.value}</div>
+              <div className="text-4xl font-extrabold text-[#C49FDC] mb-2">{s.value}</div>
               <div className="text-white/70 text-sm font-semibold mb-1">{s.label}</div>
               <div className="text-white/30 text-xs">{s.sublabel}</div>
             </motion.div>
@@ -152,7 +152,7 @@ export default function EducatorsPilotData() {
             viewport={{ once: true }}
           >
             The science behind the{" "}
-            <em className="not-italic italic text-[#FCA5A5]">experience</em>
+            <em className="not-italic italic text-[#C49FDC]">experience</em>
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {researchContext.map((r, i) => (
@@ -164,7 +164,7 @@ export default function EducatorsPilotData() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
               >
-                <h4 className="text-[#FCA5A5] font-bold text-sm tracking-wide uppercase mb-4">{r.title}</h4>
+                <h4 className="text-[#C49FDC] font-bold text-sm tracking-wide uppercase mb-4">{r.title}</h4>
                 <p className="text-white/55 leading-relaxed text-sm">{r.body}</p>
               </motion.div>
             ))}

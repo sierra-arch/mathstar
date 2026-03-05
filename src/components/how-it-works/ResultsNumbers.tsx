@@ -8,9 +8,9 @@ const stats = [
     value: "10/10",
     label: "chose math over recess",
     sub: "Ellis Elementary Pilot",
-    color: "text-[#DC2626]",
-    border: "border-[#DC2626]/20",
-    bg: "bg-[#DC2626]/8",
+    color: "text-[#7030A0]",
+    border: "border-[#7030A0]/20",
+    bg: "bg-[#7030A0]/8",
   },
   {
     value: "+18%",
@@ -32,9 +32,9 @@ const stats = [
     value: "86%",
     label: "said they loved it",
     sub: "and would recommend to a friend",
-    color: "text-[#DC2626]",
-    border: "border-[#DC2626]/20",
-    bg: "bg-[#DC2626]/8",
+    color: "text-[#7030A0]",
+    border: "border-[#7030A0]/20",
+    bg: "bg-[#7030A0]/8",
   },
 ];
 
@@ -45,9 +45,9 @@ const outcomeCards = [
     headline: "10/10",
     headlineLabel: "chose math over recess",
     supporting: ["86% said \"Yes\" to enjoying the experience", "Both instructors agreed: 5/5 engagement"],
-    color: "#DC2626",
-    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
-    border: "border-[#DC2626]/15",
+    color: "#7030A0",
+    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
+    border: "border-[#7030A0]/15",
   },
   {
     emoji: "🧘",
@@ -65,9 +65,9 @@ const outcomeCards = [
     headline: "18%",
     headlineLabel: "pre vs. post test gain",
     supporting: ["86% said \"Yes\" to learning a lot", "Students reached algebra concepts in 8 hrs"],
-    color: "#DC2626",
-    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
-    border: "border-[#DC2626]/15",
+    color: "#7030A0",
+    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
+    border: "border-[#7030A0]/15",
   },
   {
     emoji: "💡",
@@ -85,9 +85,9 @@ const outcomeCards = [
     headline: "10/10",
     headlineLabel: "rated MathSTAR \"Extremely Helpful\"",
     supporting: ["5/5 — fit perfectly into classroom routine", "5/5 — would recommend for similar classrooms"],
-    color: "#DC2626",
-    bg: "from-[#DC2626]/10 to-[#DC2626]/4",
-    border: "border-[#DC2626]/15",
+    color: "#7030A0",
+    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
+    border: "border-[#7030A0]/15",
   },
   {
     emoji: "🔑",
@@ -103,9 +103,9 @@ const outcomeCards = [
 
 export default function ResultsNumbers() {
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#FFF5F5] overflow-hidden">
+    <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF] overflow-hidden">
 
-      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#DC2626]/12 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/12 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-8%] w-[450px] h-[450px] bg-[#0891B2]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -113,7 +113,7 @@ export default function ResultsNumbers() {
         {/* Header */}
         <div className="text-center mb-16">
           <motion.p
-            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -180,7 +180,7 @@ export default function ResultsNumbers() {
             transition={{ duration: 0.6 }}
           >
             Every outcome area.{" "}
-            <em className="not-italic italic text-[#DC2626]">All of them moved.</em>
+            <em className="not-italic italic text-[#7030A0]">All of them moved.</em>
           </motion.h3>
           <motion.p
             className="text-[#0D0B12]/50 text-sm mt-3 max-w-xl mx-auto"

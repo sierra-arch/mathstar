@@ -7,9 +7,9 @@ const stats = [
   {
     value: "92%",
     body: "of students with learning differences are not proficient in math by 8th grade",
-    color: "text-[#DC2626]",
-    border: "border-[#DC2626]/15",
-    bg: "bg-[#DC2626]/6",
+    color: "text-[#7030A0]",
+    border: "border-[#7030A0]/15",
+    bg: "bg-[#7030A0]/6",
   },
   {
     value: "45%",
@@ -21,9 +21,9 @@ const stats = [
   {
     value: "55,000",
     body: "learners to reach at or above grade level — our 3-year goal",
-    color: "text-[#DC2626]",
-    border: "border-[#DC2626]/15",
-    bg: "bg-[#DC2626]/6",
+    color: "text-[#7030A0]",
+    border: "border-[#7030A0]/15",
+    bg: "bg-[#7030A0]/6",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function TheProblem() {
   return (
     <section className="relative py-28 px-6 lg:px-20 bg-[#FAFAF8] overflow-hidden">
 
-      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#DC2626]/8 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/8 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-8%] w-[400px] h-[400px] bg-[#0891B2]/8 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -44,7 +44,7 @@ export default function TheProblem() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
+            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
               The Problem
             </p>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight mb-8">

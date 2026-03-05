@@ -23,10 +23,10 @@ export default function ROICalculator() {
   };
 
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#FEF2F2] overflow-hidden">
+    <section className="relative py-28 px-6 lg:px-20 bg-[#F0E6F7] overflow-hidden">
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(252,165,165,0.35) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.35) 0%, transparent 70%)" }} />
 
       <div className="max-w-5xl mx-auto relative z-10">
 
@@ -38,7 +38,7 @@ export default function ROICalculator() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4">
+          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">
             For Educators
           </p>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight mb-4">
@@ -53,7 +53,7 @@ export default function ROICalculator() {
 
           {/* Left — sliders */}
           <motion.div
-            className="bg-white rounded-3xl p-8 border border-[#DC2626]/10 space-y-10"
+            className="bg-white rounded-3xl p-8 border border-[#7030A0]/10 space-y-10"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -62,7 +62,7 @@ export default function ROICalculator() {
             <div>
               <div className="flex items-end justify-between mb-3">
                 <label className="font-bold text-[#0D0B12] text-lg">Number of students</label>
-                <span className="text-3xl font-extrabold text-[#DC2626]">{students}</span>
+                <span className="text-3xl font-extrabold text-[#7030A0]">{students}</span>
               </div>
               <input
                 type="range"
@@ -73,7 +73,7 @@ export default function ROICalculator() {
                 onChange={(e) => setStudents(Number(e.target.value))}
                 className="w-full h-2 rounded-full appearance-none cursor-pointer"
                 style={{
-                  background: `linear-gradient(to right, #DC2626 ${((students - 5) / 95) * 100}%, #DC262620 ${((students - 5) / 95) * 100}%)`,
+                  background: `linear-gradient(to right, #7030A0 ${((students - 5) / 95) * 100}%, #7030A020 ${((students - 5) / 95) * 100}%)`,
                 }}
               />
               <div className="flex justify-between text-xs text-[#0D0B12]/35 mt-1">
@@ -121,9 +121,9 @@ export default function ROICalculator() {
                 value: `~${projected.scoreGain}`,
                 label: "students projected to improve their test score",
                 sub: "Based on 18% pre→post gain",
-                color: "#DC2626",
-                border: "border-[#DC2626]/15",
-                bg: "bg-[#DC2626]/6",
+                color: "#7030A0",
+                border: "border-[#7030A0]/15",
+                bg: "bg-[#7030A0]/6",
               },
               {
                 value: `~${projected.engagedKids}`,
@@ -137,9 +137,9 @@ export default function ROICalculator() {
                 value: `~${projected.mindsetShifts}`,
                 label: "students with measurable mindset shifts",
                 sub: "Based on 18% growth mindset increase",
-                color: "#DC2626",
-                border: "border-[#DC2626]/15",
-                bg: "bg-[#DC2626]/6",
+                color: "#7030A0",
+                border: "border-[#7030A0]/15",
+                bg: "bg-[#7030A0]/6",
               },
               {
                 value: `${projected.hoursOfLearning.toLocaleString()}`,
@@ -168,7 +168,7 @@ export default function ROICalculator() {
 
             <Link
               href="/contact"
-              className="block w-full text-center mt-4 px-8 py-4 rounded-full font-bold text-white text-base bg-[#DC2626] hover:bg-[#7F1D1D] transition-colors"
+              className="block w-full text-center mt-4 px-8 py-4 rounded-full font-bold text-white text-base bg-[#7030A0] hover:bg-[#4A1E6B] transition-colors"
             >
               Bring MathSTAR to Your Classroom →
             </Link>

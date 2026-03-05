@@ -6,19 +6,19 @@
   --color-ink: #0D0B12;
   --color-bg: #FAFAF8;
 
-  /* Brand purple: #DC2626 */
-  --color-brand: #DC2626;
-  --color-brand-dark: #7F1D1D;
+  /* Brand purple: #7030A0 */
+  --color-brand: #7030A0;
+  --color-brand-dark: #4A1E6B;
   --color-brand-darker: #2D1060;
-  --color-brand-light: #FCA5A5;
-  --color-brand-pale: #FEF2F2;
+  --color-brand-light: #C49FDC;
+  --color-brand-pale: #F0E6F7;
 
   --color-purple-950: #1E0A3C;
   --color-purple-900: #2D1060;
-  --color-purple-800: #7F1D1D;
-  --color-purple-700: #DC2626;
-  --color-purple-400: #FCA5A5;
-  --color-purple-100: #FEF2F2;
+  --color-purple-800: #4A1E6B;
+  --color-purple-700: #7030A0;
+  --color-purple-400: #C49FDC;
+  --color-purple-100: #F0E6F7;
   --color-purple-50: #F8F2FC;
 
   /* Aqua/teal accent — pairs with brand purple */

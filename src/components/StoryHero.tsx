@@ -43,7 +43,7 @@ export default function StoryHero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 55% 45% at 70% 25%, rgba(220,38,38,0.4) 0%, transparent 65%)",
+              "radial-gradient(ellipse 55% 45% at 70% 25%, rgba(112,48,160,0.4) 0%, transparent 65%)",
           }}
         />
         {/* Teal counter-glow */}
@@ -93,7 +93,7 @@ export default function StoryHero() {
             <em
               className="not-italic italic inline-block pb-2 pr-4"
               style={{
-                background: "linear-gradient(135deg, #FCA5A5 10%, #ffffff 50%, #0891B2 90%)",
+                background: "linear-gradient(135deg, #C49FDC 10%, #ffffff 50%, #0891B2 90%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

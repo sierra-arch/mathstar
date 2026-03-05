@@ -17,7 +17,7 @@ export default function AboutHero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#FFF5F5]">
+    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#F7F2FF]">
 
       {/* ── LAYER 1: Background gradient (slowest) ── */}
       <motion.div className="absolute inset-0 scale-[1.1]" style={{ y: bgY }}>
@@ -25,7 +25,7 @@ export default function AboutHero() {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 85% 70% at 70% 45%, rgba(252,165,165,0.5) 0%, rgba(254,242,242,0.7) 50%, transparent 100%)",
+              "radial-gradient(ellipse 85% 70% at 70% 45%, rgba(196,159,220,0.5) 0%, rgba(240,230,247,0.7) 50%, transparent 100%)",
           }}
         />
         <div
@@ -48,10 +48,10 @@ export default function AboutHero() {
           {/* Soft glow behind photo */}
           <div
             className="absolute -inset-8 rounded-[3rem] pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(252,165,165,0.45) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(196,159,220,0.45) 0%, transparent 70%)" }}
           />
           {/* Photo */}
-          <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-[#DC2626]/20">
+          <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-[#7030A0]/20">
             <Image
               src="/Stock Images/pexels-sound-on-3761267.jpg"
               alt="Child experiencing the wonder of VR learning"
@@ -60,7 +60,7 @@ export default function AboutHero() {
               priority
             />
             {/* Subtle gradient overlay at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#DC2626]/20 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#7030A0]/20 via-transparent to-transparent" />
           </div>
           {/* Teal accent dot */}
           <motion.div
@@ -71,7 +71,7 @@ export default function AboutHero() {
           />
           {/* Purple accent dot */}
           <motion.div
-            className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-[#FCA5A5]/60"
+            className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-[#C49FDC]/60"
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           />
@@ -85,7 +85,7 @@ export default function AboutHero() {
       >
         {/* Overline */}
         <motion.p
-          className="absolute top-28 left-8 lg:left-16 text-[#DC2626]/70 font-semibold text-xs tracking-widest uppercase"
+          className="absolute top-28 left-8 lg:left-16 text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -112,7 +112,7 @@ export default function AboutHero() {
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             We build tech that{" "}
-            <em className="not-italic italic text-[#DC2626]">changes</em>{" "}
+            <em className="not-italic italic text-[#7030A0]">changes</em>{" "}
             how kids see themselves.
           </motion.h1>
         </div>
@@ -125,7 +125,7 @@ export default function AboutHero() {
           transition={{ delay: 1.4 }}
         >
           <motion.div
-            className="w-px h-10 bg-[#DC2626]/30"
+            className="w-px h-10 bg-[#7030A0]/30"
             animate={{ scaleY: [0, 1, 0], originY: 0 }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           />

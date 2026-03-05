@@ -70,7 +70,7 @@ export default function Nav() {
             href={link.href}
             className={`text-sm font-medium transition-colors ${
               pathname === link.href
-                ? isDark ? "text-[#FCA5A5] font-semibold" : "text-[#DC2626] font-semibold"
+                ? isDark ? "text-[#C49FDC] font-semibold" : "text-[#7030A0] font-semibold"
                 : isDark ? "text-white/60 hover:text-white" : "text-ink/60 hover:text-ink"
             }`}
           >
@@ -79,7 +79,7 @@ export default function Nav() {
         ))}
         <Link
           href="/get"
-          className="text-sm font-semibold bg-[#DC2626] text-white px-5 py-2.5 rounded-full hover:bg-[#7F1D1D] transition-colors"
+          className="text-sm font-semibold bg-[#7030A0] text-white px-5 py-2.5 rounded-full hover:bg-[#4A1E6B] transition-colors"
         >
           Get MathSTAR
         </Link>
@@ -88,7 +88,7 @@ export default function Nav() {
       {/* Mobile CTA */}
       <Link
         href="/get"
-        className="md:hidden text-sm font-semibold bg-[#DC2626] text-white px-4 py-2 rounded-full hover:bg-[#7F1D1D] transition-colors"
+        className="md:hidden text-sm font-semibold bg-[#7030A0] text-white px-4 py-2 rounded-full hover:bg-[#4A1E6B] transition-colors"
       >
         Get Started
       </Link>

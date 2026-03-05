@@ -7,7 +7,7 @@ const profiles = [
   {
     id: "adhd",
     label: "ADHD / ADD",
-    color: "#DC2626",
+    color: "#7030A0",
     tagline: "A world built for the way their brain actually works.",
     howItHelps: [
       {
@@ -119,7 +119,7 @@ const profiles = [
   {
     id: "deaf",
     label: "Deaf / Hard of Hearing",
-    color: "#7F1D1D",
+    color: "#4A1E6B",
     tagline: "A world that communicates through sight and touch — not just sound.",
     howItHelps: [
       {
@@ -179,10 +179,10 @@ export default function LearnerProfiles() {
   const current = profiles.find((p) => p.id === active)!;
 
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#FFF5F5] overflow-hidden">
+    <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF] overflow-hidden">
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(252,165,165,0.28) 0%, transparent 68%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.28) 0%, transparent 68%)" }} />
       <div className="absolute -top-16 -right-16 w-[480px] h-[480px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(8,145,178,0.12) 0%, transparent 62%)" }} />
 
@@ -191,7 +191,7 @@ export default function LearnerProfiles() {
         {/* Header */}
         <div className="text-center mb-14">
           <motion.p
-            className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-4"
+            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

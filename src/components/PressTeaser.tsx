@@ -8,15 +8,15 @@ const articles = [
   {
     date: "October 17, 2025",
     tag: "Impact",
-    tagColor: "text-[#DC2626] bg-[#DC2626]/10",
+    tagColor: "text-[#7030A0] bg-[#7030A0]/10",
     title: "Groundbreaking VR Program Delivers Measurable Improvement in Math",
     excerpt:
       "A 4-week free VR math camp at the Boston Public Library saw a 45% jump in median test scores — with students rating the program 4.4 out of 5 for learning and engagement.",
     href: "/impact",
     internal: true,
-    accentColor: "#DC2626",
-    accentBg: "from-[#DC2626]/10 to-[#DC2626]/4",
-    border: "border-[#DC2626]/15",
+    accentColor: "#7030A0",
+    accentBg: "from-[#7030A0]/10 to-[#7030A0]/4",
+    border: "border-[#7030A0]/15",
   },
   {
     date: "August 30, 2024",
@@ -57,7 +57,7 @@ export default function PressTeaser() {
     <section className="relative py-32 px-6 lg:px-16 bg-white overflow-hidden">
 
       <div className="absolute top-[-5%] right-[-8%] w-[450px] h-[450px] bg-[#0891B2]/8 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-5%] left-[-6%] w-[350px] h-[350px] bg-[#DC2626]/8 rounded-full blur-[80px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-6%] w-[350px] h-[350px] bg-[#7030A0]/8 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -80,7 +80,7 @@ export default function PressTeaser() {
               transition={{ duration: 0.6 }}
             >
               The research is{" "}
-              <em className="not-italic italic text-[#DC2626]">real.</em>
+              <em className="not-italic italic text-[#7030A0]">real.</em>
             </motion.h2>
           </div>
 
@@ -127,7 +127,7 @@ export default function PressTeaser() {
 
         {/* Founder quote */}
         <motion.div
-          className="bg-gradient-to-r from-[#E0F7FA] to-[#FEF2F2] rounded-3xl p-10 lg:p-14 border border-[#0891B2]/15"
+          className="bg-gradient-to-r from-[#E0F7FA] to-[#F0E6F7] rounded-3xl p-10 lg:p-14 border border-[#0891B2]/15"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -136,7 +136,7 @@ export default function PressTeaser() {
           <div className="flex flex-col lg:flex-row items-center gap-10 max-w-3xl mx-auto">
             {/* Femi's photo */}
             <div className="shrink-0">
-              <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-[#DC2626]/20 ring-offset-4 ring-offset-transparent">
+              <div className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-[#7030A0]/20 ring-offset-4 ring-offset-transparent">
                 <Image
                   src="/headshots/Femi%20:%20Founder/download.jpeg"
                   alt="Femi Fadugba, Founder of ShepherdXR"
@@ -149,10 +149,10 @@ export default function PressTeaser() {
             <div className="text-center lg:text-left">
               <p className="text-xl lg:text-2xl font-semibold text-ink leading-relaxed mb-6">
                 &ldquo;A lot of people don&apos;t learn math well in the traditional way. Many kids are visual learners — they need an intervention that meets them where they are, so they can finally get it. And{" "}
-                <em className="not-italic italic text-[#DC2626]">love it.</em>&rdquo;
+                <em className="not-italic italic text-[#7030A0]">love it.</em>&rdquo;
               </p>
               <div className="flex items-center gap-3 justify-center lg:justify-start">
-                <div className="w-8 h-px bg-[#DC2626]/35" />
+                <div className="w-8 h-px bg-[#7030A0]/35" />
                 <div>
                   <p className="text-ink/70 font-bold text-sm">Femi Fadugba</p>
                   <p className="text-ink/40 text-xs">Founder, ShepherdXR</p>

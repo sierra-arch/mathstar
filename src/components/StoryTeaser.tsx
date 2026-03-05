@@ -9,7 +9,7 @@ export default function StoryTeaser() {
     <section className="relative py-40 px-6 lg:px-16 bg-white overflow-hidden">
 
       {/* Ambient orbs */}
-      <div className="absolute top-[-10%] left-[-15%] w-[600px] h-[600px] bg-[#DC2626]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-10%] left-[-15%] w-[600px] h-[600px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-[#0891B2]/10 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
@@ -21,12 +21,12 @@ export default function StoryTeaser() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-[#DC2626] font-semibold text-sm tracking-widest uppercase mb-5">
+          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
             Our Story
           </p>
           <h2 className="text-4xl lg:text-[3.25rem] font-extrabold text-ink leading-tight mb-8">
             The gift that changed{" "}
-            <em className="not-italic italic text-[#DC2626]">everything.</em>
+            <em className="not-italic italic text-[#7030A0]">everything.</em>
           </h2>
           <p className="text-xl text-ink/60 leading-relaxed mb-7">
             Our founder was expelled from his first school. Diagnosed with ADHD, emotional impairment,
@@ -39,7 +39,7 @@ export default function StoryTeaser() {
           </p>
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 text-[#DC2626] font-semibold text-lg hover:gap-4 transition-all"
+            className="inline-flex items-center gap-2 text-[#7030A0] font-semibold text-lg hover:gap-4 transition-all"
           >
             Read the full story →
           </Link>
@@ -54,9 +54,9 @@ export default function StoryTeaser() {
           className="relative"
         >
           {/* Glow behind image */}
-          <div className="absolute -inset-6 bg-gradient-to-br from-[#DC2626]/20 via-[#EDE9FE]/50 to-[#0891B2]/20 rounded-[40px] blur-2xl pointer-events-none" />
+          <div className="absolute -inset-6 bg-gradient-to-br from-[#7030A0]/20 via-[#EDE9FE]/50 to-[#0891B2]/20 rounded-[40px] blur-2xl pointer-events-none" />
 
-          <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-[#DC2626]/15">
+          <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-[#7030A0]/15">
             <Image
               src="/headshots/Femi%20:%20Founder/Femi.webp"
               alt="Femi Fadugba, Founder of ShepherdXR"

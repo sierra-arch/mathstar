@@ -29,7 +29,7 @@ export default function Hero() {
         {/* Left-centre purple bloom */}
         <div
           className="absolute top-1/2 left-[-10%] -translate-y-1/2 w-[900px] h-[900px] rounded-full blur-[60px]"
-          style={{ background: "radial-gradient(circle, rgba(252,165,165,0.45) 0%, rgba(220,38,38,0.08) 55%, transparent 75%)" }}
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.45) 0%, rgba(112,48,160,0.08) 55%, transparent 75%)" }}
         />
         {/* Top-right teal accent */}
         <div
@@ -44,7 +44,7 @@ export default function Hero() {
         {/* Centre-right soft lavender to carry colour behind photo */}
         <div
           className="absolute top-[20%] right-[5%] w-[500px] h-[500px] rounded-full blur-[80px]"
-          style={{ background: "radial-gradient(circle, rgba(252,165,165,0.3) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.3) 0%, transparent 70%)" }}
         />
       </div>
 
@@ -66,7 +66,7 @@ export default function Hero() {
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
-                background: "linear-gradient(135deg, #DC2626 20%, #FCA5A5 55%, #0891B2)",
+                background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -97,15 +97,15 @@ export default function Hero() {
               href="/parents"
               className="px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5 w-fit"
               style={{
-                background: "linear-gradient(135deg, #DC2626, #7F1D1D)",
-                boxShadow: "0 8px 40px rgba(220,38,38,0.35)",
+                background: "linear-gradient(135deg, #7030A0, #4A1E6B)",
+                boxShadow: "0 8px 40px rgba(112,48,160,0.35)",
               }}
             >
               For Parents →
             </Link>
             <Link
               href="/educators"
-              className="px-10 py-4 rounded-full font-bold text-[#DC2626] text-base border-2 border-[#DC2626]/25 hover:border-[#DC2626]/60 hover:bg-white/60 transition-all duration-200 w-fit"
+              className="px-10 py-4 rounded-full font-bold text-[#7030A0] text-base border-2 border-[#7030A0]/25 hover:border-[#7030A0]/60 hover:bg-white/60 transition-all duration-200 w-fit"
             >
               For Educators →
             </Link>
@@ -124,11 +124,11 @@ export default function Hero() {
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(252,165,165,0.3) 0%, transparent 70%)",
+              background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196,159,220,0.3) 0%, transparent 70%)",
             }}
           />
 
-          <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-[#DC2626]/20">
+          <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/20">
             <Image
               src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
               alt="Kid experiencing wonder in VR"
@@ -138,7 +138,7 @@ export default function Hero() {
             />
             {/* Floating student review chip */}
             <motion.div
-              className="absolute bottom-5 right-5 bg-white/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-xl border border-[#DC2626]/10 max-w-[220px]"
+              className="absolute bottom-5 right-5 bg-white/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-xl border border-[#7030A0]/10 max-w-[220px]"
               initial={{ opacity: 0, y: 16, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -146,7 +146,7 @@ export default function Hero() {
               <p className="text-[#0D0B12] text-sm font-semibold leading-snug mb-1">
                 &ldquo;Maths is my favourite subject now.&rdquo;
               </p>
-              <p className="text-[#DC2626]/60 text-xs font-medium">Parent, Roxbury Pilot</p>
+              <p className="text-[#7030A0]/60 text-xs font-medium">Parent, Roxbury Pilot</p>
             </motion.div>
           </div>
         </motion.div>
@@ -162,7 +162,7 @@ export default function Hero() {
         transition={{ delay: 1.4 }}
       >
         <motion.div
-          className="w-px h-10 bg-[#DC2626]/30"
+          className="w-px h-10 bg-[#7030A0]/30"
           animate={{ scaleY: [0, 1, 0], originY: 0 }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         />
