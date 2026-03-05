@@ -144,9 +144,9 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
               <p className="text-[#0D0B12] text-sm font-semibold leading-snug mb-1">
-                &ldquo;I would invest $200 into this.&rdquo;
+                &ldquo;Maths is my favourite subject now.&rdquo;
               </p>
-              <p className="text-[#7030A0]/60 text-xs font-medium">Student, age ~10</p>
+              <p className="text-[#7030A0]/60 text-xs font-medium">Parent, Roxbury Pilot</p>
             </motion.div>
           </div>
         </motion.div>

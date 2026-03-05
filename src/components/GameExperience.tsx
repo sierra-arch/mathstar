@@ -284,7 +284,7 @@ export default function GameExperience() {
         </motion.div>
         <ScanlineOverlay />
 
-        <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-20" style={{ opacity: heroOpacity }}>
+        <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-32" style={{ opacity: heroOpacity }}>
           <motion.p
             className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8"
             initial={{ opacity: 0, y: 10 }}
@@ -310,8 +310,8 @@ export default function GameExperience() {
               }}
             >
               world
-            </span>{" "}
-            where math is alive.
+            </span>
+            <br />where math is alive.
           </motion.h1>
           <motion.p
             className="text-white/50 text-xl max-w-xl mx-auto leading-relaxed mb-16"
