@@ -275,7 +275,7 @@ export default function GameExperience() {
     <div className="bg-[#080612]">
 
       {/* ── 1. HERO (dark video) ── */}
-      <section ref={heroRef} className="relative h-screen overflow-hidden flex items-end justify-center">
+      <section ref={heroRef} className="relative overflow-hidden flex items-end justify-center" style={{ height: "140vh" }}>
         <motion.div className="absolute inset-0" style={{ scale: heroScale }}>
           <video
             src="/Gameplay-edited.mp4"
@@ -300,7 +300,7 @@ export default function GameExperience() {
             The MathSTAR Experience
           </motion.p>
           <motion.h1
-            className="text-6xl lg:text-[5.5rem] xl:text-[6rem] font-extrabold text-white leading-[1.0] mb-8"
+            className="text-4xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold text-white leading-[1.0] mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
