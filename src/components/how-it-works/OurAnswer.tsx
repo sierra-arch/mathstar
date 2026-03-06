@@ -41,14 +41,27 @@ export default function OurAnswer() {
   const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.03, 1.01]);
 
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#F0E6F7] overflow-hidden">
+    <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF]" style={{ overflowX: "clip" }}>
 
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, rgba(196,159,220,0.35) 0%, transparent 65%)" }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.20) 0%, transparent 65%)" }} />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(8,145,178,0.12) 0%, transparent 70%)" }} />
+      {/* Section blobs — clipped horizontally */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full"
+          style={{ background: "radial-gradient(ellipse, rgba(196,159,220,0.30) 0%, transparent 65%)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.16) 0%, transparent 65%)" }} />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full blur-[120px]"
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.12) 0%, transparent 70%)" }} />
+      </div>
+
+      {/* Bridge blob down — bleeds into ResultsNumbers */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 w-[900px] h-[600px] pointer-events-none"
+        style={{
+          bottom: "-250px",
+          background: "radial-gradient(circle, rgba(196,159,220,0.35) 0%, transparent 65%)",
+          filter: "blur(120px)",
+        }}
+      />
 
       <div className="max-w-6xl mx-auto relative z-10">
 

@@ -141,11 +141,24 @@ function CountUp({ prefix, num, suffix, colorHex }: { prefix: string; num: numbe
 
 export default function ResultsNumbers() {
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF] overflow-hidden">
+    <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF]" style={{ overflowX: "clip" }}>
 
-      <div className="absolute top-[-10%] right-[-10%] w-[750px] h-[750px] bg-[#7030A0]/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[700px] h-[700px] bg-[#0891B2]/8 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[-15%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#F0E6F7]/60 rounded-full blur-[120px] pointer-events-none" />
+      {/* Section blobs — clipped horizontally */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] right-[-10%] w-[750px] h-[750px] bg-[#7030A0]/10 rounded-full blur-[130px]" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[700px] h-[700px] bg-[#0891B2]/8 rounded-full blur-[130px]" />
+        <div className="absolute bottom-[-15%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#C49FDC]/20 rounded-full blur-[120px]" />
+      </div>
+
+      {/* Bridge blob down — bleeds into next section */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 w-[900px] h-[600px] pointer-events-none"
+        style={{
+          bottom: "-260px",
+          background: "radial-gradient(circle, rgba(112,48,160,0.18) 0%, transparent 65%)",
+          filter: "blur(130px)",
+        }}
+      />
 
       <div className="max-w-6xl mx-auto relative z-10">
 

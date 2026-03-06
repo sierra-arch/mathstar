@@ -23,9 +23,10 @@ export default function HowItWorksHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-[#FAFAF8] flex items-center"
+      className="relative min-h-screen bg-[#F7F2FF] flex items-center"
+      style={{ overflowX: "clip" }}
     >
-      {/* ── Gradient mesh background ── */}
+      {/* ── Gradient mesh background (clipped horizontally) ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 130% 90% at 50% 60%, rgba(240,230,247,0.7) 0%, rgba(250,250,248,0) 65%)" }} />
         <div
@@ -135,6 +136,16 @@ export default function HowItWorksHero() {
           </motion.div>
         </div>
       </motion.div>
+
+      {/* Bridge blob — bleeds into next section */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 w-[1000px] h-[700px] pointer-events-none"
+        style={{
+          bottom: "-280px",
+          background: "radial-gradient(circle, rgba(196,159,220,0.40) 0%, transparent 65%)",
+          filter: "blur(130px)",
+        }}
+      />
 
       {/* Scroll indicator */}
       <motion.div

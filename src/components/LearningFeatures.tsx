@@ -45,12 +45,29 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
   const subColor = dark ? "text-white/50" : "text-[#0D0B12]/50";
 
   return (
-    <section className={`relative py-24 px-6 lg:px-16 ${dark ? "bg-[#0D0B12]" : "bg-[#F7F2FF]"} overflow-hidden`}>
+    <section
+      className={`relative py-24 px-6 lg:px-16 ${dark ? "bg-[#0D0B12]" : "bg-[#F7F2FF]"}`}
+      style={{ overflowX: "clip" }}
+    >
 
-      {/* Ambient orbs */}
-      <div className="absolute top-[-10%] right-[-8%] w-[700px] h-[700px] bg-[#7030A0]/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-8%] w-[650px] h-[650px] bg-[#0891B2]/8 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute top-[-12%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#C49FDC]/15 rounded-full blur-[110px] pointer-events-none" />
+      {/* Ambient orbs — clipped horizontally */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] right-[-8%] w-[700px] h-[700px] bg-[#7030A0]/10 rounded-full blur-[130px]" />
+        <div className="absolute bottom-[-10%] left-[-8%] w-[650px] h-[650px] bg-[#0891B2]/8 rounded-full blur-[130px]" />
+        <div className="absolute top-[-12%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#C49FDC]/15 rounded-full blur-[110px]" />
+      </div>
+
+      {/* Bridge blob down */}
+      {!dark && (
+        <div
+          className="absolute left-1/2 -translate-x-1/2 w-[900px] h-[600px] pointer-events-none"
+          style={{
+            bottom: "-240px",
+            background: "radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 65%)",
+            filter: "blur(120px)",
+          }}
+        />
+      )}
 
       <div className="max-w-6xl mx-auto relative z-10">
 
