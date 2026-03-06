@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import RevealText from "@/components/RevealText";
@@ -14,9 +14,6 @@ const stats = [
 
 export default function HowItWorksHero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const blob1Ref = useRef<HTMLDivElement>(null);
-  const blob2Ref = useRef<HTMLDivElement>(null);
-  const blob3Ref = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -26,35 +23,6 @@ export default function HowItWorksHero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
   const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
 
-  useEffect(() => {
-    let targetX = 0, targetY = 0;
-    let currentX = 0, currentY = 0;
-    let raf: number;
-
-    const onMouseMove = (e: MouseEvent) => {
-      const rect = sectionRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      targetX = (e.clientX - rect.left - rect.width / 2) * 0.03;
-      targetY = (e.clientY - rect.top - rect.height / 2) * 0.03;
-    };
-
-    const animate = () => {
-      currentX += (targetX - currentX) * 0.06;
-      currentY += (targetY - currentY) * 0.06;
-      if (blob1Ref.current) blob1Ref.current.style.transform = `translate(${currentX * 1.0}px, ${currentY * 1.0}px)`;
-      if (blob2Ref.current) blob2Ref.current.style.transform = `translate(${currentX * 1.6}px, ${currentY * 1.6}px)`;
-      if (blob3Ref.current) blob3Ref.current.style.transform = `translate(${currentX * 0.6}px, ${currentY * 0.6}px)`;
-      raf = requestAnimationFrame(animate);
-    };
-
-    const section = sectionRef.current;
-    section?.addEventListener("mousemove", onMouseMove);
-    raf = requestAnimationFrame(animate);
-    return () => {
-      section?.removeEventListener("mousemove", onMouseMove);
-      cancelAnimationFrame(raf);
-    };
-  }, []);
 
   return (
     <section
@@ -72,19 +40,16 @@ export default function HowItWorksHero() {
         />
         {/* Blob 1 — top-right purple */}
         <div
-          ref={blob1Ref}
           className="absolute top-[-10%] right-[-6%] w-[920px] h-[920px] rounded-full blur-[110px]"
           style={{ background: "radial-gradient(circle, rgba(196,159,220,0.55) 0%, rgba(112,48,160,0.12) 55%, transparent 75%)" }}
         />
         {/* Blob 2 — bottom-left teal */}
         <div
-          ref={blob2Ref}
           className="absolute bottom-[-12%] left-[-6%] w-[780px] h-[780px] rounded-full blur-[100px]"
           style={{ background: "radial-gradient(circle, rgba(8,145,178,0.35) 0%, transparent 65%)" }}
         />
         {/* Blob 3 — mid-left lavender */}
         <div
-          ref={blob3Ref}
           className="absolute top-[20%] left-[-8%] w-[720px] h-[720px] rounded-full blur-[120px]"
           style={{ background: "radial-gradient(circle, rgba(196,159,220,0.40) 0%, transparent 70%)" }}
         />

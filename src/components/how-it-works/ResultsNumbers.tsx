@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import RevealText from "@/components/RevealText";
-import TiltCard from "@/components/TiltCard";
 
 const stats = [
   {
@@ -257,7 +256,7 @@ export default function ResultsNumbers() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07, type: "spring", stiffness: 100, damping: 18 }}
             >
-              <TiltCard className={`rounded-3xl p-8 border ${card.border} h-full`} style={{ background: `linear-gradient(135deg, ${card.color}18 0%, ${card.color}06 100%)` }}>
+              <div className={`rounded-3xl p-8 border ${card.border} h-full`} style={{ background: `linear-gradient(135deg, ${card.color}18 0%, ${card.color}06 100%)` }}>
                 <div className="flex items-center gap-2 mb-5">
                   <span className="text-2xl">{card.emoji}</span>
                   <span className="text-xs font-bold tracking-widest uppercase" style={{ color: card.color }}>{card.category}</span>
@@ -272,7 +271,7 @@ export default function ResultsNumbers() {
                     </li>
                   ))}
                 </ul>
-              </TiltCard>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import RevealText from "@/components/RevealText";
-import TiltCard from "@/components/TiltCard";
 
 const features = [
   {
@@ -96,7 +95,7 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, type: "spring", stiffness: 100, damping: 18 }}
             >
-            <TiltCard className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} overflow-hidden h-full`}>
+            <div className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} overflow-hidden h-full`}>
               <div className="relative w-full overflow-hidden" style={{ height: i === 2 ? "280px" : "220px" }}>
                 <Image
                   src={f.photo}
@@ -131,7 +130,7 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
                   ))}
                 </div>
               </div>
-            </TiltCard>
+            </div>
             </motion.div>
           ))}
         </div>
