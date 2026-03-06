@@ -103,7 +103,11 @@ const outcomeCards = [
 
 export default function ResultsNumbers() {
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF] overflow-hidden">
+    <section className="relative py-36 px-6 lg:px-20 bg-[#F7F2FF] overflow-hidden">
+
+      {/* Fade in/out — avoids stark lines against adjacent white/near-white sections */}
+      <div className="absolute top-0 inset-x-0 h-28 pointer-events-none z-10" style={{ background: "linear-gradient(to bottom, white, transparent)" }} />
+      <div className="absolute bottom-0 inset-x-0 h-28 pointer-events-none z-10" style={{ background: "linear-gradient(to top, white, transparent)" }} />
 
       <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/12 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-8%] w-[450px] h-[450px] bg-[#0891B2]/10 rounded-full blur-[100px] pointer-events-none" />

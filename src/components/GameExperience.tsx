@@ -84,8 +84,9 @@ function SectionNum({ n, dark = true }: { n: string; dark?: boolean }) {
 }
 
 /* ── Dark video slide ── */
-function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
+function VideoSlide({ num, tag, headline, body, accent, src, videoStart, topColor, bottomColor }: {
   num: string; tag: string; headline: string; body: string; accent: string; src: string; videoStart: number;
+  topColor?: string; bottomColor?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -109,9 +110,9 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart }: {
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 15% 60%, rgba(112,48,160,0.30) 0%, transparent 60%)" }} />
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 20%, rgba(8,145,178,0.20) 0%, transparent 55%)" }} />
       </div>
-      {/* Gradient edge transitions — blend into surrounding light slides */}
-      <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F7F2FF] to-transparent z-20 pointer-events-none" />
+      {/* Gradient edge transitions — optional, only when adjacent to light sections */}
+      {topColor && <div className="absolute top-0 inset-x-0 h-36 bg-gradient-to-b z-20 pointer-events-none" style={{ background: `linear-gradient(to bottom, ${topColor}, transparent)` }} />}
+      {bottomColor && <div className="absolute bottom-0 inset-x-0 h-36 bg-gradient-to-t z-20 pointer-events-none" style={{ background: `linear-gradient(to top, ${bottomColor}, transparent)` }} />}
       <ScanlineOverlay />
       <SectionNum n={num} />
 
@@ -220,6 +221,9 @@ function QuoteSection() {
     <section ref={ref} className="relative h-screen overflow-hidden bg-[#06040E] flex items-center justify-center">
       <SectionNum n="07" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(8,145,178,0.08)_0%,transparent_65%)] pointer-events-none" />
+      {/* Edge transitions — blend with FAFAF8 above and white below */}
+      <div className="absolute top-0 inset-x-0 h-40 z-20 pointer-events-none" style={{ background: "linear-gradient(to bottom, #FAFAF8, transparent)" }} />
+      <div className="absolute bottom-0 inset-x-0 h-40 z-20 pointer-events-none" style={{ background: "linear-gradient(to top, white, transparent)" }} />
       <ScanlineOverlay />
 
       <motion.div className="max-w-4xl mx-auto text-center relative z-10 px-6" style={{ opacity: fadeOut, y: textY }}>
@@ -282,6 +286,8 @@ export default function GameExperience() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/55 via-[#080612]/10 to-[#080612]" />
         </motion.div>
+        {/* Bottom blend into first LightSlide */}
+        <div className="absolute bottom-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to top, #F7F2FF, transparent)" }} />
         <ScanlineOverlay />
 
         <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-32" style={{ opacity: heroOpacity }}>
@@ -392,6 +398,7 @@ export default function GameExperience() {
         accent="#C49FDC"
         src="/Gameplay-edited.mp4"
         videoStart={5}
+        topColor="#F7F2FF"
       />
       <VideoSlide
         num="03" tag="Step 02"
@@ -408,6 +415,7 @@ export default function GameExperience() {
         accent="#C49FDC"
         src="/Gameplay-edited.mp4"
         videoStart={68}
+        bottomColor="#F7F2FF"
       />
 
       {/* ── 6. LIGHT — Stats break ── */}
@@ -467,6 +475,9 @@ export default function GameExperience() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080612] via-[#080612]/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/55 via-transparent to-transparent" />
+        {/* Edge transitions — blends with LightSlide above and FAFAF8 section below */}
+        <div className="absolute top-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to bottom, #F7F2FF, transparent)" }} />
+        <div className="absolute bottom-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to top, #FAFAF8, transparent)" }} />
         <ScanlineOverlay />
 
         <div className="relative z-10 px-8 lg:px-20 pb-20 max-w-3xl">

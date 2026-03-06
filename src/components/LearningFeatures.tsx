@@ -45,7 +45,11 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
   const subColor = dark ? "text-white/50" : "text-[#0D0B12]/50";
 
   return (
-    <section className={`relative py-24 px-6 lg:px-16 ${dark ? "bg-[#0D0B12]" : "bg-[#F7F2FF]"} overflow-hidden`}>
+    <section className={`relative py-32 px-6 lg:px-16 ${dark ? "bg-[#0D0B12]" : "bg-[#F7F2FF]"} overflow-hidden`}>
+
+      {/* Fade in/out — avoids stark lines against adjacent white sections (light mode only) */}
+      {!dark && <div className="absolute top-0 inset-x-0 h-24 pointer-events-none z-10" style={{ background: "linear-gradient(to bottom, white, transparent)" }} />}
+      {!dark && <div className="absolute bottom-0 inset-x-0 h-24 pointer-events-none z-10" style={{ background: "linear-gradient(to top, white, transparent)" }} />}
 
       {/* Ambient orbs */}
       <div className="absolute top-[-5%] right-[-5%] w-[400px] h-[400px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
