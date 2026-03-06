@@ -181,7 +181,7 @@ function TagChip({ tag }: { tag: string }) {
   return (
     <span
       className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-5 w-fit"
-      style={{ background: `rgba(${color.text === "#7030A0" ? "112,48,160" : color.text === "#0891B2" ? "8,145,178" : "74,30,107"},0.1)`, color: color.text }}
+      style={{ background: `rgba(${color.text === "#4A1E6B" ? "74,30,107" : "112,48,160"},0.1)`, color: color.text }}
     >
       {tag}
     </span>
@@ -227,7 +227,7 @@ export default function Testimonials() {
           {featured.map((f, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl p-7 flex flex-col shadow-sm border ${f.highlight ? "bg-[#E0F7FA] border-[#0891B2]/20 shadow-[#0891B2]/8" : "bg-white border-[#7030A0]/6 shadow-[#7030A0]/8"}`}
+              className={`rounded-3xl p-7 flex flex-col shadow-sm border ${f.highlight ? "bg-[#F0E6F7] border-[#7030A0]/20 shadow-[#7030A0]/8" : "bg-white border-[#7030A0]/6 shadow-[#7030A0]/8"}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -250,7 +250,7 @@ export default function Testimonials() {
           {grid.map((q, i) => (
             <motion.div
               key={i}
-              className={`hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm border ${q.highlight ? "bg-[#E0F7FA] border-[#0891B2]/18 shadow-[#0891B2]/5" : "bg-white border-[#7030A0]/5 shadow-[#7030A0]/5"}`}
+              className={`hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm border ${q.highlight ? "bg-[#F0E6F7] border-[#7030A0]/18 shadow-[#7030A0]/5" : "bg-white border-[#7030A0]/5 shadow-[#7030A0]/5"}`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
