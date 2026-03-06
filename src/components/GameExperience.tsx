@@ -290,7 +290,7 @@ export default function GameExperience() {
         <div className="absolute bottom-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to top, #F7F2FF, transparent)" }} />
         <ScanlineOverlay />
 
-        <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-32" style={{ opacity: heroOpacity }}>
+        <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-12" style={{ opacity: heroOpacity }}>
           <motion.p
             className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8"
             initial={{ opacity: 0, y: 10 }}
