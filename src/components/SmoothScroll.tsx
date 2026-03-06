@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactLenis } from "lenis/react";
+import SnapController from "./SnapController";
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   return (
@@ -14,6 +15,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
         touchMultiplier: 2,
       }}
     >
+      <SnapController />
       {children}
     </ReactLenis>
   );

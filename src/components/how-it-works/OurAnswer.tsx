@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import RevealText from "@/components/RevealText";
 
 const pillars = [
   {
@@ -66,26 +67,20 @@ export default function OurAnswer() {
       <div className="max-w-6xl mx-auto relative z-10">
 
         {/* Header */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+        <div className="mb-16">
+          <RevealText as="p" className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
             Our Answer
-          </p>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight mb-6">
+          </RevealText>
+          <RevealText as="h2" className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight mb-6" delay={0.1}>
             Wonder first. Everything else follows.
-          </h2>
-          <p className="text-[#0D0B12]/60 text-lg leading-relaxed max-w-3xl">
+          </RevealText>
+          <RevealText as="p" className="text-[#0D0B12]/60 text-lg leading-relaxed max-w-3xl" delay={0.2}>
             MathSTAR is an <strong className="text-[#0D0B12]/80">8-hour plug-and-play VR intervention</strong> that moves students from stuck-in-arithmetic to algebra-confident. Deployed in classrooms, after-school programs, and at home — it meets kids wherever they are.
-          </p>
-          <p className="text-[#0D0B12]/60 text-lg leading-relaxed max-w-3xl mt-4">
+          </RevealText>
+          <RevealText as="p" className="text-[#0D0B12]/60 text-lg leading-relaxed max-w-3xl mt-4" delay={0.28}>
             We focus on middle graders with diverse learning styles and Individualized Education Programs (IEPs) — the students most likely to fall through the cracks of a pen-and-paper system.
-          </p>
-        </motion.div>
+          </RevealText>
+        </div>
 
         {/* Gameplay video */}
         <div ref={videoRef} className="mb-16">

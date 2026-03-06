@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import RevealText from "@/components/RevealText";
 
 const stats = [
   {
@@ -141,7 +142,7 @@ function CountUp({ prefix, num, suffix, colorHex }: { prefix: string; num: numbe
 
 export default function ResultsNumbers() {
   return (
-    <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF]" style={{ overflowX: "clip" }}>
+    <section data-snap className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF]" style={{ overflowX: "clip" }}>
 
       {/* Section blobs — clipped horizontally */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -164,24 +165,13 @@ export default function ResultsNumbers() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <motion.p
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
+          <RevealText as="p" className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">
             By the Numbers
-          </motion.p>
-          <motion.h2
-            className="text-4xl lg:text-[4rem] font-extrabold text-[#0D0B12] leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          </RevealText>
+          <RevealText as="h2" className="text-4xl lg:text-[4rem] font-extrabold text-[#0D0B12] leading-tight" delay={0.1}>
             The kids are sold.{" "}
             <em className="not-italic italic text-[#0891B2]">The data agrees.</em>
-          </motion.h2>
+          </RevealText>
         </div>
 
         {/* Photo strip with hover zoom */}

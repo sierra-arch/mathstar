@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import RevealText from "@/components/RevealText";
 
 const stats = [
   { num: "8 hrs", label: "Arithmetic to algebra-confident" },
@@ -23,6 +24,7 @@ export default function HowItWorksHero() {
   return (
     <section
       ref={sectionRef}
+      data-snap
       className="relative min-h-screen bg-[#F7F2FF] flex items-center"
       style={{ overflowX: "clip" }}
     >
@@ -50,46 +52,45 @@ export default function HowItWorksHero() {
       >
         <div className="max-w-4xl">
 
-          <motion.p
+          <RevealText
+            as="p"
             className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-6"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            delay={0.05}
           >
             How It Works
-          </motion.p>
+          </RevealText>
 
-          <motion.h1
-            className="text-5xl sm:text-6xl lg:text-[6.5rem] xl:text-[8rem] font-extrabold text-[#0D0B12] leading-[1.0] mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Simple to start.{" "}
-            <br className="hidden lg:block" />
-            <span
-              className="italic inline-block pb-2 pr-4"
-              style={{
-                background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
+          <div className="mb-8">
+            <RevealText
+              as="h1"
+              className="text-5xl sm:text-6xl lg:text-[6.5rem] xl:text-[8rem] font-extrabold text-[#0D0B12] leading-[1.0]"
+              delay={0.12}
             >
-              Life-changing
-            </span>{" "}
-            to experience.
-          </motion.h1>
+              Simple to start.{" "}
+              <br className="hidden lg:block" />
+              <span
+                className="italic inline-block pb-2 pr-4"
+                style={{
+                  background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                Life-changing
+              </span>{" "}
+              to experience.
+            </RevealText>
+          </div>
 
-          <motion.p
+          <RevealText
+            as="p"
             className="text-[#0D0B12]/55 text-xl leading-relaxed mb-12 max-w-2xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            delay={0.25}
           >
             Three steps. One headset. An underwater world where kids go from
             stuck-in-arithmetic to algebra-confident in 8 hours.
-          </motion.p>
+          </RevealText>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 mb-20"

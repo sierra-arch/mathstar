@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import RevealText from "@/components/RevealText";
 
 const features = [
   {
@@ -72,33 +73,16 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
       <div className="max-w-6xl mx-auto relative z-10">
 
         <div className="text-center mb-14">
-          <motion.p
-            className={`${overlineColor} font-semibold text-sm tracking-widest uppercase mb-4`}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
+          <RevealText as="p" className={`${overlineColor} font-semibold text-sm tracking-widest uppercase mb-4`}>
             Built for Every Learner
-          </motion.p>
-          <motion.h2
-            className={`text-3xl lg:text-4xl font-extrabold ${headingColor} leading-tight`}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          </RevealText>
+          <RevealText as="h2" className={`text-3xl lg:text-4xl font-extrabold ${headingColor} leading-tight`} delay={0.1}>
             Designed around how{" "}
             <em className="not-italic italic text-[#0891B2]">your student actually learns.</em>
-          </motion.h2>
-          <motion.p
-            className={`${subColor} text-sm mt-3 max-w-xl mx-auto`}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
+          </RevealText>
+          <RevealText as="p" className={`${subColor} text-sm mt-3 max-w-xl mx-auto`} delay={0.2}>
             MathSTAR meets students where they are — not where the worksheet expects them to be.
-          </motion.p>
+          </RevealText>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
