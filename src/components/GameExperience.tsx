@@ -317,7 +317,7 @@ export default function GameExperience() {
             >
               world
             </span>
-            {" "}where math is alive.
+            <br />where math is alive.
           </motion.h1>
           <motion.p
             className="text-white/50 text-xl max-w-xl mx-auto leading-relaxed mb-16"
