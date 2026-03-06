@@ -40,8 +40,8 @@ export default function Footer() {
     <footer className="relative bg-[#4A1E6B] px-6 lg:px-16 pt-16 pb-10">
       {/* Gradient bleed transition from section above */}
       <div
-        className="absolute -top-32 left-0 right-0 h-32 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent 0%, #4A1E6B 100%)" }}
+        className="absolute -top-80 left-0 right-0 h-80 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, transparent 0%, transparent 35%, rgba(74,30,107,0.08) 55%, rgba(74,30,107,0.35) 75%, rgba(74,30,107,0.75) 88%, #4A1E6B 100%)" }}
       />
       <div className="max-w-6xl mx-auto">
 

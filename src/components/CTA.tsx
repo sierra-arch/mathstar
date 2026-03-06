@@ -27,9 +27,6 @@ export default function CTA() {
         />
       </div>
 
-      {/* Fade into footer */}
-      <div className="absolute bottom-0 inset-x-0 h-64 pointer-events-none z-0" style={{ background: "linear-gradient(to bottom, transparent 0%, #2e1250 100%)" }} />
-
       <div className="max-w-3xl mx-auto text-center relative z-10">
 
         <motion.p
