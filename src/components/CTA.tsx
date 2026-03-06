@@ -46,7 +46,7 @@ export default function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          Gift them the{" "}
+          <span className="whitespace-nowrap">Gift them the{" "}
           <span
             className="italic inline-block pb-2 pr-4"
             style={{
@@ -57,7 +57,7 @@ export default function CTA() {
             }}
           >
             wonder
-          </span>
+          </span></span>
           <br />of math.
         </motion.h2>
 
@@ -73,27 +73,21 @@ export default function CTA() {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <Link
-            href="/parents"
+            href="/reviews"
             className="px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5"
             style={{
               background: "linear-gradient(135deg, #7030A0, #4A1E6B)",
               boxShadow: "0 8px 40px rgba(112,48,160,0.35)",
             }}
           >
-            For Parents →
-          </Link>
-          <Link
-            href="/educators"
-            className="px-10 py-4 rounded-full font-bold text-[#7030A0] text-base border-2 border-[#7030A0]/25 hover:border-[#7030A0]/60 hover:bg-white/60 transition-all duration-200"
-          >
-            For Educators →
+            See what families are saying →
           </Link>
         </motion.div>
 
