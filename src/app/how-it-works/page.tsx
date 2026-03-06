@@ -26,7 +26,7 @@ export default function HowItWorksPage() {
     <main>
       <Nav />
       <HowItWorksHero />
-      <HowItWorks compact />
+      <HowItWorks scrollDriven />
       <TheProblem />
       <MindsetSlider />
       <OurAnswer />

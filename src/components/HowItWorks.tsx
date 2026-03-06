@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 
 const steps = [
@@ -58,9 +58,177 @@ const steps = [
   },
 ];
 
-export default function HowItWorks({ compact = false }: { compact?: boolean }) {
+// ── Horizontal scroll-driven variant ──────────────────────────────────────────
+
+function HowItWorksScrollDriven() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeStep, setActiveStep] = useState(0);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  // Map 80% of scroll → full track, hold last slide for remaining 20%
+  const xRaw = useTransform(
+    scrollYProgress,
+    [0, 0.78, 1],
+    ["0%", "-66.67%", "-66.67%"]
+  );
+  const x = useSpring(xRaw, { stiffness: 80, damping: 28, restDelta: 0.001 });
+
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    if (v < 0.28) setActiveStep(0);
+    else if (v < 0.56) setActiveStep(1);
+    else setActiveStep(2);
+  });
+
+  return (
+    // Tall container — each step gets ~130vh of scroll distance
+    <div ref={containerRef} style={{ height: "400vh" }}>
+      <div
+        className="sticky top-0 overflow-hidden flex flex-col"
+        style={{ height: "100vh", background: "#0D0A1A" }}
+      >
+        {/* Ambient blobs */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-[-20%] right-[-5%] w-[700px] h-[700px] rounded-full blur-[120px]"
+            style={{ background: "rgba(112,48,160,0.18)" }} />
+          <div className="absolute bottom-[-20%] left-[-5%] w-[600px] h-[600px] rounded-full blur-[100px]"
+            style={{ background: "rgba(8,145,178,0.14)" }} />
+        </div>
+
+        {/* Top bar */}
+        <div className="relative z-20 flex items-center justify-between px-8 lg:px-16 pt-10 pb-4 shrink-0">
+          <div>
+            <p className="text-[#C49FDC] font-semibold text-xs tracking-widest uppercase mb-1">How It Works</p>
+            <h2 className="text-xl lg:text-2xl font-extrabold text-white leading-tight">
+              Simple to start.{" "}
+              <span className="italic animate-gradient">Life-changing</span>
+              {" "}to experience.
+            </h2>
+          </div>
+
+          {/* Step indicators */}
+          <div className="flex items-center gap-3">
+            {steps.map((s, i) => (
+              <motion.div
+                key={i}
+                className="h-1.5 rounded-full transition-all duration-500"
+                animate={{
+                  width: activeStep === i ? "2rem" : "0.5rem",
+                  background: activeStep === i ? s.accent : "rgba(255,255,255,0.2)",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Scrolling track — 300vw wide, shifts by -100vw per step */}
+        <div className="relative flex-1 overflow-hidden">
+          <motion.div
+            className="flex h-full"
+            style={{ x, width: `${steps.length * 100}vw` }}
+          >
+            {steps.map((step, i) => (
+              <div
+                key={i}
+                className="relative flex items-center px-8 lg:px-16"
+                style={{ width: "100vw", height: "100%" }}
+              >
+                {/* Giant ghost step number */}
+                <div
+                  className="absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 font-extrabold leading-none pointer-events-none select-none"
+                  style={{
+                    fontSize: "clamp(10rem, 22vw, 22rem)",
+                    color: `${step.accent}0C`,
+                  }}
+                >
+                  {step.num}
+                </div>
+
+                {/* Two-column content */}
+                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 w-full items-center">
+
+                  {/* Left: text */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -24 }}
+                    animate={{ opacity: activeStep === i ? 1 : 0.3, x: 0 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <div
+                      className="text-7xl font-extrabold mb-5 leading-none tabular-nums"
+                      style={{ color: `${step.accent}30` }}
+                    >
+                      {step.num}
+                    </div>
+                    <h3 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white mb-5 leading-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-white/65 text-lg leading-relaxed mb-5 max-w-lg">
+                      {step.desc}
+                    </p>
+                    <p className="text-white/35 text-sm leading-relaxed max-w-lg">
+                      {step.detail}
+                    </p>
+                  </motion.div>
+
+                  {/* Right: image */}
+                  <motion.div
+                    className="relative rounded-3xl overflow-hidden hidden lg:block"
+                    style={{
+                      height: "58vh",
+                      boxShadow: `0 0 80px ${step.accent}22`,
+                    }}
+                    initial={{ opacity: 0, scale: 0.97 }}
+                    animate={{ opacity: activeStep === i ? 1 : 0.4, scale: 1 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    {step.visual}
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: `linear-gradient(to top, #0D0A1A55 0%, transparent 60%)` }}
+                    />
+                    <div
+                      className="absolute bottom-5 left-6 text-xs font-semibold tracking-widest uppercase"
+                      style={{ color: step.accent }}
+                    >
+                      Step {step.num}
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Bottom: scroll hint */}
+        <motion.div
+          className="relative z-20 px-8 lg:px-16 pb-6 shrink-0 flex items-center gap-3"
+          animate={{ opacity: activeStep < steps.length - 1 ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <div className="w-px h-6 bg-white/20" />
+          <p className="text-white/30 text-xs tracking-widest uppercase">Scroll to continue</p>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
+
+// ── Default / compact tab variant (unchanged) ─────────────────────────────────
+
+export default function HowItWorks({
+  compact = false,
+  scrollDriven = false,
+}: {
+  compact?: boolean;
+  scrollDriven?: boolean;
+}) {
   const [active, setActive] = useState(0);
   const current = steps[active];
+
+  if (scrollDriven) return <HowItWorksScrollDriven />;
 
   return (
     <section id="how" className={`relative ${compact ? "pt-16 pb-20" : "pt-32 pb-20"} px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden`}>
