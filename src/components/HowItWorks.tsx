@@ -65,10 +65,6 @@ export default function HowItWorks({ compact = false }: { compact?: boolean }) {
   return (
     <section id="how" className={`relative ${compact ? "pt-16 pb-20" : "pt-32 pb-20"} px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden`}>
 
-      {/* Fade in/out — avoids stark lines against adjacent white/near-white sections */}
-      <div className="absolute top-0 inset-x-0 h-28 pointer-events-none z-10" style={{ background: "linear-gradient(to bottom, white, transparent)" }} />
-      <div className="absolute bottom-0 inset-x-0 h-28 pointer-events-none z-10" style={{ background: "linear-gradient(to top, white, transparent)" }} />
-
       <div className="absolute top-[10%] right-[-10%] w-[500px] h-[500px] bg-[#7030A0]/15 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[5%] left-[-8%] w-[400px] h-[400px] bg-teal-400/15 rounded-full blur-[80px] pointer-events-none" />
 

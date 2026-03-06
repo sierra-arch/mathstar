@@ -36,11 +36,7 @@ const pillars = [
 
 export default function OurAnswer() {
   return (
-    <section className="relative py-36 px-6 lg:px-20 bg-[#F0E6F7] overflow-hidden">
-
-      {/* Fade in/out — avoids stark lines against adjacent white/near-white sections */}
-      <div className="absolute top-0 inset-x-0 h-28 pointer-events-none z-10" style={{ background: "linear-gradient(to bottom, white, transparent)" }} />
-      <div className="absolute bottom-0 inset-x-0 h-28 pointer-events-none z-10" style={{ background: "linear-gradient(to top, white, transparent)" }} />
+    <section className="relative py-28 px-6 lg:px-20 bg-[#F0E6F7] overflow-hidden">
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(196,159,220,0.30) 0%, transparent 70%)" }} />
