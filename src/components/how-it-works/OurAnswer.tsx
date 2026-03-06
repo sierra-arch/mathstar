@@ -72,7 +72,7 @@ export default function OurAnswer() {
             Our Answer
           </RevealText>
           <RevealText as="h2" className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight mb-6" delay={0.1}>
-            Wonder first. Everything else follows.
+            <span className="animate-gradient">Wonder first.</span> Everything else follows.
           </RevealText>
           <RevealText as="p" className="text-[#0D0B12]/60 text-lg leading-relaxed max-w-3xl" delay={0.2}>
             MathSTAR is an <strong className="text-[#0D0B12]/80">8-hour plug-and-play VR intervention</strong> that moves students from stuck-in-arithmetic to algebra-confident. Deployed in classrooms, after-school programs, and at home — it meets kids wherever they are.

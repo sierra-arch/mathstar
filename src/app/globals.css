@@ -64,6 +64,21 @@ html {
 .float-8 { animation: floatUpSlow 10s ease-in-out infinite; animation-delay: -1.5s; }
 .pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
 
+/* ── Animated gradient text ── */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background: linear-gradient(270deg, #7030A0, #C49FDC, #0891B2, #7030A0);
+  background-size: 300% 300%;
+  animation: gradient-shift 5s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Fish swimming animations ── */
 @keyframes swimRight {
   0% { transform: translateX(-120px) translateY(0px) scaleX(1); opacity: 0; }

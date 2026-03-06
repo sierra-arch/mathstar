@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import RevealText from "@/components/RevealText";
@@ -13,6 +13,10 @@ const stats = [
 
 export default function HowItWorksHero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const blob1Ref = useRef<HTMLDivElement>(null);
+  const blob2Ref = useRef<HTMLDivElement>(null);
+  const blob3Ref = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -20,6 +24,36 @@ export default function HowItWorksHero() {
 
   const fadeOut = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
   const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+
+  useEffect(() => {
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+    let raf: number;
+
+    const onMouseMove = (e: MouseEvent) => {
+      const rect = sectionRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      targetX = (e.clientX - rect.left - rect.width / 2) * 0.03;
+      targetY = (e.clientY - rect.top - rect.height / 2) * 0.03;
+    };
+
+    const animate = () => {
+      currentX += (targetX - currentX) * 0.06;
+      currentY += (targetY - currentY) * 0.06;
+      if (blob1Ref.current) blob1Ref.current.style.transform = `translate(${currentX * 1.0}px, ${currentY * 1.0}px)`;
+      if (blob2Ref.current) blob2Ref.current.style.transform = `translate(${currentX * 1.6}px, ${currentY * 1.6}px)`;
+      if (blob3Ref.current) blob3Ref.current.style.transform = `translate(${currentX * 0.6}px, ${currentY * 0.6}px)`;
+      raf = requestAnimationFrame(animate);
+    };
+
+    const section = sectionRef.current;
+    section?.addEventListener("mousemove", onMouseMove);
+    raf = requestAnimationFrame(animate);
+    return () => {
+      section?.removeEventListener("mousemove", onMouseMove);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
     <section
@@ -32,14 +66,17 @@ export default function HowItWorksHero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 130% 90% at 50% 60%, rgba(240,230,247,0.7) 0%, rgba(250,250,248,0) 65%)" }} />
         <div
+          ref={blob1Ref}
           className="absolute top-[-12%] right-[-8%] w-[900px] h-[900px] rounded-full blur-[110px]"
           style={{ background: "radial-gradient(circle, rgba(196,159,220,0.30) 0%, rgba(112,48,160,0.05) 55%, transparent 75%)" }}
         />
         <div
+          ref={blob2Ref}
           className="absolute bottom-[-15%] left-[-8%] w-[750px] h-[750px] rounded-full blur-[100px]"
           style={{ background: "radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 65%)" }}
         />
         <div
+          ref={blob3Ref}
           className="absolute top-[25%] left-[-10%] w-[700px] h-[700px] rounded-full blur-[120px]"
           style={{ background: "radial-gradient(circle, rgba(196,159,220,0.22) 0%, transparent 70%)" }}
         />
@@ -68,15 +105,7 @@ export default function HowItWorksHero() {
             >
               Simple to start.{" "}
               <br className="hidden lg:block" />
-              <span
-                className="italic inline-block pb-2 pr-4"
-                style={{
-                  background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
+              <span className="italic inline-block pb-2 pr-4 animate-gradient">
                 Life-changing
               </span>{" "}
               to experience.

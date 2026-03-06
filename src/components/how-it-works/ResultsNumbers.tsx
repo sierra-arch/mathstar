@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import RevealText from "@/components/RevealText";
+import TiltCard from "@/components/TiltCard";
 
 const stats = [
   {
@@ -170,7 +171,7 @@ export default function ResultsNumbers() {
           </RevealText>
           <RevealText as="h2" className="text-4xl lg:text-[4rem] font-extrabold text-[#0D0B12] leading-tight" delay={0.1}>
             The kids are sold.{" "}
-            <em className="not-italic italic text-[#0891B2]">The data agrees.</em>
+            <em className="not-italic italic animate-gradient">The data agrees.</em>
           </RevealText>
         </div>
 
@@ -249,31 +250,28 @@ export default function ResultsNumbers() {
           {outcomeCards.map((card, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl p-8 border ${card.border} bg-gradient-to-br ${card.bg} cursor-default ${i === 0 || i === 5 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+              className={`${i === 0 || i === 5 ? "sm:col-span-2 lg:col-span-1" : ""}`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07, type: "spring", stiffness: 100, damping: 18 }}
-              whileHover={{
-                y: -6,
-                boxShadow: `0 20px 60px ${card.glow}`,
-                transition: { duration: 0.2 },
-              }}
             >
-              <div className="flex items-center gap-2 mb-5">
-                <span className="text-2xl">{card.emoji}</span>
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: card.color }}>{card.category}</span>
-              </div>
-              <div className="text-5xl font-extrabold mb-1" style={{ color: card.color }}>{card.headline}</div>
-              <div className="text-[#0D0B12] font-semibold text-sm leading-snug mb-5">{card.headlineLabel}</div>
-              <ul className="space-y-2">
-                {card.supporting.map((s, j) => (
-                  <li key={j} className="flex items-start gap-2 text-[#0D0B12]/60 text-xs leading-relaxed">
-                    <span className="font-bold shrink-0 mt-0.5" style={{ color: card.color }}>—</span>
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ul>
+              <TiltCard className={`rounded-3xl p-8 border ${card.border} bg-gradient-to-br ${card.bg} h-full`}>
+                <div className="flex items-center gap-2 mb-5">
+                  <span className="text-2xl">{card.emoji}</span>
+                  <span className="text-xs font-bold tracking-widest uppercase" style={{ color: card.color }}>{card.category}</span>
+                </div>
+                <div className="text-5xl font-extrabold mb-1" style={{ color: card.color }}>{card.headline}</div>
+                <div className="text-[#0D0B12] font-semibold text-sm leading-snug mb-5">{card.headlineLabel}</div>
+                <ul className="space-y-2">
+                  {card.supporting.map((s, j) => (
+                    <li key={j} className="flex items-start gap-2 text-[#0D0B12]/60 text-xs leading-relaxed">
+                      <span className="font-bold shrink-0 mt-0.5" style={{ color: card.color }}>—</span>
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
