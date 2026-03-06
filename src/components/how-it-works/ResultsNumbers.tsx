@@ -1,40 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 const stats = [
   {
-    value: "10/10",
+    prefix: "",
+    num: 10,
+    suffix: "/10",
     label: "chose math over recess",
     sub: "Ellis Elementary Pilot",
-    color: "text-[#7030A0]",
-    border: "border-[#7030A0]/20",
-    bg: "bg-[#7030A0]/8",
+    colorClass: "text-[#7030A0]",
+    hex: "#7030A0",
   },
   {
-    value: "+18%",
+    prefix: "+",
+    num: 18,
+    suffix: "%",
     label: "pre → post test gain",
     sub: "after just 8 hours of learning",
-    color: "text-[#0891B2]",
-    border: "border-[#0891B2]/20",
-    bg: "bg-[#0891B2]/8",
+    colorClass: "text-[#0891B2]",
+    hex: "#0891B2",
   },
   {
-    value: "45%",
+    prefix: "",
+    num: 45,
+    suffix: "%",
     label: "jump in median test score",
     sub: "in just 3 sessions — BPL Research",
-    color: "text-[#0891B2]",
-    border: "border-[#0891B2]/20",
-    bg: "bg-[#0891B2]/8",
+    colorClass: "text-[#0891B2]",
+    hex: "#0891B2",
   },
   {
-    value: "86%",
+    prefix: "",
+    num: 86,
+    suffix: "%",
     label: "said they loved it",
     sub: "and would recommend to a friend",
-    color: "text-[#7030A0]",
-    border: "border-[#7030A0]/20",
-    bg: "bg-[#7030A0]/8",
+    colorClass: "text-[#7030A0]",
+    hex: "#7030A0",
   },
 ];
 
@@ -48,6 +53,7 @@ const outcomeCards = [
     color: "#7030A0",
     bg: "from-[#7030A0]/10 to-[#7030A0]/4",
     border: "border-[#7030A0]/15",
+    glow: "rgba(112,48,160,0.18)",
   },
   {
     emoji: "🧘",
@@ -58,6 +64,7 @@ const outcomeCards = [
     color: "#0891B2",
     bg: "from-[#0891B2]/10 to-[#0891B2]/4",
     border: "border-[#0891B2]/15",
+    glow: "rgba(8,145,178,0.18)",
   },
   {
     emoji: "📈",
@@ -68,6 +75,7 @@ const outcomeCards = [
     color: "#7030A0",
     bg: "from-[#7030A0]/10 to-[#7030A0]/4",
     border: "border-[#7030A0]/15",
+    glow: "rgba(112,48,160,0.18)",
   },
   {
     emoji: "💡",
@@ -78,6 +86,7 @@ const outcomeCards = [
     color: "#0891B2",
     bg: "from-[#0891B2]/10 to-[#0891B2]/4",
     border: "border-[#0891B2]/15",
+    glow: "rgba(8,145,178,0.18)",
   },
   {
     emoji: "⭐",
@@ -88,6 +97,7 @@ const outcomeCards = [
     color: "#7030A0",
     bg: "from-[#7030A0]/10 to-[#7030A0]/4",
     border: "border-[#7030A0]/15",
+    glow: "rgba(112,48,160,0.18)",
   },
   {
     emoji: "🔑",
@@ -98,8 +108,36 @@ const outcomeCards = [
     color: "#0891B2",
     bg: "from-[#0891B2]/10 to-[#0891B2]/4",
     border: "border-[#0891B2]/15",
+    glow: "rgba(8,145,178,0.18)",
   },
 ];
+
+function CountUp({ prefix, num, suffix, colorHex }: { prefix: string; num: number; suffix: string; colorHex: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const duration = 1400;
+    const start = performance.now();
+    const raf = requestAnimationFrame(function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease out expo
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setCount(Math.round(eased * num));
+      if (progress < 1) requestAnimationFrame(tick);
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [isInView, num]);
+
+  return (
+    <div ref={ref} className="text-6xl font-extrabold mb-2 tabular-nums" style={{ color: colorHex }}>
+      {prefix}{count}{suffix}
+    </div>
+  );
+}
 
 export default function ResultsNumbers() {
   return (
@@ -133,49 +171,53 @@ export default function ResultsNumbers() {
           </motion.h2>
         </div>
 
-        {/* Photo strip */}
+        {/* Photo strip with hover zoom */}
         <motion.div
-          className="grid grid-cols-3 gap-3 mb-16 rounded-3xl overflow-hidden"
+          className="grid grid-cols-3 gap-3 mb-16"
           style={{ height: "220px" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="relative rounded-2xl overflow-hidden">
-            <Image src="/Stock Images/pexels-anastasia-shuraeva-9821658.jpg" alt="Student learning" fill className="object-cover object-center" />
-          </div>
-          <div className="relative rounded-2xl overflow-hidden">
-            <Image src="/Stock Images/pexels-julia-m-cameron-4144041 (1).jpg" alt="Students engaged" fill className="object-cover object-center" />
-          </div>
-          <div className="relative rounded-2xl overflow-hidden">
-            <Image src="/Stock Images/pexels-vanessa-loring-7869248.jpg" alt="Child thriving" fill className="object-cover object-center" />
-          </div>
+          {[
+            { src: "/Stock Images/pexels-anastasia-shuraeva-9821658.jpg", alt: "Student learning" },
+            { src: "/Stock Images/pexels-julia-m-cameron-4144041 (1).jpg", alt: "Students engaged" },
+            { src: "/Stock Images/pexels-vanessa-loring-7869248.jpg", alt: "Child thriving" },
+          ].map((photo, i) => (
+            <motion.div
+              key={i}
+              className="relative rounded-2xl overflow-hidden cursor-pointer"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover object-center transition-transform duration-500 hover:scale-110"
+              />
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* Headline stats — open editorial row */}
-        <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#0D0B12]/10 border-y border-[#0D0B12]/10 mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
+        {/* Headline stats — count-up */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#0D0B12]/10 border-y border-[#0D0B12]/10 mb-20">
           {stats.map((s, i) => (
             <motion.div
               key={i}
               className="px-8 py-10 lg:px-10"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08, type: "spring", stiffness: 120 }}
             >
-              <div className={`text-6xl font-extrabold mb-2 ${s.color}`}>{s.value}</div>
+              <CountUp prefix={s.prefix} num={s.num} suffix={s.suffix} colorHex={s.hex} />
               <div className="text-[#0D0B12] font-bold text-sm leading-snug mb-1">{s.label}</div>
               <div className="text-[#0D0B12]/45 text-xs leading-relaxed">{s.sub}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Outcome breakdown */}
         <div className="text-center mb-12">
@@ -204,11 +246,16 @@ export default function ResultsNumbers() {
           {outcomeCards.map((card, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl p-8 border ${card.border} bg-gradient-to-br ${card.bg} hover:-translate-y-1 transition-transform duration-200 ${i === 0 || i === 5 ? "sm:col-span-2 lg:col-span-1" : ""}`}
-              initial={{ opacity: 0, y: 30 }}
+              className={`rounded-3xl p-8 border ${card.border} bg-gradient-to-br ${card.bg} cursor-default ${i === 0 || i === 5 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
+              transition={{ duration: 0.5, delay: i * 0.07, type: "spring", stiffness: 100, damping: 18 }}
+              whileHover={{
+                y: -6,
+                boxShadow: `0 20px 60px ${card.glow}`,
+                transition: { duration: 0.2 },
+              }}
             >
               <div className="flex items-center gap-2 mb-5">
                 <span className="text-2xl">{card.emoji}</span>

@@ -88,18 +88,23 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
           {features.map((f, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} relative overflow-hidden hover:-translate-y-1 transition-transform duration-200 ${i === 0 ? "lg:col-span-2" : i === 2 ? "lg:col-span-3" : ""}`}
-              initial={{ opacity: 0, y: 30 }}
+              className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} relative overflow-hidden ${i === 0 ? "lg:col-span-2" : i === 2 ? "lg:col-span-3" : ""}`}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.1, type: "spring", stiffness: 100, damping: 18 }}
+              whileHover={{
+                y: -6,
+                boxShadow: `0 24px 64px ${f.color}28`,
+                transition: { duration: 0.2 },
+              }}
             >
               <div className="relative w-full overflow-hidden" style={{ height: i === 2 ? "280px" : "220px" }}>
                 <Image
                   src={f.photo}
                   alt={f.photoAlt}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none" />
               </div>

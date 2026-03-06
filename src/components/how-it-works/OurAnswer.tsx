@@ -114,10 +114,15 @@ export default function OurAnswer() {
             <motion.div
               key={p.title}
               className={`rounded-3xl p-8 border ${p.border} bg-gradient-to-br ${p.bg}`}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08, type: "spring", stiffness: 100, damping: 18 }}
+              whileHover={{
+                y: -6,
+                boxShadow: `0 20px 60px ${p.color}28`,
+                transition: { duration: 0.2 },
+              }}
             >
               <h3 className="text-xl font-extrabold mb-3" style={{ color: p.color }}>{p.title}</h3>
               <p className="text-[#0D0B12]/60 text-sm leading-relaxed">{p.body}</p>
