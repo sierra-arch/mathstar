@@ -305,7 +305,7 @@ export default function GameExperience() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            Step inside the{" "}
+            <span className="whitespace-nowrap">Step inside the{" "}
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
@@ -316,6 +316,7 @@ export default function GameExperience() {
               }}
             >
               world
+            </span>
             </span>
             <br />where math is alive.
           </motion.h1>
