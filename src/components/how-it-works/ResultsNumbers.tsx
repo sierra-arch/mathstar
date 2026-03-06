@@ -143,13 +143,13 @@ function CountUp({ prefix, num, suffix, colorHex }: { prefix: string; num: numbe
 
 export default function ResultsNumbers() {
   return (
-    <section data-snap className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF]" style={{ overflowX: "clip" }}>
+    <section data-snap className="relative py-28 px-6 lg:px-20" style={{ overflowX: "clip", background: "#0F0620" }}>
 
       {/* Section blobs — clipped horizontally */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] right-[-10%] w-[750px] h-[750px] bg-[#7030A0]/10 rounded-full blur-[130px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[700px] h-[700px] bg-[#0891B2]/8 rounded-full blur-[130px]" />
-        <div className="absolute bottom-[-15%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#C49FDC]/20 rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] right-[-10%] w-[750px] h-[750px] rounded-full blur-[130px]" style={{ background: "rgba(112,48,160,0.25)" }} />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[700px] h-[700px] rounded-full blur-[130px]" style={{ background: "rgba(8,145,178,0.20)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full blur-[120px]" style={{ background: "rgba(196,159,220,0.10)" }} />
       </div>
 
       {/* Bridge blob down — bleeds into next section */}
@@ -157,7 +157,7 @@ export default function ResultsNumbers() {
         className="absolute left-1/2 -translate-x-1/2 w-[900px] h-[600px] pointer-events-none"
         style={{
           bottom: "-260px",
-          background: "radial-gradient(circle, rgba(112,48,160,0.18) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(112,48,160,0.22) 0%, transparent 65%)",
           filter: "blur(130px)",
         }}
       />
@@ -166,10 +166,10 @@ export default function ResultsNumbers() {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <RevealText as="p" className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-4">
+          <RevealText as="p" className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-4">
             By the Numbers
           </RevealText>
-          <RevealText as="h2" className="text-4xl lg:text-[4rem] font-extrabold text-[#0D0B12] leading-tight" delay={0.1}>
+          <RevealText as="h2" className="text-4xl lg:text-[4rem] font-extrabold text-white leading-tight" delay={0.1}>
             The kids are sold.{" "}
             <em className="not-italic italic animate-gradient">The data agrees.</em>
           </RevealText>
@@ -201,12 +201,13 @@ export default function ResultsNumbers() {
                 fill
                 className="object-cover object-center transition-transform duration-500 hover:scale-110"
               />
+              <div className="absolute inset-0 bg-[#0F0620]/30 pointer-events-none" />
             </motion.div>
           ))}
         </motion.div>
 
         {/* Headline stats — count-up */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#0D0B12]/10 border-y border-[#0D0B12]/10 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10 border-y border-white/10 mb-20">
           {stats.map((s, i) => (
             <motion.div
               key={i}
@@ -217,8 +218,8 @@ export default function ResultsNumbers() {
               transition={{ duration: 0.5, delay: i * 0.08, type: "spring", stiffness: 120 }}
             >
               <CountUp prefix={s.prefix} num={s.num} suffix={s.suffix} colorHex={s.hex} />
-              <div className="text-[#0D0B12] font-bold text-sm leading-snug mb-1">{s.label}</div>
-              <div className="text-[#0D0B12]/45 text-xs leading-relaxed">{s.sub}</div>
+              <div className="text-white font-bold text-sm leading-snug mb-1">{s.label}</div>
+              <div className="text-white/40 text-xs leading-relaxed">{s.sub}</div>
             </motion.div>
           ))}
         </div>
@@ -226,17 +227,17 @@ export default function ResultsNumbers() {
         {/* Outcome breakdown */}
         <div className="text-center mb-12">
           <motion.h3
-            className="text-2xl lg:text-3xl font-extrabold text-[#0D0B12]"
+            className="text-2xl lg:text-3xl font-extrabold text-white"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             Every outcome area.{" "}
-            <em className="not-italic italic text-[#7030A0]">All of them moved.</em>
+            <em className="not-italic italic text-[#C49FDC]">All of them moved.</em>
           </motion.h3>
           <motion.p
-            className="text-[#0D0B12]/50 text-sm mt-3 max-w-xl mx-auto"
+            className="text-white/45 text-sm mt-3 max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -256,16 +257,16 @@ export default function ResultsNumbers() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07, type: "spring", stiffness: 100, damping: 18 }}
             >
-              <TiltCard className={`rounded-3xl p-8 border ${card.border} bg-gradient-to-br ${card.bg} h-full`}>
+              <TiltCard className={`rounded-3xl p-8 border ${card.border} h-full`} style={{ background: `linear-gradient(135deg, ${card.color}18 0%, ${card.color}06 100%)` }}>
                 <div className="flex items-center gap-2 mb-5">
                   <span className="text-2xl">{card.emoji}</span>
                   <span className="text-xs font-bold tracking-widest uppercase" style={{ color: card.color }}>{card.category}</span>
                 </div>
-                <div className="text-5xl font-extrabold mb-1" style={{ color: card.color }}>{card.headline}</div>
-                <div className="text-[#0D0B12] font-semibold text-sm leading-snug mb-5">{card.headlineLabel}</div>
+                <div className="text-5xl font-extrabold mb-1" style={{ color: card.color, filter: `drop-shadow(0 0 12px ${card.glow})` }}>{card.headline}</div>
+                <div className="text-white font-semibold text-sm leading-snug mb-5">{card.headlineLabel}</div>
                 <ul className="space-y-2">
                   {card.supporting.map((s, j) => (
-                    <li key={j} className="flex items-start gap-2 text-[#0D0B12]/60 text-xs leading-relaxed">
+                    <li key={j} className="flex items-start gap-2 text-white/50 text-xs leading-relaxed">
                       <span className="font-bold shrink-0 mt-0.5" style={{ color: card.color }}>—</span>
                       <span>{s}</span>
                     </li>
@@ -277,7 +278,7 @@ export default function ResultsNumbers() {
         </div>
 
         <motion.p
-          className="text-center text-[#0D0B12]/35 text-xs mt-10"
+          className="text-center text-white/30 text-xs mt-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

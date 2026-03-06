@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import RevealText from "@/components/RevealText";
+import ParticleField from "@/components/ParticleField";
 
 const stats = [
   { num: "8 hrs", label: "Arithmetic to algebra-confident" },
@@ -59,27 +60,36 @@ export default function HowItWorksHero() {
     <section
       ref={sectionRef}
       data-snap
-      className="relative min-h-screen bg-[#F7F2FF] flex items-center"
-      style={{ overflowX: "clip" }}
+      className="relative min-h-screen flex items-center"
+      style={{ overflowX: "clip", background: "#0F0620" }}
     >
-      {/* ── Gradient mesh background (clipped horizontally) ── */}
+      {/* ── Atmosphere layer ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 130% 90% at 50% 60%, rgba(240,230,247,0.7) 0%, rgba(250,250,248,0) 65%)" }} />
+        {/* Deep radial center glow */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "radial-gradient(ellipse 120% 80% at 50% 55%, rgba(112,48,160,0.22) 0%, rgba(15,6,32,0) 65%)" }}
+        />
+        {/* Blob 1 — top-right purple */}
         <div
           ref={blob1Ref}
-          className="absolute top-[-12%] right-[-8%] w-[900px] h-[900px] rounded-full blur-[110px]"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.30) 0%, rgba(112,48,160,0.05) 55%, transparent 75%)" }}
+          className="absolute top-[-10%] right-[-6%] w-[920px] h-[920px] rounded-full blur-[110px]"
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.55) 0%, rgba(112,48,160,0.12) 55%, transparent 75%)" }}
         />
+        {/* Blob 2 — bottom-left teal */}
         <div
           ref={blob2Ref}
-          className="absolute bottom-[-15%] left-[-8%] w-[750px] h-[750px] rounded-full blur-[100px]"
-          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 65%)" }}
+          className="absolute bottom-[-12%] left-[-6%] w-[780px] h-[780px] rounded-full blur-[100px]"
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.35) 0%, transparent 65%)" }}
         />
+        {/* Blob 3 — mid-left lavender */}
         <div
           ref={blob3Ref}
-          className="absolute top-[25%] left-[-10%] w-[700px] h-[700px] rounded-full blur-[120px]"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.22) 0%, transparent 70%)" }}
+          className="absolute top-[20%] left-[-8%] w-[720px] h-[720px] rounded-full blur-[120px]"
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.40) 0%, transparent 70%)" }}
         />
+        {/* Particles */}
+        <ParticleField count={80} />
       </div>
 
       {/* ── Content ── */}
@@ -91,7 +101,7 @@ export default function HowItWorksHero() {
 
           <RevealText
             as="p"
-            className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-6"
+            className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-6"
             delay={0.05}
           >
             How It Works
@@ -100,7 +110,7 @@ export default function HowItWorksHero() {
           <div className="mb-8">
             <RevealText
               as="h1"
-              className="text-5xl sm:text-6xl lg:text-[6.5rem] xl:text-[8rem] font-extrabold text-[#0D0B12] leading-[1.0]"
+              className="text-5xl sm:text-6xl lg:text-[6.5rem] xl:text-[8rem] font-extrabold text-white leading-[1.0]"
               delay={0.12}
             >
               Simple to start.{" "}
@@ -114,7 +124,7 @@ export default function HowItWorksHero() {
 
           <RevealText
             as="p"
-            className="text-[#0D0B12]/55 text-xl leading-relaxed mb-12 max-w-2xl"
+            className="text-white/55 text-xl leading-relaxed mb-12 max-w-2xl"
             delay={0.25}
           >
             Three steps. One headset. An underwater world where kids go from
@@ -131,23 +141,23 @@ export default function HowItWorksHero() {
               href="/parents"
               className="px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5 w-fit"
               style={{
-                background: "linear-gradient(135deg, #7030A0, #4A1E6B)",
-                boxShadow: "0 8px 40px rgba(112,48,160,0.35)",
+                background: "linear-gradient(135deg, #9040C8, #5A2880)",
+                boxShadow: "0 8px 40px rgba(144,64,200,0.5)",
               }}
             >
               For Parents →
             </Link>
             <Link
               href="/educators"
-              className="px-10 py-4 rounded-full font-bold text-[#7030A0] text-base border-2 border-[#7030A0]/25 hover:border-[#7030A0]/60 hover:bg-white/60 transition-all duration-200 w-fit"
+              className="px-10 py-4 rounded-full font-bold text-white/75 text-base border-2 border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-200 w-fit"
             >
               For Educators →
             </Link>
           </motion.div>
 
-          {/* Stats row — open editorial */}
+          {/* Stats row */}
           <motion.div
-            className="flex flex-col sm:flex-row sm:divide-x divide-[#0D0B12]/10 border-t border-[#0D0B12]/10"
+            className="flex flex-col sm:flex-row sm:divide-x divide-white/10 border-t border-white/10"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
@@ -156,11 +166,11 @@ export default function HowItWorksHero() {
               <div key={i} className="pt-6 pb-2 sm:pr-12 sm:pl-0 lg:pr-16 first:pl-0">
                 <div
                   className="text-5xl font-extrabold mb-2"
-                  style={{ color: i % 2 === 0 ? "#7030A0" : "#0891B2" }}
+                  style={{ color: i % 2 === 0 ? "#C49FDC" : "#38BDF8" }}
                 >
                   {s.num}
                 </div>
-                <p className="text-[#0D0B12]/50 text-sm leading-snug">{s.label}</p>
+                <p className="text-white/45 text-sm leading-snug">{s.label}</p>
               </div>
             ))}
           </motion.div>
@@ -172,7 +182,7 @@ export default function HowItWorksHero() {
         className="absolute left-1/2 -translate-x-1/2 w-[1000px] h-[700px] pointer-events-none"
         style={{
           bottom: "-280px",
-          background: "radial-gradient(circle, rgba(196,159,220,0.40) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(112,48,160,0.30) 0%, transparent 65%)",
           filter: "blur(130px)",
         }}
       />
@@ -186,7 +196,7 @@ export default function HowItWorksHero() {
         transition={{ delay: 1.2 }}
       >
         <motion.div
-          className="w-px h-10 bg-[#7030A0]/30"
+          className="w-px h-10 bg-white/25"
           animate={{ scaleY: [0, 1, 0], originY: 0 }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         />

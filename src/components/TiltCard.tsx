@@ -6,9 +6,10 @@ interface TiltCardProps {
   children: React.ReactNode;
   className?: string;
   maxTilt?: number;
+  style?: React.CSSProperties;
 }
 
-export default function TiltCard({ children, className = "", maxTilt = 8 }: TiltCardProps) {
+export default function TiltCard({ children, className = "", maxTilt = 8, style }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const glossRef = useRef<HTMLDivElement>(null);
 
@@ -50,7 +51,7 @@ export default function TiltCard({ children, className = "", maxTilt = 8 }: Tilt
       className={`${className} relative`}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      style={{ transformStyle: "preserve-3d" }}
+      style={{ transformStyle: "preserve-3d", ...style }}
     >
       {children}
       {/* Gloss highlight overlay */}
