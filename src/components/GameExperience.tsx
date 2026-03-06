@@ -1,8 +1,30 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+
+/* ── Lazy video — only plays when near viewport, pauses when off-screen ── */
+function LazyVideo({ src, start = 0, rate = 0.65, opacity = 0.9, className }: {
+  src: string; start?: number; rate?: number; opacity?: number; className?: string;
+}) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { entry.isIntersecting ? video.play().catch(() => {}) : video.pause(); },
+      { rootMargin: "100px" }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+  return (
+    <video ref={ref} src={src} muted loop playsInline preload="none"
+      className={className} style={{ opacity }}
+      onLoadedMetadata={(e) => { e.currentTarget.currentTime = start; e.currentTarget.playbackRate = rate; }} />
+  );
+}
 
 /* ── Gradient text helper ── */
 const GRAD_PT = "linear-gradient(135deg, #7030A0, #0891B2)";
@@ -103,8 +125,7 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart, topColo
   return (
     <section ref={ref} className="relative h-screen overflow-hidden bg-[#0d0620] flex items-end">
       <div className="absolute inset-0">
-        <video src={src} autoPlay muted loop playsInline className="w-full h-full object-cover" style={{ opacity: 0.90 }}
-          onLoadedMetadata={(e) => { e.currentTarget.currentTime = videoStart; e.currentTarget.playbackRate = 0.65; }} />
+        <LazyVideo src={src} start={videoStart} rate={0.65} opacity={0.90} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d0620]/25 via-transparent to-[#0d0620]/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0d0620]/55 via-[#0d0620]/10 to-transparent" />
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 15% 60%, rgba(112,48,160,0.30) 0%, transparent 60%)" }} />
@@ -230,9 +251,7 @@ export default function GameExperience() {
       {/* ── 1. HERO ── */}
       <section ref={heroRef} className="relative overflow-hidden flex items-end justify-center" style={{ height: "115vh" }}>
         <motion.div className="absolute inset-0" style={{ scale: heroScale }}>
-          <video src="/Gameplay-edited.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover"
-            style={{ opacity: 0.65 }}
-            onLoadedMetadata={(e) => { e.currentTarget.currentTime = 90; e.currentTarget.playbackRate = 0.6; }} />
+          <LazyVideo src="/Gameplay-edited.mp4" start={90} rate={0.6} opacity={0.65} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/55 via-[#080612]/10 to-[#080612]" />
         </motion.div>
         <div className="absolute bottom-0 inset-x-0 h-36 z-20 pointer-events-none"
@@ -335,9 +354,7 @@ export default function GameExperience() {
       {/* ── 7. DARK VIDEO — Manipulatives ── */}
       <section className="relative h-screen overflow-hidden bg-[#080612] flex items-end">
         <SectionNum n="06" />
-        <video src="/Manipulatives.mp4" autoPlay muted loop playsInline
-          className="absolute inset-0 w-full h-full object-cover" style={{ opacity: 0.8 }}
-          onLoadedMetadata={(e) => { e.currentTarget.currentTime = 26; e.currentTarget.playbackRate = 0.65; }} />
+        <LazyVideo src="/Manipulatives.mp4" start={26} rate={0.65} opacity={0.8} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080612] via-[#080612]/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/55 via-transparent to-transparent" />
         <div className="absolute top-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to bottom, #F7F2FF, transparent)" }} />
