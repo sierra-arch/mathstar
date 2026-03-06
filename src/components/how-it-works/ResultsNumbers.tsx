@@ -105,8 +105,9 @@ export default function ResultsNumbers() {
   return (
     <section className="relative py-28 px-6 lg:px-20 bg-[#F7F2FF] overflow-hidden">
 
-      <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/12 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-5%] left-[-8%] w-[450px] h-[450px] bg-[#0891B2]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-10%] w-[750px] h-[750px] bg-[#7030A0]/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[700px] h-[700px] bg-[#0891B2]/8 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[-15%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#F0E6F7]/60 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -121,7 +122,7 @@ export default function ResultsNumbers() {
             By the Numbers
           </motion.p>
           <motion.h2
-            className="text-4xl lg:text-[3.25rem] font-extrabold text-[#0D0B12] leading-tight"
+            className="text-4xl lg:text-[4rem] font-extrabold text-[#0D0B12] leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -152,23 +153,29 @@ export default function ResultsNumbers() {
           </div>
         </motion.div>
 
-        {/* Headline stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+        {/* Headline stats — open editorial row */}
+        <motion.div
+          className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#0D0B12]/10 border-y border-[#0D0B12]/10 mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           {stats.map((s, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl p-8 border ${s.border} ${s.bg} text-center`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="px-8 py-10 lg:px-10"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className={`text-5xl font-extrabold mb-2 ${s.color}`}>{s.value}</div>
+              <div className={`text-6xl font-extrabold mb-2 ${s.color}`}>{s.value}</div>
               <div className="text-[#0D0B12] font-bold text-sm leading-snug mb-1">{s.label}</div>
               <div className="text-[#0D0B12]/45 text-xs leading-relaxed">{s.sub}</div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Outcome breakdown */}
         <div className="text-center mb-12">
@@ -197,7 +204,7 @@ export default function ResultsNumbers() {
           {outcomeCards.map((card, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl p-8 border ${card.border} bg-gradient-to-br ${card.bg}`}
+              className={`rounded-3xl p-8 border ${card.border} bg-gradient-to-br ${card.bg} hover:-translate-y-1 transition-transform duration-200 ${i === 0 || i === 5 ? "sm:col-span-2 lg:col-span-1" : ""}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

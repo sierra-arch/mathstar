@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
 const pillars = [
@@ -35,11 +36,19 @@ const pillars = [
 ];
 
 export default function OurAnswer() {
+  const videoRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: videoRef, offset: ["start end", "end start"] });
+  const videoScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.03, 1.01]);
+
   return (
     <section className="relative py-28 px-6 lg:px-20 bg-[#F0E6F7] overflow-hidden">
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.30) 0%, transparent 70%)" }} />
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(ellipse, rgba(196,159,220,0.35) 0%, transparent 65%)" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(196,159,220,0.20) 0%, transparent 65%)" }} />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(8,145,178,0.12) 0%, transparent 70%)" }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -66,8 +75,10 @@ export default function OurAnswer() {
         </motion.div>
 
         {/* Gameplay video */}
+        <div ref={videoRef} className="mb-16">
         <motion.div
-          className="relative rounded-3xl overflow-hidden mb-16 shadow-2xl shadow-[#7030A0]/10"
+          className="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/15"
+          style={{ scale: videoScale }}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -79,7 +90,7 @@ export default function OurAnswer() {
             muted
             loop
             playsInline
-            className="w-full object-cover max-h-[480px]"
+            className="w-full object-cover max-h-[600px]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0F0620]/60 via-transparent to-transparent pointer-events-none" />
           <div className="absolute bottom-6 left-8 right-8 flex items-end justify-between">
@@ -95,6 +106,7 @@ export default function OurAnswer() {
             </Link>
           </div>
         </motion.div>
+        </div>
 
         {/* Pillars grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

@@ -48,8 +48,9 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
     <section className={`relative py-24 px-6 lg:px-16 ${dark ? "bg-[#0D0B12]" : "bg-[#F7F2FF]"} overflow-hidden`}>
 
       {/* Ambient orbs */}
-      <div className="absolute top-[-5%] right-[-5%] w-[400px] h-[400px] bg-[#7030A0]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[-5%] left-[-5%] w-[350px] h-[350px] bg-[#0891B2]/8 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-8%] w-[700px] h-[700px] bg-[#7030A0]/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-8%] w-[650px] h-[650px] bg-[#0891B2]/8 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-[-12%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#C49FDC]/15 rounded-full blur-[110px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
 
@@ -87,13 +88,13 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
           {features.map((f, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} relative overflow-hidden`}
+              className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} relative overflow-hidden hover:-translate-y-1 transition-transform duration-200 ${i === 0 ? "lg:col-span-2" : i === 2 ? "lg:col-span-3" : ""}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className="relative w-full overflow-hidden" style={{ height: "180px" }}>
+              <div className="relative w-full overflow-hidden" style={{ height: i === 2 ? "280px" : "220px" }}>
                 <Image
                   src={f.photo}
                   alt={f.photoAlt}
@@ -102,28 +103,30 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none" />
               </div>
-              <div className="p-8">
-              <div className="text-4xl mb-5">{f.icon}</div>
-              <h3
-                className="text-xl font-extrabold mb-3 leading-snug"
-                style={{ color: f.color }}
-              >
-                {f.title}
-              </h3>
-              <p className={`${dark ? "text-white/60" : "text-[#0D0B12]/60"} text-sm leading-relaxed mb-6`}>
-                {f.body}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {f.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs font-semibold px-3 py-1 rounded-full"
-                    style={{ background: `${f.color}18`, color: f.color }}
+              <div className={`${i === 2 ? "p-10 lg:flex lg:gap-16 lg:items-start" : "p-10"}`}>
+                <div className={i === 2 ? "lg:flex-1" : ""}>
+                  <div className="text-4xl mb-5">{f.icon}</div>
+                  <h3
+                    className="text-xl font-extrabold mb-3 leading-snug"
+                    style={{ color: f.color }}
                   >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+                    {f.title}
+                  </h3>
+                  <p className={`${dark ? "text-white/60" : "text-[#0D0B12]/60"} text-sm leading-relaxed mb-6`}>
+                    {f.body}
+                  </p>
+                </div>
+                <div className={`flex flex-wrap gap-2 ${i === 2 ? "lg:flex-col lg:items-end lg:self-end lg:flex-none" : ""}`}>
+                  {f.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-semibold px-3 py-1 rounded-full"
+                      style={{ background: `${f.color}18`, color: f.color }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
