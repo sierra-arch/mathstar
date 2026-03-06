@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
+import SmoothScroll from "@/components/SmoothScroll";
 import GameExperience from "@/components/GameExperience";
 import LearningFeatures from "@/components/LearningFeatures";
 import Footer from "@/components/Footer";
@@ -12,11 +13,13 @@ export const metadata: Metadata = {
 
 export default function MathSTARPage() {
   return (
-    <main>
-      <Nav />
-      <GameExperience />
-      <LearningFeatures dark />
-      <Footer />
-    </main>
+    <SmoothScroll>
+      <main>
+        <Nav />
+        <GameExperience />
+        <LearningFeatures dark />
+        <Footer />
+      </main>
+    </SmoothScroll>
   );
 }

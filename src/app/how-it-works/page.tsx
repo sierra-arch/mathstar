@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
-import SmoothScroll from "@/components/SmoothScroll";
 import HowItWorksHero from "@/components/how-it-works/HowItWorksHero";
 import HowItWorks from "@/components/HowItWorks";
 import LearningFeatures from "@/components/LearningFeatures";
@@ -24,7 +23,6 @@ export const metadata: Metadata = {
 
 export default function HowItWorksPage() {
   return (
-    <SmoothScroll>
     <main>
       <Nav />
       <HowItWorksHero />
@@ -42,6 +40,5 @@ export default function HowItWorksPage() {
       <CTA />
       <Footer />
     </main>
-    </SmoothScroll>
   );
 }
