@@ -53,7 +53,7 @@ export default function Hero() {
 
         {/* LEFT — Text */}
         <motion.div
-          className="flex flex-col justify-end px-8 lg:px-16 pt-36 pb-16 lg:pt-24 lg:pb-20"
+          className="flex flex-col justify-end pl-12 pr-8 lg:pl-24 lg:pr-10 pt-36 pb-16 lg:pt-24 lg:pb-20"
           style={{ y: textY, opacity: fadeOut }}
         >
           <motion.h1
@@ -121,7 +121,7 @@ export default function Hero() {
             }}
           />
 
-          <div className="relative w-full h-[580px] rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/20">
+          <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/20">
             <Image
               src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
               alt="Kid experiencing wonder in VR"
