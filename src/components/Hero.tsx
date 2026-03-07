@@ -62,7 +62,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Gift the<br />
+            Gift them the<br />
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
