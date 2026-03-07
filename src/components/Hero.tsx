@@ -107,7 +107,7 @@ export default function Hero() {
 
         {/* RIGHT — Kid photo in rounded box */}
         <motion.div
-          className="relative hidden lg:flex items-center justify-center px-8 py-10"
+          className="relative hidden lg:flex items-end justify-center px-8 pt-10 pb-20"
           style={{ y: imgY }}
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
