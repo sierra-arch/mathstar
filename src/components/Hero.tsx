@@ -53,7 +53,7 @@ export default function Hero() {
 
         {/* LEFT — Text */}
         <motion.div
-          className="flex flex-col justify-center px-8 lg:px-16 pt-36 pb-20 lg:pt-0 lg:pb-0"
+          className="flex flex-col justify-end px-8 lg:px-16 pt-36 pb-16 lg:pt-24 lg:pb-20"
           style={{ y: textY, opacity: fadeOut }}
         >
           <motion.h1
@@ -87,7 +87,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col gap-6"
+            className="flex"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
@@ -102,18 +102,6 @@ export default function Hero() {
             >
               See what families are saying →
             </Link>
-            <div className="flex items-center gap-6">
-              {[
-                { num: "10/10", label: "educators" },
-                { num: "45%",   label: "score jump" },
-                { num: "8 hrs", label: "to algebra-ready" },
-              ].map((s, i) => (
-                <div key={i} className="flex flex-col">
-                  <span className="text-[#7030A0] font-extrabold text-lg leading-none">{s.num}</span>
-                  <span className="text-[#0D0B12]/40 text-xs mt-0.5">{s.label}</span>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </motion.div>
 
