@@ -46,7 +46,7 @@ export default function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <span className="whitespace-nowrap">Gift them the{" "}
+          Gift them the<br />
           <span
             className="italic inline-block pb-2 pr-4"
             style={{
@@ -57,8 +57,7 @@ export default function CTA() {
             }}
           >
             wonder
-          </span></span>
-          <br />of math.
+          </span><br />of math.
         </motion.h2>
 
         <motion.p
