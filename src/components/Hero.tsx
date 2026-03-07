@@ -62,7 +62,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Gift the{" "}
+            Gift the<br />
             <span
               className="italic inline-block pb-2 pr-4"
               style={{
@@ -73,8 +73,7 @@ export default function Hero() {
               }}
             >
               wonder
-            </span>
-            {" "}of math.
+            </span><br />of math.
           </motion.h1>
 
           <motion.p
@@ -88,26 +87,20 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
           >
             <Link
-              href="/parents"
+              href="/reviews"
               className="px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5 w-fit"
               style={{
                 background: "linear-gradient(135deg, #7030A0, #4A1E6B)",
                 boxShadow: "0 8px 40px rgba(112,48,160,0.35)",
               }}
             >
-              For Parents →
-            </Link>
-            <Link
-              href="/educators"
-              className="px-10 py-4 rounded-full font-bold text-[#7030A0] text-base border-2 border-[#7030A0]/25 hover:border-[#7030A0]/60 hover:bg-white/60 transition-all duration-200 w-fit"
-            >
-              For Educators →
+              See what families are saying →
             </Link>
           </motion.div>
         </motion.div>
