@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
@@ -27,16 +27,14 @@ function LazyVideo({ src, start = 0, rate = 0.65, opacity = 0.9, className }: {
 }
 
 /* ── Gradient text helper ── */
-const GRAD_PT = "linear-gradient(135deg, #7030A0, #0891B2)";
-const GRAD_LT = "linear-gradient(135deg, #C49FDC, #0891B2)";
+const GRAD_PT  = "linear-gradient(135deg, #7030A0, #0891B2)";
+const GRAD_LT  = "linear-gradient(135deg, #C49FDC, #0891B2)";
 const GRAD_PLT = "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)";
 
 function GradText({ children, g = GRAD_PT }: { children: React.ReactNode; g?: string }) {
   return (
-    <span
-      className="italic inline-block pb-2 pr-4"
-      style={{ background: g, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
-    >
+    <span className="italic inline-block pb-2 pr-4"
+      style={{ background: g, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
       {children}
     </span>
   );
@@ -112,7 +110,427 @@ function SectionNum({ n, dark = true }: { n: string; dark?: boolean }) {
   );
 }
 
-/* ── Dark video slide ── */
+/* ══════════════════════════════════════════════════════════
+   NEW ── World Map / Level Progression
+   ══════════════════════════════════════════════════════════ */
+
+const LEVELS = [
+  { num: "01", world: "The Surface",       skill: "Counting & Patterns",      color: "#C49FDC" },
+  { num: "02", world: "The Shallows",      skill: "Addition & Subtraction",    color: "#0891B2" },
+  { num: "03", world: "The Reef",          skill: "Multiplication & Division", color: "#C49FDC" },
+  { num: "04", world: "The Coral Garden",  skill: "Fractions & Decimals",      color: "#0891B2" },
+  { num: "05", world: "The Open Water",    skill: "Geometry & Measurement",    color: "#C49FDC" },
+  { num: "06", world: "The Thermocline",   skill: "Early Algebra",             color: "#0891B2" },
+  { num: "07", world: "The Deep Current",  skill: "Variables & Equations",     color: "#C49FDC" },
+  { num: "08", world: "The Abyss",         skill: "Algebra-Ready ★",           color: "#F59E0B", final: true },
+];
+
+function WorldMap() {
+  return (
+    <section className="relative py-28 px-6 lg:px-16 overflow-hidden" style={{ background: "#06030E" }}>
+      {/* Atmosphere */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full blur-[150px]"
+          style={{ background: "radial-gradient(ellipse, rgba(112,48,160,0.20) 0%, transparent 70%)" }} />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
+        <motion.div className="text-center mb-16"
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.7 }}>
+          <p className="text-[#C49FDC] font-semibold text-xs tracking-widest uppercase mb-5">The World Map</p>
+          <h2 className="text-4xl lg:text-6xl font-extrabold text-white leading-[1.0] mb-5">
+            8 levels. 8 hours.<br />
+            <GradText g={GRAD_LT}>Algebra-ready.</GradText>
+          </h2>
+          <p className="text-white/40 text-lg max-w-xl mx-auto">
+            Every level is a new world. Every world hides a math concept. Students discover both at once.
+          </p>
+        </motion.div>
+
+        {/* Level grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {LEVELS.map((level, i) => (
+            <motion.div
+              key={level.num}
+              className="relative rounded-2xl p-6 border overflow-hidden group"
+              style={{
+                background: level.final
+                  ? "linear-gradient(135deg, rgba(245,158,11,0.12) 0%, rgba(6,3,14,0.8) 100%)"
+                  : "rgba(255,255,255,0.03)",
+                borderColor: level.final ? "rgba(245,158,11,0.30)" : "rgba(255,255,255,0.06)",
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              whileHover={{ y: -3, borderColor: `${level.color}50` }}
+            >
+              {/* Ghost number */}
+              <div className="absolute -right-2 -bottom-4 text-[6rem] font-extrabold leading-none pointer-events-none select-none"
+                style={{ color: `${level.color}08` }}>
+                {level.num}
+              </div>
+
+              {/* Level indicator dot */}
+              <div className="w-2.5 h-2.5 rounded-full mb-4" style={{ background: level.color, boxShadow: `0 0 10px ${level.color}` }} />
+
+              <p className="text-white/30 text-xs font-bold tracking-widest uppercase mb-2">Level {level.num}</p>
+              <h3 className="font-extrabold text-base text-white leading-snug mb-2"
+                style={level.final ? { color: level.color } : {}}>
+                {level.world}
+              </h3>
+              <p className="text-white/45 text-xs leading-snug">{level.skill}</p>
+
+              {level.final && (
+                <div className="mt-3 text-[10px] font-bold tracking-widest uppercase"
+                  style={{ color: level.color }}>
+                  ↑ Destination
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Connector line */}
+        <motion.div className="flex items-center justify-center gap-2 mt-12"
+          initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+          viewport={{ once: true }} transition={{ delay: 0.6 }}>
+          <div className="h-px flex-1 max-w-xs" style={{ background: "linear-gradient(to right, transparent, rgba(196,159,220,0.3))" }} />
+          <p className="text-white/25 text-xs tracking-widest uppercase px-4">One continuous journey</p>
+          <div className="h-px flex-1 max-w-xs" style={{ background: "linear-gradient(to left, transparent, rgba(196,159,220,0.3))" }} />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════
+   NEW ── The Worlds (atmospheric environment panels)
+   ══════════════════════════════════════════════════════════ */
+
+const WORLDS = [
+  {
+    name: "The Open Ocean",
+    sub: "Where it begins.",
+    math: "Counting · Patterns · Addition",
+    desc: "Fish fill the water. Schools of them — each one a number, grouping naturally, separating with purpose. Math happens before they know they're doing it.",
+    color: "#0891B2",
+    glow: "rgba(8,145,178,0.30)",
+    glowPos: "30% 50%",
+  },
+  {
+    name: "The Coral Kingdom",
+    sub: "Where patterns unlock.",
+    math: "Multiplication · Fractions · Geometry",
+    desc: "The coral pulses with prime numbers. Fish arrange into arrays. Reach out and hold a fraction — it splits apart in your hands, perfectly even.",
+    color: "#7030A0",
+    glow: "rgba(112,48,160,0.30)",
+    glowPos: "70% 50%",
+  },
+  {
+    name: "The Deep",
+    sub: "Where algebra waits.",
+    math: "Variables · Equations · Algebra",
+    desc: "The light fades but the numbers glow. Variables swim like creatures. Students reach for them, shape them into equations — and the ocean answers.",
+    color: "#C49FDC",
+    glow: "rgba(196,159,220,0.22)",
+    glowPos: "50% 30%",
+  },
+];
+
+function WorldsSection() {
+  return (
+    <div>
+      {WORLDS.map((world, i) => {
+        const isEven = i % 2 === 0;
+        return (
+          <section
+            key={world.name}
+            className="relative overflow-hidden flex items-center"
+            style={{ minHeight: "75vh", background: "#06030E" }}
+          >
+            {/* Atmosphere gradient */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute inset-0" style={{
+                background: `radial-gradient(ellipse 60% 70% at ${world.glowPos}, ${world.glow} 0%, transparent 65%)`,
+              }} />
+            </div>
+
+            {/* Top/bottom fades between sections */}
+            {i > 0 && (
+              <div className="absolute top-0 inset-x-0 h-24 pointer-events-none z-10"
+                style={{ background: "linear-gradient(to bottom, #06030E, transparent)" }} />
+            )}
+
+            {/* Fish decoration */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+              {[0, 1, 2].map(j => (
+                <div key={j} className={`fish-${(j + i * 3 + 1) % 6 + 1} absolute`}
+                  style={{ top: `${25 + j * 25}%`, opacity: 0.4 }}>
+                  <svg width="28" height="14" viewBox="0 0 50 25" fill="none">
+                    <path d="M2 12.5 L14 2 L14 23 Z" fill={world.color} />
+                    <ellipse cx="30" cy="12.5" rx="20" ry="9" fill={world.color} />
+                  </svg>
+                </div>
+              ))}
+            </div>
+
+            <ScanlineOverlay />
+
+            <div className={`relative z-10 max-w-6xl mx-auto px-8 lg:px-20 py-20 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${isEven ? "" : "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1"}`}>
+
+              {/* Text */}
+              <motion.div
+                initial={{ opacity: 0, x: isEven ? -32 : 32 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <p className="font-semibold text-xs tracking-widest uppercase mb-5" style={{ color: world.color }}>
+                  {world.math}
+                </p>
+                <h2 className="text-5xl lg:text-[4.5rem] font-extrabold text-white leading-[1.0] mb-4">
+                  {world.name}
+                </h2>
+                <p className="text-white/45 text-xl italic mb-8">{world.sub}</p>
+                <p className="text-white/55 text-lg leading-relaxed max-w-lg">{world.desc}</p>
+              </motion.div>
+
+              {/* Visual panel */}
+              <motion.div
+                className="relative rounded-3xl overflow-hidden"
+                style={{
+                  height: "320px",
+                  background: `linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%)`,
+                  border: `1px solid ${world.color}20`,
+                  boxShadow: `0 0 80px ${world.color}15`,
+                }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                {/* Atmospheric gradient fill */}
+                <div className="absolute inset-0" style={{
+                  background: `radial-gradient(ellipse 100% 100% at 50% 50%, ${world.glow.replace("0.30", "0.25")} 0%, rgba(6,3,14,0.8) 70%)`,
+                }} />
+
+                {/* Floating math symbols */}
+                {["×", "÷", "+", "=", "√"].map((sym, j) => (
+                  <div key={j}
+                    className={`float-${j + 1} absolute font-extrabold select-none pointer-events-none`}
+                    style={{
+                      top: `${15 + j * 18}%`,
+                      left: `${10 + (j * 19) % 75}%`,
+                      fontSize: `${1.8 + (j % 3) * 0.4}rem`,
+                      color: world.color,
+                      opacity: 0.25,
+                    }}
+                  >
+                    {sym}
+                  </div>
+                ))}
+
+                {/* World label */}
+                <div className="absolute bottom-6 left-6">
+                  <div className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: world.color }}>
+                    World {i + 1}
+                  </div>
+                  <div className="text-white/60 text-sm font-semibold">{world.name}</div>
+                </div>
+
+                {/* Corner glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-30"
+                  style={{ background: world.color }} />
+              </motion.div>
+
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════
+   NEW ── Abilities Grid
+   ══════════════════════════════════════════════════════════ */
+
+const ABILITIES = [
+  { icon: "🤲", name: "Hand Tracking",       desc: "No controllers — ever. Bare hands shape equations in mid-air. The curriculum lives in the motion.",                     unlock: "From session 1" },
+  { icon: "🌊", name: "Immersive Focus",      desc: "Private world. No classroom noise. No audience. No pressure. Just the student and the ocean.",                         unlock: "Immediate" },
+  { icon: "🔮", name: "No-Fail Exploration",  desc: "Mistakes happen in private. There's no wrong face to make. Fear of failure never gets to arrive.",                     unlock: "Always on" },
+  { icon: "📐", name: "Spatial Algebra",      desc: "3D math that sticks. See a fraction. Hold it. Pull it apart. What the page couldn't teach, the hands already knew.",   unlock: "From level 3" },
+  { icon: "⚡", name: "Instant Feedback",     desc: "Every action gets a response. The ocean moves with them. The dopamine loop that keeps ADHD minds locked in.",           unlock: "From session 1" },
+  { icon: "🗺️", name: "The Full Journey",     desc: "8 levels. 8 hours. From arithmetic to algebra-confident. Each world unlocks the next. Every session earns a new world.", unlock: "Complete arc" },
+];
+
+function AbilitiesSection() {
+  return (
+    <section className="relative py-28 px-6 lg:px-16 overflow-hidden" style={{ background: "#080612" }}>
+      <div className="absolute top-0 inset-x-0 h-32 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, #F7F2FF, transparent)" }} />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full blur-[140px]"
+          style={{ background: "radial-gradient(ellipse, rgba(112,48,160,0.18) 0%, transparent 70%)" }} />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
+        <motion.div className="text-center mb-16"
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.7 }}>
+          <p className="text-[#C49FDC] font-semibold text-xs tracking-widest uppercase mb-5">What You Unlock</p>
+          <h2 className="text-4xl lg:text-6xl font-extrabold text-white leading-[1.0] mb-5">
+            Six abilities.<br />
+            <GradText g={GRAD_LT}>All of them change a kid.</GradText>
+          </h2>
+        </motion.div>
+
+        {/* Abilities grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {ABILITIES.map((ab, i) => (
+            <motion.div
+              key={i}
+              className="relative rounded-2xl p-7 border group overflow-hidden"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                backdropFilter: "blur(12px)",
+                borderColor: "rgba(255,255,255,0.06)",
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              whileHover={{
+                background: "rgba(255,255,255,0.055)",
+                borderColor: "rgba(196,159,220,0.20)",
+              }}
+            >
+              {/* Corner glow on hover */}
+              <div className="absolute top-0 right-0 w-24 h-24 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"
+                style={{ background: "#C49FDC" }} />
+
+              <div className="text-3xl mb-5">{ab.icon}</div>
+              <h3 className="text-white font-extrabold text-lg mb-3">{ab.name}</h3>
+              <p className="text-white/45 text-sm leading-relaxed mb-5">{ab.desc}</p>
+              <div className="inline-block text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full"
+                style={{ background: "rgba(196,159,220,0.10)", color: "#C49FDC" }}>
+                {ab.unlock}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════
+   NEW ── Pathway Panels (replaces old CTA)
+   ══════════════════════════════════════════════════════════ */
+
+const PATHWAYS = [
+  {
+    id: "family",
+    overline: "For families",
+    title: "Enter the\nworld.",
+    sub: "Your child. An ocean. Eight hours from arithmetic to algebra-confident.",
+    cta: "For Parents →",
+    href: "/parents",
+    accent: "#C49FDC",
+    bg: "linear-gradient(160deg, #1a0840 0%, #2d1060 50%, #0d1428 100%)",
+    glow: "rgba(112,48,160,0.35)",
+    glowPos: "30% 70%",
+  },
+  {
+    id: "educator",
+    overline: "For educators",
+    title: "See the\nevidence.",
+    sub: "Pilot data. Research-backed curriculum. A ROI calculator you can take to your school board.",
+    cta: "For Educators →",
+    href: "/educators",
+    accent: "#0891B2",
+    bg: "linear-gradient(160deg, #061426 0%, #0c2840 50%, #061018 100%)",
+    glow: "rgba(8,145,178,0.30)",
+    glowPos: "70% 30%",
+  },
+];
+
+function PathwayPanels() {
+  const [hovered, setHovered] = useState<string | null>(null);
+
+  return (
+    <section className="relative overflow-hidden" style={{ height: "100vh", display: "flex" }}>
+      {PATHWAYS.map((p) => {
+        const isHovered = hovered === p.id;
+        const otherHovered = hovered && hovered !== p.id;
+        return (
+          <motion.div
+            key={p.id}
+            className="relative flex flex-col items-center justify-center overflow-hidden cursor-pointer"
+            style={{ background: p.bg, flexGrow: isHovered ? 1.55 : otherHovered ? 0.45 : 1 }}
+            animate={{ flexGrow: isHovered ? 1.55 : otherHovered ? 0.45 : 1 }}
+            transition={{ type: "spring", stiffness: 160, damping: 28 }}
+            onMouseEnter={() => setHovered(p.id)}
+            onMouseLeave={() => setHovered(null)}
+          >
+            {/* Glow */}
+            <div className="absolute inset-0 pointer-events-none" style={{
+              background: `radial-gradient(ellipse 70% 70% at ${p.glowPos}, ${p.glow} 0%, transparent 65%)`,
+            }} />
+            <ScanlineOverlay />
+
+            {/* Content */}
+            <motion.div
+              className="relative z-10 text-center px-8 lg:px-16 max-w-md"
+              animate={{ opacity: otherHovered ? 0.5 : 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <p className="font-semibold text-xs tracking-widest uppercase mb-6" style={{ color: p.accent }}>
+                {p.overline}
+              </p>
+              <h2 className="text-5xl lg:text-[5rem] xl:text-[5.5rem] font-extrabold text-white leading-[1.0] mb-8 whitespace-pre-line">
+                {p.title}
+              </h2>
+              <p className="text-white/45 text-base leading-relaxed mb-10 max-w-xs mx-auto">{p.sub}</p>
+
+              <motion.div
+                animate={{ opacity: isHovered || !hovered ? 1 : 0.4, y: isHovered ? 0 : 4 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Link
+                  href={p.href}
+                  className="inline-block px-8 py-4 rounded-full font-bold text-white text-base transition-all duration-200"
+                  style={{
+                    background: `linear-gradient(135deg, ${p.accent}33, ${p.accent}18)`,
+                    border: `1px solid ${p.accent}40`,
+                    backdropFilter: "blur(10px)",
+                  }}
+                >
+                  {p.cta}
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Divider line */}
+            {p.id === "family" && (
+              <div className="absolute right-0 top-0 bottom-0 w-px opacity-20"
+                style={{ background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.4), transparent)" }} />
+            )}
+          </motion.div>
+        );
+      })}
+    </section>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════
+   ── Dark video slide ──
+   ══════════════════════════════════════════════════════════ */
+
 function VideoSlide({ num, tag, headline, body, accent, src, videoStart, topColor, bottomColor }: {
   num: string; tag: string; headline: string; body: string; accent: string; src: string; videoStart: number;
   topColor?: string; bottomColor?: string;
@@ -238,7 +656,9 @@ function QuoteSection() {
   );
 }
 
-/* ── Main component ── */
+/* ══════════════════════════════════════════════════════════
+   ── Main component ──
+   ══════════════════════════════════════════════════════════ */
 export default function GameExperience() {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
@@ -258,7 +678,7 @@ export default function GameExperience() {
           style={{ background: "linear-gradient(to top, #F7F2FF, transparent)" }} />
         <ScanlineOverlay />
 
-        <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-4" style={{ opacity: heroOpacity }}>
+        <motion.div className="relative z-10 text-center px-6 max-w-5xl mx-auto pb-8" style={{ opacity: heroOpacity }}>
           <motion.p className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-8"
             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             The MathSTAR Experience
@@ -269,14 +689,29 @@ export default function GameExperience() {
             <span className="whitespace-nowrap">Step inside the <GradText g={GRAD_LT}>world</GradText></span>
             <br />where math is alive.
           </motion.h1>
-          <motion.p className="text-white/50 text-xl max-w-xl mx-auto leading-relaxed mb-16"
+          <motion.p className="text-white/50 text-xl max-w-xl mx-auto leading-relaxed mb-12"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.4 }}>
             An underwater VR universe. Fish that multiply. Equations you hold in your hands.
           </motion.p>
+
+          {/* Game-style CTA */}
+          <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
+            initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}>
+            <Link href="/parents"
+              className="px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5"
+              style={{ background: "linear-gradient(135deg, #7030A0, #4A1E6B)", boxShadow: "0 8px 40px rgba(112,48,160,0.5)" }}>
+              Enter the World →
+            </Link>
+            <Link href="/how-it-works"
+              className="px-10 py-4 rounded-full font-bold text-white/60 text-base border border-white/15 hover:border-white/35 hover:text-white/85 transition-all duration-200">
+              How it works
+            </Link>
+          </motion.div>
+
           <motion.div className="flex flex-col items-center gap-3"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.65 }}>
-            <span className="text-white/25 text-xs tracking-widest uppercase">Scroll to experience it</span>
-            <motion.div className="w-px h-16 bg-gradient-to-b from-[#C49FDC]/60 to-transparent"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.85 }}>
+            <span className="text-white/20 text-xs tracking-widest uppercase">Scroll to explore</span>
+            <motion.div className="w-px h-12 bg-gradient-to-b from-[#C49FDC]/50 to-transparent"
               animate={{ scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
           </motion.div>
@@ -312,11 +747,14 @@ export default function GameExperience() {
         </div>
       </LightSlide>
 
+      {/* ── NEW: World Map ── */}
+      <WorldMap />
+
       {/* ── 3–5. DARK VIDEO — Step slides ── */}
       <VideoSlide num="02" tag="Step 01"
         headline={"Put on\nthe headset."}
         body="No classroom required. At home or at your local library — strap in, and in seconds you're underwater. The real world disappears."
-        accent="#C49FDC" src="/Gameplay-edited.mp4" videoStart={5} topColor="#F7F2FF" />
+        accent="#C49FDC" src="/Gameplay-edited.mp4" videoStart={5} topColor="#06030E" />
       <VideoSlide num="03" tag="Step 02"
         headline={"Math comes alive\naround you."}
         body="Fish multiply before your eyes. Coral patterns pulse with prime numbers. Reach out with your actual hands and shape equations in mid-air."
@@ -351,14 +789,17 @@ export default function GameExperience() {
         </div>
       </LightSlide>
 
+      {/* ── NEW: Abilities Grid ── */}
+      <AbilitiesSection />
+
       {/* ── 7. DARK VIDEO — Manipulatives ── */}
       <section className="relative h-screen overflow-hidden bg-[#080612] flex items-end">
         <SectionNum n="06" />
         <LazyVideo src="/Manipulatives.mp4" start={26} rate={0.65} opacity={0.8} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080612] via-[#080612]/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/55 via-transparent to-transparent" />
-        <div className="absolute top-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to bottom, #F7F2FF, transparent)" }} />
-        <div className="absolute bottom-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to top, #FAFAF8, transparent)" }} />
+        <div className="absolute top-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to bottom, #080612, transparent)" }} />
+        <div className="absolute bottom-0 inset-x-0 h-36 z-20 pointer-events-none" style={{ background: "linear-gradient(to top, #06030E, transparent)" }} />
         <ScanlineOverlay />
 
         <div className="relative z-10 px-8 lg:px-20 pb-20 max-w-3xl">
@@ -380,6 +821,9 @@ export default function GameExperience() {
           </motion.p>
         </div>
       </section>
+
+      {/* ── NEW: The Worlds ── */}
+      <WorldsSection />
 
       {/* ── 8. LIGHT — Three things ── */}
       <section className="relative min-h-screen py-32 px-6 lg:px-20 bg-[#FAFAF8] overflow-hidden flex items-center">
@@ -450,40 +894,8 @@ export default function GameExperience() {
       {/* ── 9. DARK — Cinematic quote ── */}
       <QuoteSection />
 
-      {/* ── 10. LIGHT — CTA ── */}
-      <section className="relative min-h-screen py-40 px-6 bg-white overflow-hidden flex items-center justify-center">
-        <div className="absolute top-[-15%] left-[-5%] w-[700px] h-[700px] rounded-full blur-[120px] pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.35) 0%, transparent 70%)" }} />
-        <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full blur-[130px] pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.15) 0%, transparent 70%)" }} />
-
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <motion.h2 className="text-5xl lg:text-7xl font-extrabold text-[#0D0B12] leading-tight mb-8"
-            initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
-            Ready to bring<br /><GradText>this world</GradText>{" "}to your kid?
-          </motion.h2>
-          <motion.p className="text-[#0D0B12]/45 text-xl leading-relaxed mb-12 max-w-xl mx-auto"
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-            viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}>
-            Two pathways. One for parents. One for educators.
-            Both lead to the same place: a kid who loves math.
-          </motion.p>
-          <motion.div className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.35 }}>
-            <Link href="/parents"
-              className="px-8 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: "linear-gradient(135deg, #7030A0, #4A1E6B)", boxShadow: "0 8px 40px rgba(112,48,160,0.3)" }}>
-              For Parents →
-            </Link>
-            <Link href="/educators"
-              className="px-8 py-4 rounded-full font-bold text-[#7030A0] text-base border-2 border-[#7030A0]/25 hover:border-[#7030A0]/60 hover:bg-[#F0E6F7] transition-all duration-200">
-              For Educators →
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      {/* ── NEW: Pathway Panels (replaces old CTA) ── */}
+      <PathwayPanels />
 
     </div>
   );
