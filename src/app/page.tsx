@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import ResultsSlide from "@/components/ResultsSlide";
 import StoryTeaser from "@/components/StoryTeaser";
 import HowItWorks from "@/components/HowItWorks";
-import TestimonialsTeaser from "@/components/TestimonialsTeaser";
+import TestimonialsMarquee from "@/components/TestimonialsMarquee";
 import PhotoStrip from "@/components/PhotoStrip";
 import PressTeaser from "@/components/PressTeaser";
 import CTA from "@/components/CTA";
@@ -17,7 +17,7 @@ export default function Home() {
       <ResultsSlide />
       <StoryTeaser />
       <HowItWorks />
-      <TestimonialsTeaser />
+      <TestimonialsMarquee />
       <PhotoStrip />
       <PressTeaser />
       <CTA />

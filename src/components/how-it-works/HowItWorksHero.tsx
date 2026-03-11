@@ -27,7 +27,6 @@ export default function HowItWorksHero() {
   return (
     <section
       ref={sectionRef}
-      data-snap
       className="relative min-h-screen flex items-center"
       style={{ overflowX: "clip", background: "#0F0620" }}
     >

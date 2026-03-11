@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValueEvent } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 
 const steps = [
@@ -70,12 +70,12 @@ function HowItWorksScrollDriven() {
   });
 
   // Map 80% of scroll → full track, hold last slide for remaining 20%
-  const xRaw = useTransform(
+  // No useSpring — Lenis already smooths scroll; double-smoothing causes jitter
+  const x = useTransform(
     scrollYProgress,
     [0, 0.78, 1],
     ["0%", "-66.67%", "-66.67%"]
   );
-  const x = useSpring(xRaw, { stiffness: 80, damping: 28, restDelta: 0.001 });
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     if (v < 0.28) setActiveStep(0);
@@ -88,7 +88,7 @@ function HowItWorksScrollDriven() {
     <div ref={containerRef} style={{ height: "400vh" }}>
       <div
         className="sticky top-0 overflow-hidden flex flex-col"
-        style={{ height: "100vh", background: "#0D0A1A" }}
+        style={{ height: "100vh", background: "#0D0A1A", zIndex: 10, position: "sticky" }}
       >
         {/* Ambient blobs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">

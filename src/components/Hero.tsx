@@ -62,18 +62,19 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            Gift them the<br />
-            <span
-              className="italic inline-block pb-2 pr-4"
-              style={{
-                background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              wonder
-            </span><br />of math.
+            <span className="block">Gift them</span>
+            <span className="block">the{" "}
+              <span
+                className="italic inline-block pb-2 pr-4"
+                style={{
+                  background: "linear-gradient(135deg, #7030A0 20%, #C49FDC 55%, #0891B2)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >wonder</span>
+            </span>
+            <span className="block">of math.</span>
           </motion.h1>
 
           <motion.p
@@ -145,6 +146,12 @@ export default function Hero() {
         </motion.div>
 
       </div>
+
+      {/* Bottom fade to dark section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-10"
+        style={{ background: "linear-gradient(to bottom, transparent, #0d0620)" }}
+      />
 
       {/* Scroll nudge */}
       <motion.div

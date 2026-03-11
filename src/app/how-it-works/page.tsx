@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import HowItWorksHero from "@/components/how-it-works/HowItWorksHero";
 import HowItWorks from "@/components/HowItWorks";
+import SessionWalkthrough from "@/components/how-it-works/SessionWalkthrough";
+import TheProblem from "@/components/how-it-works/TheProblem";
+import BreakthroughStory from "@/components/how-it-works/BreakthroughStory";
+import MindsetSlider from "@/components/how-it-works/MindsetSlider";
+import OurAnswer from "@/components/how-it-works/OurAnswer";
+import IsItRightQuiz from "@/components/how-it-works/IsItRightQuiz";
+import LearnerProfiles from "@/components/how-it-works/LearnerProfiles";
 import LearningFeatures from "@/components/LearningFeatures";
+import ROICalculator from "@/components/how-it-works/ROICalculator";
+import ResultsNumbers from "@/components/how-it-works/ResultsNumbers";
 import ImpactCharts from "@/components/impact/ImpactCharts";
 import TestimonialsTeaser from "@/components/TestimonialsTeaser";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import TheProblem from "@/components/how-it-works/TheProblem";
-import OurAnswer from "@/components/how-it-works/OurAnswer";
-import LearnerProfiles from "@/components/how-it-works/LearnerProfiles";
-import IsItRightQuiz from "@/components/how-it-works/IsItRightQuiz";
-import ROICalculator from "@/components/how-it-works/ROICalculator";
-import MindsetSlider from "@/components/how-it-works/MindsetSlider";
-import ResultsNumbers from "@/components/how-it-works/ResultsNumbers";
 
 export const metadata: Metadata = {
   title: "How It Works — MathSTAR",
@@ -27,7 +29,9 @@ export default function HowItWorksPage() {
       <Nav />
       <HowItWorksHero />
       <HowItWorks scrollDriven />
+      <SessionWalkthrough />
       <TheProblem />
+      <BreakthroughStory />
       <MindsetSlider />
       <OurAnswer />
       <IsItRightQuiz />
