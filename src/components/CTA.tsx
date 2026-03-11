@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section id="get" className="relative pt-24 pb-24 px-6 lg:px-16 bg-[#FAFAF8]">
+    <section id="get" className="relative pt-24 pb-36 px-6 lg:px-16 bg-[#FAFAF8]">
 
       {/* Gradient mesh blobs — soft, large, overlapping */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -26,6 +26,10 @@ export default function CTA() {
           style={{ background: "radial-gradient(circle, rgba(240,230,247,0.9) 0%, transparent 65%)" }}
         />
       </div>
+
+      {/* Smooth fade into footer */}
+      <div className="absolute bottom-0 inset-x-0 h-72 pointer-events-none z-0"
+        style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(74,30,107,0.06) 40%, rgba(74,30,107,0.28) 65%, rgba(74,30,107,0.62) 82%, #4A1E6B 100%)" }} />
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
 
