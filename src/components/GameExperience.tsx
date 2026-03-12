@@ -390,10 +390,6 @@ function AbilitiesSection() {
           initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.7 }}>
           <p className="text-[#C49FDC] font-semibold text-xs tracking-widest uppercase mb-5">What You Unlock</p>
-          <h2 className="text-4xl lg:text-6xl font-extrabold text-white leading-[1.0] mb-5">
-            Six abilities.<br />
-            <GradText g={GRAD_LT}>All of them change a kid.</GradText>
-          </h2>
         </motion.div>
 
         {/* Abilities grid */}
@@ -757,6 +753,9 @@ export default function GameExperience() {
         </div>
       </LightSlide>
 
+      {/* ── NEW: Abilities Grid ── */}
+      <AbilitiesSection />
+
       {/* ── NEW: World Map ── */}
       <WorldMap />
 
@@ -798,9 +797,6 @@ export default function GameExperience() {
           ))}
         </div>
       </LightSlide>
-
-      {/* ── NEW: Abilities Grid ── */}
-      <AbilitiesSection />
 
       {/* ── 7. DARK VIDEO — Manipulatives ── */}
       <section className="relative h-screen overflow-hidden bg-[#080612] flex items-end">
