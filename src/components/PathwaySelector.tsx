@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function PathwaySelector() {
   return (
@@ -57,17 +56,6 @@ export default function PathwaySelector() {
             <Link href="/parents" className="group block h-full">
               <div className="relative h-full bg-white rounded-3xl border border-[#7030A0]/10 shadow-lg hover:shadow-2xl hover:shadow-[#7030A0]/15 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
 
-                {/* Photo */}
-                <div className="relative w-full h-56 overflow-hidden">
-                  <Image
-                    src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
-                    alt="Child using VR headset at home"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/20" />
-                </div>
-
                 {/* Card glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#7030A0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" />
 
@@ -100,17 +88,6 @@ export default function PathwaySelector() {
           >
             <Link href="/educators" className="group block h-full">
               <div className="relative h-full bg-[#0F0620] rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-[#0891B2]/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-
-                {/* Photo */}
-                <div className="relative w-full h-56 overflow-hidden">
-                  <Image
-                    src="/Stock Images/pexels-julia-m-cameron-4144152.jpg"
-                    alt="Student using VR headset in classroom"
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0F0620]/60" />
-                </div>
 
                 {/* Card glow */}
                 <div className="absolute top-[-20%] right-[-10%] w-[300px] h-[300px] bg-[#0891B2]/20 rounded-full blur-[80px] pointer-events-none" />
