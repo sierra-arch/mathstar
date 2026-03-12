@@ -16,17 +16,17 @@ export default function ImpactHero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#0D0B12]">
+    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#1a0840]">
 
       {/* ── LAYER 1: Background orbs (slowest) ── */}
       <motion.div className="absolute inset-0 scale-[1.1]" style={{ y: bgY }}>
         <div
-          className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(112,48,160,0.4) 0%, transparent 65%)" }}
+          className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(112,48,160,0.65) 0%, transparent 65%)" }}
         />
         <div
-          className="absolute bottom-[-15%] left-[-5%] w-[500px] h-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.18) 0%, transparent 65%)" }}
+          className="absolute bottom-[-15%] left-[-5%] w-[600px] h-[600px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.40) 0%, transparent 65%)" }}
         />
       </motion.div>
 
@@ -44,7 +44,7 @@ export default function ImpactHero() {
           <div
             className="text-[18rem] lg:text-[22rem] font-extrabold leading-none"
             style={{
-              background: "linear-gradient(160deg, rgba(196,159,220,0.25) 0%, rgba(112,48,160,0.08) 100%)",
+              background: "linear-gradient(160deg, rgba(196,159,220,0.45) 0%, rgba(112,48,160,0.20) 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -102,17 +102,17 @@ export default function ImpactHero() {
           >
             <div>
               <div className="text-4xl font-extrabold text-[#C49FDC]">10/10</div>
-              <div className="text-white/30 text-xs mt-1 uppercase tracking-widest">Educator rating</div>
+              <div className="text-white/55 text-xs mt-1 uppercase tracking-widest">Educator rating</div>
             </div>
             <div className="w-px h-10 bg-white/10" />
             <div>
               <div className="text-4xl font-extrabold text-[#C49FDC]">+18%</div>
-              <div className="text-white/30 text-xs mt-1 uppercase tracking-widest">Test score gain</div>
+              <div className="text-white/55 text-xs mt-1 uppercase tracking-widest">Test score gain</div>
             </div>
             <div className="w-px h-10 bg-white/10" />
             <div>
               <div className="text-4xl font-extrabold text-[#C49FDC]">86%</div>
-              <div className="text-white/30 text-xs mt-1 uppercase tracking-widest">Would recommend</div>
+              <div className="text-white/55 text-xs mt-1 uppercase tracking-widest">Would recommend</div>
             </div>
           </motion.div>
         </div>
