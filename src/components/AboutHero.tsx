@@ -40,7 +40,7 @@ export default function AboutHero() {
         style={{ y: orbY }}
       >
         <motion.div
-          className="relative w-[340px] h-[460px] lg:w-[420px] lg:h-[560px]"
+          className="relative w-[480px] h-[320px] lg:w-[580px] lg:h-[380px]"
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}

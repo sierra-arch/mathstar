@@ -114,8 +114,8 @@ export default function FounderStory() {
           </motion.h2>
         </div>
 
-        {/* 3-col: photo + story + childhood photo */}
-        <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr_280px] gap-16 items-start">
+        {/* 2-col: photo + story */}
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-16 items-start">
 
           {/* Photo column — sticky on scroll */}
           <motion.div
@@ -153,27 +153,6 @@ export default function FounderStory() {
             ))}
           </div>
 
-          {/* Childhood photo — sticky on scroll */}
-          <motion.div
-            className="lg:sticky lg:top-32 hidden lg:block"
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-          >
-            <div className="relative rounded-3xl overflow-hidden aspect-square">
-              <Image
-                src="/headshots/Femi%20:%20Founder/IMG_6194.jpg"
-                alt="Femi as a child"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B12]/50 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-white/60 text-xs italic">Femi, age ~5</p>
-              </div>
-            </div>
-          </motion.div>
         </div>
 
         {/* MathSTAR callout */}
