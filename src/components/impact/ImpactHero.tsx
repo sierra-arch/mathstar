@@ -16,17 +16,21 @@ export default function ImpactHero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#1a0840]">
+    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#2e1275]">
 
       {/* ── LAYER 1: Background orbs (slowest) ── */}
       <motion.div className="absolute inset-0 scale-[1.1]" style={{ y: bgY }}>
         <div
-          className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(112,48,160,0.65) 0%, transparent 65%)" }}
+          className="absolute top-[-20%] right-[-10%] w-[900px] h-[900px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(140,60,200,0.80) 0%, transparent 65%)" }}
         />
         <div
-          className="absolute bottom-[-15%] left-[-5%] w-[600px] h-[600px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.40) 0%, transparent 65%)" }}
+          className="absolute bottom-[-15%] left-[-5%] w-[700px] h-[700px] rounded-full"
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.55) 0%, transparent 65%)" }}
+        />
+        <div
+          className="absolute top-[30%] left-[25%] w-[600px] h-[500px] rounded-full"
+          style={{ background: "radial-gradient(ellipse, rgba(112,48,160,0.30) 0%, transparent 70%)" }}
         />
       </motion.div>
 
@@ -44,7 +48,7 @@ export default function ImpactHero() {
           <div
             className="text-[18rem] lg:text-[22rem] font-extrabold leading-none"
             style={{
-              background: "linear-gradient(160deg, rgba(196,159,220,0.45) 0%, rgba(112,48,160,0.20) 100%)",
+              background: "linear-gradient(160deg, rgba(220,180,255,0.60) 0%, rgba(160,80,220,0.35) 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -62,7 +66,7 @@ export default function ImpactHero() {
       >
         {/* Overline */}
         <motion.p
-          className="absolute top-28 left-8 lg:left-16 text-white/50 font-semibold text-xs tracking-widest uppercase"
+          className="absolute top-28 left-8 lg:left-16 text-white/75 font-semibold text-xs tracking-widest uppercase"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -72,7 +76,7 @@ export default function ImpactHero() {
 
         {/* Supporting right */}
         <motion.p
-          className="absolute top-28 right-8 lg:right-16 text-white/30 text-xs leading-relaxed text-right max-w-[150px]"
+          className="absolute top-28 right-8 lg:right-16 text-white/55 text-xs leading-relaxed text-right max-w-[150px]"
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -81,9 +85,9 @@ export default function ImpactHero() {
         </motion.p>
 
         {/* Main headline — lower left */}
-        <div className="absolute bottom-0 left-0 right-0 px-8 lg:px-16 pb-16">
+        <div className="absolute bottom-0 left-0 right-0 px-8 lg:px-16 pb-10">
           <motion.h1
-            className="text-[3.6rem] sm:text-[5rem] lg:text-[6.5rem] font-extrabold text-white leading-[0.93] mb-10"
+            className="text-[3rem] sm:text-[4.2rem] lg:text-[5.5rem] font-extrabold text-white leading-[0.93] mb-6"
             initial={{ opacity: 0, y: 70 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
