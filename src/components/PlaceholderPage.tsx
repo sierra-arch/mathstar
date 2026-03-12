@@ -27,7 +27,7 @@ export default function PlaceholderPage({ title, description, emoji = "🚧" }: 
         <p className="text-ink/55 text-lg leading-relaxed mb-10">{description}</p>
         <Link
           href="/contact"
-          className="inline-block bg-[#7030A0] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#4A1E6B] transition-colors shadow-lg shadow-[#7030A0]/20"
+          className="inline-block bg-[#C49FDC] text-[#4A1E6B] font-semibold px-8 py-4 rounded-full hover:bg-[#B88FD0] transition-colors shadow-lg shadow-[#7030A0]/20"
         >
           Get in touch instead →
         </Link>

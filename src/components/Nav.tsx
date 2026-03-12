@@ -79,7 +79,7 @@ export default function Nav() {
         ))}
         <Link
           href="/get"
-          className="text-sm font-semibold bg-[#7030A0] text-white px-5 py-2.5 rounded-full hover:bg-[#4A1E6B] transition-colors"
+          className="text-sm font-semibold bg-[#C49FDC] text-[#4A1E6B] px-5 py-2.5 rounded-full hover:bg-[#B88FD0] transition-colors"
         >
           Get MathSTAR
         </Link>
@@ -88,7 +88,7 @@ export default function Nav() {
       {/* Mobile CTA */}
       <Link
         href="/get"
-        className="md:hidden text-sm font-semibold bg-[#7030A0] text-white px-4 py-2 rounded-full hover:bg-[#4A1E6B] transition-colors"
+        className="md:hidden text-sm font-semibold bg-[#C49FDC] text-[#4A1E6B] px-4 py-2 rounded-full hover:bg-[#B88FD0] transition-colors"
       >
         Get Started
       </Link>

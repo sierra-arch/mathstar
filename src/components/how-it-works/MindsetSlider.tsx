@@ -63,8 +63,8 @@ export default function MindsetSlider() {
       <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] bg-[#7030A0]/35 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] bg-[#0891B2]/25 rounded-full blur-[110px] pointer-events-none" />
       {/* Gradient edge transitions */}
-      <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#FAFAF8] to-transparent z-20 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F0E6F7] to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#FAFAF8] to-transparent z-[5] pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#F0E6F7] to-transparent z-[5] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
 

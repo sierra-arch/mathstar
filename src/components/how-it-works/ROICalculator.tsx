@@ -168,7 +168,7 @@ export default function ROICalculator() {
 
             <Link
               href="/contact"
-              className="block w-full text-center mt-4 px-8 py-4 rounded-full font-bold text-white text-base bg-[#7030A0] hover:bg-[#4A1E6B] transition-colors"
+              className="block w-full text-center mt-4 px-8 py-4 rounded-full font-bold text-[#4A1E6B] text-base bg-[#C49FDC] hover:bg-[#B88FD0] transition-colors"
             >
               Bring MathSTAR to Your Classroom →
             </Link>

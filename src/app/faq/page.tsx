@@ -48,7 +48,7 @@ export default function FAQPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-[#7030A0] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#4A1E6B] transition-colors"
+            className="inline-flex items-center gap-2 bg-[#C49FDC] text-[#4A1E6B] font-semibold px-8 py-4 rounded-full hover:bg-[#B88FD0] transition-colors"
           >
             Contact Us →
           </Link>

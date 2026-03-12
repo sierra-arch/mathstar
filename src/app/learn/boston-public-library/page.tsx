@@ -150,7 +150,7 @@ export default function BostonArticlePage() {
           </p>
           <Link
             href="/impact"
-            className="inline-flex items-center gap-2 bg-[#7030A0] text-white font-bold px-8 py-4 rounded-full hover:bg-[#5a2480] transition-colors text-base"
+            className="inline-flex items-center gap-2 bg-[#C49FDC] text-[#4A1E6B] font-bold px-8 py-4 rounded-full hover:bg-[#B88FD0] transition-colors text-base"
           >
             See the full results →
           </Link>

@@ -79,7 +79,7 @@ export default function EducatorsHowTo() {
         >
           <Link
             href="/contact"
-            className="inline-block bg-[#7030A0] text-white font-semibold px-12 py-5 rounded-full text-lg hover:bg-[#4A1E6B] transition-colors shadow-xl shadow-[#7030A0]/25"
+            className="inline-block bg-[#C49FDC] text-[#4A1E6B] font-semibold px-12 py-5 rounded-full text-lg hover:bg-[#B88FD0] transition-colors shadow-xl shadow-[#7030A0]/25"
           >
             Request a School Pilot →
           </Link>

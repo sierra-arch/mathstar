@@ -42,12 +42,12 @@ function GradText({ children, g = GRAD_PT }: { children: React.ReactNode; g?: st
 
 /* ── Fish layer ── */
 const FISH = [
-  { cls: "fish-1", top: "22%", size: 34, color: "#0891B2", op: 0.20 },
-  { cls: "fish-2", top: "58%", size: 28, color: "#F97316", op: 0.18 },
-  { cls: "fish-3", top: "72%", size: 30, color: "#7030A0", op: 0.18 },
-  { cls: "fish-4", top: "38%", size: 40, color: "#F59E0B", op: 0.16 },
-  { cls: "fish-5", top: "12%", size: 24, color: "#059669", op: 0.15 },
-  { cls: "fish-6", top: "82%", size: 32, color: "#0891B2", op: 0.18 },
+  { cls: "fish-1", top: "22%", size: 160, color: "#0891B2", op: 0.35 },
+  { cls: "fish-2", top: "58%", size: 130, color: "#F97316", op: 0.30 },
+  { cls: "fish-3", top: "72%", size: 140, color: "#7030A0", op: 0.30 },
+  { cls: "fish-4", top: "38%", size: 180, color: "#F59E0B", op: 0.28 },
+  { cls: "fish-5", top: "12%", size: 110, color: "#059669", op: 0.28 },
+  { cls: "fish-6", top: "82%", size: 150, color: "#0891B2", op: 0.30 },
 ];
 function FishLayer() {
   return (
@@ -127,12 +127,12 @@ const LEVELS = [
 
 function WorldMap() {
   return (
-    <section className="relative py-28 px-6 lg:px-16 overflow-hidden" style={{ background: "#06030E" }}>
+    <section className="relative py-28 px-6 lg:px-16 overflow-hidden" style={{ background: "#7030A0" }}>
       {/* Section transitions */}
-      <div className="absolute top-0 inset-x-0 h-56 z-20 pointer-events-none"
+      <div className="absolute top-0 inset-x-0 h-56 z-[5] pointer-events-none"
         style={{ background: "linear-gradient(to bottom, #F7F2FF 0%, rgba(247,242,255,0.5) 45%, transparent 100%)" }} />
-      <div className="absolute bottom-0 inset-x-0 h-40 z-20 pointer-events-none"
-        style={{ background: "linear-gradient(to top, #0d0620, transparent)" }} />
+      <div className="absolute bottom-0 inset-x-0 h-40 z-[5] pointer-events-none"
+        style={{ background: "linear-gradient(to top, #7030A0, transparent)" }} />
       {/* Atmosphere */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full blur-[150px]"
@@ -162,9 +162,9 @@ function WorldMap() {
               className="relative rounded-2xl p-6 border overflow-hidden group"
               style={{
                 background: level.final
-                  ? "linear-gradient(135deg, rgba(245,158,11,0.12) 0%, rgba(6,3,14,0.8) 100%)"
-                  : "rgba(255,255,255,0.03)",
-                borderColor: level.final ? "rgba(245,158,11,0.30)" : "rgba(255,255,255,0.06)",
+                  ? "linear-gradient(135deg, rgba(245,158,11,0.18) 0%, rgba(74,30,107,0.7) 100%)"
+                  : "rgba(255,255,255,0.10)",
+                borderColor: level.final ? "rgba(245,158,11,0.50)" : "rgba(255,255,255,0.22)",
               }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -181,12 +181,12 @@ function WorldMap() {
               {/* Level indicator dot */}
               <div className="w-2.5 h-2.5 rounded-full mb-4" style={{ background: level.color, boxShadow: `0 0 10px ${level.color}` }} />
 
-              <p className="text-white/30 text-xs font-bold tracking-widest uppercase mb-2">Level {level.num}</p>
+              <p className="text-white/60 text-xs font-bold tracking-widest uppercase mb-2">Level {level.num}</p>
               <h3 className="font-extrabold text-base text-white leading-snug mb-2"
                 style={level.final ? { color: level.color } : {}}>
                 {level.world}
               </h3>
-              <p className="text-white/45 text-xs leading-snug">{level.skill}</p>
+              <p className="text-white/75 text-xs leading-snug">{level.skill}</p>
 
               {level.final && (
                 <div className="mt-3 text-[10px] font-bold tracking-widest uppercase"
@@ -202,8 +202,8 @@ function WorldMap() {
         <motion.div className="flex items-center justify-center gap-2 mt-12"
           initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
           viewport={{ once: true }} transition={{ delay: 0.6 }}>
-          <div className="h-px flex-1 max-w-xs" style={{ background: "linear-gradient(to right, transparent, rgba(196,159,220,0.3))" }} />
-          <p className="text-white/25 text-xs tracking-widest uppercase px-4">One continuous journey</p>
+          <div className="h-px flex-1 max-w-xs" style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.5))" }} />
+          <p className="text-white/60 text-xs tracking-widest uppercase px-4">One continuous journey</p>
           <div className="h-px flex-1 max-w-xs" style={{ background: "linear-gradient(to left, transparent, rgba(196,159,220,0.3))" }} />
         </motion.div>
       </div>
@@ -254,7 +254,7 @@ function WorldsSection() {
           <section
             key={world.name}
             className="relative overflow-hidden flex items-center"
-            style={{ minHeight: "75vh", background: "#06030E" }}
+            style={{ minHeight: "75vh", background: "#7030A0" }}
           >
             {/* Atmosphere gradient */}
             <div className="absolute inset-0 pointer-events-none">
@@ -266,7 +266,7 @@ function WorldsSection() {
             {/* Top/bottom fades between sections */}
             {i > 0 && (
               <div className="absolute top-0 inset-x-0 h-24 pointer-events-none z-10"
-                style={{ background: "linear-gradient(to bottom, #06030E, transparent)" }} />
+                style={{ background: "linear-gradient(to bottom, #7030A0, transparent)" }} />
             )}
             {i === WORLDS.length - 1 && (
               <div className="absolute bottom-0 inset-x-0 h-64 pointer-events-none z-10"
@@ -278,7 +278,7 @@ function WorldsSection() {
               {[0, 1, 2].map(j => (
                 <div key={j} className={`fish-${(j + i * 3 + 1) % 6 + 1} absolute`}
                   style={{ top: `${25 + j * 25}%`, opacity: 0.4 }}>
-                  <svg width="28" height="14" viewBox="0 0 50 25" fill="none">
+                  <svg width="140" height="70" viewBox="0 0 50 25" fill="none">
                     <path d="M2 12.5 L14 2 L14 23 Z" fill={world.color} />
                     <ellipse cx="30" cy="12.5" rx="20" ry="9" fill={world.color} />
                   </svg>
@@ -303,8 +303,8 @@ function WorldsSection() {
                 <h2 className="text-5xl lg:text-[4.5rem] font-extrabold text-white leading-[1.0] mb-4">
                   {world.name}
                 </h2>
-                <p className="text-white/45 text-xl italic mb-8">{world.sub}</p>
-                <p className="text-white/55 text-lg leading-relaxed max-w-lg">{world.desc}</p>
+                <p className="text-white/75 text-xl italic mb-8">{world.sub}</p>
+                <p className="text-white/85 text-lg leading-relaxed max-w-lg">{world.desc}</p>
               </motion.div>
 
               {/* Visual panel */}
@@ -313,8 +313,8 @@ function WorldsSection() {
                 style={{
                   height: "320px",
                   background: `linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%)`,
-                  border: `1px solid ${world.color}20`,
-                  boxShadow: `0 0 80px ${world.color}15`,
+                  border: `1px solid ${world.color}50`,
+                  boxShadow: `0 0 80px ${world.color}30`,
                 }}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -323,7 +323,7 @@ function WorldsSection() {
               >
                 {/* Atmospheric gradient fill */}
                 <div className="absolute inset-0" style={{
-                  background: `radial-gradient(ellipse 100% 100% at 50% 50%, ${world.glow.replace("0.30", "0.25")} 0%, rgba(6,3,14,0.8) 70%)`,
+                  background: `radial-gradient(ellipse 100% 100% at 50% 50%, ${world.glow.replace("0.30", "0.35")} 0%, rgba(74,30,107,0.6) 70%)`,
                 }} />
 
                 {/* Floating math symbols */}
@@ -378,12 +378,12 @@ const ABILITIES = [
 
 function AbilitiesSection() {
   return (
-    <section className="relative py-28 px-6 lg:px-16 overflow-hidden" style={{ background: "#080612" }}>
-      <div className="absolute top-0 inset-x-0 h-56 z-20 pointer-events-none"
+    <section className="relative py-28 px-6 lg:px-16 overflow-hidden" style={{ background: "#7030A0" }}>
+      <div className="absolute top-0 inset-x-0 h-56 z-[5] pointer-events-none"
         style={{ background: "linear-gradient(to bottom, #F7F2FF 0%, rgba(247,242,255,0.55) 45%, transparent 100%)" }} />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full blur-[140px]"
-          style={{ background: "radial-gradient(ellipse, rgba(112,48,160,0.18) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(196,159,220,0.25) 0%, transparent 70%)" }} />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -405,17 +405,17 @@ function AbilitiesSection() {
               key={i}
               className="relative rounded-2xl p-7 border group overflow-hidden"
               style={{
-                background: "rgba(255,255,255,0.03)",
+                background: "rgba(255,255,255,0.10)",
                 backdropFilter: "blur(12px)",
-                borderColor: "rgba(255,255,255,0.06)",
+                borderColor: "rgba(255,255,255,0.22)",
               }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{
-                background: "rgba(255,255,255,0.055)",
-                borderColor: "rgba(196,159,220,0.20)",
+                background: "rgba(255,255,255,0.18)",
+                borderColor: "rgba(255,255,255,0.45)",
               }}
             >
               {/* Corner glow on hover */}
@@ -424,7 +424,7 @@ function AbilitiesSection() {
 
               <div className="text-3xl mb-5">{ab.icon}</div>
               <h3 className="text-white font-extrabold text-lg mb-3">{ab.name}</h3>
-              <p className="text-white/45 text-sm leading-relaxed mb-5">{ab.desc}</p>
+              <p className="text-white/80 text-sm leading-relaxed mb-5">{ab.desc}</p>
               <div className="inline-block text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full"
                 style={{ background: "rgba(196,159,220,0.10)", color: "#C49FDC" }}>
                 {ab.unlock}
@@ -474,7 +474,7 @@ function PathwayPanels() {
   return (
     <section className="relative overflow-hidden" style={{ height: "100vh", display: "flex" }}>
       {/* Top transition from QuoteSection */}
-      <div className="absolute top-0 inset-x-0 h-48 z-20 pointer-events-none"
+      <div className="absolute top-0 inset-x-0 h-48 z-[5] pointer-events-none"
         style={{ background: "linear-gradient(to bottom, #06040E 0%, rgba(6,4,14,0.55) 45%, transparent 100%)" }} />
       {PATHWAYS.map((p) => {
         const isHovered = hovered === p.id;
@@ -561,8 +561,8 @@ function VideoSlide({ num, tag, headline, body, accent, src, videoStart, topColo
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 15% 60%, rgba(112,48,160,0.30) 0%, transparent 60%)" }} />
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 50% 40% at 85% 20%, rgba(8,145,178,0.20) 0%, transparent 55%)" }} />
       </div>
-      {topColor    && <div className="absolute top-0 inset-x-0 h-52 z-20 pointer-events-none" style={{ background: `linear-gradient(to bottom, ${topColor} 0%, ${topColor}99 35%, transparent 100%)` }} />}
-      {bottomColor && <div className="absolute bottom-0 inset-x-0 h-52 z-20 pointer-events-none" style={{ background: `linear-gradient(to top, ${bottomColor} 0%, ${bottomColor}99 35%, transparent 100%)` }} />}
+      {topColor    && <div className="absolute top-0 inset-x-0 h-52 z-[5] pointer-events-none" style={{ background: `linear-gradient(to bottom, ${topColor} 0%, ${topColor}99 35%, transparent 100%)` }} />}
+      {bottomColor && <div className="absolute bottom-0 inset-x-0 h-52 z-[5] pointer-events-none" style={{ background: `linear-gradient(to top, ${bottomColor} 0%, ${bottomColor}99 35%, transparent 100%)` }} />}
       <ScanlineOverlay />
       <SectionNum n={num} />
       <div className="absolute top-0 left-0 w-1 h-full opacity-40"
@@ -637,17 +637,17 @@ function QuoteSection() {
   const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
 
   return (
-    <section ref={ref} className="relative h-screen overflow-hidden bg-[#06040E] flex items-center justify-center">
+    <section ref={ref} className="relative h-screen overflow-hidden bg-[#7030A0] flex items-center justify-center">
       <SectionNum n="07" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,rgba(8,145,178,0.08)_0%,transparent_65%)] pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-56 z-20 pointer-events-none" style={{ background: "linear-gradient(to bottom, #FAFAF8 0%, rgba(250,250,248,0.55) 40%, transparent 100%)" }} />
-      <div className="absolute bottom-0 inset-x-0 h-56 z-20 pointer-events-none" style={{ background: "linear-gradient(to top, #1a0840 0%, rgba(26,8,64,0.55) 45%, transparent 100%)" }} />
+      <div className="absolute top-0 inset-x-0 h-56 z-[5] pointer-events-none" style={{ background: "linear-gradient(to bottom, #FAFAF8 0%, rgba(250,250,248,0.55) 40%, transparent 100%)" }} />
+      <div className="absolute bottom-0 inset-x-0 h-56 z-[5] pointer-events-none" style={{ background: "linear-gradient(to top, #7030A0 0%, rgba(112,48,160,0.55) 45%, transparent 100%)" }} />
       <ScanlineOverlay />
 
       <motion.div className="max-w-4xl mx-auto text-center relative z-10 px-6" style={{ opacity: fadeOut, y: textY }}>
         <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.5 }} transition={{ duration: 1.4, ease: "easeOut" }}>
-          <div className="text-9xl text-white/8 font-serif leading-none mb-2 select-none">&ldquo;</div>
+          <div className="text-9xl text-white/25 font-serif leading-none mb-2 select-none">&ldquo;</div>
           <p className="text-3xl lg:text-5xl font-extrabold text-white leading-tight mb-10">
             They got 17/21 in the game&apos;s test.
             We know they&apos;re capable of this —
@@ -655,12 +655,12 @@ function QuoteSection() {
             <GradText g={GRAD_LT}> They need ACCESS.</GradText>
           </p>
           <div className="flex items-center justify-center gap-4">
-            <div className="w-12 h-px bg-white/15" />
+            <div className="w-12 h-px bg-white/40" />
             <div>
-              <p className="text-white/65 font-semibold text-sm">Ms. Munroe</p>
-              <p className="text-white/30 text-xs">Classroom Teacher · Ellis Elementary Pilot</p>
+              <p className="text-white/90 font-semibold text-sm">Ms. Munroe</p>
+              <p className="text-white/60 text-xs">Classroom Teacher · Ellis Elementary Pilot</p>
             </div>
-            <div className="w-12 h-px bg-white/15" />
+            <div className="w-12 h-px bg-white/40" />
           </div>
         </motion.div>
       </motion.div>
@@ -678,7 +678,7 @@ export default function GameExperience() {
   const heroOpacity = useTransform(heroScroll, [0, 0.6], [1, 0]);
 
   return (
-    <div className="bg-[#080612]">
+    <div className="bg-[#7030A0]">
 
       {/* ── 1. HERO ── */}
       <section ref={heroRef} className="relative overflow-hidden flex items-end justify-center" style={{ height: "115vh" }}>
@@ -686,7 +686,7 @@ export default function GameExperience() {
           <LazyVideo src="/Gameplay-edited.mp4" start={90} rate={0.6} opacity={0.65} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#080612]/55 via-[#080612]/10 to-[#080612]" />
         </motion.div>
-        <div className="absolute bottom-0 inset-x-0 h-56 z-20 pointer-events-none"
+        <div className="absolute bottom-0 inset-x-0 h-56 z-[5] pointer-events-none"
           style={{ background: "linear-gradient(to top, #F7F2FF 0%, rgba(247,242,255,0.7) 40%, transparent 100%)" }} />
         <ScanlineOverlay />
 
@@ -810,8 +810,8 @@ export default function GameExperience() {
         <LazyVideo src="/Manipulatives.mp4" start={26} rate={0.65} opacity={0.8} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080612] via-[#080612]/25 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080612]/55 via-transparent to-transparent" />
-        <div className="absolute top-0 inset-x-0 h-52 z-20 pointer-events-none" style={{ background: "linear-gradient(to bottom, #080612 0%, rgba(8,6,18,0.8) 40%, transparent 100%)" }} />
-        <div className="absolute bottom-0 inset-x-0 h-52 z-20 pointer-events-none" style={{ background: "linear-gradient(to top, #06030E 0%, rgba(6,3,14,0.8) 40%, transparent 100%)" }} />
+        <div className="absolute top-0 inset-x-0 h-52 z-[5] pointer-events-none" style={{ background: "linear-gradient(to bottom, #7030A0 0%, rgba(112,48,160,0.6) 40%, transparent 100%)" }} />
+        <div className="absolute bottom-0 inset-x-0 h-52 z-[5] pointer-events-none" style={{ background: "linear-gradient(to top, #06030E 0%, rgba(6,3,14,0.8) 40%, transparent 100%)" }} />
         <ScanlineOverlay />
 
         <div className="relative z-10 px-8 lg:px-20 pb-20 max-w-3xl">
@@ -840,8 +840,8 @@ export default function GameExperience() {
       {/* ── 8. LIGHT — Three things ── */}
       <section className="relative min-h-screen py-40 px-6 lg:px-20 bg-[#FAFAF8] overflow-hidden flex items-center">
         {/* Section transitions */}
-        <div className="absolute top-0 inset-x-0 h-56 z-20 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom, #06030E 0%, rgba(6,3,14,0.55) 40%, transparent 100%)" }} />
+        <div className="absolute top-0 inset-x-0 h-56 z-[5] pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, #7030A0 0%, rgba(112,48,160,0.55) 40%, transparent 100%)" }} />
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full blur-[130px] pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(196,159,220,0.3) 0%, transparent 70%)" }} />
         <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-[110px] pointer-events-none"

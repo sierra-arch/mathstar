@@ -51,8 +51,8 @@ export default function ResultsSlide() {
         style={{ background: "radial-gradient(ellipse 50% 40% at 80% 20%, rgba(8,145,178,0.20) 0%, transparent 55%)" }}
       />
       {/* Gradient edge transitions */}
-      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#1a0733] to-transparent z-20 pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#1a0733] to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#1a0733] to-transparent z-[5] pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#1a0733] to-transparent z-[5] pointer-events-none" />
 
       {/* ── Content ── */}
       <motion.div

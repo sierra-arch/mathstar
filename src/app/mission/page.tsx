@@ -3,6 +3,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
+import FounderStory from "@/components/FounderStory";
+import ImpactQuotes from "@/components/impact/ImpactQuotes";
 
 export const metadata: Metadata = {
   title: "Our Mission — ShepherdXR",
@@ -37,6 +39,8 @@ export default function MissionPage() {
           </FadeIn>
         </div>
       </section>
+
+      <FounderStory />
 
       {/* ── THE PROBLEM ── */}
       <section className="py-28 px-6 lg:px-20">
@@ -145,6 +149,79 @@ export default function MissionPage() {
         </div>
       </section>
 
+      {/* ── BY THE NUMBERS ── */}
+      <section className="py-24 px-6 lg:px-20 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn className="text-center mb-14">
+            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+              By the Numbers
+            </p>
+            <h2 className="text-4xl font-extrabold text-[#0D0B12] leading-tight">
+              The kids are sold.{" "}
+              <em className="not-italic italic text-[#0891B2]">The data agrees.</em>
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+              {[
+                { value: "10/10", label: "chose math over recess", sublabel: "Ellis Elementary Pilot", color: "#7030A0" },
+                { value: "18%", label: "pre → post test gain", sublabel: "after just 8 hours of learning", color: "#0891B2" },
+                { value: "45%", label: "jump in median test score", sublabel: "in just 3 sessions — BPL Research", color: "#0891B2" },
+                { value: "86%", label: "of students said they loved it", sublabel: "and would recommend to a friend", color: "#7030A0" },
+              ].map((s, i) => (
+                <div key={i} className="rounded-3xl p-8 border border-[#7030A0]/12 bg-[#F7F2FF] text-center">
+                  <div className="text-5xl font-extrabold mb-2" style={{ color: s.color }}>{s.value}</div>
+                  <div className="text-[#0D0B12] font-bold text-sm leading-snug mb-1">{s.label}</div>
+                  <div className="text-[#0D0B12]/40 text-xs leading-relaxed">{s.sublabel}</div>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── WHAT WE BELIEVE ── */}
+      <section className="py-28 px-6 lg:px-20 bg-[#F0E6F7]">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn className="text-center mb-16">
+            <p className="text-[#7030A0] font-semibold text-sm tracking-widest uppercase mb-5">
+              What We Believe
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0D0B12] leading-tight">
+              Three things we know to be true.
+            </h2>
+          </FadeIn>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {[
+              {
+                num: "01",
+                title: "Every child is a math person.",
+                body: "The label \"not a math person\" is a story told by bad experiences — not by data. When kids experience math as wonder, they thrive.",
+              },
+              {
+                num: "02",
+                title: "Access is the missing ingredient.",
+                body: "The tools that change how kids see math already exist. The gap is access — to technology, to experiences, to the right moment at the right time.",
+              },
+              {
+                num: "03",
+                title: "Immersion beats instruction.",
+                body: "You can explain multiplication on a chalkboard, or you can let a child watch fish multiply before their eyes in 3D. The second one works.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="relative bg-white border border-[#0D0B12]/8 rounded-3xl p-10">
+                <p className="text-[#7030A0]/15 text-8xl font-extrabold leading-none absolute -top-3 right-6 select-none">
+                  {item.num}
+                </p>
+                <p className="text-[#7030A0] text-xs font-bold tracking-widest uppercase mb-5">{item.num}</p>
+                <h3 className="text-xl font-extrabold text-[#0D0B12] leading-snug mb-4">{item.title}</h3>
+                <p className="text-[#0D0B12]/50 text-sm leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── COMMITMENTS ── */}
       <section className="py-28 px-6 lg:px-20">
         <div className="max-w-4xl mx-auto">
@@ -196,6 +273,8 @@ export default function MissionPage() {
           </div>
         </div>
       </section>
+
+      <ImpactQuotes />
 
       {/* ── CTA ── */}
       <section className="py-24 px-6 bg-[#7030A0]">

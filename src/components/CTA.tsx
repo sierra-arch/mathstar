@@ -81,11 +81,8 @@ export default function CTA() {
         >
           <Link
             href="/reviews"
-            className="px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5"
-            style={{
-              background: "linear-gradient(135deg, #7030A0, #4A1E6B)",
-              boxShadow: "0 8px 40px rgba(112,48,160,0.35)",
-            }}
+            className="px-10 py-4 rounded-full font-bold text-[#7030A0] bg-white text-base transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#F0E6F7]"
+            style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.15)" }}
           >
             See what families are saying →
           </Link>

@@ -149,7 +149,7 @@ export default function Hero() {
 
       {/* Bottom fade to dark section */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-10"
+        className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-[5]"
         style={{ background: "linear-gradient(to bottom, transparent, #0d0620)" }}
       />
 
