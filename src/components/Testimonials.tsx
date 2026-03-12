@@ -227,7 +227,7 @@ export default function Testimonials() {
           {featured.map((f, i) => (
             <motion.div
               key={i}
-              className={`rounded-3xl p-7 flex flex-col shadow-sm border ${f.highlight ? "bg-[#F0E6F7] border-[#7030A0]/20 shadow-[#7030A0]/8" : "bg-white border-[#7030A0]/6 shadow-[#7030A0]/8"}`}
+              className="rounded-3xl p-7 flex flex-col shadow-sm border bg-white border-[#7030A0]/6 shadow-[#7030A0]/8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -250,7 +250,7 @@ export default function Testimonials() {
           {grid.map((q, i) => (
             <motion.div
               key={i}
-              className={`hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm border ${q.highlight ? "bg-[#F0E6F7] border-[#7030A0]/18 shadow-[#7030A0]/5" : "bg-white border-[#7030A0]/5 shadow-[#7030A0]/5"}`}
+              className="hover:shadow-md transition-shadow rounded-2xl px-6 py-5 flex flex-col shadow-sm border bg-white border-[#7030A0]/5 shadow-[#7030A0]/5"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
