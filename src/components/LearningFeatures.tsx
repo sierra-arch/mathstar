@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import RevealText from "@/components/RevealText";
 
 const features = [
@@ -11,8 +10,8 @@ const features = [
     photoAlt: "Student focused in private learning environment",
     title: "Focused Environment",
     color: "#7030A0",
-    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
-    border: "border-[#7030A0]/15",
+    bg: "from-[#7030A0]/30 to-[#7030A0]/15",
+    border: "border-[#7030A0]/30",
     body: "VR creates a private, distraction-free world — especially impactful for students with ADHD, ADD, or anxiety. To ensure what students master in-game transfers to paper, sessions are paired with worksheets and guided Q&A.",
     tags: ["ADHD / ADD", "Anxiety", "Sensory sensitivity"],
   },
@@ -22,8 +21,8 @@ const features = [
     photoAlt: "Hands-on embodied learning",
     title: "Embodied Learning",
     color: "#0891B2",
-    bg: "from-[#0891B2]/10 to-[#0891B2]/4",
-    border: "border-[#0891B2]/15",
+    bg: "from-[#0891B2]/30 to-[#0891B2]/15",
+    border: "border-[#0891B2]/30",
     body: "Students solve equations with their hands in a striking audiovisual world. This multi-sensory approach works for visual, auditory, and kinesthetic learners — and is especially supportive for students with dyslexia or dysgraphia.",
     tags: ["Visual learners", "Kinesthetic", "Dyslexia / Dysgraphia"],
   },
@@ -33,8 +32,8 @@ const features = [
     photoAlt: "Accessible guided learning",
     title: "Accessible Guidance",
     color: "#7030A0",
-    bg: "from-[#7030A0]/10 to-[#7030A0]/4",
-    border: "border-[#7030A0]/15",
+    bg: "from-[#7030A0]/30 to-[#7030A0]/15",
+    border: "border-[#7030A0]/30",
     body: "Step-by-step narration with multi-language subtitles and spoken audio ensures no student is left behind. Built from the ground up to support deaf and hard-of-hearing students and English learners.",
     tags: ["Deaf / Hard of Hearing", "English Learners", "Multi-language"],
   },
@@ -96,15 +95,6 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
               transition={{ duration: 0.5, delay: i * 0.1, type: "spring", stiffness: 100, damping: 18 }}
             >
             <div className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} overflow-hidden h-full`}>
-              <div className="relative w-full overflow-hidden" style={{ height: i === 2 ? "280px" : "220px" }}>
-                <Image
-                  src={f.photo}
-                  alt={f.photoAlt}
-                  fill
-                  className="object-cover object-center transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none" />
-              </div>
               <div className={`${i === 2 ? "p-10 lg:flex lg:gap-16 lg:items-start" : "p-10"}`}>
                 <div className={i === 2 ? "lg:flex-1" : ""}>
                   <div className="text-4xl mb-5">{f.icon}</div>
