@@ -104,15 +104,7 @@ export default function ImpactStats() {
   return (
     <section className="relative pb-28 px-6 lg:px-16 bg-[#F7F2FF] overflow-hidden">
 
-      {/* Dark → light gradient transition from hero above */}
-      <div
-        className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
-        style={{
-          background: "linear-gradient(to bottom, #0D0B12 0%, #F7F2FF 100%)",
-        }}
-      />
-
-      <div className="relative pt-32">
+      <div className="relative pt-16">
 
       <div className="absolute top-[-5%] right-[-8%] w-[500px] h-[500px] bg-[#7030A0]/12 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-8%] w-[450px] h-[450px] bg-[#0891B2]/10 rounded-full blur-[100px] pointer-events-none" />
