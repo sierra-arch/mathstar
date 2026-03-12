@@ -23,7 +23,7 @@ export default function Hero() {
     >
 
       {/* ── Soft full-bleed gradient mesh ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Base tint — very light lavender across the whole bg */}
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 120% 100% at 50% 50%, rgba(230,215,245,0.55) 0%, rgba(250,250,248,0.0) 70%)" }} />
         {/* Left-centre purple bloom */}
@@ -53,7 +53,7 @@ export default function Hero() {
 
         {/* LEFT — Text */}
         <motion.div
-          className="flex flex-col justify-end pl-12 pr-8 lg:pl-24 lg:pr-10 pt-36 pb-16 lg:pt-24 lg:pb-20"
+          className="flex flex-col justify-center pl-12 pr-8 lg:pl-24 lg:pr-10 pt-28 pb-16 lg:pt-20 lg:pb-16"
           style={{ y: textY, opacity: fadeOut }}
         >
           <motion.h1
