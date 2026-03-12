@@ -379,8 +379,6 @@ const ABILITIES = [
 function AbilitiesSection() {
   return (
     <section className="relative py-28 px-6 lg:px-16 overflow-hidden" style={{ background: "#7030A0" }}>
-      <div className="absolute top-0 inset-x-0 h-56 z-[5] pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, #F7F2FF 0%, rgba(247,242,255,0.55) 45%, transparent 100%)" }} />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full blur-[140px]"
           style={{ background: "radial-gradient(ellipse, rgba(196,159,220,0.25) 0%, transparent 70%)" }} />
