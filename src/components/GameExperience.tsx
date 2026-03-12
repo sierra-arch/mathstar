@@ -772,7 +772,7 @@ export default function GameExperience() {
       <VideoSlide num="04" tag="Step 03"
         headline={"Algebra unlocks\nlike a puzzle."}
         body="What felt impossible on paper becomes intuitive in 3D. Students say it out loud: 'Wait — that was algebra?' 8 hours. Algebra-ready."
-        accent="#C49FDC" src="/Gameplay-edited.mp4" videoStart={68} bottomColor="#F7F2FF" />
+        accent="#C49FDC" src="/Gameplay-edited.mp4" videoStart={68} />
 
       {/* ── 6. LIGHT — Stats ── */}
       <LightSlide num="05" overline="The Results"
