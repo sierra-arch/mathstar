@@ -114,45 +114,40 @@ export default function FounderStory() {
           </motion.h2>
         </div>
 
-        {/* 2-col: photo + story */}
-        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-16 items-start">
-
-          {/* Photo column — sticky on scroll */}
-          <motion.div
-            className="lg:sticky lg:top-24"
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="relative rounded-3xl overflow-hidden aspect-[3/4]">
-              <Image
-                src="/headshots/Femi%20:%20Founder/femi-fadugba-5108468.jpg"
-                alt="Femi Fadugba, Founder of ShepherdXR"
-                fill
-                className="object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B12]/50 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <p className="text-white font-extrabold text-lg leading-snug">Femi Fadugba</p>
-                <p className="text-white/65 text-sm">Founder &amp; CEO · ShepherdXR</p>
-                <p className="text-white/45 text-xs mt-1">MSc Quantum Physics · Oxford</p>
-              </div>
+        {/* Photo — full width, constrained height */}
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="relative rounded-3xl overflow-hidden h-[420px] lg:h-[520px]">
+            <Image
+              src="/headshots/Femi%20:%20Founder/femi-fadugba-5108468.jpg"
+              alt="Femi Fadugba, Founder of ShepherdXR"
+              fill
+              className="object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B12]/50 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="text-white font-extrabold text-lg leading-snug">Femi Fadugba</p>
+              <p className="text-white/65 text-sm">Founder &amp; CEO · ShepherdXR</p>
+              <p className="text-white/45 text-xs mt-1">MSc Quantum Physics · Oxford</p>
             </div>
-          </motion.div>
-
-          {/* Story column */}
-          <div className="space-y-14">
-            {story.map((s, i) => (
-              <AnimatedParagraph
-                key={i}
-                text={s.text}
-                highlight={s.highlight}
-                accentColor={s.accentColor}
-              />
-            ))}
           </div>
+        </motion.div>
 
+        {/* Story — full width below photo */}
+        <div className="space-y-10">
+          {story.map((s, i) => (
+            <AnimatedParagraph
+              key={i}
+              text={s.text}
+              highlight={s.highlight}
+              accentColor={s.accentColor}
+            />
+          ))}
         </div>
 
         {/* MathSTAR callout */}

@@ -17,41 +17,87 @@ export default function AboutHero() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden bg-[#F7F2FF]">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-[#F7F2FF]">
 
-      {/* ── LAYER 1: Background gradient (slowest) ── */}
-      <motion.div className="absolute inset-0 scale-[1.1]" style={{ y: bgY }}>
+      {/* ── Background gradient ── */}
+      <motion.div className="absolute inset-0 z-0 pointer-events-none" style={{ y: bgY }}>
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 85% 70% at 70% 45%, rgba(196,159,220,0.5) 0%, rgba(240,230,247,0.7) 50%, transparent 100%)",
+              "radial-gradient(ellipse 120% 100% at 50% 50%, rgba(230,215,245,0.55) 0%, rgba(247,242,255,0.0) 70%)",
           }}
         />
         <div
-          className="absolute bottom-0 left-0 w-[450px] h-[450px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.1) 0%, transparent 70%)" }}
+          className="absolute top-1/2 left-[-10%] -translate-y-1/2 w-[900px] h-[900px] rounded-full blur-[60px]"
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.45) 0%, rgba(112,48,160,0.08) 55%, transparent 75%)" }}
+        />
+        <div
+          className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full blur-[80px]"
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.22) 0%, transparent 65%)" }}
+        />
+        <div
+          className="absolute top-[20%] right-[5%] w-[500px] h-[500px] rounded-full blur-[80px]"
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.3) 0%, transparent 70%)" }}
         />
       </motion.div>
 
-      {/* ── LAYER 2: Kid photo (medium speed) ── */}
-      <motion.div
-        className="absolute inset-0 flex items-center justify-end pr-8 lg:pr-20 pointer-events-none"
-        style={{ y: orbY }}
-      >
+      {/* ── Two-column layout ── */}
+      <div className="relative z-10 min-h-screen grid grid-cols-1 lg:grid-cols-2">
+
+        {/* LEFT — Text */}
         <motion.div
-          className="relative w-[480px] h-[320px] lg:w-[580px] lg:h-[380px]"
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col justify-center pl-12 pr-8 lg:pl-24 lg:pr-10 pt-28 pb-16 lg:pt-20 lg:pb-16"
+          style={{ y: textY, opacity: fadeOut }}
         >
-          {/* Soft glow behind photo */}
+          <motion.p
+            className="text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase mb-5"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            About ShepherdXR
+          </motion.p>
+
+          <motion.h1
+            className="text-5xl sm:text-6xl lg:text-[5rem] xl:text-[5.5rem] font-extrabold text-[#0D0B12] leading-[1.0] mb-5"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="block">We build tech</span>
+            <span className="block">that{" "}
+              <em className="not-italic italic text-[#7030A0]">changes</em>
+            </span>
+            <span className="block">how kids see</span>
+            <span className="block">themselves.</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-[#0D0B12]/55 text-xl leading-relaxed max-w-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+          >
+            ShepherdXR turns math from a fear into a superpower.
+          </motion.p>
+        </motion.div>
+
+        {/* RIGHT — Photo */}
+        <motion.div
+          className="relative hidden lg:flex items-end justify-center px-8 pt-10 pb-20"
+          style={{ y: orbY }}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        >
           <div
-            className="absolute -inset-8 rounded-[3rem] pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(196,159,220,0.45) 0%, transparent 70%)" }}
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196,159,220,0.3) 0%, transparent 70%)",
+            }}
           />
-          {/* Photo */}
-          <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-[#7030A0]/20">
+          <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl shadow-[#7030A0]/20">
             <Image
               src="/Stock Images/pexels-vanessa-loring-7869443.jpg"
               alt="Child experiencing the wonder of VR learning"
@@ -59,77 +105,25 @@ export default function AboutHero() {
               className="object-cover object-center"
               priority
             />
-            {/* Subtle gradient overlay at bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#7030A0]/20 via-transparent to-transparent" />
           </div>
-          {/* Teal accent dot */}
-          <motion.div
-            className="absolute -bottom-4 -left-4 w-14 h-14 rounded-full"
-            style={{ background: "radial-gradient(circle, rgba(8,145,178,0.7) 0%, transparent 70%)" }}
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          />
-          {/* Purple accent dot */}
-          <motion.div
-            className="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-[#C49FDC]/60"
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          />
         </motion.div>
-      </motion.div>
 
-      {/* ── LAYER 3: Text (fastest, fades) ── */}
+      </div>
+
+      {/* Scroll nudge */}
       <motion.div
-        className="absolute inset-0 z-10"
-        style={{ y: textY, opacity: fadeOut }}
+        className="absolute bottom-8 left-8 lg:left-16 z-20"
+        style={{ opacity: fadeOut }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4 }}
       >
-        {/* Overline */}
-        <motion.p
-          className="absolute top-28 left-8 lg:left-16 text-[#7030A0]/70 font-semibold text-xs tracking-widest uppercase"
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          About ShepherdXR
-        </motion.p>
-
-        {/* Supporting right */}
-        <motion.p
-          className="absolute top-28 right-8 lg:right-16 text-[#0D0B12]/30 text-xs leading-relaxed text-right max-w-[150px]"
-          initial={{ opacity: 0, x: 12 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          ShepherdXR turns math from a fear into a superpower.
-        </motion.p>
-
-        {/* Main headline — lower left */}
-        <div className="absolute bottom-0 left-0 right-0 px-8 lg:px-16 pb-16">
-          <motion.h1
-            className="text-[3.4rem] sm:text-[4.5rem] lg:text-[6rem] font-extrabold text-[#0D0B12] leading-[0.95] mb-8 max-w-2xl"
-            initial={{ opacity: 0, y: 70 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            We build tech that{" "}
-            <em className="not-italic italic text-[#7030A0]">changes</em>{" "}
-            how kids see themselves.
-          </motion.h1>
-        </div>
-
-        {/* Scroll line */}
         <motion.div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
-        >
-          <motion.div
-            className="w-px h-10 bg-[#7030A0]/30"
-            animate={{ scaleY: [0, 1, 0], originY: 0 }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </motion.div>
+          className="w-px h-10 bg-[#7030A0]/30"
+          animate={{ scaleY: [0, 1, 0], originY: 0 }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        />
       </motion.div>
     </section>
   );

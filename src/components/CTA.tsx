@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section id="get" className="relative pt-24 pb-36 px-6 lg:px-16" style={{ background: "linear-gradient(to bottom, #FAFAF8 0%, #FAFAF8 35%, #2a0d4a 65%, #0d0620 100%)" }}>
+    <section id="get" className="relative pt-24 pb-36 px-6 lg:px-16" style={{ background: "linear-gradient(to bottom, #FAFAF8 0%, #FAFAF8 35%, #4A1E6B 65%, #7030A0 100%)" }}>
 
       {/* Gradient mesh blobs — soft, large, overlapping */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

@@ -37,7 +37,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0d0620] px-6 lg:px-16 pt-16 pb-10">
+    <footer className="relative bg-[#7030A0] px-6 lg:px-16 pt-16 pb-10">
       <div className="max-w-6xl mx-auto">
 
         {/* Top row */}
