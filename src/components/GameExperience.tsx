@@ -307,12 +307,11 @@ function WorldsSection() {
                 <p className="text-white/85 text-lg leading-relaxed max-w-lg">{world.desc}</p>
               </motion.div>
 
-              {/* Visual panel */}
+              {/* Visual panel — video */}
               <motion.div
                 className="relative rounded-3xl overflow-hidden"
                 style={{
                   height: "320px",
-                  background: `linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%)`,
                   border: `1px solid ${world.color}50`,
                   boxShadow: `0 0 80px ${world.color}30`,
                 }}
@@ -321,38 +320,25 @@ function WorldsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                {/* Atmospheric gradient fill */}
-                <div className="absolute inset-0" style={{
-                  background: `radial-gradient(ellipse 100% 100% at 50% 50%, ${world.glow.replace("0.30", "0.35")} 0%, rgba(74,30,107,0.6) 70%)`,
-                }} />
+                <LazyVideo
+                  src="/Gameplay-edited.mp4"
+                  start={i * 30}
+                  rate={0.65}
+                  opacity={0.9}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
 
-                {/* Floating math symbols */}
-                {["×", "÷", "+", "=", "√"].map((sym, j) => (
-                  <div key={j}
-                    className={`float-${j + 1} absolute font-extrabold select-none pointer-events-none`}
-                    style={{
-                      top: `${15 + j * 18}%`,
-                      left: `${10 + (j * 19) % 75}%`,
-                      fontSize: `${1.8 + (j % 3) * 0.4}rem`,
-                      color: world.color,
-                      opacity: 0.25,
-                    }}
-                  >
-                    {sym}
-                  </div>
-                ))}
-
-                {/* World label */}
-                <div className="absolute bottom-6 left-6">
+                {/* World label overlay */}
+                <div className="absolute bottom-6 left-6 z-10">
                   <div className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: world.color }}>
                     World {i + 1}
                   </div>
-                  <div className="text-white/60 text-sm font-semibold">{world.name}</div>
+                  <div className="text-white/80 text-sm font-semibold">{world.name}</div>
                 </div>
 
-                {/* Corner glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 rounded-full blur-3xl opacity-30"
-                  style={{ background: world.color }} />
+                {/* Edge glow */}
+                <div className="absolute inset-0 rounded-3xl pointer-events-none"
+                  style={{ boxShadow: `inset 0 0 60px ${world.glow}` }} />
               </motion.div>
 
             </div>
@@ -444,8 +430,8 @@ const PATHWAYS = [
     cta: "For Parents →",
     href: "/parents",
     accent: "#C49FDC",
-    bg: "linear-gradient(160deg, #1a0840 0%, #2d1060 50%, #0d1428 100%)",
-    glow: "rgba(112,48,160,0.35)",
+    bg: "linear-gradient(160deg, #3d1478 0%, #5a20a0 50%, #2a0e5c 100%)",
+    glow: "rgba(196,159,220,0.55)",
     glowPos: "30% 70%",
   },
   {
@@ -456,8 +442,8 @@ const PATHWAYS = [
     cta: "For Educators →",
     href: "/educators",
     accent: "#0891B2",
-    bg: "linear-gradient(160deg, #061426 0%, #0c2840 50%, #061018 100%)",
-    glow: "rgba(8,145,178,0.30)",
+    bg: "linear-gradient(160deg, #072e52 0%, #0e4a70 50%, #061e38 100%)",
+    glow: "rgba(8,145,178,0.55)",
     glowPos: "70% 30%",
   },
 ];
