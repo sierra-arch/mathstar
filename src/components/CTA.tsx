@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section id="get" className="relative pt-24 pb-36 px-6 lg:px-16 bg-[#FAFAF8]">
+    <section id="get" className="relative pt-24 pb-36 px-6 lg:px-16" style={{ background: "linear-gradient(to bottom, #FAFAF8 0%, #FAFAF8 35%, #2a0d4a 65%, #0d0620 100%)" }}>
 
       {/* Gradient mesh blobs — soft, large, overlapping */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -27,9 +27,6 @@ export default function CTA() {
         />
       </div>
 
-      {/* Smooth fade into footer */}
-      <div className="absolute bottom-0 inset-x-0 h-72 pointer-events-none z-0"
-        style={{ background: "linear-gradient(to bottom, transparent 0%, rgba(74,30,107,0.06) 40%, rgba(74,30,107,0.28) 65%, rgba(74,30,107,0.62) 82%, #4A1E6B 100%)" }} />
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
 
@@ -65,7 +62,7 @@ export default function CTA() {
         </motion.h2>
 
         <motion.p
-          className="text-[#0D0B12]/55 text-xl leading-relaxed mb-14 max-w-xl mx-auto"
+          className="text-[#0D0B12]/60 text-xl leading-relaxed mb-14 max-w-xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -95,7 +92,7 @@ export default function CTA() {
         </motion.div>
 
         <motion.p
-          className="text-[#0D0B12]/30 text-sm mt-7"
+          className="text-white/30 text-sm mt-7"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

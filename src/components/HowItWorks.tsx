@@ -13,7 +13,7 @@ const steps = [
     accent: "#7030A0",
     visual: (
       <Image
-        src="/Stock Images/pexels-tima-miroshnichenko-7047292.jpg"
+        src="/Stock Images/pexels-tima-miroshnichenko-7047681.jpg"
         alt="Child putting on VR headset"
         width={900}
         height={560}
@@ -30,7 +30,7 @@ const steps = [
     accent: "#0891B2",
     visual: (
       <Image
-        src="/Stock Images/pexels-julia-m-cameron-4144037.jpg"
+        src="/Stock Images/pexels-julia-m-cameron-4144152.jpg"
         alt="Child engaged in VR learning"
         width={900}
         height={560}
@@ -262,7 +262,7 @@ export default function HowItWorks({
         </div>
 
         {/* Step navigator + content */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16 items-stretch">
 
           {/* Left: step tabs */}
           <div className="lg:col-span-2 flex flex-col gap-3">
@@ -300,7 +300,7 @@ export default function HowItWorks({
           </div>
 
           {/* Right: detail panel */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 flex flex-col">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -308,10 +308,10 @@ export default function HowItWorks({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="rounded-3xl overflow-hidden border border-[#7030A0]/8 bg-white shadow-sm shadow-[#7030A0]/5"
+                className="rounded-3xl overflow-hidden border border-[#7030A0]/8 bg-white shadow-sm shadow-[#7030A0]/5 flex flex-col flex-1"
               >
                 {/* Visual */}
-                <div className="w-full h-72 overflow-hidden relative">
+                <div className="w-full flex-1 min-h-0 overflow-hidden relative">
                   {current.placeholder ? (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#EDE9FE] to-[#E0F7FA]">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(112,48,160,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

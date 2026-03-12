@@ -53,7 +53,7 @@ export default function AboutHero() {
           {/* Photo */}
           <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-[#7030A0]/20">
             <Image
-              src="/Stock Images/pexels-sound-on-3761267.jpg"
+              src="/Stock Images/pexels-vanessa-loring-7869443.jpg"
               alt="Child experiencing the wonder of VR learning"
               fill
               className="object-cover object-center"

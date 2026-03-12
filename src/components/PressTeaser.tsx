@@ -12,7 +12,7 @@ const articles = [
     title: "Groundbreaking VR Program Delivers Measurable Improvement in Math",
     excerpt:
       "A 4-week free VR math camp at the Boston Public Library saw a 45% jump in median test scores — with students rating the program 4.4 out of 5 for learning and engagement.",
-    href: "/impact",
+    href: "/learn/boston-public-library",
     internal: true,
     accentColor: "#7030A0",
     accentBg: "from-[#7030A0]/10 to-[#7030A0]/4",
@@ -25,8 +25,8 @@ const articles = [
     title: "VR Collab with Virginia Tutoring Company Yields Big Results",
     excerpt:
       "ShepherdXR partnered with a Virginia-based tutoring company to bring MathSTAR into new classrooms — and the results spoke for themselves.",
-    href: "#",
-    internal: false,
+    href: "/learn/virginia-tutoring",
+    internal: true,
     accentColor: "#0891B2",
     accentBg: "from-[#0891B2]/10 to-[#0891B2]/4",
     border: "border-[#0891B2]/15",
@@ -38,8 +38,8 @@ const articles = [
     title: "Empowering Middle School Math Success with XR Technology",
     excerpt:
       "XR technology is bridging the arithmetic-to-algebra gap — making abstract concepts visual, engaging, and accessible for diverse learners including students on IEPs.",
-    href: "#",
-    internal: false,
+    href: "/learn/xr-middle-school-math",
+    internal: true,
     accentColor: "#0891B2",
     accentBg: "from-[#0891B2]/10 to-[#0891B2]/4",
     border: "border-[#0891B2]/15",
@@ -112,15 +112,9 @@ export default function PressTeaser() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              {a.internal ? (
-                <Link href={a.href} className="group block h-full">
-                  <ArticleCard article={a} />
-                </Link>
-              ) : (
-                <div className="group block h-full cursor-default">
-                  <ArticleCard article={a} />
-                </div>
-              )}
+              <Link href={a.href} className="group block h-full">
+                <ArticleCard article={a} />
+              </Link>
             </motion.div>
           ))}
         </div>

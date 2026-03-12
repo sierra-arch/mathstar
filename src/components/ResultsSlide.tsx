@@ -133,23 +133,6 @@ export default function ResultsSlide() {
             ))}
           </div>
 
-          {/* Quote */}
-          <motion.div
-            className="flex items-start gap-6 max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            <div className="w-1 self-stretch bg-gradient-to-b from-[#7030A0] to-[#0891B2] rounded-full shrink-0" />
-            <div>
-              <p className="text-white/80 text-lg font-medium leading-relaxed italic mb-3">
-                &ldquo;They got 17/21 in the game&apos;s test. We know they&apos;re capable of this — it just doesn&apos;t show up on paper. They need ACCESS.&rdquo;
-              </p>
-              <p className="text-white/35 text-sm">Ms. Munroe · Classroom Teacher, Ellis Elementary</p>
-            </div>
-          </motion.div>
-
           {/* CTA */}
           <motion.div
             className="mt-14"
