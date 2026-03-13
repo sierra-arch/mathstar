@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
-import Image from "next/image";
 
 const steps = [
   {
@@ -11,16 +10,7 @@ const steps = [
     desc: "At home or at your local library — no special setup, no downloads, no tech experience needed. Strap in and you're there in seconds.",
     detail: "MathSTAR works with Meta Quest headsets available at participating public libraries and for home use. Setup takes under 2 minutes. No controllers, no cables, no IT department required.",
     accent: "#7030A0",
-    visual: (
-      <Image
-        src="/Stock Images/pexels-tima-miroshnichenko-7047681.jpg"
-        alt="Child putting on VR headset"
-        width={900}
-        height={560}
-        className="w-full h-full object-cover object-center"
-      />
-    ),
-    placeholder: false,
+    placeholder: true,
   },
   {
     num: "02",
@@ -28,16 +18,7 @@ const steps = [
     desc: "No controllers — just their hands. Fish multiply before their eyes. They reach out and shape equations in mid-air.",
     detail: "The moment the headset goes on, they're underwater. Schools of fish swim past, each one a number waiting to be discovered. Students use their bare hands to grab, arrange, and solve — the ocean responds to every move.",
     accent: "#0891B2",
-    visual: (
-      <Image
-        src="/Stock Images/pexels-julia-m-cameron-4144152.jpg"
-        alt="Child engaged in VR learning"
-        width={900}
-        height={560}
-        className="w-full h-full object-cover object-center"
-      />
-    ),
-    placeholder: false,
+    placeholder: true,
   },
   {
     num: "03",
@@ -45,16 +26,7 @@ const steps = [
     desc: "8 hours from arithmetic to algebra-confident. Kids beg to stay. Educators rate it 10/10.",
     detail: "After just 3 sessions, students show a 45% jump in median test score. After 8 hours total, they've moved from basic arithmetic to algebra-ready. The real moment? When they say — unprompted — \"Wait, that was algebra?\"",
     accent: "#7030A0",
-    visual: (
-      <Image
-        src="/Stock Images/pexels-julia-m-cameron-4144150.jpg"
-        alt="Student experiencing breakthrough moment"
-        width={900}
-        height={560}
-        className="w-full h-full object-cover object-center"
-      />
-    ),
-    placeholder: false,
+    placeholder: true,
   },
 ];
 
@@ -310,21 +282,6 @@ export default function HowItWorks({
                 transition={{ duration: 0.3 }}
                 className="rounded-3xl overflow-hidden border border-[#7030A0]/8 bg-white shadow-sm shadow-[#7030A0]/5 flex flex-col flex-1"
               >
-                {/* Visual */}
-                <div className="w-full overflow-hidden relative" style={{ height: "280px" }}>
-                  {current.placeholder ? (
-                    <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#EDE9FE] to-[#E0F7FA]">
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(112,48,160,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="5" width="20" height="14" rx="2" />
-                        <circle cx="12" cy="12" r="3.5" />
-                        <path d="M8 5V3.5" />
-                      </svg>
-                      <span className="text-[#7030A0]/30 text-xs tracking-widest uppercase font-medium">Photo · Coming soon</span>
-                    </div>
-                  ) : (
-                    current.visual
-                  )}
-                </div>
                 {/* Text detail */}
                 <div className="p-8">
                   <div
