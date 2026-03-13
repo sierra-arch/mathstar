@@ -97,8 +97,6 @@ export default function BreakthroughStory() {
 
       <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] bg-[#7030A0]/25 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[-5%] left-[-5%] w-[500px] h-[500px] bg-[#0891B2]/20 rounded-full blur-[110px] pointer-events-none" />
-      <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#F7F2FF] to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#FAFAF8] to-transparent pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
 
@@ -133,24 +131,6 @@ export default function BreakthroughStory() {
               }
             >
               {stories[t].label}
-            </button>
-          ))}
-        </div>
-
-        {/* Act selector */}
-        <div className="flex items-center justify-center gap-2 mb-8">
-          {story.acts.map((a, i) => (
-            <button
-              key={i}
-              onClick={() => setAct(i)}
-              className="px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-200"
-              style={
-                act === i
-                  ? { background: `${story.color}22`, color: story.color, border: `1px solid ${story.color}40` }
-                  : { background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.35)", border: "1px solid rgba(255,255,255,0.08)" }
-              }
-            >
-              {a.label}
             </button>
           ))}
         </div>
