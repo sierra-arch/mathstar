@@ -311,7 +311,7 @@ export default function HowItWorks({
                 className="rounded-3xl overflow-hidden border border-[#7030A0]/8 bg-white shadow-sm shadow-[#7030A0]/5 flex flex-col flex-1"
               >
                 {/* Visual */}
-                <div className="w-full flex-1 min-h-0 overflow-hidden relative">
+                <div className="w-full overflow-hidden relative" style={{ height: "280px" }}>
                   {current.placeholder ? (
                     <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-[#EDE9FE] to-[#E0F7FA]">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(112,48,160,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

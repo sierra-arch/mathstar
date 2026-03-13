@@ -16,7 +16,7 @@ const audiences = {
   },
 };
 
-/* ── Data from Ellis Elementary Pilot ── */
+/* ── Educator data ── */
 const prePostBars = [
   {
     label: "Test Score",
@@ -47,17 +47,25 @@ const prePostBars = [
   },
 ];
 
+const instructorRatings = [
+  { label: "Engagement", value: "4.5 / 5", pct: 90, color: "#7030A0" },
+  { label: "Behavior Regulation", value: "4 / 5", pct: 80, color: "#0891B2" },
+  { label: "Classroom Fit", value: "5 / 5", pct: 100, color: "#7030A0" },
+  { label: "Overall Helpfulness", value: "10 / 10", pct: 100, color: "#0891B2" },
+];
+
+/* ── Parent data ── */
 const studentResponses = [
   { label: "I enjoyed this experience", pct: 86, color: "#7030A0" },
   { label: "I learned a lot", pct: 86, color: "#0891B2" },
   { label: "I would recommend to a friend", pct: 86, color: "#7030A0" },
 ];
 
-const instructorRatings = [
-  { label: "Engagement", value: "4.5 / 5", pct: 90, color: "#7030A0" },
-  { label: "Behavior Regulation", value: "4 / 5", pct: 80, color: "#0891B2" },
-  { label: "Classroom Fit", value: "5 / 5", pct: 100, color: "#7030A0" },
-  { label: "Overall Helpfulness", value: "10 / 10", pct: 100, color: "#0891B2" },
+const parentStats = [
+  { num: "10/10", label: "Students chose math over recess", color: "#7030A0", sub: "Ellis Elementary, 4 weeks" },
+  { num: "+18%", label: "Pre → post test score gain", color: "#0891B2", sub: "After just 8 hours of MathSTAR" },
+  { num: "0", label: "Classroom removals over 11 sessions", color: "#7030A0", sub: "Zero disruptions across 4 weeks" },
+  { num: "86%", label: "Said they loved the experience", color: "#0891B2", sub: "And would recommend to a friend" },
 ];
 
 function BarPair({
@@ -170,7 +178,7 @@ export default function ImpactCharts() {
         </motion.div>
 
         {/* Section header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <AnimatePresence mode="wait">
             <motion.div
               key={audience}
@@ -192,97 +200,159 @@ export default function ImpactCharts() {
           </AnimatePresence>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-          {/* Left: Pre/Post bars */}
-          <div className="space-y-10">
-            <h3 className="text-xl font-extrabold text-[#0D0B12]">
-              Before vs. After MathSTAR
-            </h3>
-            {prePostBars.map((item, i) => (
-              <BarPair key={item.label} item={item} index={i} />
-            ))}
-          </div>
-
-          {/* Right: Student responses + instructor */}
-          <div className="space-y-12">
-
-            {/* Student responses */}
-            <div>
-              <h3 className="text-xl font-extrabold text-[#0D0B12] mb-6">
-                Student Responses
-                <span className="text-[#0D0B12]/35 font-normal text-base ml-2">(out of 3.0 scale)</span>
-              </h3>
-              <div className="space-y-6">
-                {studentResponses.map((item, i) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="space-y-2"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="text-[#0D0B12]/70 text-base">{item.label}</span>
-                      <span className="font-extrabold text-lg" style={{ color: item.color }}>
-                        {item.pct}%
-                      </span>
-                    </div>
-                    <div className="h-3.5 bg-[#0D0B12]/6 rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full rounded-full"
-                        style={{ background: item.color }}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.pct}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.9, delay: i * 0.1 + 0.3, ease: "easeOut" }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Instructor ratings */}
-            <div>
-              <h3 className="text-xl font-extrabold text-[#0D0B12] mb-6">
-                Instructor Ratings
-              </h3>
-              <div className="space-y-5">
-                {instructorRatings.map((item, i) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: i * 0.1 + 0.1 }}
-                    className="flex items-center gap-4"
-                  >
-                    <div className="flex-1 space-y-1.5">
+        {/* ── Parent view ── */}
+        <AnimatePresence mode="wait">
+          {audience === "parent" && (
+            <motion.div
+              key="parent-content"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
+            >
+              {/* Left: what students say */}
+              <div>
+                <h3 className="text-xl font-extrabold text-[#0D0B12] mb-8">
+                  What students said
+                  <span className="text-[#0D0B12]/35 font-normal text-base ml-2">(survey after program)</span>
+                </h3>
+                <div className="space-y-6">
+                  {studentResponses.map((item, i) => (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, x: -16 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      className="space-y-2"
+                    >
                       <div className="flex items-center justify-between">
                         <span className="text-[#0D0B12]/70 text-base">{item.label}</span>
-                        <span className="font-extrabold text-base" style={{ color: item.color }}>
-                          {item.value}
+                        <span className="font-extrabold text-lg" style={{ color: item.color }}>
+                          {item.pct}%
                         </span>
                       </div>
-                      <div className="h-3 bg-[#0D0B12]/6 rounded-full overflow-hidden">
+                      <div className="h-3.5 bg-[#0D0B12]/6 rounded-full overflow-hidden">
                         <motion.div
                           className="h-full rounded-full"
                           style={{ background: item.color }}
                           initial={{ width: 0 }}
-                          whileInView={{ width: `${item.pct}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: i * 0.1 + 0.4, ease: "easeOut" }}
+                          animate={{ width: `${item.pct}%` }}
+                          transition={{ duration: 0.9, delay: i * 0.1 + 0.3, ease: "easeOut" }}
                         />
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <motion.div
+                  className="mt-10 p-6 rounded-2xl border border-[#7030A0]/12 bg-[#F7F2FF]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  <p className="text-[#0D0B12]/70 text-sm leading-relaxed italic">
+                    &ldquo;Math is gonna be so fun from now on.&rdquo;
+                  </p>
+                  <p className="text-[#7030A0] text-xs font-semibold mt-2">— Student, Ellis Elementary Pilot</p>
+                </motion.div>
+              </div>
+
+              {/* Right: big outcome stats */}
+              <div>
+                <h3 className="text-xl font-extrabold text-[#0D0B12] mb-8">
+                  What happened after 8 hours
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {parentStats.map((s, i) => (
+                    <motion.div
+                      key={s.label}
+                      className="rounded-2xl p-6 border"
+                      style={{ borderColor: `${s.color}20`, background: `${s.color}06` }}
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                    >
+                      <div className="text-4xl font-extrabold mb-1" style={{ color: s.color }}>{s.num}</div>
+                      <div className="text-[#0D0B12] font-semibold text-sm leading-snug mb-1">{s.label}</div>
+                      <div className="text-[#0D0B12]/40 text-xs">{s.sub}</div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* ── Educator view ── */}
+          {audience === "educator" && (
+            <motion.div
+              key="educator-content"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start"
+            >
+              {/* Left: Pre/Post bars */}
+              <div className="space-y-10">
+                <h3 className="text-xl font-extrabold text-[#0D0B12]">
+                  Before vs. After MathSTAR
+                </h3>
+                {prePostBars.map((item, i) => (
+                  <BarPair key={item.label} item={item} index={i} />
                 ))}
               </div>
-            </div>
-          </div>
-        </div>
+
+              {/* Right: Instructor ratings */}
+              <div>
+                <h3 className="text-xl font-extrabold text-[#0D0B12] mb-6">
+                  Instructor Ratings
+                </h3>
+                <div className="space-y-5">
+                  {instructorRatings.map((item, i) => (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: i * 0.1 + 0.1 }}
+                      className="flex items-center gap-4"
+                    >
+                      <div className="flex-1 space-y-1.5">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[#0D0B12]/70 text-base">{item.label}</span>
+                          <span className="font-extrabold text-base" style={{ color: item.color }}>
+                            {item.value}
+                          </span>
+                        </div>
+                        <div className="h-3 bg-[#0D0B12]/6 rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full rounded-full"
+                            style={{ background: item.color }}
+                            initial={{ width: 0 }}
+                            animate={{ width: `${item.pct}%` }}
+                            transition={{ duration: 0.8, delay: i * 0.1 + 0.4, ease: "easeOut" }}
+                          />
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <motion.div
+                  className="mt-10 p-6 rounded-2xl border border-[#0891B2]/12 bg-[#F0FBFF]"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                  <p className="text-[#0D0B12]/70 text-sm leading-relaxed italic">
+                    &ldquo;When they know VR is on the line, they behave. It has changed the entire dynamic of our classroom.&rdquo;
+                  </p>
+                  <p className="text-[#0891B2] text-xs font-semibold mt-2">— Mr. McKinnon, Paraprofessional, Ellis Pilot</p>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Source note */}
         <motion.p
