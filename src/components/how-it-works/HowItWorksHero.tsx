@@ -9,7 +9,6 @@ import ParticleField from "@/components/ParticleField";
 const stats = [
   { num: "8 hrs", label: "Arithmetic to algebra-confident" },
   { num: "10/10", label: "Educators rate it" },
-  { num: "45%",   label: "Median score jump in 3 sessions" },
 ];
 
 export default function HowItWorksHero() {
