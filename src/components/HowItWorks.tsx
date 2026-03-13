@@ -20,7 +20,7 @@ const steps = [
     detail: "The moment the headset goes on, they're underwater. Schools of fish swim past, each one a number waiting to be discovered. Students use their bare hands to grab, arrange, and solve — the ocean responds to every move.",
     accent: "#0891B2",
     video: "/Manipulatives.mp4",
-    videoStart: 0,
+    videoStart: 10,
   },
   {
     num: "03",
