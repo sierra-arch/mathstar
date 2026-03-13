@@ -60,21 +60,21 @@ function HowItWorksScrollDriven() {
     <div ref={containerRef} style={{ height: "400vh" }}>
       <div
         className="sticky top-0 overflow-hidden flex flex-col"
-        style={{ height: "100vh", background: "#0D0A1A", zIndex: 10, position: "sticky" }}
+        style={{ height: "100vh", background: "#F0EBF9", zIndex: 10, position: "sticky" }}
       >
         {/* Ambient blobs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-[-20%] right-[-5%] w-[700px] h-[700px] rounded-full blur-[120px]"
-            style={{ background: "rgba(112,48,160,0.18)" }} />
+            style={{ background: "rgba(112,48,160,0.12)" }} />
           <div className="absolute bottom-[-20%] left-[-5%] w-[600px] h-[600px] rounded-full blur-[100px]"
-            style={{ background: "rgba(8,145,178,0.14)" }} />
+            style={{ background: "rgba(8,145,178,0.10)" }} />
         </div>
 
         {/* Top bar */}
         <div className="relative z-20 flex items-center justify-between px-8 lg:px-16 pt-10 pb-4 shrink-0">
           <div>
-            <p className="text-[#C49FDC] font-semibold text-xs tracking-widest uppercase mb-1">How It Works</p>
-            <h2 className="text-xl lg:text-2xl font-extrabold text-white leading-tight">
+            <p className="text-[#7030A0] font-semibold text-xs tracking-widest uppercase mb-1">How It Works</p>
+            <h2 className="text-xl lg:text-2xl font-extrabold text-[#0D0B12] leading-tight">
               Simple to start.{" "}
               <span className="italic animate-gradient">Life-changing</span>
               {" "}to experience.
@@ -89,7 +89,7 @@ function HowItWorksScrollDriven() {
                 className="h-1.5 rounded-full transition-all duration-500"
                 animate={{
                   width: activeStep === i ? "2rem" : "0.5rem",
-                  background: activeStep === i ? s.accent : "rgba(255,255,255,0.2)",
+                  background: activeStep === i ? s.accent : "rgba(0,0,0,0.15)",
                 }}
               />
             ))}
@@ -134,13 +134,13 @@ function HowItWorksScrollDriven() {
                     >
                       {step.num}
                     </div>
-                    <h3 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white mb-5 leading-tight">
+                    <h3 className="text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[#0D0B12] mb-5 leading-tight">
                       {step.title}
                     </h3>
-                    <p className="text-white/65 text-lg leading-relaxed mb-5 max-w-lg">
+                    <p className="text-[#0D0B12]/65 text-lg leading-relaxed mb-5 max-w-lg">
                       {step.desc}
                     </p>
-                    <p className="text-white/35 text-sm leading-relaxed max-w-lg">
+                    <p className="text-[#0D0B12]/45 text-sm leading-relaxed max-w-lg">
                       {step.detail}
                     </p>
                   </motion.div>
@@ -159,7 +159,7 @@ function HowItWorksScrollDriven() {
                     {step.visual}
                     <div
                       className="absolute inset-0"
-                      style={{ background: `linear-gradient(to top, #0D0A1A55 0%, transparent 60%)` }}
+                      style={{ background: `linear-gradient(to top, #F0EBF955 0%, transparent 60%)` }}
                     />
                     <div
                       className="absolute bottom-5 left-6 text-xs font-semibold tracking-widest uppercase"
@@ -180,8 +180,8 @@ function HowItWorksScrollDriven() {
           animate={{ opacity: activeStep < steps.length - 1 ? 1 : 0 }}
           transition={{ duration: 0.4 }}
         >
-          <div className="w-px h-6 bg-white/20" />
-          <p className="text-white/30 text-xs tracking-widest uppercase">Scroll to continue</p>
+          <div className="w-px h-6 bg-black/20" />
+          <p className="text-[#0D0B12]/40 text-xs tracking-widest uppercase">Scroll to continue</p>
         </motion.div>
       </div>
     </div>
