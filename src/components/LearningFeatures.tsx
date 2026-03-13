@@ -88,27 +88,24 @@ export default function LearningFeatures({ dark = false }: { dark?: boolean }) {
           {features.map((f, i) => (
             <motion.div
               key={i}
-              className={`${i === 0 ? "lg:col-span-2" : i === 2 ? "lg:col-span-3" : ""}`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, type: "spring", stiffness: 100, damping: 18 }}
             >
             <div className={`rounded-3xl border ${f.border} bg-gradient-to-br ${f.bg} overflow-hidden h-full`}>
-              <div className={`${i === 2 ? "p-10 lg:flex lg:gap-16 lg:items-start" : "p-10"}`}>
-                <div className={i === 2 ? "lg:flex-1" : ""}>
-                  <div className="text-4xl mb-5">{f.icon}</div>
-                  <h3
-                    className="text-xl font-extrabold mb-3 leading-snug"
-                    style={{ color: f.color }}
-                  >
-                    {f.title}
-                  </h3>
-                  <p className={`${dark ? "text-white/60" : "text-[#0D0B12]/60"} text-sm leading-relaxed mb-6`}>
-                    {f.body}
-                  </p>
-                </div>
-                <div className={`flex flex-wrap gap-2 ${i === 2 ? "lg:flex-col lg:items-end lg:self-end lg:flex-none" : ""}`}>
+              <div className="p-10">
+                <div className="text-4xl mb-5">{f.icon}</div>
+                <h3
+                  className="text-xl font-extrabold mb-3 leading-snug"
+                  style={{ color: f.color }}
+                >
+                  {f.title}
+                </h3>
+                <p className={`${dark ? "text-white/60" : "text-[#0D0B12]/60"} text-sm leading-relaxed mb-6`}>
+                  {f.body}
+                </p>
+                <div className="flex flex-wrap gap-2">
                   {f.tags.map((tag) => (
                     <span
                       key={tag}
