@@ -28,7 +28,7 @@ export default function EducatorsHero() {
           src="/Stock Images/pexels-julia-m-cameron-4144152.jpg"
           alt="Student using VR headset in classroom"
           fill
-          className="object-cover object-top"
+          className="object-cover object-center"
           priority
         />
         {/* Dark cinematic overlay */}
