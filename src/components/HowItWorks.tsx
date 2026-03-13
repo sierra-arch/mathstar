@@ -10,7 +10,8 @@ const steps = [
     desc: "At home or at your local library — no special setup, no downloads, no tech experience needed. Strap in and you're there in seconds.",
     detail: "MathSTAR works with Meta Quest headsets available at participating public libraries and for home use. Setup takes under 2 minutes. No controllers, no cables, no IT department required.",
     accent: "#7030A0",
-    placeholder: true,
+    video: "/Gameplay-edited.mp4",
+    videoStart: 0,
   },
   {
     num: "02",
@@ -18,7 +19,8 @@ const steps = [
     desc: "No controllers — just their hands. Fish multiply before their eyes. They reach out and shape equations in mid-air.",
     detail: "The moment the headset goes on, they're underwater. Schools of fish swim past, each one a number waiting to be discovered. Students use their bare hands to grab, arrange, and solve — the ocean responds to every move.",
     accent: "#0891B2",
-    placeholder: true,
+    video: "/Manipulatives.mp4",
+    videoStart: 0,
   },
   {
     num: "03",
@@ -26,7 +28,8 @@ const steps = [
     desc: "8 hours from arithmetic to algebra-confident. Kids beg to stay. Educators rate it 10/10.",
     detail: "After just 3 sessions, students show a 45% jump in median test score. After 8 hours total, they've moved from basic arithmetic to algebra-ready. The real moment? When they say — unprompted — \"Wait, that was algebra?\"",
     accent: "#7030A0",
-    placeholder: true,
+    video: "/Gameplay-edited.mp4",
+    videoStart: 20,
   },
 ];
 
@@ -140,19 +143,30 @@ function HowItWorksScrollDriven() {
                     </p>
                   </motion.div>
 
-                  {/* Right: placeholder visual */}
+                  {/* Right: video */}
                   <motion.div
-                    className="relative rounded-3xl overflow-hidden hidden lg:flex items-center justify-center"
+                    className="relative rounded-3xl overflow-hidden hidden lg:block"
                     style={{
                       height: "58vh",
-                      background: `linear-gradient(135deg, ${step.accent}18 0%, ${step.accent}08 100%)`,
-                      border: `1px solid ${step.accent}20`,
-                      boxShadow: `0 0 80px ${step.accent}18`,
+                      boxShadow: `0 0 80px ${step.accent}22`,
                     }}
                     initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: activeStep === i ? 1 : 0.4, scale: 1 }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   >
+                    <video
+                      src={step.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                      onLoadedMetadata={(e) => { e.currentTarget.currentTime = step.videoStart; }}
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: `linear-gradient(to top, #F0EBF930 0%, transparent 60%)` }}
+                    />
                     <div
                       className="absolute bottom-5 left-6 text-xs font-semibold tracking-widest uppercase"
                       style={{ color: step.accent }}
