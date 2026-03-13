@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import HowItWorksHero from "@/components/how-it-works/HowItWorksHero";
 import HowItWorks from "@/components/HowItWorks";
-import SessionWalkthrough from "@/components/how-it-works/SessionWalkthrough";
 import TheProblem from "@/components/how-it-works/TheProblem";
-import BreakthroughStory from "@/components/how-it-works/BreakthroughStory";
-import MindsetSlider from "@/components/how-it-works/MindsetSlider";
 import OurAnswer from "@/components/how-it-works/OurAnswer";
 import IsItRightQuiz from "@/components/how-it-works/IsItRightQuiz";
 import LearnerProfiles from "@/components/how-it-works/LearnerProfiles";
@@ -27,12 +24,9 @@ export default function HowItWorksPage() {
   return (
     <main>
       <Nav />
-      <HowItWorksHero />
+      {/* <HowItWorksHero /> */}
       <HowItWorks scrollDriven />
-      <SessionWalkthrough />
       <TheProblem />
-      <BreakthroughStory />
-      <MindsetSlider />
       <OurAnswer />
       <IsItRightQuiz />
       <LearnerProfiles />
