@@ -74,11 +74,6 @@ function HowItWorksScrollDriven() {
         <div className="relative z-20 flex items-center justify-between px-8 lg:px-16 pt-10 pb-4 shrink-0">
           <div>
             <p className="text-[#7030A0] font-semibold text-xs tracking-widest uppercase mb-1">How It Works</p>
-            <h2 className="text-xl lg:text-2xl font-extrabold text-[#0D0B12] leading-tight">
-              Simple to start.{" "}
-              <span className="italic animate-gradient">Life-changing</span>
-              {" "}to experience.
-            </h2>
           </div>
 
           {/* Step indicators */}
