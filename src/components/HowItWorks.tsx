@@ -145,22 +145,19 @@ function HowItWorksScrollDriven() {
                     </p>
                   </motion.div>
 
-                  {/* Right: image */}
+                  {/* Right: placeholder visual */}
                   <motion.div
-                    className="relative rounded-3xl overflow-hidden hidden lg:block"
+                    className="relative rounded-3xl overflow-hidden hidden lg:flex items-center justify-center"
                     style={{
                       height: "58vh",
-                      boxShadow: `0 0 80px ${step.accent}22`,
+                      background: `linear-gradient(135deg, ${step.accent}18 0%, ${step.accent}08 100%)`,
+                      border: `1px solid ${step.accent}20`,
+                      boxShadow: `0 0 80px ${step.accent}18`,
                     }}
                     initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: activeStep === i ? 1 : 0.4, scale: 1 }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    {step.visual}
-                    <div
-                      className="absolute inset-0"
-                      style={{ background: `linear-gradient(to top, #F0EBF955 0%, transparent 60%)` }}
-                    />
                     <div
                       className="absolute bottom-5 left-6 text-xs font-semibold tracking-widest uppercase"
                       style={{ color: step.accent }}
