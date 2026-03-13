@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import RevealText from "@/components/RevealText";
 import ParticleField from "@/components/ParticleField";
 
 const stats = [
@@ -20,134 +19,142 @@ export default function HowItWorksHero() {
   });
 
   const fadeOut = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
-  const textY   = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
-
+  const textY    = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const videoY   = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen flex items-center"
-      style={{ overflowX: "clip", background: "#2e1275" }}
+      className="relative h-screen overflow-hidden"
+      style={{ background: "#1a0a3d" }}
     >
-      {/* ── Atmosphere layer ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Deep radial center glow */}
+      {/* ── Atmosphere ── */}
+      <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 120% 80% at 50% 55%, rgba(140,60,200,0.45) 0%, rgba(46,18,117,0) 65%)" }}
+          style={{ background: "radial-gradient(ellipse 80% 90% at 20% 50%, rgba(112,48,160,0.55) 0%, transparent 65%)" }}
         />
-        {/* Blob 1 — top-right purple */}
         <div
-          className="absolute top-[-10%] right-[-6%] w-[920px] h-[920px] rounded-full blur-[110px]"
-          style={{ background: "radial-gradient(circle, rgba(220,180,255,0.65) 0%, rgba(140,60,200,0.25) 55%, transparent 75%)" }}
+          className="absolute top-[-15%] left-[-5%] w-[700px] h-[700px] rounded-full blur-[130px]"
+          style={{ background: "rgba(196,159,220,0.20)" }}
         />
-        {/* Blob 2 — bottom-left teal */}
         <div
-          className="absolute bottom-[-12%] left-[-6%] w-[780px] h-[780px] rounded-full blur-[100px]"
-          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.55) 0%, transparent 65%)" }}
+          className="absolute bottom-[-10%] left-[10%] w-[500px] h-[500px] rounded-full blur-[100px]"
+          style={{ background: "rgba(8,145,178,0.18)" }}
         />
-        {/* Blob 3 — mid-left lavender */}
-        <div
-          className="absolute top-[20%] left-[-8%] w-[720px] h-[720px] rounded-full blur-[120px]"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.55) 0%, transparent 70%)" }}
-        />
-        {/* Particles */}
-        <ParticleField count={80} />
+        <ParticleField count={50} />
       </div>
 
-      {/* ── Content ── */}
+      {/* ── Right: video panel ── */}
       <motion.div
-        className="relative z-10 w-full max-w-6xl mx-auto px-8 lg:px-16 pt-28 pb-16"
-        style={{ y: textY, opacity: fadeOut }}
+        className="absolute right-0 top-0 w-[52%] h-full hidden lg:block"
+        style={{ y: videoY }}
       >
-        <div className="max-w-4xl">
-
-          <RevealText
-            as="p"
-            className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-5"
-            delay={0.05}
-          >
-            How It Works
-          </RevealText>
-
-          <div className="mb-6">
-            <RevealText
-              as="h1"
-              className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4.5rem] font-extrabold text-white leading-[1.05]"
-              delay={0.12}
-            >
-              Simple to start.{" "}
-              <span className="italic inline-block animate-gradient">
-                Life-changing
-              </span>{" "}
-              to experience.
-            </RevealText>
-          </div>
-
-          <RevealText
-            as="p"
-            className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl"
-            delay={0.25}
-          >
-            Three steps. One headset. An underwater world where kids go from
-            stuck-in-arithmetic to algebra-confident in 8 hours.
-          </RevealText>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 mb-14"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-          >
-            <Link
-              href="/parents"
-              className="px-10 py-4 rounded-full font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5 w-fit"
-              style={{
-                background: "linear-gradient(135deg, #9040C8, #5A2880)",
-                boxShadow: "0 8px 40px rgba(144,64,200,0.5)",
-              }}
-            >
-              For Parents →
-            </Link>
-            <Link
-              href="/educators"
-              className="px-10 py-4 rounded-full font-bold text-white/75 text-base border-2 border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-200 w-fit"
-            >
-              For Educators →
-            </Link>
-          </motion.div>
-
-          {/* Stats row */}
-          <motion.div
-            className="flex flex-col sm:flex-row sm:divide-x divide-white/10 border-t border-white/10"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.55 }}
-          >
-            {stats.map((s, i) => (
-              <div key={i} className="pt-6 pb-2 sm:pr-12 sm:pl-0 lg:pr-16 first:pl-0">
-                <div
-                  className="text-5xl font-extrabold mb-2"
-                  style={{ color: i % 2 === 0 ? "#C49FDC" : "#38BDF8" }}
-                >
-                  {s.num}
-                </div>
-                <p className="text-white/45 text-sm leading-snug">{s.label}</p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
+        {/* Gradient bleed — left edge fades into dark bg */}
+        <div
+          className="absolute inset-y-0 left-0 w-48 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to right, #1a0a3d 0%, transparent 100%)" }}
+        />
+        {/* Gradient bleed — bottom */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-48 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to top, #1a0a3d 0%, transparent 100%)" }}
+        />
+        {/* Gradient bleed — top */}
+        <div
+          className="absolute inset-x-0 top-0 h-32 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, #1a0a3d 0%, transparent 100%)" }}
+        />
+        <video
+          src="/Gameplay-edited.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ opacity: 0.85 }}
+        />
       </motion.div>
 
-      {/* Bridge blob — bleeds into next section */}
-      <div
-        className="absolute left-1/2 -translate-x-1/2 w-[1000px] h-[700px] pointer-events-none"
-        style={{
-          bottom: "-280px",
-          background: "radial-gradient(circle, rgba(112,48,160,0.30) 0%, transparent 65%)",
-          filter: "blur(130px)",
-        }}
-      />
+      {/* ── Left: text ── */}
+      <motion.div
+        className="relative z-20 h-full flex flex-col justify-center px-8 lg:px-16 max-w-[54%]"
+        style={{ y: textY, opacity: fadeOut }}
+      >
+        <motion.p
+          className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-6"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+        >
+          How It Works
+        </motion.p>
+
+        <motion.h1
+          className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[4rem] font-extrabold text-white leading-[1.05] mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.12 }}
+        >
+          Three steps.<br />
+          One headset.<br />
+          <span className="italic animate-gradient">One breakthrough.</span>
+        </motion.h1>
+
+        <motion.p
+          className="text-white/60 text-lg leading-relaxed mb-10 max-w-md"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+        >
+          An underwater world where kids go from stuck-in-arithmetic to
+          algebra-confident in 8 hours.
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 mb-14"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+        >
+          <Link
+            href="/parents"
+            className="px-8 py-3.5 rounded-full font-bold text-white text-sm transition-all duration-200 hover:-translate-y-0.5 w-fit"
+            style={{
+              background: "linear-gradient(135deg, #9040C8, #5A2880)",
+              boxShadow: "0 8px 40px rgba(144,64,200,0.5)",
+            }}
+          >
+            For Parents →
+          </Link>
+          <Link
+            href="/educators"
+            className="px-8 py-3.5 rounded-full font-bold text-white/70 text-sm border border-white/20 hover:border-white/45 hover:bg-white/5 transition-all duration-200 w-fit"
+          >
+            For Educators →
+          </Link>
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div
+          className="flex gap-10 border-t border-white/10 pt-8"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+        >
+          {stats.map((s, i) => (
+            <div key={i}>
+              <div
+                className="text-4xl font-extrabold mb-1"
+                style={{ color: i % 2 === 0 ? "#C49FDC" : "#38BDF8" }}
+              >
+                {s.num}
+              </div>
+              <p className="text-white/40 text-xs leading-snug">{s.label}</p>
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
