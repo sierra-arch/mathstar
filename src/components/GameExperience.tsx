@@ -812,6 +812,9 @@ export default function GameExperience() {
       {/* ── NEW: The Worlds ── */}
       <WorldsSection />
 
+      {/* ── 9. DARK — Cinematic quote ── */}
+      <QuoteSection />
+
       {/* ── 8. LIGHT — Three things ── */}
       <section className="relative min-h-screen py-40 px-6 lg:px-20 bg-[#FAFAF8] overflow-hidden flex items-center">
         {/* Section transitions */}
@@ -880,12 +883,6 @@ export default function GameExperience() {
           </div>
         </div>
       </section>
-
-      {/* ── 9. DARK — Cinematic quote ── */}
-      <QuoteSection />
-
-      {/* ── NEW: Pathway Panels (replaces old CTA) ── */}
-      <PathwayPanels />
 
     </div>
   );

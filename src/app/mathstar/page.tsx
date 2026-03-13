@@ -17,7 +17,7 @@ export default function MathSTARPage() {
       <main>
         <Nav />
         <GameExperience />
-        <LearningFeatures dark />
+        <LearningFeatures />
         <Footer />
       </main>
     </SmoothScroll>
