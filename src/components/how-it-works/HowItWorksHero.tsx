@@ -27,30 +27,30 @@ export default function HowItWorksHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center"
-      style={{ overflowX: "clip", background: "#0F0620" }}
+      className="relative h-screen flex items-center"
+      style={{ overflowX: "clip", background: "#2e1275" }}
     >
       {/* ── Atmosphere layer ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Deep radial center glow */}
         <div
           className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse 120% 80% at 50% 55%, rgba(112,48,160,0.22) 0%, rgba(15,6,32,0) 65%)" }}
+          style={{ background: "radial-gradient(ellipse 120% 80% at 50% 55%, rgba(140,60,200,0.45) 0%, rgba(46,18,117,0) 65%)" }}
         />
         {/* Blob 1 — top-right purple */}
         <div
           className="absolute top-[-10%] right-[-6%] w-[920px] h-[920px] rounded-full blur-[110px]"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.55) 0%, rgba(112,48,160,0.12) 55%, transparent 75%)" }}
+          style={{ background: "radial-gradient(circle, rgba(220,180,255,0.65) 0%, rgba(140,60,200,0.25) 55%, transparent 75%)" }}
         />
         {/* Blob 2 — bottom-left teal */}
         <div
           className="absolute bottom-[-12%] left-[-6%] w-[780px] h-[780px] rounded-full blur-[100px]"
-          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.35) 0%, transparent 65%)" }}
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.55) 0%, transparent 65%)" }}
         />
         {/* Blob 3 — mid-left lavender */}
         <div
           className="absolute top-[20%] left-[-8%] w-[720px] h-[720px] rounded-full blur-[120px]"
-          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.40) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(196,159,220,0.55) 0%, transparent 70%)" }}
         />
         {/* Particles */}
         <ParticleField count={80} />
@@ -58,28 +58,27 @@ export default function HowItWorksHero() {
 
       {/* ── Content ── */}
       <motion.div
-        className="relative z-10 w-full max-w-6xl mx-auto px-8 lg:px-16 pt-36 pb-28"
+        className="relative z-10 w-full max-w-6xl mx-auto px-8 lg:px-16 pt-28 pb-16"
         style={{ y: textY, opacity: fadeOut }}
       >
         <div className="max-w-4xl">
 
           <RevealText
             as="p"
-            className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-6"
+            className="text-[#C49FDC] font-semibold text-sm tracking-widest uppercase mb-5"
             delay={0.05}
           >
             How It Works
           </RevealText>
 
-          <div className="mb-8">
+          <div className="mb-6">
             <RevealText
               as="h1"
-              className="text-5xl sm:text-6xl lg:text-[6.5rem] xl:text-[8rem] font-extrabold text-white leading-[1.0]"
+              className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4.5rem] font-extrabold text-white leading-[1.05]"
               delay={0.12}
             >
               Simple to start.{" "}
-              <br className="hidden lg:block" />
-              <span className="italic inline-block pb-2 pr-4 animate-gradient">
+              <span className="italic inline-block animate-gradient">
                 Life-changing
               </span>{" "}
               to experience.
@@ -88,7 +87,7 @@ export default function HowItWorksHero() {
 
           <RevealText
             as="p"
-            className="text-white/55 text-xl leading-relaxed mb-12 max-w-2xl"
+            className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl"
             delay={0.25}
           >
             Three steps. One headset. An underwater world where kids go from
@@ -96,7 +95,7 @@ export default function HowItWorksHero() {
           </RevealText>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 mb-20"
+            className="flex flex-col sm:flex-row gap-4 mb-14"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
